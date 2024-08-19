@@ -139,8 +139,9 @@ public class CheckUtil {
 
     public void checkManager() throws GlobalException {
         HttpServletRequest request = Tools.getRequest();
-        String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
-        String userId = token.substring(NumberConstants.ID_LENGTH_PREFIX,NumberConstants.ID_LENGTH_SUFFIX);
+        String userId = UserContext.getUserId();
+        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
+        String userId = token.substring(NumberConstants.ID_LENGTH_PREFIX,NumberConstants.ID_LENGTH_SUFFIX);*/
         List<RoleInfo> roleInfoList = roleUserMapper.selectByUserId(userId);
         for(RoleInfo roleInfo :roleInfoList){
             if(roleInfo.getRoleId().equals(RoleEnum.NORMAL.getRoleId())){
