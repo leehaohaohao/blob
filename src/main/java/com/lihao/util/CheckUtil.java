@@ -53,19 +53,6 @@ public class CheckUtil {
         }
         String userId = (String) map.get("userId");
         UserContext.setUserId(userId);
-        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
-        if(token == null ){
-            throw new GlobalException(ExceptionConstants.NO_LOGGING);
-        }
-        String userId = token.substring(NumberConstants.ID_LENGTH_PREFIX,NumberConstants.ID_LENGTH_SUFFIX);
-        String realToken = redisTools.getToken(userId);
-        if(realToken == null || !realToken.equals(token)){
-            throw new GlobalException(ExceptionConstants.NO_LOGGING);
-        }
-        UserInfoDto userInfoDto = redisTools.getTokenUserInfoDto(userId);
-        if(!userInfoDto.getStatus().equals(UserStatusEnum.NORMAL.getStatus())){
-            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
-        }*/
     }
     public void checkPost() throws GlobalException {
         Set<String> setPermissionId = commonUtil.getPermission(null);
@@ -136,10 +123,7 @@ public class CheckUtil {
     }
 
     public void checkManager() throws GlobalException {
-        HttpServletRequest request = Tools.getRequest();
         String userId = UserContext.getUserId();
-        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
-        String userId = token.substring(NumberConstants.ID_LENGTH_PREFIX,NumberConstants.ID_LENGTH_SUFFIX);*/
         List<RoleInfo> roleInfoList = roleUserMapper.selectByUserId(userId);
         for(RoleInfo roleInfo :roleInfoList){
             if(roleInfo.getRoleId().equals(RoleEnum.NORMAL.getRoleId())){

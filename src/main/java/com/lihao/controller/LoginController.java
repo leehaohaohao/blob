@@ -47,8 +47,6 @@ public class LoginController extends BaseController {
     private CheckUtil checkUtil;
     @Resource
     private JwtProperty jwtProperty;
-    @Resource
-    private JwtUtil jwtUtil;
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
@@ -66,7 +64,7 @@ public class LoginController extends BaseController {
         userInfoMapper.updateByUserId(updateUser, updateUser.getUserId());
         Map<String,Object> map = new HashMap<>();
         map.put("userId",userInfo.getUserId());
-        String authorization = jwtUtil.createJwt(jwtProperty.getJWT_SECRET(),
+        String authorization = JwtUtil.createJwt(jwtProperty.getJWT_SECRET(),
                 jwtProperty.getJWT_EXPIRE(),
                 map);
         //将token存入redis设置一个月期限
@@ -158,10 +156,13 @@ public class LoginController extends BaseController {
         UserInfoDto userInfoDto = new UserInfoDto();
         BeanUtils.copyProperties(userInfo,userInfoDto);
         redisTools.setTokenUserInfo(userInfoDto);
-        String token = redisTools.setToken(userInfoDto.getUserId());
-        CookieUtil.addCookie( response, StringConstants.TOKEN, token, Math.toIntExact(TimeConstants.ONE_MONTH),request.getContextPath());
+        Map<String,Object> map = new HashMap<>();
+        map.put("userId",userInfo.getUserId());
+        String authorization = JwtUtil.createJwt(jwtProperty.getJWT_SECRET(),
+                jwtProperty.getJWT_EXPIRE(),
+                map);
         //将用户权限信息存入redis
         redisTools.setPermission(userInfo.getUserId(),commonUtil.getPermission(userInfo.getUserId()));
-        return getSuccessResponsePack(StringConstants.SUCCESS_LOG);
+        return getSuccessResponsePack(authorization);
     }
 }

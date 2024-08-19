@@ -16,7 +16,7 @@ function login(event){
     }).then(response => response.json())
         .then(data => {
             if(data.success){
-                alert(data.data);
+                localStorage.setItem("authorization",data.data);
                 window.location.href='manager.html';
             }else{
                 alert(data.message);
