@@ -11,7 +11,6 @@ var user = JSON.parse(sessionStorage.getItem('user'));
 if (user == null) {
     fetch(userInfo, {
         method: 'get',
-        credentials:'include',
         headers: {
             'Authorization': authorization
         }
@@ -67,7 +66,6 @@ function postArticle(title, content, tags) {
     fetch(post, {
         method: 'POST',
         body: formData,
-        credentials:'include',
         headers: {
             'Authorization': authorization
         }

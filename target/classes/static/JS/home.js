@@ -6,6 +6,7 @@ let userInfo = baseURL + 'user/info';
 let updateTag = baseURL + 'user/updateTag';
 let myCoverPost = baseURL + 'forum/user/unapproval/post';
 let likeCollectCoverPost = baseURL + 'forum/my/like/collect/post';
+let authorization = localStorage.getItem('authorization');
 window.onload = function () {
     var noteData = new FormData();
     noteData.append("noteStatus",0);
@@ -13,7 +14,9 @@ window.onload = function () {
     fetch(noteSelect, {
         method: 'post',
         body:noteData,
-        credentials: 'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -61,7 +64,9 @@ window.onload = function () {
     //获取用户信息
     fetch(userInfo, {
         method: 'get',
-        credentials: 'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -102,7 +107,10 @@ window.onload = function () {
     myData.append("sort", 2);
     fetch(myCoverPost, {
         method: 'post',
-        body: myData
+        body: myData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -138,7 +146,10 @@ window.onload = function () {
     likeData.append("status", 0);
     fetch(likeCollectCoverPost, {
         method: 'post',
-        body: likeData
+        body: likeData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -174,7 +185,10 @@ window.onload = function () {
     collectData.append("status", 1);
     fetch(likeCollectCoverPost, {
         method: 'post',
-        body: collectData
+        body: collectData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -251,7 +265,9 @@ document.getElementById('saveTags').addEventListener('click', function () {
     fetch(updateTag, {
         method: 'post',
         body: formData,
-        credentials: 'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {

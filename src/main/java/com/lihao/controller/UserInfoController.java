@@ -13,12 +13,14 @@ import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin
 public class UserInfoController extends BaseController {
     @Resource
     private RedisTools redisTools;

@@ -4,10 +4,13 @@ let userInfo = baseURL + 'user/info';
 let hotPost = baseURL + 'back/hot/post';
 let hotTag = baseURL + 'back/hot/tag';
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
-
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     fetch(numUrl, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
     .then(data => {
         if (data.success) {
@@ -24,7 +27,10 @@ window.onload = function() {
     });
 
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -42,7 +48,10 @@ window.onload = function() {
 
     fetch(hotPost, {
         method: 'post',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -66,7 +75,10 @@ window.onload = function() {
 
     fetch(hotTag, {
         method: 'post',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {

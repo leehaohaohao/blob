@@ -6,10 +6,13 @@ let pageNum = 1;
 let pageSize = 8;
 let status = 0; // 默认状态为0
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
-
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -30,7 +33,10 @@ function getPerson(pageNum, pageSize, status) {
     formData.append("status", status);
     fetch(personInfo, {
         method: 'post',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -124,7 +130,10 @@ function changeStatus(button) {
         fetch(updateInfo, {
             method: 'POST',
             body: formData,
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+                'Authorization': authorization
+            }
         }).then(response => response.json())
             .then(data => {
                 if (data.success) {
@@ -159,7 +168,10 @@ document.getElementById('editForm').addEventListener('submit', function (event) 
     fetch(updateInfo, {
         method: 'POST',
         body: formData,
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {

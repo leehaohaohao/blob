@@ -5,10 +5,13 @@ let approval = baseURL+'forum/approval/post';
 let pageNum = 1;
 let pageSize = 8;
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
-
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -28,7 +31,10 @@ function getArticles(pageNum, pageSize) {
     formData.append("pageSize", pageSize);
     fetch(articleInfo, {
         method: 'post',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -90,7 +96,10 @@ function approveArticle(postId,status) {
     // 批准文章逻辑
     fetch(approval,{
         method:'post',
-        body:formData
+        body:formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res=>res.json())
     .then(data=>{
         if(data.success){

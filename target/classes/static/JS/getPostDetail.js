@@ -6,6 +6,7 @@ var postID = null;
 var targetName = null;
 var pageLike = 0;
 var pageCollect = 0;
+let authorization = localStorage.getItem('authorization');
 window.onload = async function(){
     userOwn = await getUser();
     console.log(userOwn);
@@ -24,7 +25,10 @@ async function request(url,mtd,FD){
     console.log(baseURL + url)
     const config={
         method:mtd,
-        body:FD
+        body:FD,
+        headers: {
+            'Authorization': authorization
+        }
     }
     try{
         const response = await fetch(baseURL + url, config);

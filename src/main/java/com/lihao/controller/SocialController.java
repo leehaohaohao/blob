@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/social")
+@CrossOrigin
 public class SocialController extends BaseController{
     @Resource
     private SocialService socialService;

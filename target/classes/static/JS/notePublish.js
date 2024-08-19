@@ -2,13 +2,16 @@ let baseURL = 'http://localhost:9090/blob/';
 let userInfo = baseURL + 'user/info';
 let postAnnouncementURL = baseURL + 'note/publish';
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
-
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     const E = window.wangEditor;
     const editor = new E('#editor');
     editor.create();
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {

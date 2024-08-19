@@ -20,7 +20,6 @@ let authorization = localStorage.getItem('authorization');
 window.onload = async function () {
     fetch(userInfo, {
         method: 'get',
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }
@@ -41,7 +40,10 @@ window.onload = async function () {
                     formData.append('otherId',otherId);
                     fetch(otherInfo,{
                         method:'post',
-                        body:formData
+                        body:formData,
+                        headers: {
+                            'Authorization': authorization
+                        }
                     }).then(response=>response.json())
                     .then(res=>{
                         if(res.success){
@@ -214,7 +216,6 @@ document.getElementById('editForm').addEventListener('submit', function (event) 
     fetch(updateInfo, {
         method: 'POST',
         body: formData,
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }

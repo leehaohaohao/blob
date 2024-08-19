@@ -14,7 +14,6 @@ window.onload = function () {
     fetch(noteSelect, {
         method: 'post',
         body:noteData,
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }
@@ -65,7 +64,6 @@ window.onload = function () {
     //获取用户信息
     fetch(userInfo, {
         method: 'get',
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }
@@ -267,7 +265,6 @@ document.getElementById('saveTags').addEventListener('click', function () {
     fetch(updateTag, {
         method: 'post',
         body: formData,
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }

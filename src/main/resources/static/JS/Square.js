@@ -56,7 +56,6 @@ async function getAllTag() {
     try {
         let response = await fetch(gettag, {
             method: "get",
-            credentials:'include',
             headers: {
                 'Authorization': authorization
             }

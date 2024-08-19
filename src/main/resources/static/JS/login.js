@@ -78,8 +78,7 @@ function register(event) {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: params,
-        credentials:'include'
+        body: params
     }).then(response => response.json())
         .then(data => {
             if(data.success){
@@ -104,8 +103,7 @@ function sentCode(event)
         params.append('email', email);
         fetch(emailCode, {
             method: 'POST',
-            body: params,
-            credentials:'include'
+            body: params
         }).then(response => response.json())
             .then(res => {
                 if(res.success){

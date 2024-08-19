@@ -494,7 +494,7 @@
 				 cover = #{bean.cover},
 			 </if>
 			 <if test="bean.approvalTime != null">
-				 approval_time = #{bean.approvalTime}
+				 approval_time = #{bean.approvalTime},
 			 </if>
 			 <if test="bean.approvalIdFuzzy != null">
 				 approval_id = #{bean.approvalId},

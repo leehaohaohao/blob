@@ -12,14 +12,12 @@ import com.lihao.service.BackService;
 import com.lihao.util.CheckUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/back")
+@CrossOrigin
 public class BackController extends BaseController{
     @Resource
     private BackService backServiceImpl;

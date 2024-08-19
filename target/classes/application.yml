@@ -67,5 +67,9 @@ spring:
           starttls:
             enable: true
             required: true
+jwt:
+  secret: lihaolihaolihaolihaolihaolihaolh
+  expire: 2592000
+  token: Authorization
 
 

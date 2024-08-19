@@ -15,7 +15,6 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
     fetch(errPublish,{
         method:'post',
         body: formData,
-        credentials:'include',
         headers: {
             'Authorization': authorization
         }

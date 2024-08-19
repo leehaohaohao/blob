@@ -8,6 +8,7 @@ import com.lihao.annotation.Manager;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.RedisConstants;
 import com.lihao.constants.StringConstants;
+import com.lihao.constants.TimeConstants;
 import com.lihao.entity.dto.PostCoverDto;
 import com.lihao.entity.dto.PostDto;
 import com.lihao.entity.dto.ResponsePack;
@@ -52,7 +53,6 @@ public class ForumController extends BaseController{
 
     /**
      * 发布文章
-     * @param request
      * @param post_content 文章内容
      * @param tags 标签
      * @param title 标题
@@ -106,19 +106,23 @@ public class ForumController extends BaseController{
      * @param tagFuzzy 模糊标签
      * @param pageNum 页码
      * @param pageSize 页数
-     * @param request
      * @return
      * @throws GlobalException
      */
     @PostMapping("/tag/post")
+    @Login
     public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtoList = new ArrayList<>();
-        postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId()+":"+page.getPageNum());
+        postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum());
         if(postCoverDtoList.size()!=0){
             return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
         }
         if(tagFuzzy.equals(StringConstants.RANDOM_POST)){
+            postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId()+":"+page.getPageNum());
+            if(postCoverDtoList.size()!=0){
+                return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
+            }
             //走推荐算法
             return getSuccessResponsePack(new PageInfo<>(forumService.getRandomPost(page,StringUtil.getUserId())));
         }else{
@@ -130,7 +134,6 @@ public class ForumController extends BaseController{
     /**
      * 根据id获取文章
      * @param postId 文章id
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -152,7 +155,6 @@ public class ForumController extends BaseController{
      * 根据id审批帖子
      * @param postId 文章id
      * @param postStatus 文章状态
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -169,7 +171,6 @@ public class ForumController extends BaseController{
      * @param otherId 他人id
      * @param pageSize 页码
      * @param pageNum 页数
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -191,7 +192,6 @@ public class ForumController extends BaseController{
      * @param postId 帖子id
      * @param status 帖子状态
      * @param type 类型
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -209,7 +209,6 @@ public class ForumController extends BaseController{
     /**
      * 根据id获取审批的帖子内容
      * @param postId
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -229,7 +228,6 @@ public class ForumController extends BaseController{
      * @param pageSize
      * @param sort
      * @param otherId
-     * @param request
      * @return
      * @throws GlobalException
      */
@@ -264,7 +262,6 @@ public class ForumController extends BaseController{
      * @param pageSize 一页数量
      * @param status 喜欢或收藏
      * @param otherId 其他用户id
-     * @param request
      * @return
      * @throws GlobalException
      */

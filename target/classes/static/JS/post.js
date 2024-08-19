@@ -5,13 +5,15 @@ let baseURL = 'http://localhost:9090/blob/';
 let userInfo  = baseURL+'user/info';
 let post = baseURL+'forum/post';
 var coverFile = null;
-
+let authorization = localStorage.getItem('authorization');
 // Get user data from sessionStorage
 var user = JSON.parse(sessionStorage.getItem('user'));
 if (user == null) {
     fetch(userInfo, {
         method: 'get',
-        credentials:'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -64,7 +66,9 @@ function postArticle(title, content, tags) {
     fetch(post, {
         method: 'POST',
         body: formData,
-        credentials:'include'
+        headers: {
+            'Authorization': authorization
+        }
     })
         .then(response => response.json())
         .then(data => {

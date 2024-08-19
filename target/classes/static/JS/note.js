@@ -7,10 +7,13 @@ let pageSize = 8;
 let noteStatus = 0; // 默认状态为0
 let noteType = 0; // 默认类别为0
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
-
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -32,7 +35,10 @@ function getAnnouncements(pageNum, pageSize, noteStatus, noteType) {
     formData.append("noteType", noteType);
     fetch(announcementInfo, {
         method: 'post',
-        body: formData
+        body: formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {
@@ -96,7 +102,10 @@ function deleteAnnouncement(button) {
     formData.append("noteStatus",announcement.noteStatus===1?0:1);
     fetch(editNote,{
         method:'post',
-        body:formData
+        body:formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res=>res.json())
     .then(data=>{
         if(data.success){

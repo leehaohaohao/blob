@@ -8,10 +8,13 @@ let user = null;
 let pageNumConcern = 1;
 let pageNumFollower = 1;
 let pageSize = 16;
+let authorization = localStorage.getItem('authorization');
 window.onload = async function () {
     fetch(userInfo, {
         method: 'get',
-        credentials: 'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -84,9 +87,10 @@ async function getConcernFollowerInfo(status, otherId, pageNum) {
         let response = await fetch(concernFollower, {
             method: 'post',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': authorization
             },
-            body: jsonString
+            body: jsonString,
         });
         let res = await response.json();
         if (res.success) {
@@ -179,7 +183,10 @@ function linkToOne(element,otherId){
     formData.append('userId',user.userId);
     fetch(socialC,{
         method:'post',
-        body:formData
+        body:formData,
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response=>response.json())
     .then(res=>{
         if(res.success){
@@ -269,7 +276,9 @@ document.getElementById('editForm').addEventListener('submit', function (event) 
     fetch(updateInfo, {
         method: 'POST',
         body: formData,
-        credentials: 'include'
+        headers: {
+            'Authorization': authorization
+        },
     }).then(response => response.json())
         .then(data => {
             if (data.success) {

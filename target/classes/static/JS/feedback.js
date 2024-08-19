@@ -1,6 +1,7 @@
 let baseURL = 'http://localhost:9090/blob/';
 let errPublish = baseURL+'error/publish';
 let getType = baseURL+'error/getType';
+let authorization = localStorage.getItem('authorization');
 document.getElementById('feedback-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -14,7 +15,9 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
     fetch(errPublish,{
         method:'post',
         body: formData,
-        credentials:'include'
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response=>response.json())
     .then(data=>{
         if(data.success){
@@ -40,7 +43,11 @@ if (feedbackTypes) {
     feedbackTypes = JSON.parse(feedbackTypes);
     populateFeedbackTypes(feedbackTypes);
 } else {
-    fetch(getType)
+    fetch(getType,{
+        headers: {
+            'Authorization': authorization
+        }
+    })
         .then(response => response.json())
         .then(data => {
             if (data.success) {
