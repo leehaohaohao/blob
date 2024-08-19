@@ -20,8 +20,14 @@
         <commons.codec.version>1.9</commons.codec.version>
         <mybatis.version>3.0.3</mybatis.version>
         <hutool.version>5.8.25</hutool.version>
+        <jjwt.version>0.12.3</jjwt.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>

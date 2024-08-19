@@ -3,7 +3,6 @@ package com.lihao.controller;
 import com.lihao.annotation.LNote;
 import com.lihao.annotation.Login;
 import com.lihao.annotation.Manager;
-import com.lihao.annotation.Post;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.Note;
@@ -24,7 +23,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.lang.annotation.Native;
 import java.util.Date;
 
 @RestController
@@ -35,8 +33,8 @@ public class NoteController extends BaseController {
     private NoteService noteService;
     @PostMapping("/publish")
     @LNote
-    public ResponsePack publish(HttpServletRequest request, String content,Integer status) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack publish(String content,Integer status) throws GlobalException {
+        String userId = StringUtil.getUserId();
         if(content == null || content.isEmpty()){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }

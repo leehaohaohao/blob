@@ -29,7 +29,6 @@ import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
-import org.apache.ibatis.annotations.Options;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -63,9 +62,9 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/post")
     @LPost
-    public ResponsePack post(HttpServletRequest request, String post_content,
+    public ResponsePack post(String post_content,
                              String tags, String title, MultipartFile file) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         //标题如果为空则采用默认标题
         if(title == null || title.isEmpty()){
             title = StringConstants.DEFAULT_TITLE;
@@ -112,20 +111,19 @@ public class ForumController extends BaseController{
      * @throws GlobalException
      */
     @PostMapping("/tag/post")
-    public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize,
-                                     HttpServletRequest request) throws GlobalException {
+    public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtoList = new ArrayList<>();
-        postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId(request)+":"+page.getPageNum());
+        postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId()+":"+page.getPageNum());
         if(postCoverDtoList.size()!=0){
             return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
         }
         if(tagFuzzy.equals(StringConstants.RANDOM_POST)){
             //走推荐算法
-            return getSuccessResponsePack(new PageInfo<>(forumService.getRandomPost(page,StringUtil.getUserId(request))));
+            return getSuccessResponsePack(new PageInfo<>(forumService.getRandomPost(page,StringUtil.getUserId())));
         }else{
             //走标签
-            return getSuccessResponsePack(new PageInfo<>(forumService.getPostByTag(tagFuzzy,page,StringUtil.getUserId(request))));
+            return getSuccessResponsePack(new PageInfo<>(forumService.getPostByTag(tagFuzzy,page,StringUtil.getUserId())));
         }
     }
 
@@ -138,8 +136,8 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/id/post")
     @Login
-    public ResponsePack getPostById(String postId,HttpServletRequest request) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack getPostById(String postId) throws GlobalException {
+        String userId = StringUtil.getUserId();
         if(Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
@@ -160,9 +158,8 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/approval/post")
     @LApprovalPost
-    public ResponsePack approvalPost(String postId,Integer postStatus,
-                                     HttpServletRequest request) throws GlobalException {
-        String approvalId = StringUtil.getUserId(request);
+    public ResponsePack approvalPost(String postId,Integer postStatus) throws GlobalException {
+        String approvalId = StringUtil.getUserId();
         forumService.approvalPost(postId,postStatus,approvalId);
         return getSuccessResponsePack(StringConstants.SUCCESS_OPERATE);
     }
@@ -178,9 +175,8 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/user/post")
     @Login
-    public ResponsePack getPostByUser(String otherId,Integer pageSize,Integer pageNum
-            ,HttpServletRequest request) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack getPostByUser(String otherId,Integer pageSize,Integer pageNum) throws GlobalException {
+        String userId = StringUtil.getUserId();
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"USER:"+pageNum+":"+otherId);
         if(postCoverDtos.size()==0){
@@ -201,11 +197,11 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/love/collect")
     @Login
-    public ResponsePack likeOrCollect(String postId,Integer status,Integer type,HttpServletRequest request) throws GlobalException {
+    public ResponsePack likeOrCollect(String postId,Integer status,Integer type) throws GlobalException {
         if(JudgeEnum.getJudgeEnumByStatus(status) == null || Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         forumService.loveOrCollect(userId,postId,status,type);
         return getSuccessResponsePack(null);
     }
@@ -219,11 +215,11 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/id/approval/post")
     @Login
-    public ResponsePack getApprovalPostById(String postId,HttpServletRequest request) throws GlobalException {
+    public ResponsePack getApprovalPostById(String postId) throws GlobalException {
         if(Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         return getSuccessResponsePack(forumService.getApprovalPostById(postId,userId));
     }
 
@@ -239,12 +235,11 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/user/unapproval/post")
     @Login
-    public ResponsePack getMyPost(Integer pageNum,Integer pageSize,Integer sort,String otherId,
-                                  HttpServletRequest request) throws GlobalException {
+    public ResponsePack getMyPost(Integer pageNum,Integer pageSize,Integer sort,String otherId) throws GlobalException {
         if(pageNum == null || pageSize == null){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         if(Tools.isBlank(otherId)){
             otherId = userId;
         }
@@ -275,11 +270,11 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/my/like/collect/post")
     @Login
-    public ResponsePack getMyLikePost(Integer pageNum,Integer pageSize,Integer status,String otherId,HttpServletRequest request) throws GlobalException {
+    public ResponsePack getMyLikePost(Integer pageNum,Integer pageSize,Integer status,String otherId) throws GlobalException {
         if(pageNum == null || pageSize == null || TypeEnum.getTypeEnumByStatus(status) == null){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         if(otherId == null){
             otherId = userId;
         }

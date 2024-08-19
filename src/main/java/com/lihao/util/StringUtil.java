@@ -1,9 +1,9 @@
 package com.lihao.util;
 
+import com.lihao.config.UserContext;
+import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
-import com.lihao.constants.StringConstants;
 import com.lihao.exception.GlobalException;
-import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.UUID;
 
@@ -15,8 +15,8 @@ public class StringUtil {
     public static String getId(String prefix){
         return prefix+CommonUtil.getId();
     }
-    public static String getUserId(HttpServletRequest request) throws GlobalException {
-        String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
+    public static String getUserId() throws GlobalException {
+        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
         String userId = null;
         if(token==null){
             throw new GlobalException("无效token！");
@@ -24,7 +24,11 @@ public class StringUtil {
         }else {
             userId = StringUtil.getUserId(token);
         }
-        //TODO 记得改回去
+        //TODO 记得改回去*/
+        String userId = UserContext.getUserId();
+        if(userId==null){
+            throw new GlobalException(ExceptionConstants.NO_LOGGING);
+        }
         return userId;
     }
     public static String getUserId(String token){

@@ -16,10 +16,14 @@ let pageSize = 16;
 let isLoadingMyPosts = false;
 let isLoadingLikePosts = false;
 let isLoadingCollectPosts = false;
+let authorization = localStorage.getItem('authorization');
 window.onload = async function () {
     fetch(userInfo, {
         method: 'get',
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -210,7 +214,10 @@ document.getElementById('editForm').addEventListener('submit', function (event) 
     fetch(updateInfo, {
         method: 'POST',
         body: formData,
-        credentials: 'include'
+        credentials: 'include',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -247,7 +254,10 @@ async function getPost(sort, otherId, url,status,pageNum) {
     try {
         let response = await fetch(url, {
             method: "post",
-            body: formData
+            body: formData,
+            headers: {
+                'Authorization': authorization
+            }
         });
         let res = await response.json();
         if (res.success) {
@@ -269,7 +279,10 @@ window.linkToOne = function(element,id){
     try{
         fetch(socialC,{
             method:'post',
-            body:formData
+            body:formData,
+            headers: {
+                'Authorization': authorization
+            }
         }).then(response=>response.json())
         .then(res=>{
             if(res.success){

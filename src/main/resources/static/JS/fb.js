@@ -3,9 +3,13 @@ let userInfo = baseURL + 'user/info';
 let approvalDetail = baseURL + 'forum/id/approval/post';
 let approval = baseURL+'forum/approval/post';
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
+let authorization = localStorage.getItem('authorization');
 window.onload = function() {
     fetch(userInfo, {
-        method: 'get'
+        method: 'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(res => res.json())
     .then(data => {
         if (data.success) {

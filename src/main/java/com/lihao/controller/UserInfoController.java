@@ -26,8 +26,8 @@ public class UserInfoController extends BaseController {
     private UserInfoService userInfoService;
     @RequestMapping("/info")
     @Login
-    public ResponsePack getUserAvatarInfo(HttpServletRequest request) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack getUserAvatarInfo() throws GlobalException {
+        String userId = StringUtil.getUserId();
         UserInfoDto userInfoDto = redisTools.getTokenUserInfoDto(userId);
         //缓存里没有
         if(userInfoDto==null){
@@ -38,12 +38,11 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/updateInfo")
     @Login
-    public ResponsePack updateInfo(HttpServletRequest request,
-                                   String name,
+    public ResponsePack updateInfo(String name,
                                    String telephone,
                                    Integer gender,
                                    MultipartFile file) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         UserInfo updateInfo = new UserInfo();
         updateInfo.setUserId(userId);
         updateInfo.setName(name);
@@ -55,14 +54,13 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/updateTag")
     @Login
-    public ResponsePack updateTag(HttpServletRequest request,
-                                  String selfTag) throws GlobalException {
+    public ResponsePack updateTag(String selfTag) throws GlobalException {
         if(!CheckUtil.checkTag(selfTag)){
             return getSuccessResponsePack(null);
         }
         //统一转小写
         selfTag=selfTag.toLowerCase();
-        String userId = StringUtil.getUserId(request);
+        String userId = StringUtil.getUserId();
         UserInfo userInfo = new UserInfo();
         userInfo.setSelfTag(selfTag);
         userInfo.setUserId(userId);
@@ -73,9 +71,8 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/other/info")
     @Login
-    public ResponsePack otherInfo(HttpServletRequest request,
-                                  String otherId) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack otherInfo(String otherId) throws GlobalException {
+        String userId = StringUtil.getUserId();
         OtherInfoDto otherInfoDto = userInfoService.otherInfo(otherId,userId);
         return getSuccessResponsePack(otherInfoDto);
     }

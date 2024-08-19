@@ -7,6 +7,7 @@ let isLoading = false;
 let PageSize = 16;
 let PageNum = 1;
 let currentTag = "random_post";
+let authorization = localStorage.getItem('authorization');
 window.onload = async function() {
     var userOwn = await getUser();
     console.log(userOwn);
@@ -55,7 +56,10 @@ async function getAllTag() {
     try {
         let response = await fetch(gettag, {
             method: "get",
-            credentials:'include'
+            credentials:'include',
+            headers: {
+                'Authorization': authorization
+            }
         });
         let res = await response.json();
         if (res.success) {
@@ -86,7 +90,10 @@ async function getAllPost(tag){
         formData.append('tagFuzzy',tag);
         let response = await fetch(getPost, {
             method: "post",
-            body:formData
+            body:formData,
+            headers: {
+                'Authorization': authorization
+            }
         });
         let res = await response.json();
         if (res.success) {
@@ -102,6 +109,9 @@ async function getAllPost(tag){
 export async function getUser(){
     return fetch(userInfo,{
         method:'get',
+        headers: {
+            'Authorization': authorization
+        }
     }).then(response=>response.json())
     .then(res=>{
         if(!res.success){
@@ -129,7 +139,10 @@ window.linkToOne = function(element,id){
     try{
         fetch(socialC,{
             method:'post',
-            body:formData
+            body:formData,
+            headers: {
+                'Authorization': authorization
+            }
         }).then(response=>response.json())
         .then(res=>{
             if(res.success){

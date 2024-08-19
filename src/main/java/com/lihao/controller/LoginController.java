@@ -1,5 +1,6 @@
 package com.lihao.controller;
 
+import com.lihao.config.JwtProperty;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.dto.UserInfoDto;
@@ -13,10 +14,7 @@ import com.lihao.mapper.RoleUserMapper;
 import com.lihao.mapper.UserInfoMapper;
 import com.lihao.redis.RedisTools;
 import com.lihao.service.Impl.EmailServiceImpl;
-import com.lihao.util.CheckUtil;
-import com.lihao.util.CommonUtil;
-import com.lihao.util.CookieUtil;
-import com.lihao.util.StringUtil;
+import com.lihao.util.*;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -30,7 +28,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin
@@ -45,6 +45,10 @@ public class LoginController extends BaseController {
     private CommonUtil commonUtil;
     @Resource
     private CheckUtil checkUtil;
+    @Resource
+    private JwtProperty jwtProperty;
+    @Resource
+    private JwtUtil jwtUtil;
     private final static Logger logger = LoggerFactory.getLogger(LoginController.class);
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
@@ -60,16 +64,20 @@ public class LoginController extends BaseController {
         updateUser.setUserId(userInfo.getUserId());
         updateUser.setLastLoginTime(new Date());
         userInfoMapper.updateByUserId(updateUser, updateUser.getUserId());
-        //将token存入redis设置一个月期限，并添加到cookie
+        Map<String,Object> map = new HashMap<>();
+        map.put("userId",userInfo.getUserId());
+        String authorization = jwtUtil.createJwt(jwtProperty.getJWT_SECRET(),
+                jwtProperty.getJWT_EXPIRE(),
+                map);
+        //将token存入redis设置一个月期限
         UserInfoDto userInfoDto = new UserInfoDto();
         BeanUtils.copyProperties(userInfo,userInfoDto);
         redisTools.setTokenUserInfo(userInfoDto);
-
-        String token = redisTools.setToken(userInfoDto.getUserId());
-        CookieUtil.addCookie( response, StringConstants.TOKEN, token, Math.toIntExact(TimeConstants.ONE_MONTH),request.getContextPath());
+        /*String token = redisTools.setToken(userInfoDto.getUserId());
+        CookieUtil.addCookie( response, StringConstants.TOKEN, token, Math.toIntExact(TimeConstants.ONE_MONTH),request.getContextPath());*/
         //将用户权限信息存入redis
         redisTools.setPermission(userInfo.getUserId(),commonUtil.getPermission(userInfo.getUserId()));
-        return getSuccessResponsePack(StringConstants.SUCCESS_LOG);
+        return getSuccessResponsePack(authorization);
     }
     @PostMapping("/register")
     @Transactional

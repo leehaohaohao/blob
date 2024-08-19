@@ -27,8 +27,8 @@ public class FeedBackController extends BaseController {
     private FeedBackService feedBackService;
     @PostMapping("/publish")
     @Login
-    public ResponsePack publish(HttpServletRequest request ,Integer status, String content,MultipartFile file) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack publish(Integer status, String content,MultipartFile file) throws GlobalException {
+        String userId = StringUtil.getUserId();
         if(content == null || content.isEmpty()){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }

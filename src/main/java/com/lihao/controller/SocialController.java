@@ -23,15 +23,14 @@ public class SocialController extends BaseController{
     private SocialService socialService;
     @RequestMapping("/concern")
     @Login
-    public ResponsePack concern(String otherId, HttpServletRequest request) throws GlobalException {
+    public ResponsePack concern(String otherId) throws GlobalException {
 
-        return getSuccessResponsePack(socialService.concern(otherId, StringUtil.getUserId(request)));
+        return getSuccessResponsePack(socialService.concern(otherId, StringUtil.getUserId()));
     }
     @RequestMapping("/comment")
     @LComment
-    public ResponsePack comment(String postId, String parentId,String commentContent,
-                                HttpServletRequest request) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack comment(String postId, String parentId,String commentContent) throws GlobalException {
+        String userId = StringUtil.getUserId();
         //判断主要参数是否为空
         if(Tools.isBlank(commentContent,postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -55,8 +54,8 @@ public class SocialController extends BaseController{
     }
     @PostMapping("/get/concern/follower")
     @Login
-    public ResponsePack getConcern(@RequestBody ConcernVo concernVo, HttpServletRequest request) throws GlobalException {
-        String userId = StringUtil.getUserId(request);
+    public ResponsePack getConcern(@RequestBody ConcernVo concernVo) throws GlobalException {
+        String userId = StringUtil.getUserId();
         Integer status = concernVo.getStatus();
         Page page = concernVo.getPage();
         String otherId = concernVo.getOtherId();

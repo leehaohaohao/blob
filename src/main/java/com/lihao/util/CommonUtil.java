@@ -30,8 +30,7 @@ public class CommonUtil {
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     public Set<String> getPermission(String userId) throws GlobalException {
         if(userId == null || userId.isEmpty()){
-            HttpServletRequest request = Tools.getRequest();
-            userId = StringUtil.getUserId(request);
+            userId = StringUtil.getUserId();
         }
         UserInfo userInfo = userInfoMapper.selectByUserId(userId);
         if(userInfo == null){

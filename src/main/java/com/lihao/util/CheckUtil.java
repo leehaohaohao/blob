@@ -1,5 +1,7 @@
 package com.lihao.util;
 
+import com.lihao.config.JwtProperty;
+import com.lihao.config.UserContext;
 import com.lihao.entity.po.Page;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
@@ -19,10 +21,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 @Component
 public class CheckUtil {
+    @Resource
+    private JwtProperty jwtProperty;
     @Resource
     private RedisTools redisTools;
     @Resource
@@ -40,7 +45,17 @@ public class CheckUtil {
     }
     public void checkLogin() throws GlobalException {
         HttpServletRequest request = Tools.getRequest();
-        String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
+        String token = request.getHeader(jwtProperty.getJWT_TOKEN());
+        if(token == null){
+            throw new GlobalException(ExceptionConstants.NO_LOGGING);
+        }
+        Map<String,Object> map = JwtUtil.parseJwt(jwtProperty.getJWT_SECRET(),token);
+        if(!map.containsKey("userId")){
+            throw new GlobalException(ExceptionConstants.NO_LOGGING);
+        }
+        String userId = (String) map.get("userId");
+        UserContext.setUserId(userId);
+        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
         if(token == null ){
             throw new GlobalException(ExceptionConstants.NO_LOGGING);
         }
@@ -52,7 +67,7 @@ public class CheckUtil {
         UserInfoDto userInfoDto = redisTools.getTokenUserInfoDto(userId);
         if(!userInfoDto.getStatus().equals(UserStatusEnum.NORMAL.getStatus())){
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
-        }
+        }*/
     }
     public void checkPost() throws GlobalException {
         Set<String> setPermissionId = commonUtil.getPermission(null);
