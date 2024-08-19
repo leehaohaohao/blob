@@ -74,7 +74,6 @@ window.onload = async function () {
 }
 async function getConcernFollowerInfo(status, otherId, pageNum) {
     try {
-        //TODO 处理跨域
         var jsonData = {
             "page": {
                     "pageNum": pageNum,

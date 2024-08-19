@@ -9,5 +9,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LComment {
     boolean checkLComment() default true;
-    //TODO true
 }

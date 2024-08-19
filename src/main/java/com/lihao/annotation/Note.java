@@ -9,5 +9,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Note {
     boolean checkNotePermission() default true;
-    //TODO true
 }

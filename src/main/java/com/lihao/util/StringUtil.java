@@ -16,15 +16,6 @@ public class StringUtil {
         return prefix+CommonUtil.getId();
     }
     public static String getUserId() throws GlobalException {
-        /*String token = CookieUtil.getCookie(request, StringConstants.TOKEN);
-        String userId = null;
-        if(token==null){
-            throw new GlobalException("无效token！");
-            //userId = "U1805230146664833024";
-        }else {
-            userId = StringUtil.getUserId(token);
-        }
-        //TODO 记得改回去*/
         String userId = UserContext.getUserId();
         if(userId==null){
             throw new GlobalException(ExceptionConstants.NO_LOGGING);
