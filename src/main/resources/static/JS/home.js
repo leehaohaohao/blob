@@ -116,6 +116,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('MyCoverList');
+                coverList.innerHTML="";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
@@ -155,6 +156,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('LikeCoverList');
+                coverList.innerHTML="";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
@@ -194,6 +196,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('CollectCoverList');
+                coverList.innerHTML="";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
