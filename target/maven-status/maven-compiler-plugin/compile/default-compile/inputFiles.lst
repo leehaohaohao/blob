@@ -41,6 +41,7 @@ D:\IDEProject\blob\src\main\java\com\lihao\enums\JudgeEnum.java
 D:\IDEProject\blob\src\main\java\com\lihao\controller\BackController.java
 D:\IDEProject\blob\src\main\java\com\lihao\aspect\NormalAspect.java
 D:\IDEProject\blob\src\main\java\com\lihao\constants\ManagerExceptionConstants.java
+D:\IDEProject\blob\src\main\java\com\lihao\entity\dto\FeedBackDto.java
 D:\IDEProject\blob\src\main\java\com\lihao\entity\dto\PostCoverDto.java
 D:\IDEProject\blob\src\main\java\com\lihao\mapper\PermissionRoleMapper.java
 D:\IDEProject\blob\src\main\java\com\lihao\entity\query\UserQuery.java

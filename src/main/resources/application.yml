@@ -69,7 +69,7 @@ spring:
             required: true
 jwt:
   secret: lihaolihaolihaolihaolihaolihaolh
-  expire: 2592000
+  expire: 259200000
   token: Authorization
 
 

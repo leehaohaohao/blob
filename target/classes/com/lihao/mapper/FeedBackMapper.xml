@@ -6,8 +6,8 @@
     <sql id="base_column">
         feedback_id,user_id,status,time,content,file,type
     </sql>
-    <resultMap id="base_map" type="FeedBack">
-        <id column="feeback_id" property="feedbackId"/>
+    <resultMap id="base_map" type="com.lihao.entity.po.FeedBack">
+        <id column="feedback_id" property="feedbackId"/>
         <result column="user_id" property="userId"/>
         <result column="status" property="status"/>
         <result column="time" property="time"/>
@@ -88,6 +88,15 @@
             </if>
         </trim>
     </insert>
+    <update id="update">
+        update feedback
+        <set>
+            <if test="bean.status != null ">
+                status = #{bean.status},
+            </if>
+        </set>
+        <include refid="base_query_condition"/>
+    </update>
     <select id="selectList" resultMap="base_map">
         select <include refid="base_column"/>
         from feedback

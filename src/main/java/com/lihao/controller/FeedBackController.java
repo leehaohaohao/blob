@@ -1,7 +1,9 @@
 package com.lihao.controller;
 
 import com.lihao.annotation.Login;
+import com.lihao.annotation.Manager;
 import com.lihao.constants.ExceptionConstants;
+import com.lihao.entity.dto.FeedBackDto;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.FeedBack;
 import com.lihao.entity.po.Page;
@@ -53,8 +55,20 @@ public class FeedBackController extends BaseController {
         return getSuccessResponsePack(feedBackService.getType());
     }
     @PostMapping("/get")
+    @Login
+    @Manager
     public ResponsePack get(Page page) throws GlobalException {
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(feedBackService.get(page));
+    }
+    @PostMapping("/update")
+    @Login
+    @Manager
+    public ResponsePack update(@RequestBody FeedBack feedBack) throws GlobalException {
+        if(feedBack.getFeedbackId() == null){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
+        feedBackService.update(feedBack);
+        return getSuccessResponsePack(null);
     }
 }
