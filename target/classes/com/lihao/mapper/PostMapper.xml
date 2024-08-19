@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.PostMapper">
+
+	<!--实体映射-->
+	<resultMap id="base_result_map" type="com.lihao.entity.po.Post">
+		<!--帖子id-->
+		<result column="post_id" property="postId"  />
+		<!--发布人id-->
+		<result column="user_id" property="userId"  />
+		<!--文案内容-->
+		<result column="post_content" property="postContent"  />
+		<!--标签，一个内容最多有5个标签-->
+		<result column="tag" property="tag"  />
+		<!--发布时间-->
+		<result column="post_time" property="postTime"  />
+		<!--点赞数-->
+		<result column="post_like" property="postLike"  />
+		<!--收藏数-->
+		<result column="collect" property="collect"  />
+		<!--0：正常 1：删除-->
+		<result column="post_status" property="postStatus"  />
+		<!--标题-->
+		<result column="title" property="title"  />
+		<result column="cover" property="cover"  />
+		<result column="approval_time" property="approvalTime"/>
+		<result column="approval_id" property="approvalId"/>
+	</resultMap>
+	<!--实体映射-->
+	<resultMap id="cover_result_map" type="com.lihao.entity.dto.PostCoverDto">
+		<!--帖子id-->
+		<result column="post_id" property="postId"  />
+		<!--标签，一个内容最多有5个标签-->
+		<result column="tag" property="tag"  />
+		<!--发布时间-->
+		<result column="post_time" property="postTime"  />
+		<!--点赞数-->
+		<result column="post_like" property="postLike"  />
+		<!--收藏数-->
+		<result column="collect" property="collect"  />
+		<!--标题-->
+		<result column="title" property="title"  />
+		<result column="cover" property="cover"  />
+	</resultMap>
+
+
+	<!-- 通用查询结果列-->
+	<sql id="base_column_list">
+		 post_id,user_id,post_content,tag,post_time,
+		 post_like,collect,post_status,title,cover,approval_time,approval_id
+	</sql>
+	<sql id="dto_column_list">
+		post_id,user_id,tag,post_time,
+		 post_like,collect,title,cover
+	</sql>
+	<sql id="cover_column_list">
+		user_id,post_id,tag,post_time,
+		 post_like,collect,title,cover
+	</sql>
+
+	<sql id="base_condition_filed">
+			<if test="query.postId != null and query.postId!=''">
+				 and  post_id = #{query.postId}
+			</if>
+			<if test="query.userId != null and query.userId!=''">
+				 and  user_id = #{query.userId}
+			</if>
+			<if test="query.postContent != null and query.postContent!=''">
+				 and  post_content = #{query.postContent}
+			</if>
+			<if test="query.tag != null and query.tag!=''">
+				 and  tag = #{query.tag}
+			</if>
+			<if test="query.postTime != null and query.postTime!=''">
+				 <![CDATA[ and  post_time=str_to_date(#{query.postTime}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.postLike != null">
+				 and  post_like = #{query.postLike}
+			</if>
+			<if test="query.collect != null">
+				 and  collect = #{query.collect}
+			</if>
+			<if test="query.postStatus != null">
+				 and  post_status = #{query.postStatus}
+			</if>
+			<if test="query.title != null and query.title!=''">
+				 and  title = #{query.title}
+			</if>
+			<if test="query.cover != null and query.cover!=''">
+				and  cover = #{query.cover}
+			</if>
+			<if test="query.postTime != null and query.postTime!=''">
+				<![CDATA[ and  approval_time=str_to_date(#{query.approvalTime}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.approvalId != null and query.approvalId!=''">
+				and  approval_id = #{query.approvalId}
+			</if>
+	</sql>
+	<!-- 通用条件列-->
+	<sql id="base_condition">
+	 <where>
+		 <include refid="base_condition_filed" />
+	 </where>
+	</sql>
+
+	<!-- 通用查询条件列-->
+	<sql id="query_condition">
+	 <where>
+			<include refid="base_condition_filed" />
+			<if test="query.postIdFuzzy!= null  and query.postIdFuzzy!=''">
+				 and  post_id like concat('%', #{query.postIdFuzzy}, '%')
+			</if>
+			<if test="query.userIdFuzzy!= null  and query.userIdFuzzy!=''">
+				 and  user_id like concat('%', #{query.userIdFuzzy}, '%')
+			</if>
+			<if test="query.postContentFuzzy!= null  and query.postContentFuzzy!=''">
+				 and  post_content like concat('%', #{query.postContentFuzzy}, '%')
+			</if>
+			<if test="query.tagFuzzy!= null  and query.tagFuzzy!=''">
+				 and  tag like concat('%', #{query.tagFuzzy}, '%')
+			</if>
+			<if test="query.postTimeStart!= null and query.postTimeStart!=''">
+				 <![CDATA[ and  post_time>=str_to_date(#{query.postTimeStart}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.postTimeEnd!= null and query.postTimeEnd!=''">
+				 <![CDATA[ and  post_time< date_sub(str_to_date(#{query.postTimeEnd},'%Y-%m-%d'),interval -1 day) ]]>
+			</if>
+		 	<if test="query.approvalTimeEnd!= null and query.approvalTimeEnd!=''">
+			 	 <![CDATA[ and  approval_time< date_sub(str_to_date(#{query.approvalTimeEnd},'%Y-%m-%d'),interval -1 day) ]]>
+		 	</if>
+			<if test="query.titleFuzzy!= null  and query.titleFuzzy!=''">
+				 and  title like concat('%', #{query.titleFuzzy}, '%')
+			</if>
+		 	<if test="query.approvalIdFuzzy!= null  and query.approvalIdFuzzy!=''">
+			 	and  approval_id like concat('%', #{query.approvalIdFuzzy}, '%')
+		 	</if>
+	 </where>
+	</sql>
+
+	<!-- 查询集合-->
+	<select id="selectList" resultMap="base_result_map" >
+		 SELECT <include refid="base_column_list" /> FROM post <include refid="query_condition" />
+		 <if test="query.orderBy!=null">
+			 order by ${query.orderBy}
+		 </if>
+		<if test="query.page!=null">
+			limit #{query.page.left},#{query.page.right}
+		</if>
+	</select>
+	<select id="selectMainList" resultMap="base_result_map">
+		SELECT <include refid="dto_column_list" /> FROM post <include refid="query_condition" />
+		<if test="query.orderBy!=null">
+			order by ${query.orderBy}
+		</if>
+		<if test="query.page!=null">
+			limit #{query.page.left},#{query.page.right}
+		</if>
+	</select>
+	<select id="selectCoverList" resultMap="cover_result_map">
+		SELECT <include refid="cover_column_list" /> FROM post <include refid="query_condition" />
+		<if test="query.orderBy!=null">
+			order by ${query.orderBy}
+		</if>
+		<if test="query.page!=null">
+			limit #{query.page.left},#{query.page.pageSize}
+		</if>
+	</select>
+	<select id="selectRandom" resultMap="base_result_map">
+		select <include refid="base_column_list" /> FROM post
+		where post_status = #{status}
+		ORDER BY RAND()
+		LIMIT #{pageSize}
+	</select>
+	<!-- 查询数量-->
+	<select id="selectCount" resultType="java.lang.Integer" >
+		 SELECT count(1) FROM post <include refid="query_condition" />
+	</select>
+
+	<!-- 插入 （匹配有值的字段）-->
+	<insert id="insert" parameterType="com.lihao.entity.po.Post">
+		 INSERT INTO post
+		 <trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="bean.postId != null">
+				 post_id,
+			</if>
+			<if test="bean.userId != null">
+				 user_id,
+			</if>
+			<if test="bean.postContent != null">
+				 post_content,
+			</if>
+			<if test="bean.tag != null">
+				 tag,
+			</if>
+			<if test="bean.postTime != null">
+				 post_time,
+			</if>
+			<if test="bean.postLike != null">
+				post_like,
+			</if>
+			<if test="bean.collect != null">
+				 collect,
+			</if>
+			<if test="bean.postStatus != null">
+				 post_status,
+			</if>
+			<if test="bean.title != null">
+				 title,
+			</if>
+			 <if test="bean.cover != null">
+				 cover,
+			 </if>
+		     <if test="bean.approvalTime !=null">
+				 approval_time,
+			 </if>
+			 <if test="bean.approvalId !=null">
+				 approval_id,
+			 </if>
+		 </trim>
+		 <trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="bean.postId!=null">
+				 #{bean.postId},
+			</if>
+			<if test="bean.userId!=null">
+				 #{bean.userId},
+			</if>
+			<if test="bean.postContent!=null">
+				 #{bean.postContent},
+			</if>
+			<if test="bean.tag!=null">
+				 #{bean.tag},
+			</if>
+			<if test="bean.postTime!=null">
+				 #{bean.postTime},
+			</if>
+			<if test="bean.postLike!=null">
+				 #{bean.postLike},
+			</if>
+			<if test="bean.collect!=null">
+				 #{bean.collect},
+			</if>
+			<if test="bean.postStatus!=null">
+				 #{bean.postStatus},
+			</if>
+			<if test="bean.title!=null">
+				 #{bean.title},
+			</if>
+			 <if test="bean.cover!=null">
+				 #{bean.cover},
+			 </if>
+			 <if test="bean.approvalTime !=null">
+				 #{bean.approvalTime},
+			 </if>
+			 <if test="bean.approvalId !=null">
+				 #{bean.approvalId},
+			 </if>
+		 </trim>
+	</insert>
+
+	<!-- 插入或者更新 （匹配有值的字段）-->
+	<insert id="insertOrUpdate" parameterType="com.lihao.entity.po.Post">
+		 INSERT INTO post
+		 <trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="bean.postId != null">
+				 post_id,
+			</if>
+			<if test="bean.userId != null">
+				 user_id,
+			</if>
+			<if test="bean.postContent != null">
+				 post_content,
+			</if>
+			<if test="bean.tag != null">
+				 tag,
+			</if>
+			<if test="bean.postTime != null">
+				 post_time,
+			</if>
+			<if test="bean.postLike != null">
+				post_like,
+			</if>
+			<if test="bean.collect != null">
+				 collect,
+			</if>
+			<if test="bean.postStatus != null">
+				 post_status,
+			</if>
+			<if test="bean.title != null">
+				 title,
+			</if>
+			 <if test="bean.cover != null">
+				 cover,
+			 </if>
+		     <if test="bean.approvalTime != null">
+				 approval_time,
+			 </if>
+		     <if test="bean.approvalId != null">
+				 approval_id
+			 </if>
+		 </trim>
+		 <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="bean.postId!=null">
+				 #{bean.postId},
+			</if>
+			<if test="bean.userId!=null">
+				 #{bean.userId},
+			</if>
+			<if test="bean.postContent!=null">
+				 #{bean.postContent},
+			</if>
+			<if test="bean.tag!=null">
+				 #{bean.tag},
+			</if>
+			<if test="bean.postTime!=null">
+				 #{bean.postTime},
+			</if>
+			<if test="bean.postLike!=null">
+				 #{bean.postLike},
+			</if>
+			<if test="bean.collect!=null">
+				 #{bean.collect},
+			</if>
+			<if test="bean.postStatus!=null">
+				 #{bean.postStatus},
+			</if>
+			<if test="bean.title!=null">
+				 #{bean.title},
+			</if>
+			 <if test="bean.cover!=null">
+				 #{bean.cover},
+			 </if>
+			 <if test="bean.approvalTime != null">
+				 #{bean.approvalTime},
+			 </if>
+			 <if test="bean.approvalId != null">
+				 #{bean.approvalId},
+			 </if>
+		 </trim>
+		 on DUPLICATE key update 
+		 <trim prefix="" suffix="" suffixOverrides=",">
+			<if test="bean.postId!=null">
+				 post_id = VALUES(post_id),
+			</if>
+			<if test="bean.userId!=null">
+				 user_id = VALUES(user_id),
+			</if>
+			<if test="bean.postContent!=null">
+				 post_content = VALUES(post_content),
+			</if>
+			<if test="bean.tag!=null">
+				 tag = VALUES(tag),
+			</if>
+			<if test="bean.postTime!=null">
+				 post_time = VALUES(post_time),
+			</if>
+			<if test="bean.postLike!=null">
+				post_like = VALUES(post_like),
+			</if>
+			<if test="bean.collect!=null">
+				 collect = VALUES(collect),
+			</if>
+			<if test="bean.postStatus!=null">
+				 post_status = VALUES(post_status),
+			</if>
+			<if test="bean.title!=null">
+				 title = VALUES(title),
+			</if>
+			 <if test="bean.cover!=null">
+				 cover = VALUES(cover),
+			 </if>
+			 <if test="bean.approvalTime != null">
+				 approval_time = VALUES(approval_time),
+			 </if>
+			 <if test="bean.approvalId != null">
+				 approval_id = VALUES(approval_id),
+			 </if>
+		 </trim>
+	</insert>
+
+	<!-- 添加 （批量插入）-->
+	<insert id="insertBatch" parameterType="com.lihao.entity.po.Post">
+		 INSERT INTO post(
+			 post_id,
+			 user_id,
+			 post_content,
+			 tag,
+			 post_time,
+			 post_like,
+			 collect,
+			 post_status,
+			 title,
+			 cover,
+		     approval_time,
+		     approval_id
+		 )values
+		 <foreach collection="list" item="item" separator=",">
+			 (
+				 #{item.postId},
+				 #{item.userId},
+				 #{item.postContent},
+				 #{item.tag},
+				 #{item.postTime},
+				 #{item.postLike},
+				 #{item.collect},
+				 #{item.postStatus},
+				 #{item.title},
+			 	 #{item.cover},
+			  	 #{item.approvalTime},
+			     #{item.approvalId}
+			 )
+		 </foreach>
+	</insert>
+
+	<!-- 批量新增修改 （批量插入）-->
+	<insert id="insertOrUpdateBatch" parameterType="com.lihao.entity.po.Post">
+		 INSERT INTO post(
+			 post_id,
+			 user_id,
+			 post_content,
+			 tag,
+			 post_time,
+			 post_like,
+			 collect,
+			 post_status,
+			 title,
+			 cover,
+		     approval_time,
+		     approval_id
+		 )values
+		 <foreach collection="list" item="item" separator=",">
+			 (
+				 #{item.postId},
+				 #{item.userId},
+				 #{item.postContent},
+				 #{item.tag},
+				 #{item.postTime},
+				 #{item.postLike},
+				 #{item.collect},
+				 #{item.postStatus},
+				 #{item.title},
+			 	 #{item.cover},
+			     #{item.approvalTime}
+			 	 #{item.approvalId}
+			 )
+		 </foreach>
+			on DUPLICATE key update 
+			post_id = VALUES(post_id),
+			user_id = VALUES(user_id),
+			post_content = VALUES(post_content),
+			tag = VALUES(tag),
+			post_time = VALUES(post_time),
+			like = VALUES(post_like),
+			collect = VALUES(collect),
+			post_status = VALUES(post_status),
+			title = VALUES(title),
+		    cover = VALUES(cover),
+		    approval_time = VALUES(approval_time),
+		 	approval_id = VALUES(approval_id)
+	</insert>
+
+	<!--多条件修改-->
+	<update id="updateByParam" parameterType="com.lihao.entity.query.PostQuery">
+		 UPDATE post
+ 		 <set> 
+			<if test="bean.postId != null">
+				 post_id = #{bean.postId},
+			</if>
+			<if test="bean.userId != null">
+				 user_id = #{bean.userId},
+			</if>
+			<if test="bean.postContent != null">
+				 post_content = #{bean.postContent},
+			</if>
+			<if test="bean.tag != null">
+				 tag = #{bean.tag},
+			</if>
+			<if test="bean.postTime != null">
+				 post_time = #{bean.postTime},
+			</if>
+			<if test="bean.postLike != null">
+				 post_like = #{bean.postLike},
+			</if>
+			<if test="bean.collect != null">
+				 collect = #{bean.collect},
+			</if>
+			<if test="bean.postStatus != null">
+				 post_status = #{bean.postStatus},
+			</if>
+			<if test="bean.title != null">
+				 title = #{bean.title},
+			</if>
+			 <if test="bean.cover != null">
+				 cover = #{bean.cover},
+			 </if>
+			 <if test="bean.approvalTime != null">
+				 approval_time = #{bean.approvalTime}
+			 </if>
+			 <if test="bean.approvalIdFuzzy != null">
+				 approval_id = #{bean.approvalId},
+			 </if>
+ 		 </set>
+ 		 <include refid="query_condition" />
+	</update>
+
+	<!--多条件删除-->
+	<delete id="deleteByParam">
+		 delete from post
+ 		 <include refid="query_condition" />
+	</delete>
+
+	<!-- 根据PostId修改-->
+	<update id="updateByPostId" parameterType="com.lihao.entity.po.Post">
+		 UPDATE post
+ 		 <set> 
+			<if test="bean.userId != null">
+				 user_id = #{bean.userId},
+			</if>
+			<if test="bean.postContent != null">
+				 post_content = #{bean.postContent},
+			</if>
+			<if test="bean.tag != null">
+				 tag = #{bean.tag},
+			</if>
+			<if test="bean.postTime != null">
+				 post_time = #{bean.postTime},
+			</if>
+			<if test="bean.postLike != null">
+				 post_like = #{bean.postLike},
+			</if>
+			<if test="bean.collect != null">
+				 collect = #{bean.collect},
+			</if>
+			<if test="bean.postStatus != null">
+				 post_status = #{bean.postStatus},
+			</if>
+			<if test="bean.title != null">
+				 title = #{bean.title},
+			</if>
+			 <if test="bean.cover != null">
+				 cover = #{bean.cover},
+			 </if>
+			 <if test="bean.approvalTime != null">
+				 approval_time = #{bean.approvalTime},
+			 </if>
+			 <if test="bean.approvalId != null">
+				 approval_id = #{bean.approvalId},
+			 </if>
+ 		 </set>
+ 		 where post_id=#{postId}
+	</update>
+
+	<!-- 根据PostId删除-->
+	<delete id="deleteByPostId">
+		delete from post where post_id=#{postId}
+	</delete>
+
+	<!-- 根据PrimaryKey获取对象-->
+	<select id="selectByPostId" resultMap="base_result_map" >
+		select <include refid="base_column_list" /> from post where post_id=#{postId}
+	</select>
+
+</mapper>

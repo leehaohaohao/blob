@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.CommentMapper">
+
+	<!--实体映射-->
+	<resultMap id="base_result_map" type="com.lihao.entity.po.Comment">
+		<!--评论id-->
+		<id column="comment_id" property="commentId"  />
+		<!--用户id-->
+		<result column="user_id" property="userId"  />
+		<!--帖子id-->
+		<result column="post_id" property="postId"  />
+		<!--上一级评论id-->
+		<result column="parent_id" property="parentId"  />
+		<!--评论内容-->
+		<result column="comment_content" property="commentContent"  />
+		<result column="top_id" property="topId"/>
+		<!--评论时间-->
+		<result column="comment_date" property="commentDate"  />
+		<!--0：正常 1：删除-->
+		<result column="comment_status" property="commentStatus"  />
+	</resultMap>
+
+	<resultMap id="dto_result_map" type="com.lihao.entity.dto.CommentDto">
+		<!--评论id-->
+		<id column="comment_id" property="commentId"  />
+		<!--用户id-->
+		<result column="user_id" property="userId"  />
+		<!--上一级评论id-->
+		<result column="parent_id" property="parentId"  />
+		<result column="top_id" property="topId"/>
+		<!--评论内容-->
+		<result column="comment_content" property="commentContent"  />
+		<!--评论时间-->
+		<result column="comment_date" property="commentDate"  />
+	</resultMap>
+
+	<!-- 通用查询结果列-->
+	<sql id="base_column_list">
+		 comment_id,user_id,post_id,parent_id,comment_content,top_id,
+		 comment_date,comment_status
+	</sql>
+	<sql id="dto_column_list">
+		comment_id,user_id,parent_id,comment_content,top_id,
+		 comment_date
+	</sql>
+
+	<sql id="base_condition_filed">
+			<if test="query.commentId != null and query.commentId!=''">
+				 and  comment_id = #{query.commentId}
+			</if>
+			<if test="query.userId != null and query.userId!=''">
+				 and  user_id = #{query.userId}
+			</if>
+			<if test="query.postId != null and query.postId!=''">
+				 and  post_id = #{query.postId}
+			</if>
+			<if test="query.parentId != null and query.parentId!=''">
+				 and  parent_id = #{query.parentId}
+			</if>
+			<if test="query.commentContent != null and query.commentContent!=''">
+				 and  comment_content = #{query.commentContent}
+			</if>
+			<if test="query.topId != null and query.topId!=''">
+				and  top_id = #{query.topId}
+			</if>
+			<if test="query.commentDate != null and query.commentDate!=''">
+				 <![CDATA[ and  comment_date=str_to_date(#{query.commentDate}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.commentStatus != null">
+				 and  comment_status = #{query.commentStatus}
+			</if>
+	</sql>
+	<!-- 通用条件列-->
+	<sql id="base_condition">
+	 <where>
+		 <include refid="base_condition_filed" />
+	 </where>
+	</sql>
+
+	<!-- 通用查询条件列-->
+	<sql id="query_condition">
+	 <where>
+			<include refid="base_condition_filed" />
+			<if test="query.commentIdFuzzy!= null  and query.commentIdFuzzy!=''">
+				 and  comment_id like concat('%', #{query.commentIdFuzzy}, '%')
+			</if>
+			<if test="query.userIdFuzzy!= null  and query.userIdFuzzy!=''">
+				 and  user_id like concat('%', #{query.userIdFuzzy}, '%')
+			</if>
+			<if test="query.postIdFuzzy!= null  and query.postIdFuzzy!=''">
+				 and  post_id like concat('%', #{query.postIdFuzzy}, '%')
+			</if>
+			<if test="query.parentIdFuzzy!= null  and query.parentIdFuzzy!=''">
+				 and  parent_id like concat('%', #{query.parentIdFuzzy}, '%')
+			</if>
+			<if test="query.commentContentFuzzy!= null  and query.commentContentFuzzy!=''">
+				 and  comment_content like concat('%', #{query.commentContentFuzzy}, '%')
+			</if>
+			<if test="query.commentDateStart!= null and query.commentDateStart!=''">
+				 <![CDATA[ and  comment_date>=str_to_date(#{query.commentDateStart}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.commentDateEnd!= null and query.commentDateEnd!=''">
+				 <![CDATA[ and  comment_date< date_sub(str_to_date(#{query.commentDateEnd},'%Y-%m-%d'),interval -1 day) ]]>
+			</if>
+	 </where>
+	</sql>
+	<sql id="dto_query_condition">
+		<where>
+			<include refid="base_condition_filed" />
+			<if test="query.commentIdFuzzy!= null  and query.commentIdFuzzy!=''">
+				and  comment_id like concat('%', #{query.commentIdFuzzy}, '%')
+			</if>
+			<if test="query.userIdFuzzy!= null  and query.userIdFuzzy!=''">
+				and  user_id like concat('%', #{query.userIdFuzzy}, '%')
+			</if>
+			<if test="query.parentIdFuzzy!= null  and query.parentIdFuzzy!=''">
+				and  parent_id like concat('%', #{query.parentIdFuzzy}, '%')
+			</if>
+			<if test="query.commentContentFuzzy!= null  and query.commentContentFuzzy!=''">
+				and  comment_content like concat('%', #{query.commentContentFuzzy}, '%')
+			</if>
+			<if test="query.commentDateStart!= null and query.commentDateStart!=''">
+				<![CDATA[ and  comment_date>=str_to_date(#{query.commentDateStart}, '%Y-%m-%d') ]]>
+			</if>
+			<if test="query.commentDateEnd!= null and query.commentDateEnd!=''">
+				<![CDATA[ and  comment_date< date_sub(str_to_date(#{query.commentDateEnd},'%Y-%m-%d'),interval -1 day) ]]>
+			</if>
+			 <if test="query.isNull">
+				 and parent_id =''
+			 </if>
+		</where>
+	</sql>
+
+	<!-- 查询集合-->
+	<select id="selectList" resultMap="base_result_map" >
+		 SELECT <include refid="base_column_list" /> FROM comment <include refid="query_condition" />
+		 <if test="query.orderBy!=null">
+			 order by ${query.orderBy}
+		 </if>
+	</select>
+	<select id="selectSpecialList" resultMap="dto_result_map" >
+		SELECT <include refid="dto_column_list" /> FROM comment <include refid="dto_query_condition" />
+		<if test="query.orderBy!=null">
+			order by ${query.orderBy}
+		</if>
+	</select>
+
+	<!-- 查询数量-->
+	<select id="selectCount" resultType="java.lang.Integer" >
+		 SELECT count(1) FROM comment <include refid="query_condition" />
+	</select>
+
+	<!-- 插入 （匹配有值的字段）-->
+	<insert id="insert" parameterType="com.lihao.entity.po.Comment">
+		 INSERT INTO comment
+		 <trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="bean.commentId != null">
+				 comment_id,
+			</if>
+			<if test="bean.userId != null">
+				 user_id,
+			</if>
+			<if test="bean.postId != null">
+				 post_id,
+			</if>
+			<if test="bean.parentId != null">
+				 parent_id,
+			</if>
+			<if test="bean.commentContent != null">
+				 comment_content,
+			</if>
+			<if test="bean.commentDate != null">
+				 comment_date,
+			</if>
+			<if test="bean.commentStatus != null">
+				 comment_status,
+			</if>
+			 <if test="bean.topId != null">
+				 top_id,
+			 </if>
+		 </trim>
+		 <trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="bean.commentId!=null">
+				 #{bean.commentId},
+			</if>
+			<if test="bean.userId!=null">
+				 #{bean.userId},
+			</if>
+			<if test="bean.postId!=null">
+				 #{bean.postId},
+			</if>
+			<if test="bean.parentId!=null">
+				 #{bean.parentId},
+			</if>
+			<if test="bean.commentContent!=null">
+				 #{bean.commentContent},
+			</if>
+			<if test="bean.commentDate!=null">
+				 #{bean.commentDate},
+			</if>
+			<if test="bean.commentStatus!=null">
+				 #{bean.commentStatus},
+			</if>
+			 <if test="bean.topId != null">
+				 #{bean.topId},
+			 </if>
+		 </trim>
+	</insert>
+
+	<!-- 插入或者更新 （匹配有值的字段）-->
+	<insert id="insertOrUpdate" parameterType="com.lihao.entity.po.Comment">
+		 INSERT INTO comment
+		 <trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="bean.commentId != null">
+				 comment_id,
+			</if>
+			<if test="bean.userId != null">
+				 user_id,
+			</if>
+			<if test="bean.postId != null">
+				 post_id,
+			</if>
+			<if test="bean.parentId != null">
+				 parent_id,
+			</if>
+			<if test="bean.commentContent != null">
+				 comment_content,
+			</if>
+			<if test="bean.commentDate != null">
+				 comment_date,
+			</if>
+			<if test="bean.commentStatus != null">
+				 comment_status,
+			</if>
+			 <if test="bean.topId != null">
+				 top_id,
+			 </if>
+		 </trim>
+		 <trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="bean.commentId!=null">
+				 #{bean.commentId},
+			</if>
+			<if test="bean.userId!=null">
+				 #{bean.userId},
+			</if>
+			<if test="bean.postId!=null">
+				 #{bean.postId},
+			</if>
+			<if test="bean.parentId!=null">
+				 #{bean.parentId},
+			</if>
+			<if test="bean.commentContent!=null">
+				 #{bean.commentContent},
+			</if>
+			<if test="bean.commentDate!=null">
+				 #{bean.commentDate},
+			</if>
+			<if test="bean.commentStatus!=null">
+				 #{bean.commentStatus},
+			</if>
+			 <if test="bean.topId != null">
+				 #{bean.topId},
+			 </if>
+		 </trim>
+		 on DUPLICATE key update 
+		 <trim prefix="" suffix="" suffixOverrides=",">
+			<if test="bean.commentId!=null">
+				 comment_id = VALUES(comment_id),
+			</if>
+			<if test="bean.userId!=null">
+				 user_id = VALUES(user_id),
+			</if>
+			<if test="bean.postId!=null">
+				 post_id = VALUES(post_id),
+			</if>
+			<if test="bean.parentId!=null">
+				 parent_id = VALUES(parent_id),
+			</if>
+			<if test="bean.commentContent!=null">
+				 comment_content = VALUES(comment_content),
+			</if>
+			<if test="bean.commentDate!=null">
+				 comment_date = VALUES(comment_date),
+			</if>
+			<if test="bean.commentStatus!=null">
+				 comment_status = VALUES(comment_status),
+			</if>
+			<if test="bean.topId != null">
+				top_id = VALUES(top_id),
+			</if>
+		 </trim>
+	</insert>
+
+	<!-- 添加 （批量插入）-->
+	<insert id="insertBatch" parameterType="com.lihao.entity.po.Comment">
+		 INSERT INTO comment(
+			 comment_id,
+			 user_id,
+			 post_id,
+			 parent_id,
+			 comment_content,
+			 comment_date,
+			 comment_status,
+		     top_id
+		 )values
+		 <foreach collection="list" item="item" separator=",">
+			 (
+				 #{item.commentId},
+				 #{item.userId},
+				 #{item.postId},
+				 #{item.parentId},
+				 #{item.commentContent},
+				 #{item.commentDate},
+				 #{item.commentStatus},
+			 	 #{item.topId}
+			 )
+		 </foreach>
+	</insert>
+
+	<!-- 批量新增修改 （批量插入）-->
+	<insert id="insertOrUpdateBatch" parameterType="com.lihao.entity.po.Comment">
+		 INSERT INTO comment(
+			 comment_id,
+			 user_id,
+			 post_id,
+			 parent_id,
+			 comment_content,
+			 comment_date,
+			 comment_status,
+		     top_id
+		 )values
+		 <foreach collection="list" item="item" separator=",">
+			 (
+				 #{item.commentId},
+				 #{item.userId},
+				 #{item.postId},
+				 #{item.parentId},
+				 #{item.commentContent},
+				 #{item.commentDate},
+				 #{item.commentStatus},
+			     #{item.topId}
+			 )
+		 </foreach>
+			on DUPLICATE key update 
+			comment_id = VALUES(comment_id),
+			user_id = VALUES(user_id),
+			post_id = VALUES(post_id),
+			parent_id = VALUES(parent_id),
+			comment_content = VALUES(comment_content),
+			comment_date = VALUES(comment_date),
+			comment_status = VALUES(comment_status),
+			top_id = VALUES(top_id)
+	</insert>
+
+	<!--多条件修改-->
+	<update id="updateByParam" parameterType="com.lihao.entity.query.CommentQuery">
+		 UPDATE comment
+ 		 <set> 
+			<if test="bean.commentId != null">
+				 comment_id = #{bean.commentId},
+			</if>
+			<if test="bean.userId != null">
+				 user_id = #{bean.userId},
+			</if>
+			<if test="bean.postId != null">
+				 post_id = #{bean.postId},
+			</if>
+			<if test="bean.parentId != null">
+				 parent_id = #{bean.parentId},
+			</if>
+			<if test="bean.commentContent != null">
+				 comment_content = #{bean.commentContent},
+			</if>
+			<if test="bean.commentDate != null">
+				 comment_date = #{bean.commentDate},
+			</if>
+			<if test="bean.commentStatus != null">
+				 comment_status = #{bean.commentStatus},
+			</if>
+			 <if test="bean.topId != null">
+				 top_id = #{bean.topId},
+			 </if>
+ 		 </set>
+ 		 <include refid="query_condition" />
+	</update>
+
+	<!--多条件删除-->
+	<delete id="deleteByParam">
+		 delete from comment
+ 		 <include refid="query_condition" />
+	</delete>
+
+	<!-- 根据CommentId修改-->
+	<update id="updateByCommentId" parameterType="com.lihao.entity.po.Comment">
+		 UPDATE comment
+ 		 <set> 
+			<if test="bean.userId != null">
+				 user_id = #{bean.userId},
+			</if>
+			<if test="bean.postId != null">
+				 post_id = #{bean.postId},
+			</if>
+			<if test="bean.parentId != null">
+				 parent_id = #{bean.parentId},
+			</if>
+			<if test="bean.commentContent != null">
+				 comment_content = #{bean.commentContent},
+			</if>
+			<if test="bean.commentDate != null">
+				 comment_date = #{bean.commentDate},
+			</if>
+			<if test="bean.commentStatus != null">
+				 comment_status = #{bean.commentStatus},
+			</if>
+			 <if test="bean.topId != null">
+				 top_id = #{bean.topId},
+			 </if>
+ 		 </set>
+ 		 where comment_id=#{commentId}
+	</update>
+
+	<!-- 根据CommentId删除-->
+	<delete id="deleteByCommentId">
+		delete from comment where comment_id=#{commentId}
+	</delete>
+
+	<!-- 根据PrimaryKey获取对象-->
+	<select id="selectByCommentId" resultMap="base_result_map" >
+		select <include refid="base_column_list" /> from comment where comment_id=#{commentId}
+	</select>
+
+</mapper>

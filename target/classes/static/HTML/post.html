@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布新帖子</title>
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/post.css">
+    <link rel="stylesheet" href="../CSS/solo.css">
+    <script src="https://unpkg.com/wangeditor/dist/wangEditor.min.js"></script>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="home.html">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#contact">联系我</a>
+        </div>
+        <div id="logoContainer">
+            <form id="soloform" method="get" action="multiPersonSquare.html">
+                <img style="width: 2em;border-radius: 1em;" src="https://img2.baidu.com/it/u=61859711,4130188719&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1719853200&t=73e28dae16028c73aa5a883c67a683ff">
+                <input name="tag">
+                <button>搜索</button>
+            </form>
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <img id="avatar" src="" class="avatar">
+                <div class="dropdown-content">
+                    <div id="name" class="name"></div>
+                    <div id="uid" class="uid"></div>
+                    <div><a href="center.html">个人中心</a></div>
+                    <div><a href="#">链接 2</a></div>
+                    <div><a href="#">链接 3</a></div>
+                </div>
+            </div>
+            <button id="publish">发布</button>
+        </div>
+    </nav>
+    <div id="post-container">
+        <div id="title-cover-container">
+            <input type="text" id="title" placeholder="请输入标题">
+            <div id="cover-container">
+                <div class="custom-file-upload">
+                    <label for="cover">选择封面</label>
+                    <input type="file" id="cover" name="file" accept=".png,.jpg,.jpeg,.gif,.svg">
+                </div>
+                <img id="cover-preview" src="http://121.40.154.188:8080/image/background.png" alt="封面">
+            </div>
+        </div>
+        <div id="tags">
+            <div id="tag-inputs"></div>
+            <button id="addTag">+</button>
+        </div>
+        <div id="editor"></div>
+        <button id="submit">提交</button>
+    </div>
+    <script src="../JS/post.js"></script>
+</body>
+
+</html>

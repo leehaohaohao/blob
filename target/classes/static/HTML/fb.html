@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>管理后台</title>
+        <link rel="stylesheet" href="../CSS/mnav.css">
+        <link rel="stylesheet" href="../CSS/fb.css">
+    </head>
+    <body>
+        <div class="info-bar">
+            <span class="left">不挂管理后台</span>
+            <span class="right">欢迎 <span id="username">xxx</span></span>
+        </div>
+        <div id="main">
+            <div id="sidebar">
+                <div class="menu-item" onclick="location.href='manager.html'">网站信息</div>
+                <div class="menu-item" onclick="location.href='person.html'">人员管理</div>
+                <div class="menu-item" onclick="location.href='note.html'">公告</div>
+                <div class="menu-item" onclick="location.href='approval.html'">文章审批管理</div>
+                <div class="menu-item active" onclick="location.href='fb.html'">问题反馈处理</div>
+            </div>
+            <div id="content">
+            </div>
+        </div>
+        <script src="../JS/fb.js"></script>
+    </body>
+</html>

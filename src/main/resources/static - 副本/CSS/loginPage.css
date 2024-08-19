@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+.form {
+    width: 90%;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    opacity: 0;
+}
+.form.show {
+    opacity: 1;
+    z-index: 2;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.btn:hover {
+    opacity: 1;
+}
+@keyframes coolEffect {
+    0% {background-color: #4CAF50;}
+    25% {background-color: #218838;}
+    50% {background-color: #0069d9;}
+    75% {background-color: #fd7e14;}
+    100% {background-color: #dc3545;}
+}
+.btn {
+    animation-name: coolEffect;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}

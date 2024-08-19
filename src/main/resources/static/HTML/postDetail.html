@@ -1,0 +1,101 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帖子详情</title>
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/showPost.css">
+    <link rel="stylesheet" href="../CSS/tag.css">
+    <link rel="stylesheet" href="../CSS/solo.css">
+    <script type="module" src="../JS/getPostDetail.js"></script>
+</head>
+<nav id="navbar">
+    <div class="nav-left">
+        <a href="home.html">首页</a>
+        <a href="multiPersonSquare.html?tag=random_post">资料广场</a>
+        <a href="#contact">联系我</a>
+    </div>
+    <!-- 添加一个新的div用于显示logo -->
+    <div id="logoContainer">
+        <form id="soloform" method="get" action="multiPersonSquare.html">
+            <img style="width: 2em;border-radius: 1em;" src="https://img2.baidu.com/it/u=61859711,4130188719&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1719853200&t=73e28dae16028c73aa5a883c67a683ff">
+            <input name="tag">
+            <button>搜索</button>
+        </form>
+    </div>
+    <div class="nav-right">
+        <div class="dropdown">
+            <img src="http://121.40.154.188:8080/image/defAva.png" class="avatar">
+            <div class="dropdown-content">
+                <div class="name">用户</div>
+                <div class="uid"></div>
+                <div><a href="center.html">个人中心</a></div>
+                <div><a href="#">链接 2</a></div>
+                <div><a href="#">链接 3</a></div>
+            </div>
+        </div>
+        <button id="publish" onclick="window.location.href = 'post.html'">发布</button>
+    </div>
+</nav>
+<div class="PageBox">
+    <div id="postContentBox">
+        <div class="lineBox">
+            <h1 id="post_title"></h1>
+        </div>
+        <div class="lineBox" id="tags-cont">
+            <span>标签：</span>
+            <tag id="tags"><tag>
+        </div>
+        <div class="lineBox" id="authorHeader">
+            <div style="display: inherit;align-items: center;">
+                <a id="post_author_box">
+                    <img id="postOwnerPic">
+                    <div id="post_author"></div>
+                </a>
+                <!-- <div id="linkToAuthor">关注该作者</div> -->
+            </div>
+            <div style="font-size: 0.8em;">
+                <span id="post_time"></span>
+                <span id="post_date"></span>
+            </div>
+        </div>
+        <div class="lineBox">
+            <div id="post_detail">
+            </div>
+        </div>
+        <div class="lineBox" style="position:absolute;bottom: 0;">
+            <div style="font-size: 15px;color: #494949; margin-right: 3em;"
+            id="likeThisPost">点赞</div>
+            <div style="font-size: 15px;color: #494949;margin-right: 3em;"
+            id="collectThisPost">收藏</div>
+            <div style="font-size: 15px;color: #494949;margin-right: 3em;">转发</div>
+            <div style="font-size: 15px;color: #494949;">举报</div>
+        </div>
+    </div>
+    <div id="remarkContentBox">
+        <div class="lineBox">
+            <h3>评论：</h3>
+        </div>
+        <div class="lineBox" id="remkCont">
+            <div class="remark">
+                <div style="display: flex;align-items: center;">
+                    <img class="remkPersonPic" src="http://121.40.154.188:8080/image/defAva.png">
+                    <span class="remkName">name:</span>
+                </div>
+                <p class="remark_P">
+                </p>
+            </div>
+        </div>
+        <div style="position: absolute;width:100%;bottom: 0;">
+            <form id="form_">
+                <input id="input_" name="conment" type="text" placeholder="评论该帖子"
+                onblur="losefocus(this)"
+                onfocus="iptfocus(this)"/>
+                <button onclick="sentComment()" type="submit">发送</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="PageBox">
+    <div>
+    </div>
+</div>

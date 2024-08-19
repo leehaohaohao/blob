@@ -1,0 +1,166 @@
+#content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.PageBox {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.lineBox {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#postContentBox {
+    border: 1px solid #b8ccff;
+    width: 50em;
+    background-color: #f9f9f9;
+    border-radius: 1.2em;
+    position: relative;
+}
+
+#authorHeader {
+    justify-content: space-between;
+}
+
+#post_author_box {
+    display: inherit;
+    align-items: center;
+}
+
+#post_author {
+    font-size: .90em;
+    margin-left: 2em;
+    color: #636363;
+    text-decoration: underline;
+}
+
+#post_time {
+    color: #bdbdbd;
+}
+
+#post_date {
+    margin-left: 1em;
+    color: #8dabf6;
+}
+
+#post_detail {
+    min-height: 200px;
+}
+
+#postOwnerPic {
+    width: 2em;
+}
+
+#remkCont {
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 450px;
+    margin-bottom: 2em;
+}
+
+.remkPersonPic {
+    width: 1.5em;
+}
+
+#remarkContentBox {
+    position: relative;
+    width: 20em;
+    margin-left: 10px;
+    background-color: #f7f7f7;
+    border-radius: 1em;
+}
+
+#tags-cont {
+    display: flex;
+    background-color: #fff;
+    line-height: 1.8em;
+    font-size: 1em;
+}
+
+#form_ {
+    margin: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 2em;
+    padding: 0 10px;
+    border: 2px solid #e4e4e4;
+}
+
+#input_ {
+    height: 22px;
+    font-size: 12px;
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+input:focus {
+    border: none !important;
+    outline: none !important;
+}
+
+tag {
+    display: flex;
+    flex-wrap: wrap;
+    width: 15em;
+}
+
+tag a {
+    font-size: 0.9em;
+    color: rgb(113, 170, 216);
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    padding: 0 10px;
+    margin: 2px 2px;
+}
+
+tag a:hover {
+    color: rgb(163, 214, 255);
+    background-color: #ebebeb;
+}
+
+#coverDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#coverImage {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

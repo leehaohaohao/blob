@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../CSS/loginPage.css">
+</head>
+<body>
+    <div id="loginForm" class="form">
+        <h2>登录</h2>
+        <label for="email"><b>邮箱</b></label>
+        <input type="text" placeholder="输入邮箱" name="email" required>
+
+        <label for="psw"><b>密码</b></label>
+        <input type="password" placeholder="输入密码" name="psw" required>
+
+        <button type="submit" class="btn">登录</button>
+        <p>还没有账号？ <a href="#" onclick="switchForm()">注册</a></p>
+    </div>
+
+    <div id="registerForm" class="form" style="display: none;">
+        <h2>注册</h2>
+        <label for="email"><b>邮箱</b></label>
+        <input type="text" placeholder="输入邮箱" name="email" required>
+
+        <label for="psw"><b>密码</b></label>
+        <input type="password" placeholder="输入密码" name="psw" required>
+        
+        <label for="code"><b>邮箱验证码</b></label>
+        <input type="number" placeholder="输入验证码" name="code" required>
+        <button onclick="sentCode()">发送邮箱验证码</button>
+        <button type="submit" class="btn">注册</button>
+        <p>已经有账号？ <a href="#" onclick="switchForm()">登录</a></p>
+    </div>
+
+    <script src="../JS/loginPage.js"></script>
+</body>
+</html>

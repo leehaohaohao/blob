@@ -1,0 +1,133 @@
+html,body{
+    background-color: rgb(246, 244, 237);
+}
+.PageBox{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.lineBox{
+    display: flex;
+    align-items: center;
+    padding:10px 20px;
+}
+#postContentBox{
+    border: 1px solid #b8ccff;
+    width:50em ;
+    background-color: #f9f9f9;
+    border-radius: 1.2em;
+    position: relative;
+}
+#authorHeader{
+    justify-content: space-between;
+}
+#post_author_box{
+    display: inherit;
+    align-items: center;
+}
+#post_author{
+    font-size: .90em;
+    margin-left: 2em;
+    color: #636363;
+    text-decoration: underline;
+}
+#post_time{
+    color: #bdbdbd;
+}
+#post_date{
+    margin-left: 1em;
+    color: #8dabf6;
+}
+#post_detail{
+    min-height: 200px;
+}
+#postOwnerPic{
+    width: 2em;
+}
+#linkToAuthor{
+    margin-left: 2em;
+    font-size: .9em;
+    padding: 2px 5px;
+    border-radius:1em ;
+    background-color: rgb(115, 159, 198);
+    color: rgb(238, 255, 238);
+}
+#remkCont{
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 450px;
+    margin-bottom: 2em;
+}
+.remkPersonPic{
+    width: 1.5em;
+}
+.rinnerCmmt_Head{
+    display: flex;
+    align-items: center;
+    margin-top:5px;
+    padding-left:1em;
+    font-size: 0.8em;
+    color: #808080;
+}
+.rinnerCmmt{
+    font-size: 0.52em;
+    background-color: #f6fcff;
+    border-top: 1px solid #8dabf6;
+    padding: 10px 10px 10px 14px;
+}
+.remark:first-of-type {
+    background-color: #d5f5ff;
+}
+
+.remark{
+    width: 100%;
+}
+.pare{
+    background-color: #fff;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    margin-top: 20px;
+}
+.remark_P{
+    font-size: 0.5em;
+}
+.remkName{
+    margin-left: 2em;
+    font-size: 0.7em;
+}
+#remarkContentBox{
+    position: relative;
+    width: 20em;
+    margin-left:10px;
+    background-color: #f7f7f7;
+    border-radius: 1em;
+}
+#tags-cont{
+    display: flex;
+    background-color: #fff;
+    line-height: 1.8em;
+    font-size: 1em;
+}
+#form_{
+    margin:10px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 2em;
+    padding: 0 10px;
+    border:2px solid #e4e4e4;
+}
+#input_{
+    height: 22px;
+    font-size: 12px;
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+input:focus {
+    border: none !important;
+    outline: none !important;
+}

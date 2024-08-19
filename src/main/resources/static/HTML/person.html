@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>管理后台</title>
+        <link rel="stylesheet" href="../CSS/mnav.css">
+        <link rel="stylesheet" href="../CSS/person.css">
+    </head>
+    <body>
+        <div class="info-bar">
+            <span class="left">不挂管理后台</span>
+            <span class="right">欢迎 <span id="username">xxx</span></span>
+        </div>
+        <div id="main">
+            <div id="sidebar">
+                <div class="menu-item" onclick="location.href='manager.html'">网站信息</div>
+                <div class="menu-item active" onclick="location.href='person.html'">人员管理</div>
+                <div class="menu-item" onclick="location.href='note.html'">公告</div>
+                <div class="menu-item" onclick="location.href='approval.html'">文章审批管理</div>
+                <div class="menu-item" onclick="location.href='fb.html'">问题反馈处理</div>
+            </div>
+            <div id="content">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>邮箱</th>
+                                <th>电话</th>
+                                <th>性别</th>
+                                <th>上次登陆时间</th>
+                                <th>当前状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 数据行将由JavaScript填充 -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <div class="toggle-container">
+                        <span id="statusLabel">正常用户</span>
+                        <div class="toggle-switch" onclick="toggleStatus()">
+                            <div class="toggle-knob"></div>
+                        </div>
+                    </div>
+                    <button class="page-button" onclick="goToFirstPage()">回到第一页</button>
+                    <button class="page-button" id="prevPage" onclick="prevPage()">上一页</button>
+                    <button class="page-button" id="nextPage" onclick="nextPage()">下一页</button>
+                </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <form id="editForm">
+                    <input type="hidden" id="userId" name="userId">
+                    <div class="input-group">
+                        <label for="name">名字:</label>
+                        <input type="text" id="name" name="name" value="不挂科">
+                    </div>
+                    <div class="input-group">
+                        <label for="telephone">电话号码:</label>
+                        <input type="text" id="telephone" name="telephone" value="无">
+                    </div>
+                    <div class="input-group">
+                        <label for="gender">性别:</label>
+                        <div id="gender">
+                            <input type="radio" id="male" name="gender" value="0">
+                            <label for="male">男</label>
+                            <input type="radio" id="female" name="gender" value="1">
+                            <label for="female">女</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="img">上传图片:</label>
+                        <div class="custom-file-upload">
+                            <label for="img">选择图片</label>
+                            <input type="file" id="img" name="file" accept=".png,.jpg,.jpeg,.gif,.svg">
+                        </div>
+                    </div>                
+                    <img id="new-profile-pic" src="http://121.40.154.188:8080/image/defAva.png" alt="新头像"
+                        style="width: 100px; height: 100px;"><br>
+                    <input type="submit" value="提交">
+                </form>
+            </div>
+        </div>
+        <script src="../JS/person.js"></script>
+    </body>
+</html>

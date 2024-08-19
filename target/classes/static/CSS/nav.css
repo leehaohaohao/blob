@@ -1,0 +1,107 @@
+html,body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f8f9fa, #e0f2fe);
+    transition: background-color 0.5s;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to right, #00bfff, #1e90ff); /* 修改背景为渐变色 */
+    color: white;
+    padding: 20px 0; /* 增加导航栏的高度 */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.5s;
+    font-size: 18px; /* 增大字体大小 */
+    font-weight: bold; /* 设置字体为粗体 */
+}
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 50px; /* 设置logo的宽度 */
+    height: 50px; /* 设置logo的高度 */
+    background-color: #333;
+}
+
+.dropdown-content a{
+    color: rgb(106, 22, 155);
+}
+nav a:hover {
+    color: #ddd;
+}
+
+.avatar {
+    width: 50px; /* 减小头像的大小 */
+    height: 50px; /* 减小头像的大小 */
+    border-radius: 50%;
+    transition: transform 0.3s;
+    margin-right: 50px;
+}
+
+.dropdown:hover .avatar {
+    transform: scale(1.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(117, 8, 8, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    right: 0; /* 将下拉菜单定位到右边 */
+    border-radius: 5px; /* 添加圆角 */
+    color: #333; /* 改变字体颜色 */
+    font-size: 14px; /* 改变字体大小 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content div {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content div:last-child {
+    border-bottom: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+}
+
+#publish {
+    display: block;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #1c5324;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 50px;
+    transition: transform 0.3s; /* 添加悬浮动画 */
+}
+
+#publish:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/nav.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="home.html">首页</a>
+            <a href="multiPersonSquare.html?tag=random_post">资料广场</a>
+            <a href="#about">联系我</a>
+        </div>
+        <!-- 添加一个新的div用于显示logo -->
+        <div id="logoContainer">
+            <div id="logo">logo</div>
+        </div>
+        <div class="nav-right">
+            <div class="dropdown">
+                <img src="http://121.40.154.188:8080/image/defAva.png" class="avatar">
+                <div class="dropdown-content">
+                    <div class="name">用户</div>
+                    <div class="uid">UID</div>
+                    <div><a href="center.html">个人中心</a></div>
+                    <div><a href="#">链接 2</a></div>
+                    <div><a href="#">链接 3</a></div>
+                </div>
+            </div>
+            <button id="publish">发布</button>
+        </div>
+    </nav>
+    <div class="main-container">
+        <div class="left-container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+        </div>
+        <div class="right-container">
+            <div class="box4">
+                <div id="tagContainer">
+                    <div id="tags">
+                    </div>
+                    <div id="divider"></div>
+                    <div id="buttonContainer">
+                        <button id="addTag">添加快捷标签</button>
+                    </div>
+                </div>
+                <!-- 添加一个新的容器用于显示基本信息 -->
+                <!-- 添加一个新的容器用于显示基本信息 -->
+                <div id="infoContainer">
+                    <div class="infoItem">
+                        <span class="infoLabel">帖子数:</span>
+                        <span id="postCount" class="infoValue">0</span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="infoLabel">粉丝数:</span>
+                        <span id="followerCount" class="infoValue">0</span>
+                    </div>
+                    <div class="infoItem">
+                        <span class="infoLabel">关注数:</span>
+                        <span id="followingCount" class="infoValue">0</span>
+                    </div>
+                </div>
+                <div class="featureContainer">
+                    <div class="featureItem" title="功能1">
+                        <a href="#" id="announcementLink">公告</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feedback.html">问题反馈</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂云盘</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂好物秒杀</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂商城</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂考研</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂英语</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂学堂</a>
+                    </div>
+                    <div class="featureItem" title="功能1">
+                        <a href="feature2.html">不挂留学</a>
+                    </div>
+                    <!-- 你可以根据需要添加更多的功能 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup" style="display: none;">
+        <div id="tagInputs"></div>
+        <button id="addTagInput">+</button>
+        <div id="tagLimit">目前只支持5个标签</div>
+        <button id="saveTags">保存</button>
+    </div>
+    <!-- 模态对话框 -->
+    <!-- 模态对话框 -->
+    <!-- 模态对话框 -->
+    <div id="modal" style="display: none;">
+        <!-- 公告窗口 -->
+        <div id="announcementWindow">
+            <!-- 公告内容 -->
+            <div id="announcementContent">
+            </div>
+            <!-- 关闭按钮 -->
+            <span id="closeModal" style="cursor: pointer;">×</span>
+        </div>
+        <div id="announcementBlocks">
+        </div>
+    </div>
+
+
+
+    <script src="../JS/home.js"></script>
+</body>
+
+</html>
