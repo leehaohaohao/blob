@@ -36,6 +36,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -66,11 +67,11 @@ public class ForumController extends BaseController{
                              String tags, String title, MultipartFile file) throws GlobalException {
         String userId = StringUtil.getUserId();
         //标题如果为空则采用默认标题
-        if(title == null || title.isEmpty()){
+        if(Tools.isBlank(title)){
             title = StringConstants.DEFAULT_TITLE;
         }
         //判断内容是否为空
-        if(post_content == null || post_content.isEmpty()){
+        if(Tools.isBlank(post_content)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
         //判断标签是否为空
@@ -115,12 +116,12 @@ public class ForumController extends BaseController{
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtoList = new ArrayList<>();
         postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum());
-        if(postCoverDtoList.size()!=0){
+        if(!postCoverDtoList.isEmpty()){
             return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
         }
         if(tagFuzzy.equals(StringConstants.RANDOM_POST)){
             postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId()+":"+page.getPageNum());
-            if(postCoverDtoList.size()!=0){
+            if(!postCoverDtoList.isEmpty()){
                 return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
             }
             //走推荐算法
@@ -145,9 +146,7 @@ public class ForumController extends BaseController{
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
         PostDto postDto = redisTools.getPostDto(postId);
-        if(postDto == null){
-            postDto = forumService.getPostById(postId,userId);
-        }
+        postDto = Optional.ofNullable(postDto).orElse(forumService.getPostById(postId,userId));
         return getSuccessResponsePack(postDto);
     }
 
@@ -180,7 +179,7 @@ public class ForumController extends BaseController{
         String userId = StringUtil.getUserId();
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"USER:"+pageNum+":"+otherId);
-        if(postCoverDtos.size()==0){
+        if(postCoverDtos.isEmpty()){
             return getSuccessResponsePack(forumService.getPostByUserId(userId,otherId,page));
         }else {
             return getSuccessResponsePack(postCoverDtos);
@@ -234,22 +233,23 @@ public class ForumController extends BaseController{
     @PostMapping("/user/unapproval/post")
     @Login
     public ResponsePack getMyPost(Integer pageNum,Integer pageSize,Integer sort,String otherId) throws GlobalException {
-        if(pageNum == null || pageSize == null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
+        Optional.ofNullable(pageNum)
+                .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));
+
+        Optional.ofNullable(pageSize)
+                .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));
         String userId = StringUtil.getUserId();
         if(Tools.isBlank(otherId)){
             otherId = userId;
         }
         Page page = new Page(pageSize,pageNum);
-        String type = "";
-        if(sort == null || PostOrderEnum.getPostOrderEnumByStatus(sort)==null){
-            type = PostOrderEnum.SORT_TIME.getType();
-        }else {
-            type = PostOrderEnum.getPostOrderEnumByStatus(sort).getType();
-        }
+        String type = Optional.ofNullable(sort)
+                .map(PostOrderEnum::getPostOrderEnumByStatus)
+                .map(PostOrderEnum::getType)
+                .orElse(PostOrderEnum.SORT_TIME.getType());
+
         List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"USER:"+pageNum+":"+otherId);
-        if(postCoverDtos.size()==0){
+        if(postCoverDtos.isEmpty()){
             return getSuccessResponsePack(forumService.getMyPost(page,userId,type,otherId));
         }else {
             return getSuccessResponsePack(postCoverDtos);
@@ -282,7 +282,7 @@ public class ForumController extends BaseController{
         }else{
             postCoverDtos =  redisTools.getList(RedisConstants.REDIS_POST_KEY+"COLLECT:"+pageNum+":"+userId);
         }
-        if(postCoverDtos.size()==0){
+        if(postCoverDtos.isEmpty()){
             return getSuccessResponsePack(forumService.getMyLikeCollectPost(page,otherId,status,userId));
         }else {
             return getSuccessResponsePack(postCoverDtos);

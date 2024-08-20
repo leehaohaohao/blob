@@ -33,7 +33,10 @@ window.onload = async function () {
                     formData.append('otherId', otherId);
                     fetch(otherInfo, {
                         method: 'post',
-                        body: formData
+                        body: formData,
+                        headers: {
+                            'Authorization': authorization
+                        }
                     }).then(response => response.json())
                         .then(res => {
                             if (res.success) {

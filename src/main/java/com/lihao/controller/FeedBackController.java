@@ -14,12 +14,14 @@ import com.lihao.exception.GlobalException;
 import com.lihao.service.FeedBackService;
 import com.lihao.util.CheckUtil;
 import com.lihao.util.StringUtil;
+import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/error")
@@ -31,15 +33,14 @@ public class FeedBackController extends BaseController {
     @Login
     public ResponsePack publish(Integer status, String content,MultipartFile file) throws GlobalException {
         String userId = StringUtil.getUserId();
-        if(content == null || content.isEmpty()){
+        if(Tools.isBlank(content)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        if(status != null && FeedBackTypeEnum.getTypeEnum(status) == null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
-        if(status == null){
-            status= FeedBackTypeEnum.OTHER.getStatus();
-        }
+        Optional.ofNullable(status)
+                .filter(s -> FeedBackTypeEnum.getTypeEnum(s) != null)
+                .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));
+
+        status = Optional.ofNullable(status).orElse(FeedBackTypeEnum.OTHER.getStatus());
         FeedBack feedBack = new FeedBack();
         feedBack.setContent(content);
         feedBack.setFeedbackId(StringUtil.getId(UidPrefixEnum.FEEDBACK.getPrefix()));
@@ -65,9 +66,8 @@ public class FeedBackController extends BaseController {
     @Login
     @Manager
     public ResponsePack update(@RequestBody FeedBack feedBack) throws GlobalException {
-        if(feedBack.getFeedbackId() == null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
+        Optional.ofNullable(feedBack.getFeedbackId())
+                .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));
         feedBackService.update(feedBack);
         return getSuccessResponsePack(null);
     }

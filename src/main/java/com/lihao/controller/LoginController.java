@@ -27,10 +27,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @CrossOrigin
@@ -117,7 +114,10 @@ public class LoginController extends BaseController {
         return getSuccessResponsePack(StringConstants.SUCCESS_REGISTER);
     }
     @PostMapping("/email/code")
-    public ResponsePack code(String email){
+    public ResponsePack code(String email) throws GlobalException {
+        if(Tools.isBlank(email)){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
         emailService.email(email);
         return getSuccessResponsePack(StringConstants.SUCCESS_SEND_EMAIL_CODE);
     }
@@ -125,9 +125,8 @@ public class LoginController extends BaseController {
     public ResponsePack send(String email , String code,String password) throws GlobalException {
         //判断当前邮箱是否在网站注册
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
-        if(userInfo == null){
-            throw new GlobalException(ExceptionConstants.NO_EMAIL);
-        }
+        Optional.ofNullable(userInfo)
+                .orElseThrow(() -> new GlobalException(ExceptionConstants.NO_EMAIL));
         //校验邮箱验证码
         checkUtil.checkEmailCode(email,code);
         //校验密码格式是否符合要求
@@ -140,19 +139,24 @@ public class LoginController extends BaseController {
         return getSuccessResponsePack(StringConstants.SUCCESS_UPDATE_PASSWORD);
     }
     @PostMapping("/manager/login")
-    public ResponsePack mLogin(String email,String password,
-                               HttpServletRequest request, HttpServletResponse response) throws GlobalException {
+    public ResponsePack mLogin(String email,String password) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
-        if(userInfo == null || !userInfo.getPassword().toLowerCase().equals(DigestUtils.md5Hex(password))){
-            throw new GlobalException(ExceptionConstants.EMAIL_NO_MATCH);
-        }
+        Optional.ofNullable(userInfo)
+                .filter(info->info.getPassword().equals(DigestUtils.md5Hex(password)))
+                .orElseThrow(()->new GlobalException(ExceptionConstants.EMAIL_NO_MATCH));
         String userId = userInfo.getUserId();
         List<RoleInfo> roleInfoList = roleUserMapper.selectByUserId(userId);
-        for(RoleInfo roleInfo :roleInfoList){
-            if(roleInfo.getRoleId().equals(RoleEnum.NORMAL.getRoleId())){
-                throw new GlobalException(ExceptionConstants.NO_PERMISSION);
-            }
-        }
+        roleInfoList.stream()
+                .filter(roleInfo -> roleInfo.getRoleId().equals(RoleEnum.NORMAL.getRoleId()))
+                .findAny()
+                .ifPresent(roleInfo -> {
+                    try {
+                        throw new GlobalException(ExceptionConstants.NO_PERMISSION);
+                    } catch (GlobalException e) {
+                        logger.error(e.getMessage(),e);
+                        throw new RuntimeException(e);
+                    }
+                });
         UserInfoDto userInfoDto = new UserInfoDto();
         BeanUtils.copyProperties(userInfo,userInfoDto);
         redisTools.setTokenUserInfo(userInfoDto);

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/user")
 @CrossOrigin
@@ -32,10 +34,9 @@ public class UserInfoController extends BaseController {
         String userId = StringUtil.getUserId();
         UserInfoDto userInfoDto = redisTools.getTokenUserInfoDto(userId);
         //缓存里没有
-        if(userInfoDto==null){
-            userInfoDto = userInfoService.getUserInfo(userId);
-            redisTools.setTokenUserInfo(userInfoDto);
-        }
+        userInfoDto= Optional.ofNullable(userInfoDto)
+                .orElse(userInfoService.getUserInfo(userId));
+        redisTools.setTokenUserInfo(userInfoDto);
         return getSuccessResponsePack(userInfoDto);
     }
     @RequestMapping("/updateInfo")
