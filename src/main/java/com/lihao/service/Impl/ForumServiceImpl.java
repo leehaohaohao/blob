@@ -1,5 +1,6 @@
 package com.lihao.service.Impl;
 
+import cn.hutool.core.lang.Opt;
 import com.github.pagehelper.PageHelper;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.*;
@@ -19,18 +20,20 @@ import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
 import org.apache.catalina.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class ForumServiceImpl implements ForumService {
+    private final static Logger looger = LoggerFactory.getLogger(ForumServiceImpl.class);
     @Resource
     private PostMapper<Post, PostQuery> postMapper;
     @Resource
@@ -53,12 +56,14 @@ public class ForumServiceImpl implements ForumService {
         post.setPostStatus(PostEnum.REVIEWING.getStatus());
         post.setPostId(StringUtil.getId(UidPrefixEnum.POST.getPrefix()));
         //储存封面
-        String[] ss = null;
-        if(file==null || file.getOriginalFilename().isEmpty()){
+        String[] ss = Optional.ofNullable(file)
+                .filter(f->!Tools.isBlank(file.getOriginalFilename()))
+                .map(f->FileUtil.fileBookLoad(file,StringConstants.POST_COVER_IMAGE_PATH))
+                .orElse(null);
+        if (ss == null) {
             post.setCover(StringConstants.DEFAULT_POST_COVER);
-        }else{
-            ss = FileUtil.fileBookLoad(file,StringConstants.POST_COVER_IMAGE_PATH);
-            if(ss.length!=NumberConstants.FILE_ARRAY_LENGTH){
+        } else {
+            if (ss.length != NumberConstants.FILE_ARRAY_LENGTH) {
                 throw new GlobalException(ExceptionConstants.SERVER_ERROR);
             }
             post.setCover(ss[0]);
@@ -83,15 +88,17 @@ public class ForumServiceImpl implements ForumService {
         postQuery.setPage(page);
         //除去无用信息
         List<Post> posts = postMapper.selectList(postQuery);
-        List<PostCoverDto> postCoverDtos = new ArrayList<>();
-        //TODO 用stream流并行处理提高速度
-        for(Post post:posts){
-            //将用户与帖子发布人关联存入
+        List<PostCoverDto> postCoverDtos = posts.stream().map(post->{
             PostCoverDto postCoverDto = new PostCoverDto();
             BeanUtils.copyProperties(post, postCoverDto);
-            postCoverDto.setOtherInfoDto(userInfoService.otherInfo(post.getUserId(),userId));
-            postCoverDtos.add(postCoverDto);
-        }
+            try {
+                postCoverDto.setOtherInfoDto(userInfoService.otherInfo(post.getUserId(),userId));
+            } catch (GlobalException e) {
+                looger.error(e.getMessage(),e);
+                throw new RuntimeException(e);
+            }
+            return postCoverDto;
+        }).collect(Collectors.toList());
         //TODO 缓存策略优化
         redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_DAY);
         return postCoverDtos;
@@ -99,9 +106,8 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public PostDto getPostById(String postId,String userId) throws GlobalException {
         Post post = postMapper.selectByPostId(postId);
-        if(post == null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
+        Optional.ofNullable(post)
+                .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
         //判断当前id的post的状态
         if(PostEnum.NORMAL != PostEnum.getPostEnum(post.getPostStatus())){
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
@@ -126,13 +132,18 @@ public class ForumServiceImpl implements ForumService {
         loveCollectQuery.setPostId(postId);
         //添加点赞和收藏信息
         LoveCollect loveCollect = loveCollectMapper.select(loveCollectQuery);
-        if(loveCollect == null){
-            postDto.setIsLove(false);
-            postDto.setIsCollect(false);
-        }else{
-            postDto.setIsLove(loveCollect.getLove());
-            postDto.setIsCollect(loveCollect.getCollect());
-        }
+        Optional.ofNullable(loveCollect)
+                .ifPresentOrElse(
+                        lc -> {
+                            postDto.setIsLove(lc.getLove());
+                            postDto.setIsCollect(lc.getCollect());
+                        },
+                        () -> {
+                            postDto.setIsLove(false);
+                            postDto.setIsCollect(false);
+                        }
+                );
+
         //存入缓存
         redisTools.setPostDto(postDto);
         return postDto;
@@ -141,14 +152,19 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public List<PostCoverDto> getRandomPost(Page page, String userId) throws GlobalException {
         //TODO 推荐算法仍需优化
-        List<PostCoverDto> postCoverDtos = new ArrayList<>();
+
         List<Post> posts = postMapper.selectRandom(PostEnum.NORMAL.getStatus(),page.getPageSize());
-        for(Post post:posts){
+        List<PostCoverDto> postCoverDtos = posts.stream().map(post -> {
             PostCoverDto postCoverDto = new PostCoverDto();
             BeanUtils.copyProperties(post, postCoverDto);
-            postCoverDto.setOtherInfoDto(userInfoService.otherInfo(post.getUserId(),userId));
-            postCoverDtos.add(postCoverDto);
-        }
+            try {
+                postCoverDto.setOtherInfoDto(userInfoService.otherInfo(post.getUserId(),userId));
+            } catch (GlobalException e) {
+                looger.error(e.getMessage(),e);
+                throw new RuntimeException(e);
+            }
+            return postCoverDto;
+        }).collect(Collectors.toList());
         //TODO 缓存策略优化
         redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+userId+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_DAY);
         return postCoverDtos;
@@ -157,9 +173,8 @@ public class ForumServiceImpl implements ForumService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void approvalPost(String postId,Integer postStatus,String approvalId) throws GlobalException {
-        if(PostEnum.getPostEnum(postStatus)==null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
+        Optional.ofNullable(PostEnum.getPostEnum(postStatus))
+                .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
         Post post = postMapper.selectByPostId(postId);
         //判断是否已经审核
         if(postStatus.equals(post.getPostStatus())){
@@ -187,8 +202,8 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public List<PostCoverDto> getPostByUserId(String userId, String otherId, Page page) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByUserId(userId);
-        UserInfo otherInfo = null;
-        List<PostCoverDto> postCoverDtos = new ArrayList<>();
+        UserInfo otherInfo;
+        List<PostCoverDto> postCoverDtos;
         PostQuery postQuery = new PostQuery();
         postQuery.setOrderBy("post_time desc");
         postQuery.setUserId(otherId);
@@ -211,11 +226,11 @@ public class ForumServiceImpl implements ForumService {
             OtherInfoDto otherInfoDto = new OtherInfoDto();
             otherInfoDto.setStatus(RelationshipEnum.MINE.getStatus());
             otherInfoDto.setUserInfoDto(userInfoDto);
-            for(Post post:posts){
+            postCoverDtos=posts.stream().map(post -> {
                 PostCoverDto postCoverDto = new PostCoverDto();
                 BeanUtils.copyProperties(post, postCoverDto);
-                postCoverDtos.add(postCoverDto);
-            }
+                return postCoverDto;
+            }).collect(Collectors.toList());
             postCoverDtos.get(0).setOtherInfoDto(otherInfoDto);
         }else{
             otherInfo = userInfoMapper.selectByUserId(otherId);
@@ -229,11 +244,11 @@ public class ForumServiceImpl implements ForumService {
             OtherInfoDto otherInfoDto = userInfoService.otherInfo(otherId,userId);
             PageHelper.startPage(page.getPageNum(),page.getPageSize());
             List<Post> posts = postMapper.selectMainList(postQuery);
-            for(Post post:posts){
+            postCoverDtos=posts.stream().map(post -> {
                 PostCoverDto postCoverDto = new PostCoverDto();
                 BeanUtils.copyProperties(post, postCoverDto);
-                postCoverDtos.add(postCoverDto);
-            }
+                return postCoverDto;
+            }).collect(Collectors.toList());
             postCoverDtos.get(0).setOtherInfoDto(otherInfoDto);
         }
         redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+"USER:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);
@@ -382,18 +397,23 @@ public class ForumServiceImpl implements ForumService {
             }
         }
         List<LoveCollect> list = loveCollectMapper.selectList(loveCollectQuery);
-        List<PostCoverDto> postCoverDtos = new ArrayList<>();
-        for(LoveCollect collect : list){
+        List<PostCoverDto> postCoverDtos = list.stream().map(collect->{
             PostQuery postQuery = new PostQuery();
             postQuery.setPostStatus(PostEnum.NORMAL.getStatus());
             postQuery.setPostId(collect.getPostId());
             List<PostCoverDto> postCoverDto = postMapper.selectCoverList(postQuery);
             for(int i = 0;i<postCoverDto.size();i++){
-                OtherInfoDto otherInfoDto = userInfoService.otherInfo(postCoverDto.get(i).getUserId(),userId);
+                OtherInfoDto otherInfoDto = null;
+                try {
+                    otherInfoDto = userInfoService.otherInfo(postCoverDto.get(i).getUserId(),userId);
+                } catch (GlobalException e) {
+                    looger.error(e.getMessage(),e);
+                    throw new RuntimeException(e);
+                }
                 postCoverDto.get(i).setOtherInfoDto(otherInfoDto);
             }
-            postCoverDtos.add(postCoverDto.get(0));
-        }
+            return postCoverDto.get(0);
+        }).collect(Collectors.toList());
         //添加缓存
         if(like){
             redisTools.setRightList(RedisConstants.REDIS_POST_KEY+"LIKE:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);
@@ -423,31 +443,54 @@ public class ForumServiceImpl implements ForumService {
 
 
     //查找帖子全部评论
-    private List<CommentDto> getCommentDto(String postId){
+    private List<CommentDto> getCommentDto(String postId) {
         CommentQuery commentQuery = new CommentQuery();
         commentQuery.setPostId(postId);
         commentQuery.setCommentStatus(CommentEnum.NORMAL.getStatus());
         commentQuery.setOrderBy("comment_date desc");
         commentQuery.setIsNull(true);
         List<CommentDto> commentDtos = commentMapper.selectSpecialList(commentQuery);
-        BFSCommentDto(commentDtos,postId);
+
+        // 收集所有需要查询的用户ID
+        Set<String> userIds = commentDtos.stream()
+                .flatMap(commentDto -> {
+                    Set<String> ids = new HashSet<>();
+                    ids.add(commentDto.getUserId());
+                    if (!Tools.isBlank(commentDto.getParentId())) {
+                        Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
+                        ids.add(comment.getUserId());
+                    }
+                    return ids.stream();
+                })
+                .collect(Collectors.toSet());
+
+        // 批量查询用户信息
+        Map<String, UserInfo> userInfoMap = new HashMap<>();
+        if (!userIds.isEmpty()) {
+            userInfoMap = userInfoMapper.selectByUserIds(userIds).stream()
+                    .collect(Collectors.toMap(UserInfo::getUserId, userInfo -> userInfo));
+        }
+
+        // 传递用户信息Map给BFSCommentDto方法
+        BFSCommentDto(commentDtos, postId, userInfoMap);
         return commentDtos;
     }
+
     //全部查找算法
     //TODO 有时间继续进行优化 如加入分页 提高查询效率
     //TODO 封禁用户评论信息处理
-    private void BFSCommentDto(List<CommentDto> target,String postId){
-        for(CommentDto commentDto:target){
-            String userId = commentDto.getUserId();
-            UserInfo userInfo = userInfoMapper.selectByUserId(userId);
-            String parentId = commentDto.getParentId();
-            if(!Tools.isBlank(parentId)){
-                Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
-                UserInfo parentInfo = userInfoMapper.selectByUserId(comment.getUserId());
-                commentDto.setParentName(parentInfo.getName());
-            }
+    private void BFSCommentDto(List<CommentDto> target, String postId, Map<String, UserInfo> userInfoMap) {
+        for (CommentDto commentDto : target) {
+            UserInfo userInfo = userInfoMap.get(commentDto.getUserId());
             commentDto.setUserName(userInfo.getName());
             commentDto.setPhoto(userInfo.getPhoto());
+
+            if (!Tools.isBlank(commentDto.getParentId())) {
+                Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
+                UserInfo parentInfo = userInfoMap.get(comment.getUserId());
+                commentDto.setParentName(parentInfo.getName());
+            }
+
             CommentQuery commentQuery = new CommentQuery();
             commentQuery.setParentId(commentDto.getCommentId());
             commentQuery.setPostId(postId);
@@ -455,10 +498,22 @@ public class ForumServiceImpl implements ForumService {
             commentQuery.setIsNull(false);
             commentQuery.setOrderBy("comment_date desc");
             List<CommentDto> childCommentDto = commentMapper.selectSpecialList(commentQuery);
-            if(!childCommentDto.isEmpty()){
+
+            // 动态更新用户信息Map
+            Set<String> childUserIds = childCommentDto.stream()
+                    .map(CommentDto::getUserId)
+                    .filter(userId -> !userInfoMap.containsKey(userId))
+                    .collect(Collectors.toSet());
+            if (!childUserIds.isEmpty()) {
+                Map<String, UserInfo> childUserInfoMap = userInfoMapper.selectByUserIds(childUserIds).stream()
+                        .collect(Collectors.toMap(UserInfo::getUserId, user -> user));
+                userInfoMap.putAll(childUserInfoMap);
+            }
+            if (!childCommentDto.isEmpty()) {
                 commentDto.setChildCommentDto(childCommentDto);
-                BFSCommentDto(childCommentDto,postId);
+                BFSCommentDto(childCommentDto, postId, userInfoMap);
             }
         }
     }
+
 }

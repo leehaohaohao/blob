@@ -16,11 +16,17 @@ import com.lihao.redis.RedisTools;
 import com.lihao.service.UserInfoService;
 import com.lihao.util.CheckUtil;
 import com.lihao.util.FileUtil;
+import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Optional;
+
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
     @Resource
@@ -29,6 +35,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     private ConcernMapper concernMapper;
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
+    private final Logger logger = LoggerFactory.getLogger(UserInfoServiceImpl.class);
 
     @Override
     public UserInfoDto getUserInfo(String userId) {

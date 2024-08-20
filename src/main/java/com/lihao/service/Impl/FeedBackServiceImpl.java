@@ -26,8 +26,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class FeedBackServiceImpl implements FeedBackService {
@@ -45,9 +48,9 @@ public class FeedBackServiceImpl implements FeedBackService {
             CheckUtil.checkImageType(file);
             ss = FileUtil.fileBookLoad(file, StringUtil.getFeedBackPath());
         }
-        if(ss!=null && ss.length == NumberConstants.FILE_ARRAY_LENGTH){
-            feedBack.setFile(ss[0]);
-        }
+        Optional.ofNullable(ss)
+                .filter(array -> array.length == NumberConstants.FILE_ARRAY_LENGTH)
+                .ifPresent(array -> feedBack.setFile(array[0]));
         if(!feedBackMapper.insert(feedBack).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
         }
@@ -66,15 +69,14 @@ public class FeedBackServiceImpl implements FeedBackService {
         feedBackQuery.setOrderBy("time desc");
         feedBackQuery.setStatus(0);
         List<FeedBack> feedBacks = feedBackMapper.selectList(feedBackQuery);
-        List<FeedBackDto> feedBackDtos = new ArrayList<>();
-        for(FeedBack back:feedBacks){
+        List<FeedBackDto> feedBackDtos = feedBacks.stream().map(back->{
             FeedBackDto feedBackDto = new FeedBackDto();
             BeanUtils.copyProperties(back,feedBackDto);
             feedBackDto.setType(FeedBackTypeEnum.getTypeEnum(back.getType()).getType());
             UserInfo userInfo = userInfoMapper.selectByUserId(back.getUserId());
             feedBackDto.setName(userInfo.getName());
-            feedBackDtos.add(feedBackDto);
-        }
+            return feedBackDto;
+        }).collect(Collectors.toList());
         return feedBackDtos;
     }
 

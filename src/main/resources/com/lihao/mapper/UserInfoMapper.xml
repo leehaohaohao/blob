@@ -253,4 +253,13 @@
             limit ${query.page.left},${query.page.pageSize}
         </if>
     </select>
+    <select id="selectByUserIds" resultMap="base_result_map">
+        select <include refid="base_column_list"/>
+        from users
+        where user_id in
+        <foreach item="userId" collection="userIds" open="(" separator="," close=")">
+            #{userId}
+        </foreach>
+    </select>
+
 </mapper>

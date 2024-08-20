@@ -4,6 +4,7 @@ import com.lihao.entity.po.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Set;
 
 public interface UserInfoMapper<T,P> extends BaseMapper<T,P>{
     /**
@@ -32,4 +33,6 @@ public interface UserInfoMapper<T,P> extends BaseMapper<T,P>{
     T selectByEmail(String email);
     Integer selectCount(Integer status);
     List<T> selectList(@Param("query")P p);
+    List<UserInfo> selectByUserIds(@Param("userIds") Set<String> userIds);
+
 }
