@@ -137,7 +137,10 @@ function showInfo(res,id) {
 
             name_id_div.appendChild(name_div);
             name_id_div.appendChild(user_id_div);
-
+            //添加点击跳转到个人中心
+            name_id_div.onclick=function (){
+                window.location.href = "center.html?userId="+user.userId;
+            }
             var num_info_div = document.createElement('div');
             num_info_div.className='num_info';
 
