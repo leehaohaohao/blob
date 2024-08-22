@@ -19,7 +19,8 @@ window.onload = async function(){
         event.preventDefault();
         sentComment();
     });
-    let postData = await getPostByID(postID);
+    await getPostByID(postID);
+    await getComment(postID);
 }
 async function request(url,mtd,FD){
     console.log(baseURL + url)
@@ -93,9 +94,6 @@ async function getPostByID(postID){
             doc.getElementById('post_author').innerHTML = RD.name;
             doc.getElementById('post_detail').innerHTML = RD.postContent;
         }).then(res=>{
-            var REMARK = RD.parentCommentDto;
-            document.getElementById('remkCont').innerHTML = renderComments(REMARK)
-        }).then(res=>{
             pageLike = RD.postLike;
             pageCollect = RD.collect;
             console.log(pageCollect)
@@ -120,6 +118,20 @@ async function getPostByID(postID){
     }catch(err){
         console.error(err);
     }
+}
+async function getComment(postId){
+    var fd = new FormData();
+    fd.append( 'postId', postID );
+    var response = request('social/get/comment','post',fd);
+    let doc = document;
+    let RD = null;
+    response.then(res=>{
+        RD=res.data
+    }).then(res=>{
+        doc.getElementById('remkCont').innerHTML = renderComments(RD);
+    }).catch(err=>{
+        alert(err);
+    })
 }
 window.CollectOrLike  = function(e,postid,status,type){
     console.log('click');

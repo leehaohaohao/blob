@@ -1,6 +1,5 @@
 package com.lihao.service.Impl;
 
-import cn.hutool.core.lang.Opt;
 import com.github.pagehelper.PageHelper;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.*;
@@ -29,7 +28,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class ForumServiceImpl implements ForumService {
@@ -124,9 +122,9 @@ public class ForumServiceImpl implements ForumService {
         //判断帖子发布人与查看人的关系
         OtherInfoDto otherInfoDto = userInfoService.otherInfo(post.getUserId(),userId);
         postDto.setStatus(otherInfoDto.getStatus());
-        //查询帖子相关评论信息
+        /*//查询帖子相关评论信息
         List<CommentDto> parentCommentDtos = getCommentDto(postId);
-        postDto.setParentCommentDto(parentCommentDtos);
+        postDto.setParentCommentDto(parentCommentDtos);*/
         LoveCollect loveCollectQuery = new LoveCollect();
         loveCollectQuery.setUserId(userId);
         loveCollectQuery.setPostId(postId);
@@ -450,7 +448,6 @@ public class ForumServiceImpl implements ForumService {
         commentQuery.setOrderBy("comment_date desc");
         commentQuery.setIsNull(true);
         List<CommentDto> commentDtos = commentMapper.selectSpecialList(commentQuery);
-
         // 收集所有需要查询的用户ID
         Set<String> userIds = commentDtos.stream()
                 .flatMap(commentDto -> {
@@ -463,14 +460,12 @@ public class ForumServiceImpl implements ForumService {
                     return ids.stream();
                 })
                 .collect(Collectors.toSet());
-
         // 批量查询用户信息
         Map<String, UserInfo> userInfoMap = new HashMap<>();
         if (!userIds.isEmpty()) {
             userInfoMap = userInfoMapper.selectByUserIds(userIds).stream()
                     .collect(Collectors.toMap(UserInfo::getUserId, userInfo -> userInfo));
         }
-
         // 传递用户信息Map给BFSCommentDto方法
         BFSCommentDto(commentDtos, postId, userInfoMap);
         return commentDtos;

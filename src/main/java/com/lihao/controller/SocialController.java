@@ -50,8 +50,11 @@ public class SocialController extends BaseController{
     }
     @RequestMapping("/get/comment")
     @Login
-    public ResponsePack getComment(String postId){
-        return getSuccessResponsePack(null);
+    public ResponsePack getComment(String postId) throws GlobalException {
+        if(Tools.isBlank(postId)){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
+        return getSuccessResponsePack(socialService.getComment(postId));
     }
     @PostMapping("/get/concern/follower")
     @Login
