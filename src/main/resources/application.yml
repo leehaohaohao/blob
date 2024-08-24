@@ -71,5 +71,7 @@ jwt:
   secret: lihaolihaolihaolihaolihaolihaolh
   expire: 259200000
   token: Authorization
+ws:
+  port: 9091
 
 

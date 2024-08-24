@@ -8,10 +8,6 @@ import com.lihao.exception.GlobalException;
 import java.util.UUID;
 
 public class StringUtil {
-    public static String setToken(String userId){
-        String token = UUID.randomUUID().toString()+userId;
-        return token;
-    }
     public static String getId(String prefix){
         return prefix+CommonUtil.getId();
     }
@@ -21,9 +17,6 @@ public class StringUtil {
             throw new GlobalException(ExceptionConstants.NO_LOGGING);
         }
         return userId;
-    }
-    public static String getUserId(String token){
-        return token.substring(NumberConstants.ID_LENGTH_PREFIX,NumberConstants.ID_LENGTH_SUFFIX);
     }
     public static String getImgPath() {
         // 获取项目根目录

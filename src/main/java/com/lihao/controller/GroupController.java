@@ -133,6 +133,7 @@ public class GroupController extends BaseController {
     @PostMapping("/add")
     @Login
     public ResponsePack add2Group(String groupId) throws GlobalException {
+
         return getSuccessResponsePack(null);
     }
 

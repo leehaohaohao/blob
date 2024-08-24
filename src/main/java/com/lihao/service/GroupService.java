@@ -15,4 +15,5 @@ public interface GroupService {
     List<GroupCommentDto> selectGroupComment(GroupCommentQuery groupCommentQuery,String userId);
     List<Group> selectGroupList(GroupQuery groupQuery);
     Group selectMyGroup(GroupQuery groupQuery);
+    void add2Group(String userId,String groupId);
 }

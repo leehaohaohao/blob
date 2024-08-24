@@ -15,6 +15,7 @@ import com.lihao.exception.GlobalException;
 import com.lihao.mapper.GroupCommentMapper;
 import com.lihao.mapper.GroupMapper;
 import com.lihao.mapper.UserInfoMapper;
+import com.lihao.netty.ChannelContext;
 import com.lihao.service.GroupService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
@@ -31,6 +32,8 @@ public class GroupServiceImpl implements GroupService {
     private GroupCommentMapper<GroupComment, GroupCommentQuery> groupCommentMapper;
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
+    @Resource
+    private ChannelContext context;
     @Override
     public void create(Group group) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByUserId(group.getUserId());
@@ -87,5 +90,10 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public Group selectMyGroup(GroupQuery groupQuery) {
         return groupMapper.select(groupQuery);
+    }
+
+    @Override
+    public void add2Group(String userId, String groupId) {
+        context.addGroupContext(groupId,userId);
     }
 }
