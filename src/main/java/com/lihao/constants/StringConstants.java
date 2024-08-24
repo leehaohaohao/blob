@@ -8,8 +8,9 @@ public class StringConstants {
     public final static String SUCCESS_REGISTER = "注册成功！";
     public final static String DEFAULT_TITLE = "无标题";
     public final static String SOLVE_IT = "技术小哥正在快马加鞭的帮您解决！";
-    public final static String DEFAULT_USER_AVATAR = "http://121.40.154.188:8080/image/defAva.png";
+    public final static String DEFAULT_USER_AVATAR = "http://localhost:9090/blob/image/defAva.png";
     public final static String DEFAULT_POST_COVER = "http://121.40.154.188:8080/image/background.png";
+    public final static String DEFAULT_GROUP_AVATAR = "http://localhost:9090/blob/image/group.png";
     public final static String URI = "http://localhost:9090/blob";
     public final static String AVATAR_PATH = StringUtil.getImgPath();
     public final static String POST_COVER_IMAGE_PATH = StringUtil.getPostCoverPath();

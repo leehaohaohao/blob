@@ -6,7 +6,9 @@ public enum UidPrefixEnum {
     FEEDBACK("FB","问题反馈"),
     HISTORY("H","历史浏览"),
     NOTE("N","公告"),
-    COMMENT("C","评论");
+    COMMENT("C","评论"),
+    GROUP("G","群组"),
+    GROUP_COMMENT("GC","群组评论");
     private String prefix;
     private String type;
     public String getPrefix() {

@@ -38,6 +38,12 @@ public class StringUtil {
         // 获取图片存放的完整路径
         return path + "/src/main/resources/static/post/cover/";
     }
+    public static String getGroupAvatarPath() {
+        // 获取项目根目录
+        String path = System.getProperty("user.dir");
+        // 获取图片存放的完整路径
+        return path + "/src/main/resources/static/group/avatar/";
+    }
     public static String getFeedBackPath() {
         // 获取项目根目录
         String path = System.getProperty("user.dir");

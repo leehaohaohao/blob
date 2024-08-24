@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.GroupCommentMapper">
+    <resultMap id="base_result_map" type="com.lihao.entity.po.GroupComment">
+        <id property="id" column="id"/>
+        <result property="groupId" column="group_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="content" column="content"/>
+        <result property="time" column="time"/>
+    </resultMap>
+    <sql id="base_column_list">
+        id,group_id,user_id,content,time
+    </sql>
+    <sql id="base_query_condition">
+        <where>
+            <if test="query.id!=null and query.id!=''">
+                and id=#{query.id}
+            </if>
+            <if test="query.groupId!=null and query.groupId!=''">
+                AND group_id=#{query.groupId}
+            </if>
+            <if test="query.userId!=null and query.userId!=''">
+                AND user_id=#{query.userId}
+            </if>
+        </where>
+    </sql>
+    <select id="selectByGroupId" resultMap="base_result_map">
+        select <include refid="base_column_list"/>
+        from group <include refid="base_query_condition"/>
+        <if test="query.orderBy!=null">
+            order by ${query.orderBy}
+        </if>
+        <if test="query.page!=null">
+            limit #{query.page.left},#{query.page.pageSize}
+        </if>
+    </select>
+    <insert id="insert" parameterType="com.lihao.entity.po.GroupComment">
+        insert into group_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bean.id!=null and bean.id!=''">
+                id,
+            </if>
+            <if test="bean.groupId!=null and bean.groupId!=''">
+                group_id,
+            </if>
+            <if test="bean.userId!=null and bean.userId!=''">
+                user_id,
+            </if>
+            <if test="bean.content!=null and bean.content!=''">
+                content,
+            </if>
+            <if test="bean.time!=null">
+                time
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="bean.id!=null and bean.id!=''">
+                #{bean.id},
+            </if>
+            <if test="bean.groupId!=null and bean.groupId!=''">
+                #{bean.groupId},
+            </if>
+            <if test="bean.userId!=null and bean.userId!=''">
+                #{bean.userId},
+            </if>
+            <if test="bean.content!=null and bean.content!=''">
+                #{bean.content},
+            </if>
+            <if test="bean.time!=null">
+                #{bean.time}
+            </if>
+        </trim>
+    </insert>
+</mapper>
