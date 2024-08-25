@@ -1,6 +1,7 @@
 package com.lihao.netty;
 
 import com.lihao.config.AppConfig;
+import com.lihao.netty.handler.CustomWebSocketServerProtocolHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -29,12 +30,12 @@ public class NettyServer {
     @Resource
     private NettyHeart nettyHeart;
     @Resource
-    private CustomWebSocketServerHandler customWebSocketServerHandler;
+    private CustomWebSocketServerProtocolHandler customWebSocketServerProtocolHandler;
     private NioEventLoopGroup bossGroup = new NioEventLoopGroup();
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
     public void start() throws InterruptedException {
         ServerBootstrap bootstrap = new ServerBootstrap();
-        bootstrap.group(bossGroup,workerGroup)
+        /*bootstrap.group(bossGroup,workerGroup)
                 .channel(NioServerSocketChannel.class)
                 .childHandler(new ChannelInitializer<SocketChannel>() {
                     @Override
@@ -48,6 +49,21 @@ public class NettyServer {
                                 .addLast(customWebSocketServerHandler)
                                 .addLast(new WebSocketServerProtocolHandler("/ws"))
                                 .addLast(nettyHandler);
+                    }
+                });*/
+        bootstrap.group(bossGroup, workerGroup)
+                .channel(NioServerSocketChannel.class)
+                .childHandler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel socketChannel) throws Exception {
+                        ChannelPipeline pipeline = socketChannel.pipeline();
+                        pipeline.addLast(new HttpServerCodec())
+                                .addLast(new HttpObjectAggregator(64 * 1024))
+                                .addLast(new IdleStateHandler(appConfig.getWsHeart(), 0, 0, TimeUnit.SECONDS))
+                                .addLast(nettyHeart)
+                                .addLast(new ChunkedWriteHandler())
+                                .addLast(customWebSocketServerProtocolHandler);
+                                /*.addLast(nettyHandler);*/
                     }
                 });
         ChannelFuture future = bootstrap.bind(appConfig.getWsPort()).sync();
