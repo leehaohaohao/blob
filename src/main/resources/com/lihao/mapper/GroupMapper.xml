@@ -17,7 +17,7 @@
     <sql id="base_query_condition">
         <where>
             <if test="query.id!=null and query.id!=''">
-                id=#{query.id}
+                and id=#{query.id}
             </if>
             <if test="query.userId!=null and query.userId!=''">
                 and user_id=#{query.userId}
@@ -33,13 +33,13 @@
     <select id="select" resultMap="base_result_map">
         select
         <include refid="base_column_list"/>
-        from group_info
+        from `group`
         <include refid="base_query_condition"/>
     </select>
     <select id="selectList" resultMap="base_result_map">
         select
         <include refid="base_column_list"/>
-        from group_info
+        from `group`
         <include refid="base_query_condition"/>
         <if test="query.orderBy!=null">
             order by ${query.orderBy}
@@ -49,7 +49,7 @@
         </if>
     </select>
     <insert id="insert" parameterType="com.lihao.entity.po.Group">
-        insert into group
+        insert into `group`
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="bean.id!=null">
                 id,
@@ -86,7 +86,7 @@
         </trim>
     </insert>
     <update id="update">
-        update group_info
+        update `group`
         <set>
             <if test="bean.userId!=null">
                 user_id=#{bean.userId},

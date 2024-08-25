@@ -1,5 +1,6 @@
 package com.lihao.service.Impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
 import com.lihao.entity.dto.GroupCommentDto;
@@ -9,6 +10,7 @@ import com.lihao.entity.po.UserInfo;
 import com.lihao.entity.query.GroupCommentQuery;
 import com.lihao.entity.query.GroupQuery;
 import com.lihao.entity.query.UserQuery;
+import com.lihao.entity.vo.GroupCommentVo;
 import com.lihao.enums.GroupEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
@@ -59,7 +61,12 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public List<GroupCommentDto> selectGroupComment(GroupCommentQuery groupCommentQuery,String userId) {
+    public GroupCommentVo selectGroupComment(GroupCommentQuery groupCommentQuery, String userId) throws GlobalException {
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setId(groupCommentQuery.getGroupId());
+        Group group = groupMapper.select(groupQuery);
+        Optional.ofNullable(group)
+                        .orElseThrow(()->new GlobalException(ExceptionConstants.GROUP_NOT_EXIST));
         groupCommentQuery.setOrderBy("time desc");
         List<GroupComment> groupComments = groupCommentMapper.selectByGroupId(groupCommentQuery);
         //status为0说明是自己否则为他人
@@ -78,7 +85,10 @@ public class GroupServiceImpl implements GroupService {
                     return commentDto;
                 })
                 .toList();
-        return commentDtos;
+        GroupCommentVo groupCommentVo = new GroupCommentVo();
+        groupCommentVo.setGroupCommentDtos(commentDtos);
+        groupCommentVo.setOwnerId(group.getUserId());
+        return groupCommentVo;
     }
 
     @Override
@@ -95,5 +105,24 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public void add2Group(String userId, String groupId) {
         context.addGroupContext(groupId,userId);
+    }
+
+    @Override
+    public void chat(GroupComment groupComment) throws GlobalException, JsonProcessingException {
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setId(groupComment.getGroupId());
+        Group group = groupMapper.select(groupQuery);
+        //通过netty广播消息
+        GroupCommentDto commentDto = new GroupCommentDto();
+        BeanUtils.copyProperties(groupComment,commentDto);
+        UserInfo userInfo = userInfoMapper.selectByUserId(groupComment.getUserId());
+        commentDto.setName(userInfo.getName());
+        commentDto.setAvatar(userInfo.getPhoto());
+        commentDto.setOwnerId(group.getUserId());
+        context.sendMessage(commentDto);
+        //向数据库插入聊天消息
+        if(!groupCommentMapper.insert(groupComment).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
+            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
+        }
     }
 }

@@ -9,4 +9,6 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
     @Value("${ws.port}")
     private Integer wsPort;
+    @Value("${ws.heart}")
+    private Integer wsHeart;
 }

@@ -1,19 +1,23 @@
 package com.lihao.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lihao.annotation.Login;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.StringConstants;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.Group;
+import com.lihao.entity.po.GroupComment;
 import com.lihao.entity.po.Page;
 import com.lihao.entity.query.GroupCommentQuery;
 import com.lihao.entity.query.GroupQuery;
 import com.lihao.enums.GroupEnum;
 import com.lihao.enums.UidPrefixEnum;
 import com.lihao.exception.GlobalException;
+import com.lihao.netty.ChannelContext;
 import com.lihao.service.GroupService;
 import com.lihao.util.*;
 import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,9 +30,12 @@ import java.util.Date;
  */
 @RestController
 @RequestMapping("/group")
+@CrossOrigin
 public class GroupController extends BaseController {
     @Resource
     private GroupService groupServiceImpl;
+    @Resource
+    private ChannelContext context;
     /**
      * 创建群组
      * @param file
@@ -133,19 +140,20 @@ public class GroupController extends BaseController {
     @PostMapping("/add")
     @Login
     public ResponsePack add2Group(String groupId) throws GlobalException {
-
+        context.addGroupContext(groupId,StringUtil.getUserId());
         return getSuccessResponsePack(null);
     }
 
     /**
      * 移除群组中某位在线的用户
-     * @param userId
+     * @param otherId
      * @return
      * @throws GlobalException
      */
     @PostMapping("/remove")
     @Login
-    public ResponsePack removeFromGroup(String userId) throws GlobalException {
+    public ResponsePack removeFromGroup(String otherId) throws GlobalException {
+        context.removeUserFromGroup(StringUtil.getUserId(),otherId);
         return getSuccessResponsePack(null);
     }
 
@@ -158,6 +166,26 @@ public class GroupController extends BaseController {
     @PostMapping("/delete")
     @Login
     public ResponsePack deleteGroup(String groupId) throws GlobalException {
+        return getSuccessResponsePack(null);
+    }
+
+    /**
+     * 群组发消息聊天
+     * @param groupId 群id
+     * @param content 消息内容
+     * @return
+     * @throws GlobalException
+     */
+    @PostMapping("/chat")
+    @Login
+    public ResponsePack chat(String groupId,String content) throws GlobalException, JsonProcessingException {
+        GroupComment groupComment = new GroupComment();
+        groupComment.setId(StringUtil.getId(UidPrefixEnum.GROUP_COMMENT.getPrefix()));
+        groupComment.setTime(new Date());
+        groupComment.setContent(content);
+        groupComment.setGroupId(groupId);
+        groupComment.setUserId(StringUtil.getUserId());
+        groupServiceImpl.chat(groupComment);
         return getSuccessResponsePack(null);
     }
 }

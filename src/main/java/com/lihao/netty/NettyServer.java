@@ -28,6 +28,8 @@ public class NettyServer {
     private NettyHandler nettyHandler;
     @Resource
     private NettyHeart nettyHeart;
+    @Resource
+    private CustomWebSocketServerHandler customWebSocketServerHandler;
     private NioEventLoopGroup bossGroup = new NioEventLoopGroup();
     private NioEventLoopGroup workerGroup = new NioEventLoopGroup();
     public void start() throws InterruptedException {
@@ -40,9 +42,10 @@ public class NettyServer {
                         ChannelPipeline pipeline = socketChannel.pipeline();
                         pipeline.addLast(new HttpServerCodec())
                                 .addLast(new HttpObjectAggregator(64 * 1024))
-                                .addLast(new IdleStateHandler(6,0,0, TimeUnit.SECONDS))
+                                .addLast(new IdleStateHandler(appConfig.getWsHeart(),0,0, TimeUnit.SECONDS))
                                 .addLast(nettyHeart)
                                 .addLast(new ChunkedWriteHandler())
+                                .addLast(customWebSocketServerHandler)
                                 .addLast(new WebSocketServerProtocolHandler("/ws"))
                                 .addLast(nettyHandler);
                     }

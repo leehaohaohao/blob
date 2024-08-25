@@ -47,35 +47,13 @@
         <div id="left">
             <div id="info">
                 <div id="groupName">
-                    不挂科
+                    暂无群聊
                 </div>
                 <div id="groupId">
-                    GID: 123456789
+                    GID: 空
                 </div>
             </div>
             <div id="chatContent">
-                <div class="messageContainer otherContent">
-                    <img class="avatarChat" src="http://121.40.154.188:8080/image/defAva.png" alt="头像"/>
-                    <div class="message">
-                        <div class="messageName otherName">
-                            张三
-                        </div>
-                        <div class="messageContent">
-                            你好，我是张三！
-                        </div>
-                    </div>
-                </div>
-                <div class="messageContainer myContent">
-                    <div class="message">
-                        <div class="messageName myName">
-                            李四
-                        </div>
-                        <div class="messageContent">
-                            你好，我是李四！
-                        </div>
-                    </div>
-                    <img class="avatarChat" src="http://121.40.154.188:8080/image/defAva.png" alt="头像"/>
-                </div>
             </div>
             <div id="input">
                 <input type="text" id="messageInput" placeholder="输入消息..." />
@@ -88,36 +66,41 @@
                 <button id="searchButton">搜索</button>
             </div>
             <div id="groupList">
-                <div class="group active" onclick="setActiveGroup(this)">
-                    <img class="groupAvatar" src="http://121.40.154.188:8080/image/defAva.png" alt="群组头像"/>
-                    <div class="groupInfo">
-                        <div class="groupName">不挂科</div>
-                        <div class="groupID">GID: 123456789</div>
-                    </div>
-                </div>
-                <div class="group" onclick="setActiveGroup(this)">
-                    <img class="groupAvatar" src="http://121.40.154.188:8080/image/defAva.png" alt="群组头像"/>
-                    <div class="groupInfo">
-                        <div class="groupName">不挂科</div>
-                        <div class="groupID">GID: 123456789</div>
-                    </div>
-                </div>
             </div>
             <span class="text">我的群组</span>
             <div class="partition"></div>
             <div id="myGroup">
-
-                <div class="group" onclick="setActiveGroup(this)">
-                    <img class="groupAvatar" src="http://121.40.154.188:8080/image/defAva.png" alt="群组头像"/>
-                    <div class="groupInfo">
-                        <div class="groupName">不挂科</div>
-                        <div class="groupID">GID: 123456789</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
+<div id="createGroupModal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h2>创建群组</h2>
+        <form id="createGroupForm">
+            <div class="input-group">
+                <label for="name">群组名称:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="avatar">群组封面:</label>
+                <div class="custom-file-upload">
+                    <label for="avatar">选择图片</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+            </div>
+            <div class="input-group">
+                <img id="preview" src="http://localhost:9090/blob/img/group.png" alt="预览图片" class="preview-image">
+            </div>
+            <button type="submit">创建</button>
+        </form>
+    </div>
+</div>
+
+
+
 </body>
 <script src="../JS/chat.js"></script>
+<script src="../JS/webSocket.js"></script>
 </html>

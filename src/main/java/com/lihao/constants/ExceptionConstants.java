@@ -19,4 +19,5 @@ public class ExceptionConstants {
     public final static String EMAIL_CODE_FAULT = "邮箱验证码错误！";
     public final static String PARENT_COMMENT_DELETED = "该评论已经被删除！";
     public static final String GROUP_EXIST = "你已经创建过群组了！每个人只能创建一次";
+    public static final String GROUP_NOT_EXIST = "群组不存在或已经被删除！";
 }

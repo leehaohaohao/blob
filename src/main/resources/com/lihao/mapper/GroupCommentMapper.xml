@@ -28,7 +28,7 @@
     </sql>
     <select id="selectByGroupId" resultMap="base_result_map">
         select <include refid="base_column_list"/>
-        from group <include refid="base_query_condition"/>
+        from group_comment <include refid="base_query_condition"/>
         <if test="query.orderBy!=null">
             order by ${query.orderBy}
         </if>

@@ -101,7 +101,7 @@
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 25px;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: linear-gradient(135deg, #c3e9fb 0%, #a1c4fd 100%);
     word-wrap: break-word; /* 确保长单词换行 */
 }
 
@@ -113,7 +113,7 @@
     margin-top: 10px;
     margin-left: auto; /* 确保消息靠右显示 */
     border-radius: 25px;
-    background-image: linear-gradient(135deg, #c3e9fb 0%, #a1c4fd 100%); /* 区分自己发送的消息 */
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 .avatarChat {
@@ -139,8 +139,20 @@
 
 .otherName {
     align-self: flex-start; /* 确保其他用户的名字靠左显示 */
+    display: flex;
 }
-
+.remove{
+    margin-left: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.remove:hover{
+    background-color: #45a049;
+}
 .myName {
     align-self: flex-end; /* 确保自己的名字靠右显示 */
 }
@@ -268,3 +280,132 @@
 #myGroup{
     width: 100%;
 }
+#create{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px 15px 15px 15px; /* 右侧圆角 */
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+#create:hover{
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+/* 模态窗口背景 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* 模态窗口内容 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;  /* 添加圆角 */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  /* 添加阴影 */
+}
+
+/* 输入组 */
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    margin-right: 10px;
+}
+
+/* 自定义文件上传 */
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#avatar {
+    display: none;  /* 隐藏原生的文件选择按钮 */
+}
+
+.custom-file-upload label {
+    padding: 10px 24px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.custom-file-upload label:hover {
+    background-color: #45a049;
+}
+
+/* 关闭按钮 */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 表单样式 */
+#createGroupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#createGroupForm label {
+    font-size: 18px;
+    color: #333;
+}
+
+#createGroupForm input[type="text"],
+#createGroupForm button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#createGroupForm button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#createGroupForm button:hover {
+    background-color: #45a049;
+}
+
+/* 预览图片样式 */
+.preview-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;  /* 圆形图片 */
+    object-fit: cover;
+}
+
+
