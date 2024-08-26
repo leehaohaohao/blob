@@ -15,6 +15,7 @@ import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import jakarta.annotation.PreDestroy;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,21 +32,34 @@ public class ChannelContext {
     public static final ConcurrentHashMap<String, Channel> userChannelMap = new ConcurrentHashMap<>();
     public static final ConcurrentHashMap<String, ChannelGroup> groupChannelMap = new ConcurrentHashMap<>();
     //添加用户上下文信息
-    public void addUserContext(String userId,Channel channel){
+    @PreDestroy
+    public void clear(){
+        userChannelMap.clear();
+        groupChannelMap.clear();
+        logger.info("清除人员、群组信息");
+    }
+    public void addUserContext(String userId, Channel channel) {
+        // 获取Channel的唯一ID
         String channelId = channel.id().toString();
-        AttributeKey attributeKey = null;
-        if(!AttributeKey.exists(channelId)){
+        AttributeKey<String> attributeKey = null;
+        // 检查是否已经存在该Channel的AttributeKey
+        if (!AttributeKey.exists(channelId)) {
             attributeKey = AttributeKey.newInstance(channelId);
-        }else{
+        } else {
             attributeKey = AttributeKey.valueOf(channelId);
         }
+        // 将userId设置为Channel的属性
         channel.attr(attributeKey).set(userId);
-        if(userChannelMap.containsKey(userId)){
-            userChannelMap.replace(userId,channel);
-        }else{
-            userChannelMap.put(userId,channel);
+        // 检查userChannelMap中是否已经存在该用户的Channel
+        if (userChannelMap.containsKey(userId)) {
+            Channel existingChannel = userChannelMap.get(userId);
+            existingChannel.attr(attributeKey).set(userId);
+        } else {
+            // 如果不存在，添加新的用户-Channel映射
+            userChannelMap.put(userId, channel);
         }
     }
+
     //从channel中取出用户id
     public String getUserId(Channel channel){
         Attribute<String> attribute = channel.attr(AttributeKey.valueOf(channel.id().toString()));
@@ -54,7 +68,7 @@ public class ChannelContext {
     //将用户添加到组内
     public void addGroupContext(String groupId,String userId){
         ChannelGroup newGroup = groupChannelMap.get(groupId);
-        if(newGroup == null){
+        if(newGroup == null || newGroup.isEmpty()){
             newGroup = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
             groupChannelMap.put(groupId,newGroup);
         }
@@ -70,7 +84,16 @@ public class ChannelContext {
             }
         }
         //将新用户添加到群组中
-        newGroup.add(channel);
+        if (newGroup.add(channel)) {
+            logger.info("用户{}加入群组{}", userId, groupId);
+        } else {
+            if (newGroup.contains(channel)) {
+                logger.info("用户{}已经在群组{}中", userId, groupId);
+            } else {
+                logger.warn("用户{}未能加入群组{}，原因未知", userId, groupId);
+            }
+        }
+
     }
     //移除用户上下文
     public void removeUserContext(Channel channel){
@@ -78,18 +101,24 @@ public class ChannelContext {
         String userId = attribute.get();
         if(!Tools.isBlank(userId)){
             if(userChannelMap.containsKey(userId)){
+                logger.info("已经将用户{}移除！",userId);
                 userChannelMap.remove(userId);
                 //更新用户下线时间
                 UserInfo userInfo = new UserInfo();
                 userInfo.setLastOffTime(new Date());
                 userInfoMapper.updateByUserId(userInfo,userId);
-
             }
+        }
+        // 关闭用户的 Channel
+        if (channel.isActive()) {
+            channel.close();
+            logger.info("用户{}的Channel已关闭", userId);
         }
     }
     //用户下线从群组中移除他的信息，要遍历群组移除所有组里他的信息
     public void removeUserFromSomeGroup(Channel channel){
         for(ChannelGroup channels:groupChannelMap.values()){
+            logger.info("已经将用户从组内移除！");
             channels.remove(channel);
         }
     }

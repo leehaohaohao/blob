@@ -1,8 +1,9 @@
-package com.lihao.netty;
+package com.lihao.netty.handler;
 
 import com.lihao.config.JwtProperty;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.exception.GlobalException;
+import com.lihao.netty.ChannelContext;
 import com.lihao.util.JwtUtil;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;

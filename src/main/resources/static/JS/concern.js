@@ -9,7 +9,7 @@ let pageNumConcern = 1;
 let pageNumFollower = 1;
 let pageSize = 16;
 let authorization = localStorage.getItem('authorization');
-window.onload = async function () {
+window.addEventListener('load', async function() {
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -53,8 +53,8 @@ window.onload = async function () {
                                 alert(res.message);
                             }
                         }).catch(error => {
-                            console.error(error);
-                        })
+                        console.error(error);
+                    })
                 } else {
                     nameList[1].innerHTML = "用户名：" + user.name;
                     uidList[1].innerHTML = "UID:" + user.userId;
@@ -67,14 +67,14 @@ window.onload = async function () {
                     document.getElementsByClassName('avatar')[0].src = user.photo;
                 }
                 var myPostsButton = document.querySelector('.tablink');
-                openPage('concernList',myPostsButton,0,getUserIdFromUrl());
+                openPage('concernList', myPostsButton, 0, getUserIdFromUrl());
             } else {
                 alert(data.message);
             }
         }).catch(error => {
-            console.error('Error:', error);
-        });
-}
+        console.error('Error:', error);
+    });
+});
 async function getConcernFollowerInfo(status, otherId, pageNum) {
     try {
         var jsonData = {
@@ -105,7 +105,6 @@ async function getConcernFollowerInfo(status, otherId, pageNum) {
     }
 }
 function showInfo(res,id) {
-    var parent = document.getElementById(id);
     if (res.length == 0) {
         showEmptyInfo(id);
     } else {
@@ -114,62 +113,31 @@ function showInfo(res,id) {
             var user = item.userInfoDto;
             var status = item.status;
 
-            var info_box_div = document.createElement('div');
-            info_box_div.className='info_box';
-            var img = document.createElement('img');
-            img.src = user.photo;
-            img.className = 'info_avatar';
-
-            var name_id_div = document.createElement('div');
-            name_id_div.className='name_id';
-
-            var name_div = document.createElement('div');
-            name_div.className='username';
-            var nameP = document.createElement('p');
-            nameP.innerText="用户名:"+user.name;
-            name_div.appendChild(nameP);
-            
-            var user_id_div = document.createElement('div');
-            user_id_div.className='userid';
-            var idP = document.createElement('p');
-            idP.innerText="UID:"+user.userId;
-            user_id_div.appendChild(idP);
-
-            name_id_div.appendChild(name_div);
-            name_id_div.appendChild(user_id_div);
-            //添加点击跳转到个人中心
-            name_id_div.onclick=function (){
-                window.location.href = "center.html?userId="+user.userId;
-            }
-            var num_info_div = document.createElement('div');
-            num_info_div.className='num_info';
-
-            var follower_div = document.createElement('div');
-            follower_div.className="follower";
-            var followerP = document.createElement('p');
-            followerP.innerText="关注数:"+user.concern;
-            follower_div.appendChild(followerP);
-
-            var fan_div = document.createElement('div');
-            fan_div.className = "fan";
-            var fanP = document.createElement('p');
-            fanP.innerText="粉丝数:"+user.followers;
-            fan_div.appendChild(fanP);
-
-            num_info_div.appendChild(follower_div);
-            num_info_div.appendChild(fan_div);
-
-            var concern_box_div = document.createElement('div');
-            concern_box_div.className = "concern-box";
-            console.log("test==========="+Status(status,user.userId));
-            console.log("test==========="+status);
-            concern_box_div.innerHTML=Status(status,user.userId);
-            
-            info_box_div.appendChild(img);
-            info_box_div.appendChild(name_id_div);
-            info_box_div.appendChild(num_info_div);
-            info_box_div.appendChild(concern_box_div);
-            parent.appendChild(info_box_div);
+            var infoBoxHTML = `
+        <div class="info_box">
+            <img src="${user.photo}" class="info_avatar" alt="头像"/>
+            <div class="name_id" onclick="window.location.href='center.html?userId=${user.userId}'">
+                <div class="username">
+                    <p>用户名: ${user.name}</p>
+                </div>
+                <div class="userid">
+                    <p>UID: ${user.userId}</p>
+                </div>
+            </div>
+            <div class="num_info">
+                <div class="follower">
+                    <p>关注数: ${user.concern}</p>
+                </div>
+                <div class="fan">
+                    <p>粉丝数: ${user.followers}</p>
+                </div>
+            </div>
+            <div class="concern-box">
+                ${Status(status, user.userId)}
+            </div>
+        </div>
+    `;
+            parent.insertAdjacentHTML('beforeend', infoBoxHTML);
         });
     }
 }

@@ -188,4 +188,15 @@ public class GroupController extends BaseController {
         groupServiceImpl.chat(groupComment);
         return getSuccessResponsePack(null);
     }
+
+    /**
+     * 用户退出群组
+     * @return
+     */
+    @PostMapping("/exit")
+    @Login
+    public ResponsePack exit() throws GlobalException {
+        groupServiceImpl.exit();
+        return getSuccessResponsePack(null);
+    }
 }

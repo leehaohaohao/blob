@@ -6,6 +6,7 @@ let groupMessage = baseURL + 'group/select/comment';
 let sendGroupMessage = baseURL + 'group/chat';
 let createGroup = baseURL + 'group/create';
 let addGroup = baseURL + 'group/add';
+let exitGroup = baseURL+'group/exit';
 let user = null;
 let authorization = localStorage.getItem('authorization');
 let post = 'post';
@@ -16,7 +17,7 @@ let activeGroupId = null;
 let username = null;
 let avatar = null;
 let userId = null;
-window.onload = async function () {
+window.addEventListener('load', async function() {
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -32,16 +33,18 @@ window.onload = async function () {
                 var uidList = document.getElementsByClassName('uid');
                 uidList[0].innerHTML = "UID:" + user.userId;
                 userId = user.userId;
+                localStorage.setItem('userId', userId);
                 var avatarList = document.getElementsByClassName('avatar');
                 avatarList[0].src = user.photo;
                 avatar = user.photo;
             }
-        }).catch(error=>{
-        console.error(error)
-        });
+        }).catch(error => {
+        console.error(error);
+    });
     showMyGroup();
     showGroupList();
-}
+});
+
 async function setActiveGroup(element) {
     // 移除所有群组的active状态
     var groups = document.querySelectorAll('.group');
@@ -91,8 +94,8 @@ async function request(url, method, formData) {
 //展示我的群组
 function showMyGroup(){
     request(myGroup,post,null)
-        .then(data=>{
-            if(data.success){
+        .then(async data => {
+            if (data.success) {
                 var myGroup = document.getElementById("myGroup");
                 myGroup.innerHTML = "";
                 if (data.data) {
@@ -101,7 +104,7 @@ function showMyGroup(){
                     group.className = "group active";
                     group.setAttribute('data-group-id', res.id); // 存储 groupId
                     group.setAttribute('data-group-name', res.name);
-                    group.addEventListener('click', function() {
+                    group.addEventListener('click', function () {
                         setActiveGroup(this);
                     });
                     group.innerHTML = `
@@ -112,21 +115,24 @@ function showMyGroup(){
                         </div>
                     `;
                     myGroup.appendChild(group);
-                    showHistoryMessage(res.id);
+                    var success = await add2Group(res.id);
+                    if(success){
+                        showHistoryMessage(res.id);
+                    }
                     activeGroupId = res.id;
                 } else {
                     myGroup.innerHTML = "<button id='create'>创建群组</button>";
                     document.getElementById('chatContent').innerHTML = "";
-                    document.getElementById('messageInput').type="hidden";
-                    document.getElementById('sendButton').style.display="none";
+                    document.getElementById('messageInput').type = "hidden";
+                    document.getElementById('sendButton').style.display = "none";
                     // 绑定创建群组按钮的点击事件
                     var btn = document.getElementById("create");
-                    btn.onclick = function() {
+                    btn.onclick = function () {
                         var modal = document.getElementById("createGroupModal");
                         modal.style.display = "block";
                     }
                 }
-            }else{
+            } else {
                 alert(data.message);
             }
         }).catch(err=>{
@@ -340,6 +346,15 @@ async function add2Group(groupId) {
         return false;
     }
 }
+// 页面卸载时发送请求移除用户的 channel
+window.addEventListener('beforeunload', function() {
+    // 发送异步请求到后端移除用户的 channel
+    request(exitGroup, post, null)
+        .catch(error => {
+            console.error(error);
+        });
+});
+
 
 
 

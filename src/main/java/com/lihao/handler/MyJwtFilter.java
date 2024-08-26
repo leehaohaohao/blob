@@ -11,7 +11,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 @Component
-@Slf4j(topic = "用户id已删除！用户id已删除！")
+@Slf4j
 public class MyJwtFilter extends OncePerRequestFilter {
 
     @Override

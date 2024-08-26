@@ -1,19 +1,19 @@
 let baseURL = 'http://localhost:9090/blob/';
-let login_ = baseURL+'login';
-let register_ = baseURL+'register';
-let emailCode = baseURL+'email/code';
+let login_ = baseURL + 'login';
+let register_ = baseURL + 'register';
+let emailCode = baseURL + 'email/code';
 var countdown = 60;
 var timer = null;
-window.onload = function() {
+window.addEventListener('load', function () {
     var loginForm = document.getElementById('loginForm');
     var registerForm = document.getElementById('registerForm');
-
     // 默认显示登录表单，隐藏注册表单
     loginForm.style.opacity = '1';
     loginForm.style.display = 'block';
     registerForm.style.opacity = '0';
     registerForm.style.display = 'none';
-}
+})
+
 
 function switchForm(event) {
     // 阻止按钮的默认提交行为
@@ -24,22 +24,26 @@ function switchForm(event) {
 
     if (getComputedStyle(loginForm).opacity == '1') {
         loginForm.style.opacity = '0';
-        setTimeout(function(){
+        setTimeout(function () {
             loginForm.style.display = 'none';
             registerForm.style.display = 'block';
-            setTimeout(function(){ registerForm.style.opacity = '1'; }, 50);
+            setTimeout(function () {
+                registerForm.style.opacity = '1';
+            }, 50);
         }, 500);
     } else {
         registerForm.style.opacity = '0';
-        setTimeout(function(){
+        setTimeout(function () {
             registerForm.style.display = 'none';
             loginForm.style.display = 'block';
-            setTimeout(function(){ loginForm.style.opacity = '1'; }, 50);
+            setTimeout(function () {
+                loginForm.style.opacity = '1';
+            }, 50);
         }, 500);
     }
 }
 
-function login(event){
+function login(event) {
     event.preventDefault();
     var email = document.querySelector('#loginForm input[name="email"]').value;
     var password = document.querySelector('#loginForm input[name="password"]').value;
@@ -51,10 +55,10 @@ function login(event){
         body: params
     }).then(response => response.json())
         .then(data => {
-            if(data.success){
+            if (data.success) {
                 localStorage.setItem('authorization', data.data);
-                window.location.href='home.html';
-            }else{
+                window.location.href = 'home.html';
+            } else {
                 alert(data.message);
             }
             // 处理服务器返回的数据
@@ -62,6 +66,7 @@ function login(event){
         console.error('Error:', error);
     });
 }
+
 function register(event) {
     event.preventDefault();
     var email = document.querySelector('#registerForm input[name="email"]').value;
@@ -71,7 +76,7 @@ function register(event) {
     var params = new URLSearchParams();
     params.append('email', email);
     params.append('password', password);
-    params.append('code',code)
+    params.append('code', code)
 
     fetch(register_, {
         method: 'POST',
@@ -81,24 +86,24 @@ function register(event) {
         body: params
     }).then(response => response.json())
         .then(data => {
-            if(data.success){
+            if (data.success) {
                 alert(data.data);
-                window.location.href='loginPage.html';
-            }else{
+                window.location.href = 'loginPage.html';
+            } else {
                 alert(data.message);
             }
         }).catch(error => {
         console.error('Error:', error);
     });
 }
-function sentCode(event)
-{
+
+function sentCode(event) {
     event.preventDefault();
     var email = document.querySelector('#registerForm input[name="email"]').value;
-    if (email==''){
+    if (email == '') {
         alert('请输入邮箱！');
         return
-    }else{
+    } else {
         var params = new URLSearchParams();
         params.append('email', email);
         fetch(emailCode, {
@@ -106,11 +111,11 @@ function sentCode(event)
             body: params
         }).then(response => response.json())
             .then(res => {
-                if(res.success){
+                if (res.success) {
                     // 禁用按钮并开始倒计时
                     var btn = document.querySelector('#registerForm #submit');
                     btn.disabled = true;
-                    timer = setInterval(function() {
+                    timer = setInterval(function () {
                         countdown--;
                         btn.innerText = countdown + '秒后重新获取';
                         if (countdown <= 0) {

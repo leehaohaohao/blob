@@ -5,24 +5,24 @@ let hotPost = baseURL + 'back/hot/post';
 let hotTag = baseURL + 'back/hot/tag';
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
 let authorization = localStorage.getItem('authorization');
-window.onload = function() {
+window.addEventListener('load', function () {
     fetch(numUrl, {
         method: 'get',
         headers: {
             'Authorization': authorization
         }
     }).then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById("user_num").innerText = data.data.userNum;
-            document.getElementById("uuser_num").innerText = data.data.uuserNum;
-            document.getElementById("post_num").innerText = data.data.postNum;
-            document.getElementById("upost_num").innerText = data.data.upostNum;
-            document.getElementById("tag_num").innerText = data.data.tagNum;
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        .then(data => {
+            if (data.success) {
+                document.getElementById("user_num").innerText = data.data.userNum;
+                document.getElementById("uuser_num").innerText = data.data.uuserNum;
+                document.getElementById("post_num").innerText = data.data.postNum;
+                document.getElementById("upost_num").innerText = data.data.upostNum;
+                document.getElementById("tag_num").innerText = data.data.tagNum;
+            } else {
+                handleAlert(data.message);
+            }
+        }).catch(error => {
         console.error(error);
     });
 
@@ -32,13 +32,13 @@ window.onload = function() {
             'Authorization': authorization
         }
     }).then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('username').innerText = data.data.name;
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        .then(data => {
+            if (data.success) {
+                document.getElementById('username').innerText = data.data.name;
+            } else {
+                handleAlert(data.message);
+            }
+        }).catch(error => {
         console.error(error);
     });
 
@@ -53,23 +53,23 @@ window.onload = function() {
             'Authorization': authorization
         }
     }).then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            var list = data.data;
-            for (var i = 0; i < list.length; i++) {
-                var container = document.getElementById("r-container");
-                var post = document.createElement("div");
-                post.className = "post";
-                var a = document.createElement("a");
-                a.href = "postDetail.html?postId=" + list[i].postId;
-                a.innerText = list[i].title;
-                post.appendChild(a);
-                container.appendChild(post);
+        .then(data => {
+            if (data.success) {
+                var list = data.data;
+                for (var i = 0; i < list.length; i++) {
+                    var container = document.getElementById("r-container");
+                    var post = document.createElement("div");
+                    post.className = "post";
+                    var a = document.createElement("a");
+                    a.href = "postDetail.html?postId=" + list[i].postId;
+                    a.innerText = list[i].title;
+                    post.appendChild(a);
+                    container.appendChild(post);
+                }
+            } else {
+                handleAlert(data.message);
             }
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        }).catch(error => {
         console.error(error);
     });
 
@@ -80,26 +80,26 @@ window.onload = function() {
             'Authorization': authorization
         }
     }).then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            var list = data.data;
-            for (var i = 0; i < list.length; i++) {
-                var container = document.getElementById("l-container");
-                var text = document.createElement("div");
-                text.className = "text";
-                var a = document.createElement("a");
-                a.href = "multiPersonSquare.html?tag=" + list[i].tag;
-                a.innerText = list[i].tag;
-                text.appendChild(a);
-                container.appendChild(text);
+        .then(data => {
+            if (data.success) {
+                var list = data.data;
+                for (var i = 0; i < list.length; i++) {
+                    var container = document.getElementById("l-container");
+                    var text = document.createElement("div");
+                    text.className = "text";
+                    var a = document.createElement("a");
+                    a.href = "multiPersonSquare.html?tag=" + list[i].tag;
+                    a.innerText = list[i].tag;
+                    text.appendChild(a);
+                    container.appendChild(text);
+                }
+            } else {
+                handleAlert(data.message);
             }
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        }).catch(error => {
         console.error(error);
     });
-}
+});
 
 function handleAlert(message) {
     if (!alertShown) {

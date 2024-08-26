@@ -7,13 +7,13 @@ let updateTag = baseURL + 'user/updateTag';
 let myCoverPost = baseURL + 'forum/user/unapproval/post';
 let likeCollectCoverPost = baseURL + 'forum/my/like/collect/post';
 let authorization = localStorage.getItem('authorization');
-window.onload = function () {
+window.addEventListener('load', function (){
     var noteData = new FormData();
-    noteData.append("noteStatus",0);
+    noteData.append("noteStatus", 0);
     // 获取公告
     fetch(noteSelect, {
         method: 'post',
-        body:noteData,
+        body: noteData,
         headers: {
             'Authorization': authorization
         }
@@ -59,8 +59,8 @@ window.onload = function () {
                 alert(data.message);
             }
         }).catch(error => {
-            console.error(error);
-        });
+        console.error(error);
+    });
     //获取用户信息
     fetch(userInfo, {
         method: 'get',
@@ -96,8 +96,8 @@ window.onload = function () {
                 //TODO 没有登陆不影响进入首页
             }
         }).catch(error => {
-            console.error('Error:', error);
-        });
+        console.error('Error:', error);
+    });
     document.getElementById('publish').addEventListener('click', function () {
         window.location.href = 'post.html';
     });
@@ -116,7 +116,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('MyCoverList');
-                coverList.innerHTML="";
+                coverList.innerHTML = "";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
@@ -139,8 +139,8 @@ window.onload = function () {
                 }
             }
         }).catch(error => {
-            console.error(error);
-        });
+        console.error(error);
+    });
     var likeData = new FormData();
     likeData.append("pageNum", 1);
     likeData.append("pageSize", 4);
@@ -156,7 +156,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('LikeCoverList');
-                coverList.innerHTML="";
+                coverList.innerHTML = "";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
@@ -179,8 +179,8 @@ window.onload = function () {
                 }
             }
         }).catch(error => {
-            console.error(error);
-        });
+        console.error(error);
+    });
     var collectData = new FormData();
     collectData.append("pageNum", 1);
     collectData.append("pageSize", 4);
@@ -196,7 +196,7 @@ window.onload = function () {
             if (data.success) {
                 var list = data.data;
                 var coverList = document.getElementById('CollectCoverList');
-                coverList.innerHTML="";
+                coverList.innerHTML = "";
                 for (var i = 0; i < list.length; i++) {
                     var cover = document.createElement('div');
                     cover.className = 'cover';
@@ -219,9 +219,9 @@ window.onload = function () {
                 }
             }
         }).catch(error => {
-            console.error(error);
-        });
-};
+        console.error(error);
+    });
+});
 document.getElementById('addTag').addEventListener('click', function (event) {
     // 显示弹出窗口
     document.getElementById('popup').style.display = 'flex';
@@ -291,8 +291,8 @@ document.getElementById('saveTags').addEventListener('click', function () {
                 alert(data.message);
             }
         }).catch(error => {
-            console.error('Error:', error);
-        });
+        console.error('Error:', error);
+    });
 
     // 隐藏弹出窗口
     document.getElementById('popup').style.display = 'none';
@@ -305,10 +305,12 @@ window.addEventListener('click', function (event) {
         popup.style.display = 'none';
     }
 });
+
 // 显示指定的公告
 function showAnnouncement(index) {
     document.getElementById('announcementContent').innerHTML = announcements[index].content;
 }
+
 // 点击 × 号或者公告框以外的区域关闭公告
 document.getElementById('closeModal').onclick = function () {
     document.getElementById('modal').style.display = 'none';

@@ -17,7 +17,7 @@ let isLoadingMyPosts = false;
 let isLoadingLikePosts = false;
 let isLoadingCollectPosts = false;
 let authorization = localStorage.getItem('authorization');
-window.onload = async function () {
+window.addEventListener('load',async function () {
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -45,21 +45,21 @@ window.onload = async function () {
                             'Authorization': authorization
                         }
                     }).then(response=>response.json())
-                    .then(res=>{
-                        if(res.success){
-                            var other = res.data.userInfoDto;
-                            nameList[1].innerHTML = "用户名：" + other.name;
-                            uidList[1].innerHTML = "UID:" + other.userId;
-                            document.getElementById('followers').innerText = "关注数:" + other.concern;
-                            document.getElementById('fans').innerText = "粉丝数:" + other.followers;
-                            document.getElementById('posts').innerText = "帖子数:" + other.post;
-                            document.getElementById('likes').innerText = "喜欢数:" + other.love;
-                            document.getElementById('collects').innerText = "收藏数:" + other.collect;
-                            document.getElementsByClassName('avatar')[0].src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
-                        }else{
-                            alert(res.message);
-                        }
-                    }).catch(error=>{
+                        .then(res=>{
+                            if(res.success){
+                                var other = res.data.userInfoDto;
+                                nameList[1].innerHTML = "用户名：" + other.name;
+                                uidList[1].innerHTML = "UID:" + other.userId;
+                                document.getElementById('followers').innerText = "关注数:" + other.concern;
+                                document.getElementById('fans').innerText = "粉丝数:" + other.followers;
+                                document.getElementById('posts').innerText = "帖子数:" + other.post;
+                                document.getElementById('likes').innerText = "喜欢数:" + other.love;
+                                document.getElementById('collects').innerText = "收藏数:" + other.collect;
+                                document.getElementsByClassName('avatar')[0].src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
+                            }else{
+                                alert(res.message);
+                            }
+                        }).catch(error=>{
                         console.error(error);
                     })
                 }else{
@@ -79,10 +79,10 @@ window.onload = async function () {
                 alert(data.message);
             }
         }).catch(error => {
-            console.error('Error:', error);
-        });
-        
-}
+        console.error('Error:', error);
+    });
+
+});
 window.addEventListener('scroll', async function() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         if (!isLoadingMyPosts && document.getElementById('MyPosts').style.display === 'block') {

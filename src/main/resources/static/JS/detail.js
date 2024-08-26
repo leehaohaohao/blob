@@ -4,20 +4,20 @@ let approvalDetail = baseURL + 'forum/id/approval/post';
 let approval = baseURL+'forum/approval/post';
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
 let authorization = localStorage.getItem('authorization');
-window.onload = function() {
+window.addEventListener('load', function() {
     fetch(userInfo, {
         method: 'get',
         headers: {
             'Authorization': authorization
         },
     }).then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('username').innerText = data.data.name;
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        .then(data => {
+            if (data.success) {
+                document.getElementById('username').innerText = data.data.name;
+            } else {
+                handleAlert(data.message);
+            }
+        }).catch(error => {
         console.error(error);
     });
 
@@ -27,7 +27,8 @@ window.onload = function() {
     if (postId) {
         fetchApprovalDetail(postId);
     }
-}
+});
+
 
 function handleAlert(message) {
     if (!alertShown) {

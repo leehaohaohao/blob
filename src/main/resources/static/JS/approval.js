@@ -6,7 +6,7 @@ let pageNum = 1;
 let pageSize = 8;
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
 let authorization = localStorage.getItem('authorization');
-window.onload = function() {
+window.addEventListener('load',function() {
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -23,7 +23,7 @@ window.onload = function() {
         console.error(error);
     });
     getArticles(pageNum, pageSize);
-}
+});
 
 function getArticles(pageNum, pageSize) {
     var formData = new FormData();

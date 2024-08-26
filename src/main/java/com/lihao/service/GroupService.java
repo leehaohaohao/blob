@@ -19,4 +19,5 @@ public interface GroupService {
     Group selectMyGroup(GroupQuery groupQuery);
     void add2Group(String userId,String groupId);
     void chat(GroupComment groupComment) throws GlobalException, JsonProcessingException;
+    void exit() throws GlobalException;
 }

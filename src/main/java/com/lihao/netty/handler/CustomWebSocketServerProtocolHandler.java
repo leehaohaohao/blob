@@ -4,8 +4,6 @@ import com.lihao.config.JwtProperty;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.exception.GlobalException;
 import com.lihao.netty.ChannelContext;
-import com.lihao.netty.CustomWebSocketServerHandler;
-import com.lihao.netty.NettyHandler;
 import com.lihao.util.JwtUtil;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -14,10 +12,8 @@ import io.netty.handler.codec.http.DefaultHttpHeaders;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.HttpHeaderNames;
 import io.netty.handler.codec.http.HttpHeaders;
-import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker;
 import io.netty.handler.codec.http.websocketx.WebSocketServerHandshakerFactory;
-import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +29,6 @@ public class CustomWebSocketServerProtocolHandler extends SimpleChannelInboundHa
     private JwtProperty jwtProperty;
     @Resource
     private ChannelContext context;
-    @Resource
-    private WebSocketFrameHandler webSocketFrameHandler;
     @Resource
     private NettyHandler nettyHandler;
 

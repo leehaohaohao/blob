@@ -7,7 +7,7 @@ var targetName = null;
 var pageLike = 0;
 var pageCollect = 0;
 let authorization = localStorage.getItem('authorization');
-window.onload = async function(){
+window.addEventListener('load',async function(){
     userOwn = await getUser();
     console.log(userOwn);
     document.getElementsByClassName('name')[0].innerHTML=userOwn.name;
@@ -21,7 +21,7 @@ window.onload = async function(){
     });
     await getPostByID(postID);
     await getComment(postID);
-}
+});
 async function request(url,mtd,FD){
     console.log(baseURL + url)
     const config={

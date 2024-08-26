@@ -7,7 +7,7 @@ let pageSize = 4;
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
 let authorization = localStorage.getItem('authorization');
 
-window.onload = function() {
+window.addEventListener('load', function() {
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -24,7 +24,8 @@ window.onload = function() {
         console.error(error);
     });
     getFeedback(pageNum, pageSize);
-}
+});
+
 
 function getFeedback(pageNum, pageSize) {
     var formData = new FormData();

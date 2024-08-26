@@ -8,7 +8,7 @@ project:
   folder: d:/IDEProject/blob/src/main/resources/static
 log:
   root:
-    level: debug
+    level: info
 mybatis:
   mapper-locations: classpath:com/lihao/mapper/*.xml
   type-aliases-package: com.lihao.entity
@@ -73,6 +73,6 @@ jwt:
   token: Authorization
 ws:
   port: 9091
-  heart: 32000
+  heart: 30
 
 

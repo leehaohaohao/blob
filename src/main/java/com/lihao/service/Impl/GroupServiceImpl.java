@@ -3,6 +3,7 @@ package com.lihao.service.Impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
+import com.lihao.constants.StringConstants;
 import com.lihao.entity.dto.GroupCommentDto;
 import com.lihao.entity.po.Group;
 import com.lihao.entity.po.GroupComment;
@@ -19,6 +20,7 @@ import com.lihao.mapper.GroupMapper;
 import com.lihao.mapper.UserInfoMapper;
 import com.lihao.netty.ChannelContext;
 import com.lihao.service.GroupService;
+import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -124,5 +126,11 @@ public class GroupServiceImpl implements GroupService {
         if(!groupCommentMapper.insert(groupComment).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
         }
+    }
+
+    @Override
+    public void exit() throws GlobalException {
+        String userId = StringUtil.getUserId();
+        context.removeUserFromSomeGroup(context.userChannelMap.get(userId));
     }
 }

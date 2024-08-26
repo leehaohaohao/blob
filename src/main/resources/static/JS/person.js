@@ -7,24 +7,24 @@ let pageSize = 8;
 let status = 0; // 默认状态为0
 let alertShown = false; // 全局变量，跟踪是否已经显示过提示框
 let authorization = localStorage.getItem('authorization');
-window.onload = function() {
+window.addEventListener('load', function (){
     fetch(userInfo, {
         method: 'get',
         headers: {
             'Authorization': authorization
         }
     }).then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            document.getElementById('username').innerText = data.data.name;
-        } else {
-            handleAlert(data.message);
-        }
-    }).catch(error => {
+        .then(data => {
+            if (data.success) {
+                document.getElementById('username').innerText = data.data.name;
+            } else {
+                handleAlert(data.message);
+            }
+        }).catch(error => {
         console.error(error);
     });
     getPerson(pageNum, pageSize, status);
-}
+});
 
 function getPerson(pageNum, pageSize, status) {
     var formData = new FormData();
