@@ -26,8 +26,7 @@ public class NettyHandler extends SimpleChannelInboundHandler<TextWebSocketFrame
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         String userId = context.getUserId(ctx.channel());
-        logger.info("用户{}:切换页面或者下线", userId);
-        context.updateUserLastTime(userId);
+        logger.info("用户{}离开交流室", userId);
         context.removeUserFromSomeGroup(ctx.channel());
         context.removeUserContext(ctx.channel());
         ctx.close();

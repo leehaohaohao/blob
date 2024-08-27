@@ -26,7 +26,7 @@ function connectWebSocket() {
                 <div class="message">
                     <div class="messageName otherName">            
                         ${mes.name}            
-                        ${mes.ownerId === wsUserId ? `<button class="remove" onclick="remove(${mes.userId})">踢出</button>` : ''}            
+                        ${mes.ownerId === wsUserId ? `<button class="remove" onclick="remove('${mes.userId}')">踢出</button>` : ''}            
                     </div>            
                     <div class="messageContent">            
                         ${mes.content}           
@@ -34,8 +34,8 @@ function connectWebSocket() {
                 </div>                                    
             `;
             chatContent.appendChild(message);
-            // 自动滚动到底部
-            chatContent.scrollTop = chatContent.scrollHeight;
+            // 判断是否滚动到底部
+            autoScrollToBottom(chatContent);
         }
     };
 
@@ -50,7 +50,14 @@ function connectWebSocket() {
         socket.close();
     };
 }
-
+function autoScrollToBottom(chatContent) {
+    const threshold = 0.05; // 5%
+    const distanceToBottom = chatContent.scrollHeight - chatContent.scrollTop - chatContent.clientHeight;
+    const isNearBottom = distanceToBottom / chatContent.scrollHeight <= threshold;
+    if (isNearBottom) {
+        chatContent.scrollTop = chatContent.scrollHeight;
+    }
+}
 function startHeartbeat() {
     setInterval(function() {
         if (socket.readyState === WebSocket.OPEN) {

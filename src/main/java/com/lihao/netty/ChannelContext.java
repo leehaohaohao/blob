@@ -3,11 +3,9 @@ package com.lihao.netty;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lihao.config.AppConfig;
+import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.GroupCommentDto;
-import com.lihao.entity.po.UserInfo;
-import com.lihao.entity.query.UserQuery;
-import com.lihao.mapper.UserInfoMapper;
+import com.lihao.exception.GlobalException;
 import com.lihao.util.Tools;
 import io.netty.channel.Channel;
 import io.netty.channel.group.ChannelGroup;
@@ -17,12 +15,10 @@ import io.netty.util.Attribute;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import jakarta.annotation.PreDestroy;
-import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 @Component
@@ -118,26 +114,25 @@ public class ChannelContext {
         }
     }
     //群主从组里移除组员
-    public void removeUserFromGroup(String userId,String otherId){
+    public void removeUserFromGroup(String groupId,String otherId){
         if(!Tools.isBlank(otherId)){
             //从群组移除其他用户
             if(!userChannelMap.containsKey(otherId)){
                 return;
             }
-            if(!groupChannelMap.containsKey(userId)){
+            if(!groupChannelMap.containsKey(groupId)){
                 return;
             }
             Channel channel = userChannelMap.get(otherId);
-            ChannelGroup group = groupChannelMap.get(userId);
+            ChannelGroup group = groupChannelMap.get(groupId);
             group.remove(channel);
         }
     }
-    public void sendMessage(GroupCommentDto commentDto) throws JsonProcessingException {
+    public void sendMessage(GroupCommentDto commentDto) throws JsonProcessingException, GlobalException {
         ChannelGroup group = groupChannelMap.get(commentDto.getGroupId());
         Channel user = userChannelMap.get(commentDto.getUserId());
         if(group == null || user == null){
-            //TODO 不插入数据库
-            return;
+            throw new GlobalException(ExceptionConstants.GROUP_NOT_EXIST);
         }
         for(Channel channel:group){
             if(channel!=user){

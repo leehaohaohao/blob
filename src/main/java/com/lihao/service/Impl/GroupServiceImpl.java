@@ -7,6 +7,7 @@ import com.lihao.constants.StringConstants;
 import com.lihao.entity.dto.GroupCommentDto;
 import com.lihao.entity.po.Group;
 import com.lihao.entity.po.GroupComment;
+import com.lihao.entity.po.GroupUser;
 import com.lihao.entity.po.UserInfo;
 import com.lihao.entity.query.GroupCommentQuery;
 import com.lihao.entity.query.GroupQuery;
@@ -17,6 +18,7 @@ import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
 import com.lihao.mapper.GroupCommentMapper;
 import com.lihao.mapper.GroupMapper;
+import com.lihao.mapper.GroupUserMapper;
 import com.lihao.mapper.UserInfoMapper;
 import com.lihao.netty.ChannelContext;
 import com.lihao.service.GroupService;
@@ -36,6 +38,8 @@ public class GroupServiceImpl implements GroupService {
     private GroupCommentMapper<GroupComment, GroupCommentQuery> groupCommentMapper;
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
+    @Resource
+    private GroupUserMapper groupUserMapper;
     @Resource
     private ChannelContext context;
     @Override
@@ -105,19 +109,37 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public void add2Group(String userId, String groupId) {
-        context.addGroupContext(groupId,userId);
+    public void add2Group(String userId, String groupId) throws GlobalException {
+        GroupUser groupUser = groupUserMapper.select(groupId,userId);
+        if(groupUser == null){
+            context.addGroupContext(groupId,userId);
+        }else{
+            throw new GlobalException(ExceptionConstants.GROUP_REJECT_USER);
+        }
     }
 
     @Override
     public void chat(GroupComment groupComment) throws GlobalException, JsonProcessingException {
+        //查询是否已经被踢出群组
+        GroupUser groupUser = groupUserMapper.select(groupComment.getGroupId(),groupComment.getUserId());
+        if(groupUser!=null){
+            throw new GlobalException(ExceptionConstants.GROUP_REMOVE_YOU);
+        }
         GroupQuery groupQuery = new GroupQuery();
         groupQuery.setId(groupComment.getGroupId());
         Group group = groupMapper.select(groupQuery);
+        //判断群组状态
+        if(group.getStatus().equals(GroupEnum.ABNORMAL.getStatus())){
+            throw new GlobalException(ExceptionConstants.GROUP_NOT_EXIST);
+        }
+        UserInfo userInfo = userInfoMapper.selectByUserId(groupComment.getUserId());
+        //判断用户状态
+        if(userInfo.getStatus().equals(UserStatusEnum.ABNORMAL.getStatus())){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
         //通过netty广播消息
         GroupCommentDto commentDto = new GroupCommentDto();
         BeanUtils.copyProperties(groupComment,commentDto);
-        UserInfo userInfo = userInfoMapper.selectByUserId(groupComment.getUserId());
         commentDto.setName(userInfo.getName());
         commentDto.setAvatar(userInfo.getPhoto());
         commentDto.setOwnerId(group.getUserId());
@@ -132,5 +154,30 @@ public class GroupServiceImpl implements GroupService {
     public void exit() throws GlobalException {
         String userId = StringUtil.getUserId();
         context.removeUserFromSomeGroup(context.userChannelMap.get(userId));
+    }
+
+    @Override
+    public void removeFromGroup(String groupId, String otherId,String userId) throws GlobalException {
+        //如果是移除自己 TODO 暂定无效参数，后续可以判定为解散群组
+        if(userId.equals(otherId)){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setUserId(userId);
+        Group group = groupMapper.select(groupQuery);
+        UserInfo userInfo = userInfoMapper.selectByUserId(otherId);
+        if( group == null
+                || !group.getId().equals(groupId)
+                ||group.getStatus().equals(GroupEnum.ABNORMAL.getStatus())
+                || userInfo == null
+                || userInfo.getStatus().equals(UserStatusEnum.ABNORMAL.getStatus())
+        ){
+            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
+        }
+        GroupUser groupUser = new GroupUser();
+        groupUser.setGroupId(groupId);
+        groupUser.setUserId(otherId);
+        groupUserMapper.insert(groupUser);
+        context.removeUserFromGroup(groupId,otherId);
     }
 }

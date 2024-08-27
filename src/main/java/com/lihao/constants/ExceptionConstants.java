@@ -20,4 +20,6 @@ public class ExceptionConstants {
     public final static String PARENT_COMMENT_DELETED = "该评论已经被删除！";
     public static final String GROUP_EXIST = "你已经创建过群组了！每个人只能创建一次";
     public static final String GROUP_NOT_EXIST = "群组不存在或已经被删除！";
+    public static final String GROUP_REJECT_USER="该群组已拒绝你的加入请求！";
+    public static final String GROUP_REMOVE_YOU="你已经被踢出群组！";
 }

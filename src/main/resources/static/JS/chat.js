@@ -7,6 +7,7 @@ let sendGroupMessage = baseURL + 'group/chat';
 let createGroup = baseURL + 'group/create';
 let addGroup = baseURL + 'group/add';
 let exitGroup = baseURL+'group/exit';
+let removeFromGroup = baseURL+'group/remove';
 let user = null;
 let authorization = localStorage.getItem('authorization');
 let post = 'post';
@@ -55,6 +56,8 @@ async function setActiveGroup(element) {
     document.getElementById('groupName').innerText = element.getAttribute('data-group-name');
     document.getElementById('groupId').innerText = "GID:" + element.getAttribute('data-group-id');
     var success = await add2Group(activeGroupId);
+    var chatContent = document.getElementById("chatContent");
+    chatContent.innerHTML = "";
     if (success) {
         showHistoryMessage(activeGroupId);
         document.getElementById('messageInput').type = "text";
@@ -104,6 +107,8 @@ function showMyGroup(){
                     group.className = "group active";
                     group.setAttribute('data-group-id', res.id); // 存储 groupId
                     group.setAttribute('data-group-name', res.name);
+                    document.getElementById('groupName').innerText = res.name;
+                    document.getElementById('groupId').innerText = "GID:" + res.id;
                     group.addEventListener('click', function () {
                         setActiveGroup(this);
                     });
@@ -199,33 +204,19 @@ function showHistoryMessage(groupId){
                         `;
                     }else{
                         message.className = "messageContainer otherContent";
-                        if(userId && userId === ownerId){
-                            message.innerHTML= `
-                                <img class="avatarChat" src="${list[i].avatar}" alt="头像"/>
-                                <div class="message">
-                                    <div class="messageName otherName">
-                                        ${list[i].name}
-                                        <button class="remove" onclick="remove(${list[i].userId})">踢出</button>
-                                    </div>
-                                    <div class="messageContent">
-                                        ${list[i].content}
-                                    </div>
-                                </div>
-                            `;
-                        }else{
-                            message.innerHTML= `
-                               <img class="avatarChat" src="${list[i].avatar}" alt="头像"/>
-                               <div class="message">
-                                  <div class="messageName otherName">
-                                     ${list[i].name}
-                                  </div>
-                                  <div class="messageContent">
-                                     ${list[i].content}
-                                  </div>
-                               </div>
-                            `;
-                        }
-                        
+                        const isOwner = userId && userId === ownerId;
+                        message.innerHTML = `
+                                            <img class="avatarChat" src="${list[i].avatar}" alt="头像"/>
+                                            <div class="message">
+                                                <div class="messageName otherName">
+                                                    ${list[i].name}
+                                                    ${isOwner ? `<button class="remove" onclick="remove('${list[i].userId}')">踢出</button>` : ''}
+                                                </div>
+                                                <div class="messageContent">
+                                                    ${list[i].content}
+                                                </div>
+                                            </div>
+                                        `;
                     }
                     chatContent.appendChild(message);
                 }
@@ -268,33 +259,39 @@ function sendMessage(groupId,content){
                 chatContent.appendChild(message);
                 // 自动滚动到底部
                 chatContent.scrollTop = chatContent.scrollHeight;
+            }else{
+                alert(data.message);
             }
         })
 }
-/*function createGroup(){
-    request(createGroup,post,null);
-}*/
 function remove(userId){
-    
+    alert("你确定要移除当前用户吗？确认后该用户将无法再加入该群组！");
+    var formData = new FormData();
+    formData.append('otherId',userId);
+    formData.append('groupId',activeGroupId);
+    request(removeFromGroup,post,formData)
+        .then(data=>{
+            if(!data.success){
+                alert(data.message);
+            }
+        }).catch(error=>{
+            alert(error);
+        })
 }
 // 获取模态窗口元素
 var modal = document.getElementById("createGroupModal");
-
 // 获取关闭模态窗口的 <span> 元素
 var span = document.getElementsByClassName("close")[0];
-
 // 当用户点击 <span> (x)，关闭模态窗口
 span.onclick = function() {
     modal.style.display = "none";
 }
-
 // 当用户点击模态窗口外部，关闭模态窗口
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
 // 处理创建群组表单提交
 document.getElementById("createGroupForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -319,11 +316,9 @@ document.getElementById("avatar").addEventListener("change", function(event) {
     var preview = document.getElementById("preview");
     var file = event.target.files[0];
     var reader = new FileReader();
-
     reader.onloadend = function() {
         preview.src = reader.result;
     }
-
     if (file) {
         reader.readAsDataURL(file);
     } else {

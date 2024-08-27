@@ -140,7 +140,7 @@ public class GroupController extends BaseController {
     @PostMapping("/add")
     @Login
     public ResponsePack add2Group(String groupId) throws GlobalException {
-        context.addGroupContext(groupId,StringUtil.getUserId());
+        groupServiceImpl.add2Group(StringUtil.getUserId(),groupId);
         return getSuccessResponsePack(null);
     }
 
@@ -152,8 +152,8 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/remove")
     @Login
-    public ResponsePack removeFromGroup(String otherId) throws GlobalException {
-        context.removeUserFromGroup(StringUtil.getUserId(),otherId);
+    public ResponsePack removeFromGroup(String groupId,String otherId) throws GlobalException {
+        groupServiceImpl.removeFromGroup(groupId,otherId,StringUtil.getUserId());
         return getSuccessResponsePack(null);
     }
 

@@ -1,7 +1,6 @@
 package com.lihao.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.lihao.entity.dto.GroupCommentDto;
 import com.lihao.entity.po.Group;
 import com.lihao.entity.po.GroupComment;
 import com.lihao.entity.query.GroupCommentQuery;
@@ -17,7 +16,8 @@ public interface GroupService {
     GroupCommentVo selectGroupComment(GroupCommentQuery groupCommentQuery, String userId) throws GlobalException;
     List<Group> selectGroupList(GroupQuery groupQuery);
     Group selectMyGroup(GroupQuery groupQuery);
-    void add2Group(String userId,String groupId);
+    void add2Group(String userId,String groupId) throws GlobalException;
     void chat(GroupComment groupComment) throws GlobalException, JsonProcessingException;
     void exit() throws GlobalException;
+    void removeFromGroup(String groupId,String otherId,String userId) throws GlobalException;
 }
