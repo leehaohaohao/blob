@@ -8,6 +8,7 @@ let createGroup = baseURL + 'group/create';
 let addGroup = baseURL + 'group/add';
 let exitGroup = baseURL+'group/exit';
 let removeFromGroup = baseURL+'group/remove';
+let searchGroup = baseURL+'group/select/group'
 let user = null;
 let authorization = localStorage.getItem('authorization');
 let post = 'post';
@@ -154,24 +155,32 @@ function showGroupList(){
                 var groupList = document.getElementById("groupList");
                 groupList.innerHTML = "";
                 var list = data.data;
-                list.forEach((item,index)=>{
-                    var group = document.createElement('div');
-                    group.className = "group";
-                    group.setAttribute('data-group-id', item.id); // 存储 groupId
-                    group.setAttribute('data-group-name', item.name);
-                    group.addEventListener('click', function() {
-                        setActiveGroup(this);
-                    });
-                    group.innerHTML = `
+                if(list.length===0){
+                    groupList.innerHTML=`
+                        <div id="empty">
+                            <span>空</span>
+                        </div>
+                    `;
+                }else{
+                    list.forEach((item,index)=>{
+                        var group = document.createElement('div');
+                        group.className = "group";
+                        group.setAttribute('data-group-id', item.id); // 存储 groupId
+                        group.setAttribute('data-group-name', item.name);
+                        group.addEventListener('click', function() {
+                            setActiveGroup(this);
+                        });
+                        group.innerHTML = `
                         <img class="groupAvatar" src="${item.avatar}" alt="群组头像">
                         <div class="groupInfo">
                             <div class="groupName">${item.name}</div>
                             <div class="groupId">${item.id}</div>
                         </div>
                     `;
-                    groupList.appendChild(group);
-                    /*console.log(item,index)*/
-                })
+                        groupList.appendChild(group);
+                        /*console.log(item,index)*/
+                    })
+                }
             }
         })
 }
@@ -349,7 +358,47 @@ window.addEventListener('beforeunload', function() {
             console.error(error);
         });
 });
-
+function searchGroupById(){
+    var groupId = document.getElementById("searchInput").value;
+    console.log(groupId);
+    var groupList = document.getElementById("groupList");
+    if(!groupId || groupId===''){
+        showGroupList();
+    }else{
+        var formData = new FormData();
+        formData.append('groupId',groupId);
+        request(searchGroup,post,formData)
+            .then(data=>{
+                if(data.success){
+                    groupList.innerHTML='';
+                    if(data.data){
+                        var item = data.data;
+                        var group = document.createElement('div');
+                        group.className = "group";
+                        group.setAttribute('data-group-id', item.id); // 存储 groupId
+                        group.setAttribute('data-group-name', item.name);
+                        group.addEventListener('click', function() {
+                            setActiveGroup(this);
+                        });
+                        group.innerHTML = `
+                        <img class="groupAvatar" src="${item.avatar}" alt="群组头像">
+                        <div class="groupInfo">
+                            <div class="groupName">${item.name}</div>
+                            <div class="groupId">${item.id}</div>
+                        </div>
+                    `;
+                        groupList.appendChild(group);
+                    }else{
+                        groupList.innerHTML=`
+                            <div id="empty">
+                                <span>空</span>
+                            </div>        
+                        `;
+                    }
+                }
+            })
+    }
+}
 
 
 

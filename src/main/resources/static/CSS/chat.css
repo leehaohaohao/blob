@@ -407,5 +407,12 @@
     border-radius: 50%;  /* 圆形图片 */
     object-fit: cover;
 }
+#empty{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-bottom: #2c3e50 1px solid;
+}
 
 
