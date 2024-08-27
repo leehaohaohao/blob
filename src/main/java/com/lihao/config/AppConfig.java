@@ -11,4 +11,6 @@ public class AppConfig {
     private Integer wsPort;
     @Value("${ws.heart}")
     private Integer wsHeart;
+    @Value("${ws.expire}")
+    private long expireTime;
 }

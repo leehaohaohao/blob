@@ -73,6 +73,7 @@ jwt:
   token: Authorization
 ws:
   port: 9091
-  heart: 30
+  heart: 120
+  expire: 5000
 
 

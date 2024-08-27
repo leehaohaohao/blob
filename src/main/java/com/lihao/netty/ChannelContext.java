@@ -3,6 +3,7 @@ package com.lihao.netty;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lihao.config.AppConfig;
 import com.lihao.entity.dto.GroupCommentDto;
 import com.lihao.entity.po.UserInfo;
 import com.lihao.entity.query.UserQuery;
@@ -26,8 +27,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ChannelContext {
-    @Resource
-    private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     private Logger logger = LoggerFactory.getLogger(ChannelContext.class);
     public static final ConcurrentHashMap<String, Channel> userChannelMap = new ConcurrentHashMap<>();
     public static final ConcurrentHashMap<String, ChannelGroup> groupChannelMap = new ConcurrentHashMap<>();
@@ -38,6 +37,12 @@ public class ChannelContext {
         groupChannelMap.clear();
         logger.info("清除人员、群组信息");
     }
+
+    /**
+     * 添加用户上下文信息
+     * @param userId
+     * @param channel
+     */
     public void addUserContext(String userId, Channel channel) {
         // 获取Channel的唯一ID
         String channelId = channel.id().toString();
@@ -50,14 +55,8 @@ public class ChannelContext {
         }
         // 将userId设置为Channel的属性
         channel.attr(attributeKey).set(userId);
-        // 检查userChannelMap中是否已经存在该用户的Channel
-        if (userChannelMap.containsKey(userId)) {
-            Channel existingChannel = userChannelMap.get(userId);
-            existingChannel.attr(attributeKey).set(userId);
-        } else {
-            // 如果不存在，添加新的用户-Channel映射
-            userChannelMap.put(userId, channel);
-        }
+        // 如果不存在，添加新的用户-Channel映射
+        userChannelMap.put(userId, channel);
     }
 
     //从channel中取出用户id
@@ -103,10 +102,6 @@ public class ChannelContext {
             if(userChannelMap.containsKey(userId)){
                 logger.info("已经将用户{}移除！",userId);
                 userChannelMap.remove(userId);
-                //更新用户下线时间
-                UserInfo userInfo = new UserInfo();
-                userInfo.setLastOffTime(new Date());
-                userInfoMapper.updateByUserId(userInfo,userId);
             }
         }
         // 关闭用户的 Channel

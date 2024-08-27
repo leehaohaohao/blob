@@ -1,23 +1,15 @@
 let socket;
-let heartbeatInterval = 16000; // 心跳包发送间隔时间
+let heartbeatInterval = 70000; // 心跳包发送间隔时间
 let authHeader = localStorage.getItem('authorization'); // 获取授权头
 let wsUserId = localStorage.getItem('userId');
 
 function connectWebSocket() {
-    // 检查是否已经存在 WebSocket 连接
-    if (sessionStorage.getItem('socket')) {
-        console.log('WebSocket 已经连接');
-        socket = JSON.parse(sessionStorage.getItem('socket'));
-        return;
-    }
     const url = `ws://localhost:9091/ws`;
 
     socket = new WebSocket(url, [authHeader]);
     socket.addEventListener('open', (event) => {
         console.log('ws连接已建立');
         startHeartbeat();
-        // 将 WebSocket 连接存储在 sessionStorage 中
-        sessionStorage.setItem('socket', JSON.stringify(socket));
     });
 
     socket.onmessage = function(event) {
@@ -50,13 +42,11 @@ function connectWebSocket() {
     socket.onclose = function() {
         console.log('ws连接已关闭');
         // 尝试重新连接
-        sessionStorage.removeItem('socket');
         setTimeout(connectWebSocket, 5000);
     };
 
     socket.onerror = function(error) {
         console.log('ws连接错误:', error);
-        console.log(socket)
         socket.close();
     };
 }
@@ -73,9 +63,3 @@ function startHeartbeat() {
 window.addEventListener('load', function() {
     connectWebSocket();
 });
-window.addEventListener('beforeunload', function(){
-    if(socket){
-        socket.close();
-        console.log('关闭socket');
-    }
-})

@@ -1,5 +1,6 @@
 package com.lihao.netty.handler;
 
+import com.lihao.config.AppConfig;
 import com.lihao.config.JwtProperty;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.exception.GlobalException;
@@ -49,7 +50,6 @@ public class CustomWebSocketServerProtocolHandler extends SimpleChannelInboundHa
         String userId = (String) map.get("userId");
         context.addUserContext(userId, ctx.channel());
         logger.info("用户{}:上线", userId);
-
         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
                 getWebSocketLocation(req), subprotocols, true);
         WebSocketServerHandshaker handshaker = wsFactory.newHandshaker(req);
@@ -60,7 +60,6 @@ public class CustomWebSocketServerProtocolHandler extends SimpleChannelInboundHa
             headers.set("Sec-WebSocket-Protocol", subprotocols);
             handshaker.handshake(ctx.channel(), req, headers, ctx.newPromise());
         }
-
         // 将处理器替换为处理 WebSocket 帧的处理器
         ctx.pipeline().replace(this, "nettyHandler", nettyHandler);
     }
