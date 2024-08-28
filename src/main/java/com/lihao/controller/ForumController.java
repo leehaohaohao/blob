@@ -288,11 +288,31 @@ public class ForumController extends BaseController{
             return getSuccessResponsePack(postCoverDtos);
         }
     }
+
+    /**
+     * 获取审批列表
+     * @param page 分页信息
+     * @return
+     * @throws GlobalException
+     */
     @PostMapping("/approval/list")
     @Login
     @Manager
     public ResponsePack getApprovalList(Page page) throws GlobalException {
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(forumService.getApprovalList(page));
+    }
+
+    /**
+     * 删除文章
+     * @param postId 文章id
+     * @return
+     * @throws GlobalException
+     */
+    @PostMapping("/delete/post")
+    @Login
+    public ResponsePack deletePost(String postId) throws GlobalException {
+        forumService.deletePost(postId);
+        return getSuccessResponsePack(null);
     }
 }

@@ -21,4 +21,5 @@ public interface ForumService {
     List<PostCoverDto> getMyPost(Page page,String userId,String type,String otherId) throws GlobalException;
     List<PostCoverDto> getMyLikeCollectPost(Page page,String otherId,Integer status,String userId) throws GlobalException;
     List<PostCoverDto> getApprovalList(Page page);
+    void deletePost(String postId) throws GlobalException;
 }

@@ -439,6 +439,28 @@ public class ForumServiceImpl implements ForumService {
         }).collect(Collectors.toList());
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void deletePost(String postId) throws GlobalException {
+        Post post = postMapper.selectByPostId(postId);
+        Optional.ofNullable(post).orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
+        if(!post.getUserId().equals(StringUtil.getUserId())){
+            throw new GlobalException(ExceptionConstants.NO_PERMISSION);
+        }
+        Post updatePost = new Post();
+        updatePost.setPostStatus(PostEnum.DELETED.getStatus());
+        if(!postMapper.updateByPostId(updatePost,postId).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
+            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
+        }
+        //更新用户文章数
+        UserInfo userInfo = userInfoMapper.selectByUserId(post.getUserId());
+        UserInfo updateInfo = new UserInfo();
+        updateInfo.setPost(userInfo.getPost()-1);
+        if(!userInfoMapper.updateByUserId(updateInfo,post.getUserId()).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
+            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
+        }
+    }
+
 
     //查找帖子全部评论
     private List<CommentDto> getCommentDto(String postId) {

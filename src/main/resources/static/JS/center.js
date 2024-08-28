@@ -5,6 +5,7 @@ let otherInfo = baseURL + 'user/other/info';
 let userPost = baseURL + 'forum/user/unapproval/post';
 let likeCollectPost = baseURL + 'forum/my/like/collect/post';
 let socialC = baseURL+'social/concern';
+let dePost = baseURL+'forum/delete/post';
 let user = null;
 let sortLike = 0;
 let sortCollect = 1;
@@ -163,18 +164,15 @@ async function openPage(pageName, elmnt,sort,userId,url,status) {
     if(sort!=null){
         pageNum = pageNumMy;
         data = await getPost(sort,userId,url,status,pageNum);
-        console.log(data);
         showUserPost(data);
     }else{
         if(status==0){
             pageNum = pageNumLike;
             data = await getPost(sort,userId,url,status,pageNum);
-            console.log(data);
             showLikePost(data);
         }else{
             pageNum = pageNumCollect;
             data = await getPost(sort,userId,url,status,pageNum);
-            console.log(data);
             showCollectPost(data);
         }
     }
@@ -318,22 +316,29 @@ function showUserPost(res) {
     var status = otherInfoDto.status;
     var otherId = otherInfoDto.userInfoDto.userId;
     posts.forEach((item, index) => {
-        var i = index % 4 + 1
-        var target = document.getElementById('imgBoxMyPosts' + i);
-        let cont = "<information-box><a href='postDetail.html?postId=" + item.postId +
-            "'><img src='" + item.cover + "'>" +
-            "<div class='titleBelowImg'>" + item.title + "</div></a><tag>" +
-            item.tag.split("|").map(function (item) {
-                return `<a href="multiPersonSquare.html?tag=${item}">${item}</a>`
-            }).join("") + "</tag><div class='userBelowImg'><a class='titleBelow_a'href='center.html?userId=" + otherId +
-            "'><img class='iconOfUse'src=" + photo +
-            "><div style='text-indent:0.55em;'>" + name + "</div></a>" + Status(status,otherId) + "</div></information-box>"
-        // console.log(cont);
-        if (cont !== null) {
-            target.innerHTML += cont;
-        }
-    })
-
+        const i = index % 4 + 1;
+        const target = document.getElementById(`imgBoxMyPosts${i}`);
+        const cont = `
+        <information-box>
+            <a href='postDetail.html?postId=${item.postId}'>
+                <img src='${item.cover}'>
+                <div class='titleBelowImg'>${item.title}</div>
+            </a>
+            <tag>
+                ${item.tag.split("|").map(tagItem => `<a href="multiPersonSquare.html?tag=${tagItem}">${tagItem}</a>`).join("")}
+            </tag>
+            <div class='userBelowImg'>
+                <a class='titleBelow_a' href='center.html?userId=${otherId}'>
+                    <img class='iconOfUse' src='${photo}'>
+                    <div style='text-indent:0.55em;'>${name}</div>
+                </a>
+                ${Status(status, otherId)}
+                ${otherId === user.userId ? `<button class="delete" type="button" onclick="deletePost('${item.postId}')">删除</button>`:""}
+            </div>
+        </information-box>
+    `;
+        target.innerHTML += cont;
+    });
 }
 function showLikePost(res) {
     console.log(res);
@@ -343,21 +348,30 @@ function showLikePost(res) {
         return;
     }
     posts.forEach((item, index) => {
-        var i = index % 4 + 1
-        var target = document.getElementById('imgBoxMyLikes' + i);
-        let cont = "<information-box><a href='postDetail.html?postId=" + item.postId +
-            "'><img src='" + item.cover + "'>" +
-            "<div class='titleBelowImg'>" + item.title + "</div></a><tag>" +
-            item.tag.split("|").map(function (item) {
-                return `<a href="multiPersonSquare.html?tag=${item}">${item}</a>`
-            }).join("") + "</tag><div class='userBelowImg'><a class='titleBelow_a'href='center.html?userId=" + item.otherInfoDto.userInfoDto.userId +
-            "'><img class='iconOfUse'src=" + item.otherInfoDto.userInfoDto.photo +
-            "><div style='text-indent:0.55em;'>" + item.otherInfoDto.userInfoDto.name + "</div></a>" + Status(item.otherInfoDto.status,item.otherInfoDto.userInfoDto.userId) + "</div></information-box>"
-        // console.log(cont);
-        if (cont !== null) {
-            target.innerHTML += cont;
-        }
+        const i = index % 4 + 1;
+        const target = document.getElementById(`imgBoxMyLikes${i}`);
+        const cont = `
+        <information-box>
+            <a href='postDetail.html?postId=${item.postId}'>
+                <img src='${item.cover}'>
+                <div class='titleBelowImg'>${item.title}</div>
+            </a>
+            <tag>
+                ${item.tag.split("|").map(tagItem => `<a href="multiPersonSquare.html?tag=${tagItem}">${tagItem}</a>`).join("")}
+            </tag>
+            <div class='userBelowImg'>
+                <a class='titleBelow_a' href='center.html?userId=${item.otherInfoDto.userInfoDto.userId}'>
+                    <img class='iconOfUse' src='${item.otherInfoDto.userInfoDto.photo}'>
+                    <div style='text-indent:0.55em;'>${item.otherInfoDto.userInfoDto.name}</div>
+                </a>
+                ${Status(item.otherInfoDto.status, item.otherInfoDto.userInfoDto.userId)}
+                ${item.otherInfoDto.userInfoDto.userId === user.userId ? `<button class="delete" type="button" onclick="deletePost('${item.postId}')">删除</button>`:""}
+            </div>
+        </information-box>
+    `;
+        target.innerHTML += cont;
     });
+
 
 }
 function showCollectPost(res) {
@@ -368,21 +382,30 @@ function showCollectPost(res) {
         return;
     }
     posts.forEach((item, index) => {
-        var i = index % 4 + 1
-        var target = document.getElementById('imgBoxMyCollects' + i);
-        let cont = "<information-box><a href='postDetail.html?postId=" + item.postId +
-            "'><img src='" + item.cover + "'>" +
-            "<div class='titleBelowImg'>" + item.title + "</div></a><tag>" +
-            item.tag.split("|").map(function (item) {
-                return `<a href="multiPersonSquare.html?tag=${item}">${item}</a>`
-            }).join("") + "</tag><div class='userBelowImg'><a class='titleBelow_a'href='center.html?userId=" + item.otherInfoDto.userInfoDto.userId +
-            "'><img class='iconOfUse'src=" + item.otherInfoDto.userInfoDto.photo +
-            "><div style='text-indent:0.55em;'>" + item.otherInfoDto.userInfoDto.name + "</div></a>" + Status(item.otherInfoDto.status,item.otherInfoDto.userInfoDto.userId) + "</div></information-box>"
-        // console.log(cont);
-        if (cont !== null) {
-            target.innerHTML += cont;
-        }
-    })
+        const i = index % 4 + 1;
+        const target = document.getElementById(`imgBoxMyCollects${i}`);
+        const cont = `
+        <information-box>
+            <a href='postDetail.html?postId=${item.postId}'>
+                <img src='${item.cover}'>
+                <div class='titleBelowImg'>${item.title}</div>
+            </a>
+            <tag>
+                ${item.tag.split("|").map(tagItem => `<a href="multiPersonSquare.html?tag=${tagItem}">${tagItem}</a>`).join("")}
+            </tag>
+            <div class='userBelowImg'>
+                <a class='titleBelow_a' href='center.html?userId=${item.otherInfoDto.userInfoDto.userId}'>
+                    <img class='iconOfUse' src='${item.otherInfoDto.userInfoDto.photo}'>
+                    <div style='text-indent:0.55em;'>${item.otherInfoDto.userInfoDto.name}</div>
+                </a>
+                ${Status(item.otherInfoDto.status, item.otherInfoDto.userInfoDto.userId)}
+                ${item.otherInfoDto.userInfoDto.userId === user.userId ? `<button class="delete" type="button" onclick="deletePost('${item.postId}')">删除</button>`:""}
+            </div>
+        </information-box>
+    `;
+        target.innerHTML += cont;
+    });
+
 
 }
 function Status(status,otherId) {
@@ -395,12 +418,42 @@ function Status(status,otherId) {
     }
 }
 function showEmptyInfo(id) {
-    console.log(id)
-    var emptyTarget = document.getElementById(id);
-    var cont = "<div style='display:flex;align-items:center;'>" +
-        "<div><img style='width:10em' src='http://121.40.154.188:8080/image/emptyPage.png'></div>" +
-        "<div><div id='empty_txt'>空&nbsp;空&nbsp;如&nbsp;也</div>" +
-        "<div style='font-size:20px;color:#dfdfdf'>这里什么都没有……</div></div>" +
-        "</div>"
+    console.log(id);
+    const emptyTarget = document.getElementById(id);
+    const cont = `
+        <div style='display:flex;align-items:center;'>
+            <div>
+                <img style='width:10em' src='http://121.40.154.188:8080/image/emptyPage.png'>
+            </div>
+            <div>
+                <div id='empty_txt'>空 空 如 也</div>
+                <div style='font-size:20px;color:#dfdfdf'>这里什么都没有……</div>
+            </div>
+        </div>
+    `;
     emptyTarget.innerHTML = cont;
+}
+function deletePost(postId) {
+    if (confirm("你确定要删除该文章吗？")) {
+        var formData = new FormData();
+        formData.append('postId', postId);
+        fetch(dePost, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Authorization': authorization
+            }
+        }).then(res => res.json())
+            .then(async data => {
+                if (data.success) {
+                    data = await getPost(2, user.userId, userPost, null, pageNumMy);
+                    console.log(data);
+                    showUserPost(data);
+                } else {
+                    alert(data.message);
+                }
+            }).catch(err => {
+            console.error(err);
+        });
+    }
 }
