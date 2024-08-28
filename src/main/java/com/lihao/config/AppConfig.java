@@ -13,4 +13,8 @@ public class AppConfig {
     private Integer wsHeart;
     @Value("${ws.expire}")
     private long expireTime;
+    @Value("${error.img}")
+    private String errorImg;
+    @Value("${error.name}")
+    private String errorName;
 }

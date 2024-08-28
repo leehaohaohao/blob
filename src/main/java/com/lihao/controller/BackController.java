@@ -4,8 +4,10 @@ import com.lihao.annotation.Login;
 import com.lihao.annotation.Manager;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
+import com.lihao.entity.po.Group;
 import com.lihao.entity.po.Page;
 import com.lihao.entity.po.UserInfo;
+import com.lihao.enums.GroupEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
 import com.lihao.service.BackService;
@@ -74,9 +76,8 @@ public class BackController extends BaseController{
     @Manager
     public ResponsePack getPerson(Page page,Integer status) throws GlobalException {
         CheckUtil.checkPage(page);
-        if(UserStatusEnum.getUserStatusEnum(status)==null){
-            throw new GlobalException(ExceptionConstants.INVALID_PARAM);
-        }
+        Optional.ofNullable(UserStatusEnum.getUserStatusEnum(status))
+                .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
         return getSuccessResponsePack(backServiceImpl.getPerson(page,status));
     }
 
@@ -105,6 +106,45 @@ public class BackController extends BaseController{
         updateInfo.setGender(userInfo.getGender());
         updateInfo.setStatus(userInfo.getStatus());
         backServiceImpl.updatePerson(updateInfo,file);
+        return getSuccessResponsePack(null);
+    }
+
+    /**
+     * 获取群组列表
+     * @param page 分页信息
+     * @param status 状态
+     * @return
+     * @throws GlobalException
+     */
+    @PostMapping("/group/list")
+    @Login
+    @Manager
+    public ResponsePack getGroupList(Page page,Integer status) throws GlobalException {
+        CheckUtil.checkPage(page);
+        Optional.ofNullable(GroupEnum.getGroupEnum(status))
+                .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
+        return getSuccessResponsePack(backServiceImpl.groupList(page,status));
+    }
+
+    /**
+     * 更新群组信息
+     * @param group 群组信息
+     * @param file 头像
+     * @return
+     * @throws GlobalException
+     */
+    @PostMapping("/group/update")
+    @Login
+    @Manager
+    public ResponsePack updateGroup(Group group,MultipartFile file) throws GlobalException {
+        Optional.ofNullable(group)
+                .filter(g -> !Tools.isBlank(g.getId()))
+                .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
+        if(group.getStatus()!=null){
+            Optional.ofNullable(GroupEnum.getGroupEnum(group.getStatus()))
+                    .orElseThrow(()->new GlobalException(ExceptionConstants.INVALID_PARAM));
+        }
+        backServiceImpl.updateGroup(group,file);
         return getSuccessResponsePack(null);
     }
 }

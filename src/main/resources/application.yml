@@ -75,5 +75,8 @@ ws:
   port: 9091
   heart: 120
   expire: 5000
+error:
+  img: http://localhost:9090/blob/img/error.jpg
+  name: 不挂违规用户
 
 

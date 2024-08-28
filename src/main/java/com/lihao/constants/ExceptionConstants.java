@@ -2,6 +2,7 @@ package com.lihao.constants;
 
 public class ExceptionConstants {
     public final static String NO_EMAIL = "该邮箱未注册！";
+    public final static String ACCOUNT_ERROR = "账号异常！";
     public final static String EMAIL_FAULT = "邮箱验证码发送失败！";
     public final static String EMAIL_NO_MATCH = "账号或密码错误！";
     public final static String NO_LOGGING = "您还未登陆！";

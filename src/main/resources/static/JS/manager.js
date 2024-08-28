@@ -19,6 +19,7 @@ window.addEventListener('load', function () {
                 document.getElementById("post_num").innerText = data.data.postNum;
                 document.getElementById("upost_num").innerText = data.data.upostNum;
                 document.getElementById("tag_num").innerText = data.data.tagNum;
+                document.getElementById("group_num").innerText = data.data.groupNum;
             } else {
                 handleAlert(data.message);
             }
@@ -105,6 +106,8 @@ function handleAlert(message) {
     if (!alertShown) {
         alertShown = true;
         alert(message);
-        window.location.href = 'mlogin.html';
+        if(message==="您还未登陆！" || message==="你没有权限！"){
+            window.location.href = 'mlogin.html';
+        }
     }
 }

@@ -52,7 +52,6 @@ public class UserInfoController extends BaseController {
         updateInfo.setTelephone(telephone);
         updateInfo.setGender(gender);
         userInfoService.updateInfo(updateInfo,file);
-        //TODO 前端进行页面提示
         return getSuccessResponsePack(null);
     }
     @RequestMapping("/updateTag")

@@ -69,6 +69,8 @@ function handleAlert(message) {
     if (!alertShown) {
         alertShown = true;
         alert(message);
-        //window.location.href = 'mlogin.html';
+        if(message==="您还未登陆！" || message==="你没有权限！"){
+            window.location.href = 'mlogin.html';
+        }
     }
 }

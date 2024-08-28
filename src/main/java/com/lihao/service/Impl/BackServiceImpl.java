@@ -1,21 +1,29 @@
 package com.lihao.service.Impl;
 
+import com.lihao.constants.ExceptionConstants;
+import com.lihao.constants.NumberConstants;
+import com.lihao.entity.dto.GroupDto;
 import com.lihao.entity.dto.PostCoverDto;
 import com.lihao.entity.dto.UserInfoDto;
 import com.lihao.entity.po.*;
+import com.lihao.entity.query.GroupQuery;
 import com.lihao.entity.query.PostQuery;
 import com.lihao.entity.query.TagQuery;
 import com.lihao.entity.query.UserQuery;
+import com.lihao.enums.GroupEnum;
 import com.lihao.enums.PostEnum;
 import com.lihao.enums.PostOrderEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
+import com.lihao.mapper.GroupMapper;
 import com.lihao.mapper.PostMapper;
 import com.lihao.mapper.TagMapper;
 import com.lihao.mapper.UserInfoMapper;
 import com.lihao.service.BackService;
 import com.lihao.service.UserInfoService;
 
+import com.lihao.util.FileUtil;
+import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -23,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -36,6 +45,8 @@ public class BackServiceImpl implements BackService {
     private TagMapper tagMapper;
     @Resource
     private UserInfoService userInfoServiceImpl;
+    @Resource
+    private GroupMapper<Group, GroupQuery> groupMapper;
     @Override
     public Num num() {
         Num num = new Num();
@@ -47,6 +58,9 @@ public class BackServiceImpl implements BackService {
         postQuery.setPostStatus(PostEnum.REVIEWING.getStatus());
         num.setUpostNum(postMapper.selectCount(postQuery));
         num.setTagNum(tagMapper.selectCount());
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setStatus(GroupEnum.NORMAL.getStatus());
+        num.setGroupNum(groupMapper.selectCount(groupQuery));
         return num;
     }
 
@@ -96,5 +110,36 @@ public class BackServiceImpl implements BackService {
     public Integer updatePerson(UserInfo userInfo, MultipartFile file) throws GlobalException {
         userInfoServiceImpl.updateInfo(userInfo,file);
         return null;
+    }
+
+    @Override
+    public List<GroupDto> groupList(Page page, Integer status) {
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setStatus(status);
+        groupQuery.setOrderBy("time desc");
+        groupQuery.setPage(page);
+        List<Group> groups = groupMapper.selectList(groupQuery);
+        List<GroupDto> groupDtos = groups.stream().map(group -> {
+            GroupDto groupDto = new GroupDto();
+            BeanUtils.copyProperties(group, groupDto);
+            UserInfo userInfo = userInfoMapper.selectByUserId(group.getUserId());
+            groupDto.setUserName(userInfo.getName());
+            return groupDto;
+        }).collect(Collectors.toList());
+        return groupDtos;
+    }
+
+    @Override
+    @Transactional
+    public void updateGroup(Group group, MultipartFile file) throws GlobalException {
+        Optional.ofNullable(file).filter(f->!f.getOriginalFilename().isEmpty()).ifPresent(f -> {
+            String[]ss = FileUtil.fileBookLoad(f, StringUtil.getGroupAvatarPath());
+            group.setAvatar(ss[0]);
+        });
+        GroupQuery groupQuery = new GroupQuery();
+        groupQuery.setId(group.getId());
+        if(!groupMapper.update(group,groupQuery).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
+            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
+        }
     }
 }

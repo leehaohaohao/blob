@@ -1,8 +1,14 @@
 package com.lihao.aspect;
 
 import com.lihao.annotation.*;
+import com.lihao.constants.ExceptionConstants;
+import com.lihao.entity.po.UserInfo;
+import com.lihao.entity.query.UserQuery;
+import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
+import com.lihao.mapper.UserInfoMapper;
 import com.lihao.util.CheckUtil;
+import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -19,6 +25,8 @@ import java.lang.reflect.Method;
 public class NormalAspect {
     @Resource
     private CheckUtil checkUtil;
+    @Resource
+    private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     private static final Logger logger = LoggerFactory.getLogger(NormalAspect.class);
     @Before("@annotation(com.lihao.annotation.Login)")
     public void login(JoinPoint joinPoint) throws GlobalException {
@@ -29,7 +37,11 @@ public class NormalAspect {
         }
         if(login.logging()){
             checkUtil.checkLogin();
-            //TODO 判断用户状态，是否被网站拉黑
+            //判断用户状态，是否被网站拉黑
+            UserInfo userInfo = userInfoMapper.selectByUserId(StringUtil.getUserId());
+            if(!UserStatusEnum.NORMAL.equals(UserStatusEnum.getUserStatusEnum(userInfo.getStatus()))){
+                throw new GlobalException(ExceptionConstants.ACCOUNT_ERROR);
+            }
         }
     }
     //检查发布文章

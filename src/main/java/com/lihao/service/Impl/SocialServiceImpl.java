@@ -1,5 +1,6 @@
 package com.lihao.service.Impl;
 
+import com.lihao.config.AppConfig;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
 import com.lihao.constants.RedisConstants;
@@ -190,7 +191,7 @@ public class SocialServiceImpl implements SocialService {
     }
 
     //全部查找算法
-    //TODO 有时间继续进行优化 如加入分页 提高查询效率
+    //TODO 有时间加入分页 提高查询效率
     //TODO 封禁用户评论信息处理
     private void BFSCommentDto(List<CommentDto> target, String postId, Map<String, UserInfo> userInfoMap) {
         for (CommentDto commentDto : target) {

@@ -1,5 +1,6 @@
 package com.lihao.service.Impl;
 
+import com.lihao.config.AppConfig;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.StringConstants;
 import com.lihao.entity.dto.OtherInfoDto;
@@ -34,15 +35,21 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Resource
     private ConcernMapper concernMapper;
     @Resource
+    private AppConfig appConfig;
+    @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     private final Logger logger = LoggerFactory.getLogger(UserInfoServiceImpl.class);
 
     @Override
     public UserInfoDto getUserInfo(String userId) {
-        //TODO 要考虑账号被封禁的情况
         UserInfo userInfo = userInfoMapper.selectByUserId(userId);
         UserInfoDto userInfoDto = new UserInfoDto();
         BeanUtils.copyProperties(userInfo,userInfoDto);
+        //考虑账号被封禁的情况
+        if(userInfo.getStatus().equals(UserStatusEnum.ABNORMAL.getStatus())){
+            userInfoDto.setName(appConfig.getErrorName());
+            userInfoDto.setPhoto(appConfig.getErrorImg());
+        }
         return userInfoDto;
     }
 
@@ -103,12 +110,11 @@ public class UserInfoServiceImpl implements UserInfoService {
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
         }
         //检验用户状态是否正常
-        if(!UserStatusEnum.NORMAL.equals(UserStatusEnum.getUserStatusEnum(userInfo.getStatus()))
-                || !UserStatusEnum.NORMAL.equals(UserStatusEnum.getUserStatusEnum(otherInfo.getStatus())
-        )){
-            throw new GlobalException(ExceptionConstants.SERVER_ERROR);
+        //如果other是异常状态这显示异常用户信息
+        if(!UserStatusEnum.NORMAL.equals(UserStatusEnum.getUserStatusEnum(otherInfo.getStatus()))){
+            otherInfo.setName(appConfig.getErrorName());
+            otherInfo.setPhoto(appConfig.getErrorImg());
         }
-        //TODO 优化如果other是异常状态这显示异常用户信息
         //查看用户与查看用户之间的关系
         Concern userConcern = concernMapper.select(userId,otherId);
         Concern otherConcern = concernMapper.select(otherId,userId);

@@ -9,4 +9,5 @@ public class Num {
     private Integer postNum;
     private Integer upostNum;
     private Integer tagNum;
+    private Integer groupNum;
 }

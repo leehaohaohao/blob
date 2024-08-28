@@ -39,7 +39,10 @@ window.addEventListener('load', async function () {
     }
 });
 window.addEventListener('scroll', async function () {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const threshold = document.body.offsetHeight * 0.8; // 距离底部20%的位置
+
+    if (scrollPosition >= threshold && !isLoading) {
         isLoading = true; // 设置标志为true，表示正在加载
         PageNum++;
         let newPosts = await getAllPost(currentTag); // 假设 currentTag 是当前标签
@@ -51,6 +54,7 @@ window.addEventListener('scroll', async function () {
         isLoading = false; // 加载完成后重置标志
     }
 });
+
 
 async function getAllTag() {
     try {

@@ -93,7 +93,6 @@ window.addEventListener('load', function (){
             } else {
                 alert(data.message);
                 showAnnouncement(0);
-                //TODO 没有登陆不影响进入首页
             }
         }).catch(error => {
         console.error('Error:', error);

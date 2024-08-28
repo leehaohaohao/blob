@@ -104,5 +104,9 @@
                 status=#{bean.status},
             </if>
         </set>
+        <include refid="base_query_condition"/>
     </update>
+    <select id="selectCount" resultType="java.lang.Integer" >
+        SELECT count(1) FROM `group` <include refid="base_query_condition" />
+    </select>
 </mapper>
