@@ -33,7 +33,6 @@ public class FileUtil {
                 out.write(bytes, 0, readCount);
             }
             out.flush();
-
             // 压缩图片
             compressImage(outputFile);
 
