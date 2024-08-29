@@ -155,4 +155,16 @@ public class BackController extends BaseController{
         backServiceImpl.updateGroup(group,file);
         return getSuccessResponsePack(null);
     }
+
+    /**
+     * 获取api性能列表
+     * @return
+     */
+    @PostMapping("/api")
+    @Login
+    @Manager
+    @MonitorApiUsage
+    public ResponsePack api(){
+        return getSuccessResponsePack(backServiceImpl.apiList());
+    }
 }

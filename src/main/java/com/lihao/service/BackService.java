@@ -8,6 +8,7 @@ import com.lihao.exception.GlobalException;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BackService {
     Num num();
@@ -17,4 +18,5 @@ public interface BackService {
     Integer updatePerson(UserInfo userInfo, MultipartFile file) throws GlobalException;
     List<GroupDto> groupList(Page page, Integer status);
     void updateGroup(Group group,MultipartFile file) throws GlobalException;
+    Map<String,List<ApiStatistics>> apiList();
 }

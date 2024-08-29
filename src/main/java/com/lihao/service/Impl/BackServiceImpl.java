@@ -15,10 +15,7 @@ import com.lihao.enums.PostEnum;
 import com.lihao.enums.PostOrderEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
-import com.lihao.mapper.GroupMapper;
-import com.lihao.mapper.PostMapper;
-import com.lihao.mapper.TagMapper;
-import com.lihao.mapper.UserInfoMapper;
+import com.lihao.mapper.*;
 import com.lihao.service.BackService;
 import com.lihao.service.UserInfoService;
 
@@ -30,8 +27,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -47,6 +43,8 @@ public class BackServiceImpl implements BackService {
     private UserInfoService userInfoServiceImpl;
     @Resource
     private GroupMapper<Group, GroupQuery> groupMapper;
+    @Resource
+    private ApiStatisticsMapper apiStatisticsMapper;
     @Override
     public Num num() {
         Num num = new Num();
@@ -141,5 +139,17 @@ public class BackServiceImpl implements BackService {
         if(!groupMapper.update(group,groupQuery).equals(NumberConstants.DEFAULT_UPDATE_INSERT)){
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
         }
+    }
+
+    @Override
+    public Map<String,List<ApiStatistics>> apiList() {
+        List<ApiStatistics> apiStatistics = apiStatisticsMapper.selectList();
+        HashMap<String,List<ApiStatistics>> map = new HashMap<>();
+        for(ApiStatistics api:apiStatistics){
+            String apiName = api.getName();
+            String className = apiName.split("\\.")[0];
+            map.computeIfAbsent(className,(k->new ArrayList<>())).add(api);
+        }
+        return map;
     }
 }
