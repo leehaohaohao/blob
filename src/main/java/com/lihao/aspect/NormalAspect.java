@@ -11,6 +11,8 @@ import com.lihao.util.CheckUtil;
 import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -131,5 +133,12 @@ public class NormalAspect {
         if(manager.checkManager()){
             checkUtil.checkManager();
         }
+    }
+    @Around("@annotation(com.lihao.annotation.MonitorApiUsage)")
+    public void monitorApiUsage(ProceedingJoinPoint joinPoint) throws Throwable {
+        long startTime = System.currentTimeMillis();
+        Object result = joinPoint.proceed();
+        long endTime = System.currentTimeMillis();
+        long responseTime = endTime - startTime;
     }
 }

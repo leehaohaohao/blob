@@ -23,4 +23,5 @@ public class ExceptionConstants {
     public static final String GROUP_NOT_EXIST = "群组不存在或已经被删除！";
     public static final String GROUP_REJECT_USER="该群组已拒绝你的加入请求！";
     public static final String GROUP_REMOVE_YOU="你已经被踢出群组！";
+    public static final String GROUP_REMOVE_HE="他已经被踢出群组！";
 }

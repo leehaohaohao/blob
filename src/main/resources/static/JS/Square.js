@@ -8,6 +8,7 @@ let PageSize = 16;
 let PageNum = 1;
 let currentTag = "random_post";
 let authorization = localStorage.getItem('authorization');
+let lastIndex = 0;
 window.addEventListener('load', async function () {
     var userOwn = await getUser();
     console.log(userOwn);
@@ -176,22 +177,29 @@ function showAllPost(allPost) {
     console.log(allPost);
     let posts = allPost.list;
     posts.forEach((item, index) => {
-        var i = index % 4 + 1
+        var i = (lastIndex + index) % 4 + 1;
         var target = document.getElementById('imgBox' + i);
-        let cont = "<information-box><a href='postDetail.html?postId=" + item.postId +
-            "'><img src='" + item.cover + "'>" +
-            "<div class='titleBelowImg'>" + item.title + "</div></a><tag>" +
-            item.tag.split("|").map(function (item) {
-                return `<a href="multiPersonSquare.html?tag=${item}">${item}</a>`
-            }).join("") + "</tag><div class='userBelowImg'><a class='titleBelow_a'href='center.html?userId=" + item.otherInfoDto.userInfoDto.userId +
-            "'><img class='iconOfUse'src=" + item.otherInfoDto.userInfoDto.photo +
-            "><div style='text-indent:0.55em;'>" + item.otherInfoDto.userInfoDto.name + "</div></a>" + Status(item.otherInfoDto) + "</div></information-box>"
-        // console.log(cont);
-        if (cont !== null) {
-            target.innerHTML += cont;
-        }
-    })
-
+        let cont = `
+            <information-box>
+                <a href='postDetail.html?postId=${item.postId}'>
+                    <img src='${item.cover}'>
+                    <div class='titleBelowImg'>${item.title}</div>
+                </a>
+                <tag>
+                    ${item.tag.split("|").map(tagItem => `<a href="multiPersonSquare.html?tag=${tagItem}">${tagItem}</a>`).join("")}
+                </tag>
+                <div class='userBelowImg'>
+                    <a class='titleBelow_a' href='center.html?userId=${item.otherInfoDto.userInfoDto.userId}'>
+                        <img class='iconOfUse' src='${item.otherInfoDto.userInfoDto.photo}'>
+                        <div style='text-indent:0.55em;'>${item.otherInfoDto.userInfoDto.name}</div>
+                    </a>
+                    ${Status(item.otherInfoDto)}
+                </div>
+            </information-box>
+        `;
+        target.innerHTML += cont;
+    });
+    lastIndex = (lastIndex + posts.length) % 4;
 }
 
 function Status(stmt) {

@@ -2,6 +2,7 @@ package com.lihao.mapper;
 
 import com.lihao.entity.dto.PostCoverDto;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -30,4 +31,6 @@ public interface PostMapper<T,P> extends BaseMapper<T,P> {
 	 List<T> selectMainList(@Param("query") P p);
 	 List<PostCoverDto> selectCoverList(@Param("query")P p);
 	 Integer selectCount(Integer status);
+	 @Update("update post set rand_num = rand()")
+	 Integer updateRand();
 }

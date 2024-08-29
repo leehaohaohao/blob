@@ -1,5 +1,6 @@
 package com.lihao.service.Impl;
 
+import cn.hutool.core.collection.ConcurrentHashSet;
 import com.github.pagehelper.PageHelper;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.*;
@@ -22,11 +23,13 @@ import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Service
@@ -46,6 +49,8 @@ public class ForumServiceImpl implements ForumService {
     private RedisTools redisTools;
     @Resource
     private TagMapper tagMapper;
+    private final ConcurrentHashMap<String,Set<String>> postCacheMap = new ConcurrentHashMap<>();
+    private final ConcurrentHashSet<String> userIdCache = new ConcurrentHashSet<>();
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void post(Post post, MultipartFile file) throws GlobalException {
@@ -141,16 +146,12 @@ public class ForumServiceImpl implements ForumService {
                             postDto.setIsCollect(false);
                         }
                 );
-
         //存入缓存
         redisTools.setPostDto(postDto);
         return postDto;
     }
-
-    @Override
-    public List<PostCoverDto> getRandomPost(Page page, String userId) throws GlobalException {
+    public List<PostCoverDto> getRandomPost_(Page page, String userId) throws GlobalException {
         //TODO 推荐算法仍需优化
-
         List<Post> posts = postMapper.selectRandom(PostEnum.NORMAL.getStatus(),page.getPageSize());
         List<PostCoverDto> postCoverDtos = posts.stream().map(post -> {
             PostCoverDto postCoverDto = new PostCoverDto();
@@ -166,6 +167,48 @@ public class ForumServiceImpl implements ForumService {
         //TODO 缓存策略优化
         redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+userId+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_DAY);
         return postCoverDtos;
+    }
+    @Scheduled(fixedRate = 300000)
+    public void setPostCache(){
+        List<Post> posts = postMapper.selectRandom(PostEnum.NORMAL.getStatus(),100);
+        //清楚用户id缓存
+        userIdCache.clear();
+        //查询所有用户id
+        userIdCache.addAll(posts.stream().map(Post::getUserId).collect(Collectors.toSet()));
+        postCacheMap.clear();
+        //查询所有文章封面信息
+        List<PostCoverDto> postDtos = posts.stream().map(post -> {
+            PostCoverDto postCoverDto = new PostCoverDto();
+            BeanUtils.copyProperties(post, postCoverDto);
+            return postCoverDto;
+        }).toList();
+        redisTools.delete(RedisConstants.REDIS_POST_RAND);
+        redisTools.setLeftList(RedisConstants.REDIS_POST_RAND, postDtos,6*TimeConstants.ONE_minute);
+    }
+    @Override
+    public List<PostCoverDto> getRandomPost(Page page, String userId) throws GlobalException {
+       List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_RAND);
+       List<PostCoverDto> result = new ArrayList<>();
+       if(page.getPageNum().equals(1)){
+           postCacheMap.clear();
+       }
+       Random random = new Random();
+       for(int i = 0;i< page.getPageSize();i++){
+            //随机获取一个索引
+            int index = random.nextInt(postCoverDtos.size());
+            //判断是否已经添加过
+            if(!postCacheMap.containsKey(userId)){
+                postCacheMap.put(userId,new ConcurrentHashSet<>());
+            }
+            //除去已经推荐过的
+            PostCoverDto postCoverDto = postCoverDtos.get(index);
+            if(!postCacheMap.get(userId).contains(postCoverDto.getPostId())){
+                postCoverDto.setOtherInfoDto(userInfoService.otherInfo(postCoverDto.getUserId(),userId));
+                result.add(postCoverDto);
+                postCacheMap.get(userId).add(postCoverDto.getPostId());
+            }
+       }
+       return result;
     }
 
     @Override

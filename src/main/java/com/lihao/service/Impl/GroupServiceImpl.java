@@ -173,10 +173,14 @@ public class GroupServiceImpl implements GroupService {
         ){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        GroupUser groupUser = new GroupUser();
-        groupUser.setGroupId(groupId);
-        groupUser.setUserId(otherId);
-        groupUserMapper.insert(groupUser);
+        GroupUser groupUser = groupUserMapper.select(groupId,otherId);
+        if(groupUser!=null){
+            throw new GlobalException(ExceptionConstants.GROUP_REMOVE_HE);
+        }
+        GroupUser insertGroupUser = new GroupUser();
+        insertGroupUser.setGroupId(groupId);
+        insertGroupUser.setUserId(otherId);
+        groupUserMapper.insert(insertGroupUser);
         context.removeUserFromGroup(groupId,otherId);
     }
 }

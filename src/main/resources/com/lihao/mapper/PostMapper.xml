@@ -169,7 +169,7 @@
 	<select id="selectRandom" resultMap="base_result_map">
 		select <include refid="base_column_list" /> FROM post
 		where post_status = #{status}
-		ORDER BY RAND()
+		ORDER BY rand_num desc
 		LIMIT #{pageSize}
 	</select>
 	<!-- 查询数量-->

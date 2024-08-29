@@ -2,6 +2,7 @@ package com.lihao.handler;
 
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.QueryTimeoutException;
@@ -32,6 +33,8 @@ public class GlobalExceptionHandler {
             responsePack.setMessage(ExceptionConstants.SERVER_ERROR);
         }else if(e instanceof BadSqlGrammarException){
             responsePack.setMessage(ExceptionConstants.INVALID_PARAM);
+        }else if(e instanceof ExpiredJwtException){
+            responsePack.setMessage(ExceptionConstants.EXPIRE_LOG);
         }else{
             responsePack.setMessage(e.getMessage());
         }

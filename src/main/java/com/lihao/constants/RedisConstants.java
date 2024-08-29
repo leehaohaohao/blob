@@ -6,4 +6,5 @@ public class RedisConstants {
     public final static String REDIS_TOKEN_USER_PERMISSION = "blob:token:user:permission:";
     public final static String REDIS_EMAIL_CODE = "blob:email:code:";
     public final static String REDIS_POST_KEY = "blob:post:";
+    public final static String REDIS_POST_RAND = "blob:post:rand";
 }
