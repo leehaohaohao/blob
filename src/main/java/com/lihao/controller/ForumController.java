@@ -1,10 +1,7 @@
 package com.lihao.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.lihao.annotation.LApprovalPost;
-import com.lihao.annotation.LPost;
-import com.lihao.annotation.Login;
-import com.lihao.annotation.Manager;
+import com.lihao.annotation.*;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.RedisConstants;
 import com.lihao.constants.StringConstants;
@@ -63,6 +60,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/post")
     @LPost
+    @MonitorApiUsage
     public ResponsePack post(String post_content,
                              String tags, String title, MultipartFile file) throws GlobalException {
         String userId = StringUtil.getUserId();
@@ -98,6 +96,7 @@ public class ForumController extends BaseController{
     }
     //动态获取标签
     @GetMapping("/get/tag")
+    @MonitorApiUsage
     public ResponsePack getTag(){
         return getSuccessResponsePack(tagMapper.select());
     }
@@ -112,6 +111,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/tag/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtoList = new ArrayList<>();
@@ -140,6 +140,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/id/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getPostById(String postId) throws GlobalException {
         String userId = StringUtil.getUserId();
         if(Tools.isBlank(postId)){
@@ -159,6 +160,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/approval/post")
     @LApprovalPost
+    @MonitorApiUsage
     public ResponsePack approvalPost(String postId,Integer postStatus) throws GlobalException {
         String approvalId = StringUtil.getUserId();
         forumService.approvalPost(postId,postStatus,approvalId);
@@ -175,6 +177,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/user/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getPostByUser(String otherId,Integer pageSize,Integer pageNum) throws GlobalException {
         String userId = StringUtil.getUserId();
         Page page = new Page(pageSize,pageNum);
@@ -196,6 +199,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/love/collect")
     @Login
+    @MonitorApiUsage
     public ResponsePack likeOrCollect(String postId,Integer status,Integer type) throws GlobalException {
         if(JudgeEnum.getJudgeEnumByStatus(status) == null || Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -213,6 +217,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/id/approval/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getApprovalPostById(String postId) throws GlobalException {
         if(Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -232,6 +237,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/user/unapproval/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getMyPost(Integer pageNum,Integer pageSize,Integer sort,String otherId) throws GlobalException {
         Optional.ofNullable(pageNum)
                 .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));
@@ -267,6 +273,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/my/like/collect/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack getMyLikePost(Integer pageNum,Integer pageSize,Integer status,String otherId) throws GlobalException {
         if(pageNum == null || pageSize == null || TypeEnum.getTypeEnumByStatus(status) == null){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -298,6 +305,7 @@ public class ForumController extends BaseController{
     @PostMapping("/approval/list")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack getApprovalList(Page page) throws GlobalException {
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(forumService.getApprovalList(page));
@@ -311,6 +319,7 @@ public class ForumController extends BaseController{
      */
     @PostMapping("/delete/post")
     @Login
+    @MonitorApiUsage
     public ResponsePack deletePost(String postId) throws GlobalException {
         forumService.deletePost(postId);
         return getSuccessResponsePack(null);

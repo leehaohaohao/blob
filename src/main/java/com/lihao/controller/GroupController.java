@@ -2,6 +2,7 @@ package com.lihao.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lihao.annotation.Login;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.StringConstants;
 import com.lihao.entity.dto.ResponsePack;
@@ -45,6 +46,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/create")
     @Login
+    @MonitorApiUsage
     public ResponsePack create(MultipartFile file,String name) throws GlobalException {
         Group group = new Group();
         if(file == null){
@@ -69,6 +71,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/select/group")
     @Login
+    @MonitorApiUsage
     public ResponsePack selectGroup(String groupId) throws GlobalException {
         if(Tools.isBlank(groupId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -89,6 +92,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/select/comment")
     @Login
+    @MonitorApiUsage
     public ResponsePack selectGroupComment(String groupId,Integer pageSize,Integer pageNum) throws GlobalException {
         if(Tools.isBlank(groupId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -109,6 +113,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/select/list")
     @Login
+    @MonitorApiUsage
     public ResponsePack selectGroupList(Integer pageSize,Integer pageNum) throws GlobalException {
         GroupQuery groupQuery = new GroupQuery();
         groupQuery.setOrderBy("time asc");
@@ -124,6 +129,7 @@ public class GroupController extends BaseController {
      */
     @RequestMapping("/select/my")
     @Login
+    @MonitorApiUsage
     public ResponsePack selectMyGroup() throws GlobalException {
         GroupQuery groupQuery = new GroupQuery();
         groupQuery.setUserId(StringUtil.getUserId());
@@ -139,6 +145,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/add")
     @Login
+    @MonitorApiUsage
     public ResponsePack add2Group(String groupId) throws GlobalException {
         groupServiceImpl.add2Group(StringUtil.getUserId(),groupId);
         return getSuccessResponsePack(null);
@@ -152,6 +159,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/remove")
     @Login
+    @MonitorApiUsage
     public ResponsePack removeFromGroup(String groupId,String otherId) throws GlobalException {
         groupServiceImpl.removeFromGroup(groupId,otherId,StringUtil.getUserId());
         return getSuccessResponsePack(null);
@@ -165,6 +173,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/delete")
     @Login
+    @MonitorApiUsage
     public ResponsePack deleteGroup(String groupId) throws GlobalException {
         return getSuccessResponsePack(null);
     }
@@ -178,6 +187,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/chat")
     @Login
+    @MonitorApiUsage
     public ResponsePack chat(String groupId,String content) throws GlobalException, JsonProcessingException {
         GroupComment groupComment = new GroupComment();
         groupComment.setId(StringUtil.getId(UidPrefixEnum.GROUP_COMMENT.getPrefix()));
@@ -195,6 +205,7 @@ public class GroupController extends BaseController {
      */
     @PostMapping("/exit")
     @Login
+    @MonitorApiUsage
     public ResponsePack exit() throws GlobalException {
         groupServiceImpl.exit();
         return getSuccessResponsePack(null);

@@ -2,6 +2,7 @@ package com.lihao.controller;
 
 import com.lihao.annotation.Login;
 import com.lihao.annotation.Manager;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.FeedBackDto;
 import com.lihao.entity.dto.ResponsePack;
@@ -31,6 +32,7 @@ public class FeedBackController extends BaseController {
     private FeedBackService feedBackService;
     @PostMapping("/publish")
     @Login
+    @MonitorApiUsage
     public ResponsePack publish(Integer status, String content,MultipartFile file) throws GlobalException {
         String userId = StringUtil.getUserId();
         if(Tools.isBlank(content)){
@@ -52,12 +54,14 @@ public class FeedBackController extends BaseController {
     }
     @GetMapping("/getType")
     @Login
+    @MonitorApiUsage
     public ResponsePack getType(){
         return getSuccessResponsePack(feedBackService.getType());
     }
     @PostMapping("/get")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack get(Page page) throws GlobalException {
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(feedBackService.get(page));
@@ -65,6 +69,7 @@ public class FeedBackController extends BaseController {
     @PostMapping("/update")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack update(@RequestBody FeedBack feedBack) throws GlobalException {
         Optional.ofNullable(feedBack.getFeedbackId())
                 .orElseThrow(() -> new GlobalException(ExceptionConstants.INVALID_PARAM));

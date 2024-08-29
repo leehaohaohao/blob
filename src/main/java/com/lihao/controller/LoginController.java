@@ -1,5 +1,6 @@
 package com.lihao.controller;
 
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.config.JwtProperty;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.ResponsePack;
@@ -49,6 +50,7 @@ public class LoginController extends BaseController {
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     @PostMapping("/login")
     @Transactional
+    @MonitorApiUsage
     public ResponsePack loginCon(HttpServletRequest request, HttpServletResponse response,
                                  String email, String password) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
@@ -76,6 +78,7 @@ public class LoginController extends BaseController {
     }
     @PostMapping("/register")
     @Transactional
+    @MonitorApiUsage
     public ResponsePack register(String email, String password,
                                  String code,
                                  HttpServletRequest request) throws GlobalException {
@@ -114,6 +117,7 @@ public class LoginController extends BaseController {
         return getSuccessResponsePack(StringConstants.SUCCESS_REGISTER);
     }
     @PostMapping("/email/code")
+    @MonitorApiUsage
     public ResponsePack code(String email) throws GlobalException {
         if(Tools.isBlank(email)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -122,6 +126,7 @@ public class LoginController extends BaseController {
         return getSuccessResponsePack(StringConstants.SUCCESS_SEND_EMAIL_CODE);
     }
     @PostMapping("/forget")
+    @MonitorApiUsage
     public ResponsePack send(String email , String code,String password) throws GlobalException {
         //判断当前邮箱是否在网站注册
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
@@ -139,6 +144,7 @@ public class LoginController extends BaseController {
         return getSuccessResponsePack(StringConstants.SUCCESS_UPDATE_PASSWORD);
     }
     @PostMapping("/manager/login")
+    @MonitorApiUsage
     public ResponsePack mLogin(String email,String password) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
         Optional.ofNullable(userInfo)

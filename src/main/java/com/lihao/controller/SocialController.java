@@ -2,6 +2,7 @@ package com.lihao.controller;
 
 import com.lihao.annotation.LComment;
 import com.lihao.annotation.Login;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.Comment;
@@ -24,12 +25,14 @@ public class SocialController extends BaseController{
     private SocialService socialService;
     @RequestMapping("/concern")
     @Login
+    @MonitorApiUsage
     public ResponsePack concern(String otherId) throws GlobalException {
 
         return getSuccessResponsePack(socialService.concern(otherId, StringUtil.getUserId()));
     }
     @RequestMapping("/comment")
     @LComment
+    @MonitorApiUsage
     public ResponsePack comment(String postId, String parentId,String commentContent) throws GlobalException {
         String userId = StringUtil.getUserId();
         //判断主要参数是否为空
@@ -50,6 +53,7 @@ public class SocialController extends BaseController{
     }
     @RequestMapping("/get/comment")
     @Login
+    @MonitorApiUsage
     public ResponsePack getComment(String postId) throws GlobalException {
         if(Tools.isBlank(postId)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -58,6 +62,7 @@ public class SocialController extends BaseController{
     }
     @PostMapping("/get/concern/follower")
     @Login
+    @MonitorApiUsage
     public ResponsePack getConcern(@RequestBody ConcernVo concernVo) throws GlobalException {
         String userId = StringUtil.getUserId();
         Integer status = concernVo.getStatus();

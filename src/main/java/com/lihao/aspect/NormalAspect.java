@@ -2,12 +2,17 @@ package com.lihao.aspect;
 
 import com.lihao.annotation.*;
 import com.lihao.constants.ExceptionConstants;
+import com.lihao.constants.RedisConstants;
+import com.lihao.entity.po.ApiStatistics;
 import com.lihao.entity.po.UserInfo;
 import com.lihao.entity.query.UserQuery;
+import com.lihao.enums.UidPrefixEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
 import com.lihao.mapper.UserInfoMapper;
+import com.lihao.redis.RedisUtils;
 import com.lihao.util.CheckUtil;
+import com.lihao.util.CommonUtil;
 import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.aspectj.lang.JoinPoint;
@@ -16,11 +21,16 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.hibernate.validator.internal.constraintvalidators.bv.time.futureorpresent.FutureOrPresentValidatorForReadableInstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Component
 @Aspect
@@ -29,7 +39,10 @@ public class NormalAspect {
     private CheckUtil checkUtil;
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
+    @Resource
+    private RedisUtils redisUtils;
     private static final Logger logger = LoggerFactory.getLogger(NormalAspect.class);
+    private final ConcurrentHashMap<String, ReentrantLock> lockMap = new ConcurrentHashMap<>();
     @Before("@annotation(com.lihao.annotation.Login)")
     public void login(JoinPoint joinPoint) throws GlobalException {
         Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
@@ -135,10 +148,40 @@ public class NormalAspect {
         }
     }
     @Around("@annotation(com.lihao.annotation.MonitorApiUsage)")
-    public void monitorApiUsage(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object monitorApiUsage(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         Object result = joinPoint.proceed();
         long endTime = System.currentTimeMillis();
         long responseTime = endTime - startTime;
+        String className = joinPoint.getTarget().getClass().getSimpleName();
+        String methodName = joinPoint.getSignature().getName();
+        String apiName = className+"."+methodName;
+        //加锁 防止并发出现数据统计问题
+        ReentrantLock lock = lockMap.computeIfAbsent(apiName, k -> new ReentrantLock());
+        lock.lock();
+        try {
+            ApiStatistics api = (ApiStatistics) redisUtils.hget(RedisConstants.REDIS_API,apiName);
+            if(api == null){
+                api = new ApiStatistics();
+                api.setName(apiName);
+                api.setId(StringUtil.getId(UidPrefixEnum.API.getPrefix()));
+                api.setMinTime(100000000000L);
+            }
+            api.setCount(api.getCount()+1);
+            api.setMinTime(Math.min(api.getMinTime(), responseTime));
+            api.setMaxTime(Math.max(api.getMaxTime(), responseTime));
+            double currentAverage = api.getAverageTime();
+            long count = api.getCount();
+            double newAverage = currentAverage + (responseTime - currentAverage) / count;
+            api.setAverageTime(newAverage);
+
+            //将更新后的统计数据存回redis
+            redisUtils.hset(RedisConstants.REDIS_API,apiName,api);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            lock.unlock();
+        }
+        return result;
     }
 }

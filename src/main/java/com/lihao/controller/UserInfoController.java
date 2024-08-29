@@ -1,6 +1,7 @@
 package com.lihao.controller;
 
 import com.lihao.annotation.Login;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.entity.dto.OtherInfoDto;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.dto.UserInfoDto;
@@ -30,6 +31,7 @@ public class UserInfoController extends BaseController {
     private UserInfoService userInfoService;
     @RequestMapping("/info")
     @Login
+    @MonitorApiUsage
     public ResponsePack getUserAvatarInfo() throws GlobalException {
         String userId = StringUtil.getUserId();
         UserInfoDto userInfoDto = redisTools.getTokenUserInfoDto(userId);
@@ -41,6 +43,7 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/updateInfo")
     @Login
+    @MonitorApiUsage
     public ResponsePack updateInfo(String name,
                                    String telephone,
                                    Integer gender,
@@ -56,6 +59,7 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/updateTag")
     @Login
+    @MonitorApiUsage
     public ResponsePack updateTag(String selfTag) throws GlobalException {
         if(!CheckUtil.checkTag(selfTag)){
             return getSuccessResponsePack(null);
@@ -73,6 +77,7 @@ public class UserInfoController extends BaseController {
     }
     @RequestMapping("/other/info")
     @Login
+    @MonitorApiUsage
     public ResponsePack otherInfo(String otherId) throws GlobalException {
         String userId = StringUtil.getUserId();
         OtherInfoDto otherInfoDto = userInfoService.otherInfo(otherId,userId);

@@ -3,6 +3,7 @@ package com.lihao.controller;
 import com.lihao.annotation.LNote;
 import com.lihao.annotation.Login;
 import com.lihao.annotation.Manager;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.Note;
@@ -32,6 +33,7 @@ public class NoteController extends BaseController {
     private NoteService noteService;
     @PostMapping("/publish")
     @LNote
+    @MonitorApiUsage
     public ResponsePack publish(String content,Integer status) throws GlobalException {
         String userId = StringUtil.getUserId();
         if(Tools.isBlank(content)){
@@ -52,6 +54,7 @@ public class NoteController extends BaseController {
         return getSuccessResponsePack(null);
     }
     @PostMapping("/select")
+    @MonitorApiUsage
     public ResponsePack select(NoteQuery noteQuery) throws GlobalException {
         Optional.ofNullable(noteQuery)
                 .map(query -> {
@@ -69,6 +72,7 @@ public class NoteController extends BaseController {
     @PostMapping("/manager/select")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack managerSelect(Page page,Integer noteStatus,Integer noteType) throws GlobalException {
         if(page==null ||noteStatus == null || noteType == null){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -82,6 +86,7 @@ public class NoteController extends BaseController {
     @PostMapping("/manager/update")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack managerUpdate(Note note) throws GlobalException {
         if(note == null || Tools.isBlank(note.getNoteId())){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);

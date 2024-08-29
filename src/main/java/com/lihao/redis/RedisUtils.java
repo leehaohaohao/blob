@@ -9,6 +9,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -155,6 +156,57 @@ public class RedisUtils<V> {
         logger.error(keys.toString());
         if (!CollectionUtils.isEmpty(keys)) {
             keys.stream().limit(limit).forEach(redisTemplate::delete);
+        }
+    }
+    /**
+     * 使用HashMap存储统计数据
+     * @param key 键
+     * @param hashKey 哈希键
+     * @param value 值
+     * @return true成功 or false失败
+     */
+    public boolean hset(String key, String hashKey, V value) {
+        try {
+            redisTemplate.opsForHash().put(key, hashKey, value);
+            return true;
+        } catch (Exception e) {
+            logger.error("设置redisKey:{},hashKey:{},value:{}失败", key, hashKey, value, e);
+            return false;
+        }
+    }
+
+    /**
+     * 获取HashMap中的值
+     * @param key 键
+     * @param hashKey 哈希键
+     * @return 值
+     */
+    public V hget(String key, String hashKey) {
+        return (V) redisTemplate.opsForHash().get(key, hashKey);
+    }
+
+    /**
+     * 获取HashMap中的所有键值对
+     * @param key 键
+     * @return 键值对
+     */
+    public Map<Object, Object> hgetAll(String key) {
+        return redisTemplate.opsForHash().entries(key);
+    }
+
+    /**
+     * 删除HashMap中的某个键值对
+     * @param key 键
+     * @param hashKey 哈希键
+     * @return true成功 or false失败
+     */
+    public boolean hdel(String key, String... hashKey) {
+        try {
+            redisTemplate.opsForHash().delete(key, (Object[]) hashKey);
+            return true;
+        } catch (Exception e) {
+            logger.error("删除redisKey:{},hashKey:{}失败", key, hashKey, e);
+            return false;
         }
     }
 

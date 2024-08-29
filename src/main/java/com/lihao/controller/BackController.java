@@ -2,6 +2,7 @@ package com.lihao.controller;
 
 import com.lihao.annotation.Login;
 import com.lihao.annotation.Manager;
+import com.lihao.annotation.MonitorApiUsage;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
 import com.lihao.entity.po.Group;
@@ -33,6 +34,7 @@ public class BackController extends BaseController{
     @GetMapping("/num")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack num(){
         return getSuccessResponsePack(backServiceImpl.num());
     }
@@ -46,6 +48,7 @@ public class BackController extends BaseController{
     @PostMapping("/hot/post")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack getHotPost(Page page) throws GlobalException {
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(backServiceImpl.getHotPost(page));
@@ -60,6 +63,7 @@ public class BackController extends BaseController{
     @PostMapping("/hot/tag")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack getHotTag(Page page) throws GlobalException{
         CheckUtil.checkPage(page);
         return getSuccessResponsePack(backServiceImpl.getHotTag(page));
@@ -74,6 +78,7 @@ public class BackController extends BaseController{
     @PostMapping("/person")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack getPerson(Page page,Integer status) throws GlobalException {
         CheckUtil.checkPage(page);
         Optional.ofNullable(UserStatusEnum.getUserStatusEnum(status))
@@ -89,6 +94,7 @@ public class BackController extends BaseController{
     @PostMapping("/update/person")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack updatePerson(UserInfo userInfo, MultipartFile file) throws GlobalException {
         if(userInfo == null || Tools.isBlank(userInfo.getUserId())){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
@@ -119,6 +125,7 @@ public class BackController extends BaseController{
     @PostMapping("/group/list")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack getGroupList(Page page,Integer status) throws GlobalException {
         CheckUtil.checkPage(page);
         Optional.ofNullable(GroupEnum.getGroupEnum(status))
@@ -136,6 +143,7 @@ public class BackController extends BaseController{
     @PostMapping("/group/update")
     @Login
     @Manager
+    @MonitorApiUsage
     public ResponsePack updateGroup(Group group,MultipartFile file) throws GlobalException {
         Optional.ofNullable(group)
                 .filter(g -> !Tools.isBlank(g.getId()))

@@ -8,7 +8,8 @@ public enum UidPrefixEnum {
     NOTE("N","公告"),
     COMMENT("C","评论"),
     GROUP("G","群组"),
-    GROUP_COMMENT("GC","群组评论");
+    GROUP_COMMENT("GC","群组评论"),
+    API("A","api");
     private String prefix;
     private String type;
     public String getPrefix() {
