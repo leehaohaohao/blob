@@ -114,15 +114,11 @@ public class ForumController extends BaseController{
     @MonitorApiUsage
     public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {
         Page page = new Page(pageSize,pageNum);
-        List<PostCoverDto> postCoverDtoList = new ArrayList<>();
         if(tagFuzzy.equals(StringConstants.RANDOM_POST)){
-            /*postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+StringUtil.getUserId()+":"+page.getPageNum());
-            if(!postCoverDtoList.isEmpty()){
-                return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
-            }*/
             //走推荐算法
             return getSuccessResponsePack(new PageInfo<>(forumService.getRandomPost(page,StringUtil.getUserId())));
         }else{
+            List<PostCoverDto> postCoverDtoList = new ArrayList<>();
             postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum());
             if(!postCoverDtoList.isEmpty()){
                 return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));

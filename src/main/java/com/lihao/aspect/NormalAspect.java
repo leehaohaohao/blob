@@ -147,6 +147,7 @@ public class NormalAspect {
             checkUtil.checkManager();
         }
     }
+    //统计接口调用次数、响应时间
     @Around("@annotation(com.lihao.annotation.MonitorApiUsage)")
     public Object monitorApiUsage(ProceedingJoinPoint joinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
@@ -156,6 +157,11 @@ public class NormalAspect {
         String className = joinPoint.getTarget().getClass().getSimpleName();
         String methodName = joinPoint.getSignature().getName();
         String apiName = className+"."+methodName;
+        logger.info("接口：{}，耗时：{}ms",apiName,responseTime);
+        //无效耗时接口不统计
+        if(responseTime<300){
+            return result;
+        }
         //加锁 防止并发出现数据统计问题
         ReentrantLock lock = lockMap.computeIfAbsent(apiName, k -> new ReentrantLock());
         lock.lock();
@@ -174,7 +180,6 @@ public class NormalAspect {
             long count = api.getCount();
             double newAverage = currentAverage + (responseTime - currentAverage) / count;
             api.setAverageTime(newAverage);
-
             //将更新后的统计数据存回redis
             redisUtils.hset(RedisConstants.REDIS_API,apiName,api);
         } catch (Exception e) {

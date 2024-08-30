@@ -29,6 +29,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -150,24 +151,6 @@ public class ForumServiceImpl implements ForumService {
         redisTools.setPostDto(postDto);
         return postDto;
     }
-    public List<PostCoverDto> getRandomPost_(Page page, String userId) throws GlobalException {
-        //TODO 推荐算法仍需优化
-        List<Post> posts = postMapper.selectRandom(PostEnum.NORMAL.getStatus(),page.getPageSize());
-        List<PostCoverDto> postCoverDtos = posts.stream().map(post -> {
-            PostCoverDto postCoverDto = new PostCoverDto();
-            BeanUtils.copyProperties(post, postCoverDto);
-            try {
-                postCoverDto.setOtherInfoDto(userInfoService.otherInfo(post.getUserId(),userId));
-            } catch (GlobalException e) {
-                looger.error(e.getMessage(),e);
-                throw new RuntimeException(e);
-            }
-            return postCoverDto;
-        }).collect(Collectors.toList());
-        //TODO 缓存策略优化
-        redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+StringConstants.RANDOM_POST+":"+userId+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_DAY);
-        return postCoverDtos;
-    }
     @Scheduled(fixedRate = 300000)
     public void setPostCache(){
         List<Post> posts = postMapper.selectRandom(PostEnum.NORMAL.getStatus(),100);
@@ -193,22 +176,36 @@ public class ForumServiceImpl implements ForumService {
            postCacheMap.clear();
        }
        Random random = new Random();
-       for(int i = 0;i< page.getPageSize();i++){
-            //随机获取一个索引
-            int index = random.nextInt(postCoverDtos.size());
-            //判断是否已经添加过
-            if(!postCacheMap.containsKey(userId)){
-                postCacheMap.put(userId,new ConcurrentHashSet<>());
-            }
-            //除去已经推荐过的
+        //判断是否已经添加过
+        if(!postCacheMap.containsKey(userId)){
+            postCacheMap.put(userId,new ConcurrentHashSet<>());
+        }
+        //随机索引列表
+        Set<Integer> randomIndex = new HashSet<>();
+        while(randomIndex.size() < page.getPageSize()){
+            randomIndex.add(random.nextInt(postCoverDtos.size()));
+        }
+        //异步并行处理
+        List<CompletableFuture<Void>> futures = new ArrayList<>();
+        for(int index :randomIndex){
             PostCoverDto postCoverDto = postCoverDtos.get(index);
             if(!postCacheMap.get(userId).contains(postCoverDto.getPostId())){
-                postCoverDto.setOtherInfoDto(userInfoService.otherInfo(postCoverDto.getUserId(),userId));
-                result.add(postCoverDto);
-                postCacheMap.get(userId).add(postCoverDto.getPostId());
+                futures.add(CompletableFuture.runAsync(()->{
+                    //异步获取otherInfo
+                    try {
+                        postCoverDto.setOtherInfoDto(userInfoService.otherInfo(postCoverDto.getUserId(),userId));
+                        synchronized (result){
+                            result.add(postCoverDto);
+                        }
+                    } catch (GlobalException e) {
+                        throw new RuntimeException(e);
+                    }
+                    postCacheMap.get(userId).add(postCoverDto.getPostId());
+                }));
             }
-       }
-       return result;
+        }
+        CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
+        return result;
     }
 
     @Override
