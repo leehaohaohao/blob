@@ -12,7 +12,6 @@ import com.lihao.exception.GlobalException;
 import com.lihao.mapper.UserInfoMapper;
 import com.lihao.redis.RedisUtils;
 import com.lihao.util.CheckUtil;
-import com.lihao.util.CommonUtil;
 import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
 import org.aspectj.lang.JoinPoint;
@@ -21,14 +20,11 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.hibernate.validator.internal.constraintvalidators.bv.time.futureorpresent.FutureOrPresentValidatorForReadableInstant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -158,10 +154,10 @@ public class NormalAspect {
         String methodName = joinPoint.getSignature().getName();
         String apiName = className+"."+methodName;
         logger.info("接口：{}，耗时：{}ms",apiName,responseTime);
-        //无效耗时接口不统计
+        /*//无效耗时接口不统计
         if(responseTime<300){
             return result;
-        }
+        }*/
         //加锁 防止并发出现数据统计问题
         ReentrantLock lock = lockMap.computeIfAbsent(apiName, k -> new ReentrantLock());
         lock.lock();

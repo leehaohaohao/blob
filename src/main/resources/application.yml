@@ -23,9 +23,10 @@ spring:
       max-request-size: 500MB
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://121.40.154.188:3306/blob
+    url: jdbc:mysql://localhost:3306/blob
     username: root
-    password: 1851811574LIhao
+    #password: 1851811574LIhao
+    password: 123456
     hikari:
       pool-name: HikariCPDatasource
       minimum-idle: 5

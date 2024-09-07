@@ -1,12 +1,10 @@
 package com.lihao.service.Impl;
 
-import com.lihao.config.AppConfig;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.NumberConstants;
 import com.lihao.constants.RedisConstants;
 import com.lihao.entity.dto.CommentDto;
 import com.lihao.entity.dto.OtherInfoDto;
-import com.lihao.entity.dto.UserInfoDto;
 import com.lihao.entity.po.*;
 import com.lihao.entity.query.CommentQuery;
 import com.lihao.entity.query.ConcernQuery;
@@ -14,7 +12,6 @@ import com.lihao.entity.query.PostQuery;
 import com.lihao.entity.query.UserQuery;
 import com.lihao.enums.CommentEnum;
 import com.lihao.enums.PostEnum;
-import com.lihao.enums.RelationshipEnum;
 import com.lihao.enums.UserStatusEnum;
 import com.lihao.exception.GlobalException;
 import com.lihao.mapper.CommentMapper;
@@ -26,7 +23,6 @@ import com.lihao.service.SocialService;
 import com.lihao.service.UserInfoService;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -194,39 +190,42 @@ public class SocialServiceImpl implements SocialService {
     //TODO 有时间加入分页 提高查询效率
     //TODO 封禁用户评论信息处理
     private void BFSCommentDto(List<CommentDto> target, String postId, Map<String, UserInfo> userInfoMap) {
-        for (CommentDto commentDto : target) {
-            UserInfo userInfo = userInfoMap.get(commentDto.getUserId());
-            commentDto.setUserName(userInfo.getName());
-            commentDto.setPhoto(userInfo.getPhoto());
+        //加锁 避免递归出现线程安全问题
+        synchronized (userInfoMap) {
+            for (CommentDto commentDto : target) {
+                UserInfo userInfo = userInfoMap.get(commentDto.getUserId());
+                commentDto.setUserName(userInfo.getName());
+                commentDto.setPhoto(userInfo.getPhoto());
 
-            if (!Tools.isBlank(commentDto.getParentId())) {
-                Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
-                UserInfo parentInfo = userInfoMap.get(comment.getUserId());
-                commentDto.setParentName(parentInfo.getName());
-            }
+                if (!Tools.isBlank(commentDto.getParentId())) {
+                    Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
+                    UserInfo parentInfo = userInfoMap.get(comment.getUserId());
+                    commentDto.setParentName(parentInfo.getName());
+                }
 
-            CommentQuery commentQuery = new CommentQuery();
-            commentQuery.setParentId(commentDto.getCommentId());
-            commentQuery.setPostId(postId);
-            commentQuery.setCommentStatus(CommentEnum.NORMAL.getStatus());
-            commentQuery.setIsNull(false);
-            commentQuery.setOrderBy("comment_date desc");
-            List<CommentDto> childCommentDto = commentMapper.selectSpecialList(commentQuery);
-
-            // 动态更新用户信息Map
-            Set<String> childUserIds = childCommentDto.stream()
-                    .map(CommentDto::getUserId)
-                    .filter(userId -> !userInfoMap.containsKey(userId))
-                    .collect(Collectors.toSet());
-            if (!childUserIds.isEmpty()) {
-                Map<String, UserInfo> childUserInfoMap = userInfoMapper.selectByUserIds(childUserIds).stream()
-                        .collect(Collectors.toMap(UserInfo::getUserId, user -> user));
-                userInfoMap.putAll(childUserInfoMap);
-            }
-            if (!childCommentDto.isEmpty()) {
-                commentDto.setChildCommentDto(childCommentDto);
-                BFSCommentDto(childCommentDto, postId, userInfoMap);
+                CommentQuery commentQuery = new CommentQuery();
+                commentQuery.setParentId(commentDto.getCommentId());
+                commentQuery.setPostId(postId);
+                commentQuery.setCommentStatus(CommentEnum.NORMAL.getStatus());
+                commentQuery.setIsNull(false);
+                commentQuery.setOrderBy("comment_date desc");
+                List<CommentDto> childCommentDto = commentMapper.selectSpecialList(commentQuery);
+                // 动态更新用户信息Map（初始userInfoMap存放的是顶级评论的userInfo）
+                Set<String> childUserIds = childCommentDto.stream()
+                        .map(CommentDto::getUserId)
+                        .filter(userId -> !userInfoMap.containsKey(userId))
+                        .collect(Collectors.toSet());
+                if (!childUserIds.isEmpty()) {
+                    Map<String, UserInfo> childUserInfoMap = userInfoMapper.selectByUserIds(childUserIds).stream()
+                            .collect(Collectors.toMap(UserInfo::getUserId, user -> user));
+                    userInfoMap.putAll(childUserInfoMap);
+                }
+                if (!childCommentDto.isEmpty()) {
+                    commentDto.setChildCommentDto(childCommentDto);
+                    BFSCommentDto(childCommentDto, postId, userInfoMap);
+                }
             }
         }
     }
+
 }

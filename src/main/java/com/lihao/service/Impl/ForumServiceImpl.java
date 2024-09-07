@@ -19,7 +19,6 @@ import com.lihao.util.FileUtil;
 import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
-import org.apache.catalina.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -128,9 +127,6 @@ public class ForumServiceImpl implements ForumService {
         //判断帖子发布人与查看人的关系
         OtherInfoDto otherInfoDto = userInfoService.otherInfo(post.getUserId(),userId);
         postDto.setStatus(otherInfoDto.getStatus());
-        /*//查询帖子相关评论信息
-        List<CommentDto> parentCommentDtos = getCommentDto(postId);
-        postDto.setParentCommentDto(parentCommentDtos);*/
         LoveCollect loveCollectQuery = new LoveCollect();
         loveCollectQuery.setUserId(userId);
         loveCollectQuery.setPostId(postId);
@@ -500,77 +496,4 @@ public class ForumServiceImpl implements ForumService {
             throw new GlobalException(ExceptionConstants.SERVER_ERROR);
         }
     }
-
-
-    //查找帖子全部评论
-    private List<CommentDto> getCommentDto(String postId) {
-        CommentQuery commentQuery = new CommentQuery();
-        commentQuery.setPostId(postId);
-        commentQuery.setCommentStatus(CommentEnum.NORMAL.getStatus());
-        commentQuery.setOrderBy("comment_date desc");
-        commentQuery.setIsNull(true);
-        List<CommentDto> commentDtos = commentMapper.selectSpecialList(commentQuery);
-        // 收集所有需要查询的用户ID
-        Set<String> userIds = commentDtos.stream()
-                .flatMap(commentDto -> {
-                    Set<String> ids = new HashSet<>();
-                    ids.add(commentDto.getUserId());
-                    if (!Tools.isBlank(commentDto.getParentId())) {
-                        Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
-                        ids.add(comment.getUserId());
-                    }
-                    return ids.stream();
-                })
-                .collect(Collectors.toSet());
-        // 批量查询用户信息
-        Map<String, UserInfo> userInfoMap = new HashMap<>();
-        if (!userIds.isEmpty()) {
-            userInfoMap = userInfoMapper.selectByUserIds(userIds).stream()
-                    .collect(Collectors.toMap(UserInfo::getUserId, userInfo -> userInfo));
-        }
-        // 传递用户信息Map给BFSCommentDto方法
-        BFSCommentDto(commentDtos, postId, userInfoMap);
-        return commentDtos;
-    }
-
-    //全部查找算法
-    //TODO 有时间继续进行优化 如加入分页 提高查询效率
-    //TODO 封禁用户评论信息处理
-    private void BFSCommentDto(List<CommentDto> target, String postId, Map<String, UserInfo> userInfoMap) {
-        for (CommentDto commentDto : target) {
-            UserInfo userInfo = userInfoMap.get(commentDto.getUserId());
-            commentDto.setUserName(userInfo.getName());
-            commentDto.setPhoto(userInfo.getPhoto());
-
-            if (!Tools.isBlank(commentDto.getParentId())) {
-                Comment comment = commentMapper.selectByCommentId(commentDto.getParentId());
-                UserInfo parentInfo = userInfoMap.get(comment.getUserId());
-                commentDto.setParentName(parentInfo.getName());
-            }
-
-            CommentQuery commentQuery = new CommentQuery();
-            commentQuery.setParentId(commentDto.getCommentId());
-            commentQuery.setPostId(postId);
-            commentQuery.setCommentStatus(CommentEnum.NORMAL.getStatus());
-            commentQuery.setIsNull(false);
-            commentQuery.setOrderBy("comment_date desc");
-            List<CommentDto> childCommentDto = commentMapper.selectSpecialList(commentQuery);
-
-            // 动态更新用户信息Map
-            Set<String> childUserIds = childCommentDto.stream()
-                    .map(CommentDto::getUserId)
-                    .filter(userId -> !userInfoMap.containsKey(userId))
-                    .collect(Collectors.toSet());
-            if (!childUserIds.isEmpty()) {
-                Map<String, UserInfo> childUserInfoMap = userInfoMapper.selectByUserIds(childUserIds).stream()
-                        .collect(Collectors.toMap(UserInfo::getUserId, user -> user));
-                userInfoMap.putAll(childUserInfoMap);
-            }
-            if (!childCommentDto.isEmpty()) {
-                commentDto.setChildCommentDto(childCommentDto);
-                BFSCommentDto(childCommentDto, postId, userInfoMap);
-            }
-        }
-    }
-
 }
