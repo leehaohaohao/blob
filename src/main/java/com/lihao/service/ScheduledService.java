@@ -22,10 +22,12 @@ public class ScheduledService {
     private RedisUtils redisUtils;
     @Resource
     private ApiStatisticsMapper apiStatisticsMapper;
+    //更新文章随机值字段
     @Scheduled(fixedRate = 240000)
     public void updateRand(){
         postMapper.updateRand();
     }
+    //将api访问量定时存入数据库
     @Scheduled(fixedRate = 10000)
     @Transactional
     public void storageApi(){

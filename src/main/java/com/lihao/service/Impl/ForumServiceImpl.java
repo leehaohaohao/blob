@@ -40,8 +40,6 @@ public class ForumServiceImpl implements ForumService {
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
     @Resource
-    private CommentMapper<Comment, CommentQuery> commentMapper;
-    @Resource
     private UserInfoService userInfoService;
     @Resource
     private LoveCollectMapper<LoveCollect, LoveCollectQuery> loveCollectMapper;
