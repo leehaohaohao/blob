@@ -5,7 +5,6 @@ import com.lihao.annotation.*;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.RedisConstants;
 import com.lihao.constants.StringConstants;
-import com.lihao.constants.TimeConstants;
 import com.lihao.entity.dto.PostCoverDto;
 import com.lihao.entity.dto.PostDto;
 import com.lihao.entity.dto.ResponsePack;
@@ -26,7 +25,7 @@ import com.lihao.util.CheckUtil;
 import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -39,6 +38,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/forum")
 @CrossOrigin
+@Slf4j
 public class ForumController extends BaseController{
     @Resource
     private UserInfoMapper<UserInfo, UserQuery> userInfoMapper;
@@ -115,8 +115,10 @@ public class ForumController extends BaseController{
     public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {
         Page page = new Page(pageSize,pageNum);
         if(tagFuzzy.equals(StringConstants.RANDOM_POST)){
+            List<PostCoverDto> postCoverDtoList = new ArrayList<>();
+            postCoverDtoList=forumService.getRandomPost(page,StringUtil.getUserId());
             //走推荐算法
-            return getSuccessResponsePack(new PageInfo<>(forumService.getRandomPost(page,StringUtil.getUserId())));
+            return getSuccessResponsePack(new PageInfo<>(postCoverDtoList));
         }else{
             List<PostCoverDto> postCoverDtoList = new ArrayList<>();
             postCoverDtoList = redisTools.getList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum());
@@ -250,12 +252,12 @@ public class ForumController extends BaseController{
                 .map(PostOrderEnum::getType)
                 .orElse(PostOrderEnum.SORT_TIME.getType());
 
-        List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"USER:"+pageNum+":"+otherId);
-        if(postCoverDtos.isEmpty()){
-            return getSuccessResponsePack(forumService.getMyPost(page,userId,type,otherId));
-        }else {
+        /*List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"USER:"+pageNum+":"+otherId);
+        if(postCoverDtos.isEmpty()){*/
+        return getSuccessResponsePack(forumService.getMyPost(page,userId,type,otherId));
+        /*}else {
             return getSuccessResponsePack(postCoverDtos);
-        }
+        }*/
     }
 
     /**

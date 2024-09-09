@@ -14,7 +14,6 @@ import com.lihao.service.SocialService;
 import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

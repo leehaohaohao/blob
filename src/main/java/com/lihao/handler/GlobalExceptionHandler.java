@@ -3,6 +3,7 @@ package com.lihao.handler;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.entity.dto.ResponsePack;
 import io.jsonwebtoken.ExpiredJwtException;
+import net.coobird.thumbnailator.tasks.UnsupportedFormatException;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.QueryTimeoutException;
@@ -35,6 +36,8 @@ public class GlobalExceptionHandler {
             responsePack.setMessage(ExceptionConstants.INVALID_PARAM);
         }else if(e instanceof ExpiredJwtException){
             responsePack.setMessage(ExceptionConstants.EXPIRE_LOG);
+        }else if(e instanceof UnsupportedFormatException){
+            responsePack.setMessage(ExceptionConstants.INVALID_FILE);
         }else{
             responsePack.setMessage(e.getMessage());
         }

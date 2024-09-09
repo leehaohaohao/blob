@@ -1,0 +1,1070 @@
+2024-08-30 10:45:37 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-08-30 10:45:38 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 100620 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:45:38 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:45:38 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-30 10:45:38 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-30 10:45:39 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:45:39 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:45:39 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:45:40 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:45:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:45:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:45:40 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:45:40 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:45:40 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:45:40 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:45:40 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2326 ms
+2024-08-30 10:45:42 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:45:42 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:45:43 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:45:43 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.674 seconds (process running for 7.598)
+2024-08-30 10:45:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:45:44 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5feab5f7
+2024-08-30 10:45:44 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:45:45 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 10:46:30 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 5 class path changes (1 addition, 3 deletions, 1 modification)
+2024-08-30 10:46:30 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:31 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:46:31 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:46:31 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:46:32 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 100620 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:46:32 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:46:32 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:46:32 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:46:32 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:46:32 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:46:32 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:46:32 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:46:32 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:32 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:46:32 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:46:33 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:46:33 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 962 ms
+2024-08-30 10:46:35 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:46:35 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:35 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:46:35 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.255 seconds (process running for 59.798)
+2024-08-30 10:46:35 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:46:35 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bff469e
+2024-08-30 10:46:35 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:46:36 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (3 additions, 0 deletions, 0 modifications)
+2024-08-30 10:46:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:40 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:46:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:46:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:46:40 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1bff469e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 10:46:40 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 100620 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:46:40 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:46:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:46:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:46:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:46:41 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:46:41 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:46:41 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:46:41 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:41 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:46:41 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:46:41 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:46:41 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 567 ms
+2024-08-30 10:46:43 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:46:43 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:46:43 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:46:43 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.039 seconds (process running for 68.069)
+2024-08-30 10:46:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:46:44 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d4575dd
+2024-08-30 10:46:44 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:46:44 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 10:47:06 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 10:47:06 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 10:47:06 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-30 10:47:10 [ERROR][com.lihao.InitRun][run][29]-> 数据库配置错误，请检查数据库配置！
+2024-08-30 10:53:35 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (0 additions, 3 deletions, 0 modifications)
+2024-08-30 10:53:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:53:39 [WARN][org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory][stop][918]-> RedisClient did not shut down gracefully.
+io.lettuce.core.RedisCommandInterruptedException: Command interrupted
+	at io.lettuce.core.internal.Exceptions.bubble(Exceptions.java:68)
+	at io.lettuce.core.AbstractRedisClient.shutdown(AbstractRedisClient.java:531)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.stop(LettuceConnectionFactory.java:914)
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:117)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:346)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:485)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:315)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:215)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1139)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308)
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250)
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:607)
+Caused by: java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2073)
+	at io.lettuce.core.AbstractRedisClient.shutdown(AbstractRedisClient.java:529)
+	... 13 common frames omitted
+2024-08-30 10:53:39 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:53:39 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:53:39 [WARN][com.zaxxer.hikari.HikariDataSource][close][355]-> HikariCPDatasource - Interrupted during closing
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1662)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.awaitTermination(ThreadPoolExecutor.java:1475)
+	at com.zaxxer.hikari.pool.HikariPool.shutdown(HikariPool.java:236)
+	at com.zaxxer.hikari.HikariDataSource.close(HikariDataSource.java:351)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:232)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308)
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250)
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:607)
+2024-08-30 10:53:39 [WARN][org.springframework.beans.factory.support.DisposableBeanAdapter][invokeCustomDestroyMethod][339]-> Failed to invoke custom destroy method 'shutdown' on bean with name 'lettuceClientResources'
+java.lang.InterruptedException: DefaultPromise@77a44e8d(incomplete)
+	at io.netty.util.concurrent.DefaultPromise.await(DefaultPromise.java:245)
+	at io.netty.util.concurrent.DefaultPromise.get(DefaultPromise.java:338)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:324)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:249)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:587)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:559)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:520)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1195)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1186)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1147)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:174)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1093)
+	at org.springframework.boot.devtools.restart.Restarter.stop(Restarter.java:308)
+	at org.springframework.boot.devtools.restart.Restarter.lambda$restart$1(Restarter.java:250)
+	at org.springframework.boot.devtools.restart.Restarter$LeakSafeThread.run(Restarter.java:607)
+2024-08-30 10:53:43 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-08-30 10:53:43 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:53:43 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:53:43 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-30 10:53:43 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-30 10:53:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:53:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:53:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:53:45 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:53:45 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:53:45 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:53:45 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:53:45 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:53:45 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:53:45 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:53:45 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2076 ms
+2024-08-30 10:53:47 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:53:47 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:53:47 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:53:47 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.29 seconds (process running for 6.443)
+2024-08-30 10:53:47 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:53:49 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@47e566a1
+2024-08-30 10:53:49 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:54:04 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 10:54:04 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 10:54:04 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-30 10:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：NoteController.select，耗时：443ms
+2024-08-30 10:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getMyLikePost，耗时：624ms
+2024-08-30 10:54:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：UserInfoController.getUserAvatarInfo，耗时：794ms
+2024-08-30 10:54:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getMyLikePost，耗时：1141ms
+2024-08-30 10:54:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getMyPost，耗时：1141ms
+2024-08-30 10:54:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：UserInfoController.getUserAvatarInfo，耗时：339ms
+2024-08-30 10:54:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getTag，耗时：23ms
+2024-08-30 10:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：1091ms
+2024-08-30 10:54:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：2561ms
+2024-08-30 10:54:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：138ms
+2024-08-30 10:54:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：72ms
+2024-08-30 10:56:15 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
+2024-08-30 10:56:15 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:16 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:56:16 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:56:16 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
+	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
+	at com.lihao.InitRun.run(InitRun.java:26)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.lihao.BlobApplication.main(BlobApplication.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-08-30 10:56:16 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:56:16 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:56:16 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:56:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:56:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:56:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:56:17 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:56:17 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:56:17 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:56:17 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:17 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:56:17 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:56:17 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:56:17 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1015 ms
+2024-08-30 10:56:18 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:56:19 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:19 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:56:19 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.687 seconds (process running for 157.602)
+2024-08-30 10:56:19 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:56:19 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4d3a429e
+2024-08-30 10:56:19 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:56:19 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 10:56:20 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (1 addition, 0 deletions, 1 modification)
+2024-08-30 10:56:23 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:24 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:56:24 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:56:24 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:56:24 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:56:24 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:56:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:56:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:56:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:56:24 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:56:24 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:56:24 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:56:24 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:24 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:56:24 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:56:24 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:56:24 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 520 ms
+2024-08-30 10:56:26 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:56:26 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:56:26 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:56:26 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.667 seconds (process running for 164.652)
+2024-08-30 10:56:26 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:56:26 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@cbf94fe
+2024-08-30 10:56:26 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:57:38 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 10:57:38 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 10:57:38 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 0 ms
+2024-08-30 10:57:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：UserInfoController.getUserAvatarInfo，耗时：302ms
+2024-08-30 10:57:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getTag，耗时：13ms
+2024-08-30 10:57:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：870ms
+2024-08-30 10:57:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：UserInfoController.getUserAvatarInfo，耗时：205ms
+2024-08-30 10:57:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getTag，耗时：151ms
+2024-08-30 10:57:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：568ms
+2024-08-30 10:57:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：947ms
+2024-08-30 10:57:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：191ms
+2024-08-30 10:57:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：171ms
+2024-08-30 10:57:59 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：128ms
+2024-08-30 10:58:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][159]-> 接口：ForumController.getPostByTag，耗时：179ms
+2024-08-30 10:59:24 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-08-30 10:59:24 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:24 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:59:24 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:59:24 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:59:24 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@cbf94fe (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 10:59:25 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:59:25 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:59:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:59:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:59:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:59:25 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:59:25 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:59:25 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:59:25 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:25 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:59:25 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:59:25 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:59:25 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 571 ms
+2024-08-30 10:59:26 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:59:27 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:27 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:59:27 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.056 seconds (process running for 345.591)
+2024-08-30 10:59:27 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:59:27 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@23ff441
+2024-08-30 10:59:27 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:59:28 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-08-30 10:59:28 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:29 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 10:59:29 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 10:59:29 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
+	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
+	at com.lihao.InitRun.run(InitRun.java:26)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.lihao.BlobApplication.main(BlobApplication.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-08-30 10:59:29 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 10:59:29 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 10:59:29 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 10:59:30 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 10:59:30 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 10:59:30 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+2024-08-30 10:59:30 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 10:59:30 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 10:59:30 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 10:59:30 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:30 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 10:59:30 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 10:59:30 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 10:59:30 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 904 ms
+2024-08-30 10:59:31 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 10:59:31 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 10:59:31 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 10:59:31 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.242 seconds (process running for 350.558)
+2024-08-30 10:59:31 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 10:59:32 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@580f9c47
+2024-08-30 10:59:32 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 10:59:54 [ERROR][com.lihao.InitRun][run][29]-> 数据库配置错误，请检查数据库配置！
+2024-08-30 11:04:59 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (0 additions, 2 deletions, 1 modification)
+2024-08-30 11:04:59 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:04:59 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 11:04:59 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 11:04:59 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 11:04:59 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@580f9c47 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 11:04:59 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 11:04:59 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 11:05:00 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 11:05:00 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 11:05:00 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2024-08-30 11:05:00 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 11:05:00 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 11:05:00 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 11:05:00 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:05:00 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 11:05:00 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 11:05:00 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 11:05:00 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 808 ms
+2024-08-30 11:05:02 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forumController': Injection of resource dependencies failed
+2024-08-30 11:05:02 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-30 11:05:02 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30 11:05:02 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lihao.service.ForumService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.service.ForumService' in your configuration.
+
+2024-08-30 11:05:03 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 11:05:03 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 11:05:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 11:05:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 11:05:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-08-30 11:05:04 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 11:05:04 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 11:05:04 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 11:05:04 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:05:04 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 11:05:04 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 11:05:04 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 11:05:04 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 546 ms
+2024-08-30 11:05:05 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 11:05:05 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:05:05 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 11:05:06 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.082 seconds (process running for 684.576)
+2024-08-30 11:05:06 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 11:05:06 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@260beffd
+2024-08-30 11:05:06 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 11:05:29 [ERROR][com.lihao.InitRun][run][29]-> 数据库配置错误，请检查数据库配置！
+2024-08-30 11:10:41 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 11:10:41 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 11:10:41 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-30 11:10:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：971ms
+2024-08-30 11:10:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：151ms
+2024-08-30 11:10:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：187ms
+2024-08-30 11:10:51 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：251ms
+2024-08-30 11:10:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：45ms
+2024-08-30 11:10:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：174ms
+2024-08-30 11:11:42 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-08-30 11:11:42 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:11:43 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 11:11:43 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 11:11:43 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 11:11:43 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@260beffd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 11:11:43 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 11:11:43 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 11:11:43 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 11:11:43 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 11:11:43 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2024-08-30 11:11:44 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 11:11:44 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 11:11:44 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 11:11:44 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:11:44 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 11:11:44 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 11:11:44 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 11:11:44 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 715 ms
+2024-08-30 11:11:46 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 11:11:46 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:11:46 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 11:11:46 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.669 seconds (process running for 1084.668)
+2024-08-30 11:11:46 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 11:11:46 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@38696dcb
+2024-08-30 11:11:46 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 11:11:47 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 11:12:13 [ERROR][com.lihao.InitRun][run][29]-> 数据库配置错误，请检查数据库配置！
+2024-08-30 11:20:51 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
+2024-08-30 11:20:51 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:20:52 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 11:20:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 11:20:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 11:20:52 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 11:20:52 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 11:20:52 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 11:20:52 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 11:20:52 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-08-30 11:20:53 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 11:20:53 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 11:20:53 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 11:20:53 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:20:53 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 11:20:53 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 11:20:53 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 11:20:53 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 660 ms
+2024-08-30 11:20:54 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 11:20:54 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:20:54 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 11:20:54 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.944 seconds (process running for 1633.087)
+2024-08-30 11:20:54 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 11:20:55 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f4e348b
+2024-08-30 11:20:55 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 11:20:55 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 11:21:00 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-08-30 11:21:00 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:21:01 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 11:21:01 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 11:21:01 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 11:21:01 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 11:21:01 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 11:21:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 11:21:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 11:21:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-08-30 11:21:01 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 11:21:01 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 11:21:01 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 11:21:01 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:21:01 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 11:21:01 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 11:21:01 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 11:21:01 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 546 ms
+2024-08-30 11:21:03 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 11:21:03 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 11:21:03 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 11:21:03 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.848 seconds (process running for 1641.721)
+2024-08-30 11:21:03 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 11:21:03 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@45bf04ad
+2024-08-30 11:21:03 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 11:51:08 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@70718f46 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 12:10:58 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4d3dbbc9 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 12:50:28 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@459fc645 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:06:28 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@21f1fb5c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:19:58 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6986162c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:20:03 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7c4be2a3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:23:48 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 2 deletions, 0 modifications)
+2024-08-30 13:23:48 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:23:48 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 13:23:48 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 13:23:48 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 13:23:48 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3345d8cb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:23:48 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:23:48 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:23:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:23:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:23:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:23:49 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:23:49 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:23:49 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:23:49 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:23:49 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:23:49 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:23:49 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:23:49 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1075 ms
+2024-08-30 13:23:50 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forumController': Injection of resource dependencies failed
+2024-08-30 13:23:50 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-30 13:23:50 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30 13:23:50 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lihao.service.ForumService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.service.ForumService' in your configuration.
+
+2024-08-30 13:23:57 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:23:57 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:23:58 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:23:58 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:23:58 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:23:58 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:23:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:23:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:23:58 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:23:58 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:23:58 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:23:58 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:23:58 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 603 ms
+2024-08-30 13:23:59 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 13:23:59 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:23:59 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 13:23:59 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.953 seconds (process running for 9018.461)
+2024-08-30 13:23:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 13:24:01 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@20e5c100
+2024-08-30 13:24:01 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 13:24:01 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 13:24:18 [ERROR][com.lihao.InitRun][run][29]-> 数据库配置错误，请检查数据库配置！
+2024-08-30 13:27:14 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (0 additions, 2 deletions, 1 modification)
+2024-08-30 13:27:14 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:27:15 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 13:27:15 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 13:27:15 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 13:27:15 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:27:15 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:27:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:27:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:27:16 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:27:16 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:27:16 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:27:16 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:27:16 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:27:16 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:27:16 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:27:16 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:27:16 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1171 ms
+2024-08-30 13:27:17 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forumController': Injection of resource dependencies failed
+2024-08-30 13:27:17 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-30 13:27:17 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30 13:27:17 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lihao.service.ForumService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.service.ForumService' in your configuration.
+
+2024-08-30 13:27:19 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:27:19 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:27:19 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:27:19 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:27:19 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:27:19 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:27:19 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:27:19 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:27:19 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:27:19 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:27:19 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:27:19 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-3].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:27:19 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 939 ms
+2024-08-30 13:27:21 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 13:27:22 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:27:22 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 13:27:22 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.04 seconds (process running for 9220.598)
+2024-08-30 13:27:22 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 13:27:22 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@240eaafa
+2024-08-30 13:27:22 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 13:27:22 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 13:27:40 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-3].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 13:27:40 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 13:27:40 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-30 13:27:40 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 153024817 milliseconds ago at 2024-08-28T10:57:16.000Z. Current time: 2024-08-30T05:27:40.817Z. Allowed clock skew: 0 milliseconds.]
+2024-08-30 13:27:40 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 153024818 milliseconds ago at 2024-08-28T10:57:16.000Z. Current time: 2024-08-30T05:27:40.818Z. Allowed clock skew: 0 milliseconds.]
+2024-08-30 13:27:40 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 153024818 milliseconds ago at 2024-08-28T10:57:16.000Z. Current time: 2024-08-30T05:27:40.818Z. Allowed clock skew: 0 milliseconds.]
+2024-08-30 13:27:40 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 153024821 milliseconds ago at 2024-08-28T10:57:16.000Z. Current time: 2024-08-30T05:27:40.821Z. Allowed clock skew: 0 milliseconds.]
+2024-08-30 13:27:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：LoginController.mLogin，耗时：871ms
+2024-08-30 13:27:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotPost，耗时：291ms
+2024-08-30 13:27:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotTag，耗时：291ms
+2024-08-30 13:27:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：309ms
+2024-08-30 13:27:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.num，耗时：504ms
+2024-08-30 13:27:59 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.api，耗时：235ms
+2024-08-30 13:27:59 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：250ms
+2024-08-30 13:28:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：214ms
+2024-08-30 13:28:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getPerson，耗时：207ms
+2024-08-30 13:28:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotPost，耗时：190ms
+2024-08-30 13:28:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotTag，耗时：190ms
+2024-08-30 13:28:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：206ms
+2024-08-30 13:28:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.num，耗时：391ms
+2024-08-30 13:29:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.api，耗时：298ms
+2024-08-30 13:29:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：314ms
+2024-08-30 13:29:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getPerson，耗时：231ms
+2024-08-30 13:29:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：252ms
+2024-08-30 13:29:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：203ms
+2024-08-30 13:29:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getGroupList，耗时：219ms
+2024-08-30 13:29:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.managerSelect，耗时：328ms
+2024-08-30 13:29:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：344ms
+2024-08-30 13:29:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：202ms
+2024-08-30 13:29:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getApprovalList，耗时：712ms
+2024-08-30 13:51:45 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 4 class path changes (0 additions, 3 deletions, 1 modification)
+2024-08-30 13:51:45 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:51:45 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 13:51:45 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 13:51:45 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 13:51:46 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:51:46 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:51:46 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:51:46 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:51:46 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:51:47 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:51:47 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-3].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:51:47 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1264 ms
+2024-08-30 13:51:47 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forumController': Injection of resource dependencies failed
+2024-08-30 13:51:47 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-30 13:51:47 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30 13:51:47 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lihao.service.ForumService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.service.ForumService' in your configuration.
+
+2024-08-30 13:51:49 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:51:49 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:51:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:51:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:51:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:51:49 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:51:49 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:51:49 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:51:49 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:51:49 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:51:49 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:51:49 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:51:49 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 555 ms
+2024-08-30 13:51:51 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 13:51:51 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:51:51 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 13:51:51 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.051 seconds (process running for 10689.973)
+2024-08-30 13:51:51 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 13:51:51 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@56ee2a46
+2024-08-30 13:51:51 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 13:54:53 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 4 class path changes (0 additions, 2 deletions, 2 modifications)
+2024-08-30 13:54:53 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:54:54 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 13:54:54 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
+	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
+	at com.lihao.InitRun.run(InitRun.java:26)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.lihao.BlobApplication.main(BlobApplication.java:22)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-08-30 13:54:54 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 13:54:54 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 13:54:54 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:54:54 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:54:54 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:54:54 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:54:54 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:54:55 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:54:55 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-4].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:54:55 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1036 ms
+2024-08-30 13:54:55 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forumController': Injection of resource dependencies failed
+2024-08-30 13:54:55 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-30 13:54:55 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30 13:54:55 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean of type 'com.lihao.service.ForumService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.service.ForumService' in your configuration.
+
+2024-08-30 13:54:57 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 73032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:54:57 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:54:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:54:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:54:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:54:57 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:54:57 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:54:57 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:54:57 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:54:57 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:54:57 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:54:57 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-5].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:54:57 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 523 ms
+2024-08-30 13:54:59 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 13:54:59 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:54:59 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 13:54:59 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.751 seconds (process running for 10877.737)
+2024-08-30 13:54:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 13:54:59 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@64e0e1fc
+2024-08-30 13:54:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 13:55:05 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 13:55:05 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 13:55:05 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 13:55:05 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64e0e1fc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 13:55:09 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-08-30 13:55:09 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 90116 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 13:55:09 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 13:55:09 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-30 13:55:09 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-30 13:55:10 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 13:55:10 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 13:55:10 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2024-08-30 13:55:11 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 13:55:11 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 13:55:11 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 13:55:11 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:55:11 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 13:55:11 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 13:55:12 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 13:55:12 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2479 ms
+2024-08-30 13:55:14 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 13:55:14 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 13:55:14 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 13:55:14 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.851 seconds (process running for 8.118)
+2024-08-30 13:55:14 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 13:55:15 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5760a823
+2024-08-30 13:55:15 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 13:55:16 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 13:55:32 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-30 13:55:32 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-30 13:55:32 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-30 13:55:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.api，耗时：369ms
+2024-08-30 13:55:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：390ms
+2024-08-30 13:55:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getPerson，耗时：245ms
+2024-08-30 13:55:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：289ms
+2024-08-30 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotTag，耗时：316ms
+2024-08-30 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：328ms
+2024-08-30 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotPost，耗时：326ms
+2024-08-30 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.num，耗时：539ms
+2024-08-30 13:55:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：392ms
+2024-08-30 13:55:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getGroupList，耗时：557ms
+2024-08-30 13:56:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：202ms
+2024-08-30 13:56:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.api，耗时：206ms
+2024-08-30 13:57:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：316ms
+2024-08-30 13:57:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：343ms
+2024-08-30 13:57:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：325ms
+2024-08-30 13:57:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：504ms
+2024-08-30 13:57:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：515ms
+2024-08-30 13:57:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：199ms
+2024-08-30 13:57:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：186ms
+2024-08-30 13:57:34 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：903ms
+2024-08-30 13:57:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：416ms
+2024-08-30 13:57:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：371ms
+2024-08-30 13:57:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：178ms
+2024-08-30 13:57:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：176ms
+2024-08-30 13:57:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：91ms
+2024-08-30 13:57:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：184ms
+2024-08-30 13:57:46 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：327ms
+2024-08-30 13:57:46 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：148ms
+2024-08-30 13:57:46 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：175ms
+2024-08-30 13:57:50 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：262ms
+2024-08-30 13:57:50 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：181ms
+2024-08-30 13:57:51 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：184ms
+2024-08-30 13:57:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：330ms
+2024-08-30 13:57:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：163ms
+2024-08-30 13:57:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：178ms
+2024-08-30 13:57:54 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：77ms
+2024-08-30 13:57:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：333ms
+2024-08-30 13:57:56 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：324ms
+2024-08-30 13:57:56 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：166ms
+2024-08-30 13:57:56 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：27ms
+2024-08-30 13:58:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：284ms
+2024-08-30 13:58:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：170ms
+2024-08-30 13:58:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.otherInfo，耗时：173ms
+2024-08-30 13:58:02 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：164ms
+2024-08-30 13:58:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：305ms
+2024-08-30 13:58:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：111ms
+2024-08-30 13:58:08 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：88ms
+2024-08-30 13:58:11 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：217ms
+2024-08-30 13:58:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.otherInfo，耗时：175ms
+2024-08-30 13:58:13 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：SocialController.getConcern，耗时：1294ms
+2024-08-30 13:58:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：SocialController.getConcern，耗时：676ms
+2024-08-30 13:58:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：356ms
+2024-08-30 13:58:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.otherInfo，耗时：175ms
+2024-08-30 13:58:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：SocialController.getConcern，耗时：1475ms
+2024-08-30 13:58:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：SocialController.getConcern，耗时：644ms
+2024-08-30 13:58:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：170ms
+2024-08-30 13:58:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：177ms
+2024-08-30 13:58:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：181ms
+2024-08-30 13:58:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：192ms
+2024-08-30 13:58:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：348ms
+2024-08-30 13:58:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：351ms
+2024-08-30 13:58:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：167ms
+2024-08-30 13:58:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：560ms
+2024-08-30 13:58:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：561ms
+2024-08-30 13:58:34 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：170ms
+2024-08-30 13:58:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：56ms
+2024-08-30 13:58:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：215ms
+2024-08-30 13:58:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：234ms
+2024-08-30 13:58:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：252ms
+2024-08-30 13:58:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：408ms
+2024-08-30 13:58:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：320ms
+2024-08-30 13:58:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：173ms
+2024-08-30 13:58:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：187ms
+2024-08-30 13:58:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：348ms
+2024-08-30 13:58:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：164ms
+2024-08-30 13:58:46 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：709ms
+2024-08-30 13:58:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：83ms
+2024-08-30 13:58:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：86ms
+2024-08-30 13:58:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：85ms
+2024-08-30 13:58:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：240ms
+2024-08-30 13:58:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：261ms
+2024-08-30 13:58:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：FeedBackController.getType，耗时：61ms
+2024-08-30 13:59:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：36ms
+2024-08-30 13:59:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：40ms
+2024-08-30 13:59:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：47ms
+2024-08-30 13:59:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：196ms
+2024-08-30 13:59:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：212ms
+2024-08-30 13:59:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：586ms
+2024-08-30 13:59:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.otherInfo，耗时：192ms
+2024-08-30 13:59:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：188ms
+2024-08-30 13:59:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：106ms
+2024-08-30 13:59:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：111ms
+2024-08-30 13:59:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：113ms
+2024-08-30 13:59:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：265ms
+2024-08-30 13:59:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：290ms
+2024-08-30 13:59:54 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：76ms
+2024-08-30 13:59:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：230ms
+2024-08-30 13:59:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：248ms
+2024-08-30 13:59:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：417ms
+2024-08-30 13:59:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：424ms
+2024-08-30 13:59:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：248ms
+2024-08-30 13:59:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.otherInfo，耗时：182ms
+2024-08-30 13:59:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：179ms
+2024-08-30 14:00:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：124ms
+2024-08-30 14:00:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：132ms
+2024-08-30 14:00:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：136ms
+2024-08-30 14:00:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：285ms
+2024-08-30 14:00:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：315ms
+2024-08-30 14:00:01 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：283ms
+2024-08-30 14:00:01 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：167ms
+2024-08-30 14:00:02 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：710ms
+2024-08-30 14:00:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：265ms
+2024-08-30 14:00:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：169ms
+2024-08-30 14:00:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：171ms
+2024-08-30 14:00:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：224ms
+2024-08-30 14:00:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：152ms
+2024-08-30 14:00:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：719ms
+2024-08-30 14:00:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：534ms
+2024-08-30 14:00:09 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：190ms
+2024-08-30 14:00:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：530ms
+2024-08-30 14:00:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：98ms
+2024-08-30 14:00:11 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：157ms
+2024-08-30 14:00:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：85ms
+2024-08-30 14:00:16 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：613ms
+2024-08-30 14:00:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：396ms
+2024-08-30 14:00:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：137ms
+2024-08-30 14:00:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：170ms
+2024-08-30 14:00:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：36ms
+2024-08-30 14:00:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：177ms
+2024-08-30 14:00:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：72ms
+2024-08-30 14:00:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：177ms
+2024-08-30 14:00:34 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：180ms
+2024-08-30 14:00:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：181ms
+2024-08-30 14:00:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：69ms
+2024-08-30 14:00:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：287ms
+2024-08-30 14:00:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getTag，耗时：163ms
+2024-08-30 14:00:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：575ms
+2024-08-30 14:00:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：536ms
+2024-08-30 14:00:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：168ms
+2024-08-30 14:00:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：148ms
+2024-08-30 14:00:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：182ms
+2024-08-30 14:00:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：173ms
+2024-08-30 14:00:54 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getPostByTag，耗时：62ms
+2024-08-30 14:00:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：NoteController.select，耗时：169ms
+2024-08-30 14:00:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：194ms
+2024-08-30 14:00:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：349ms
+2024-08-30 14:00:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyPost，耗时：374ms
+2024-08-30 14:00:56 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：ForumController.getMyLikePost，耗时：527ms
+2024-08-30 14:01:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotTag，耗时：226ms
+2024-08-30 14:01:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.getHotPost，耗时：226ms
+2024-08-30 14:01:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：245ms
+2024-08-30 14:01:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.num，耗时：441ms
+2024-08-30 14:01:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：BackController.api，耗时：239ms
+2024-08-30 14:01:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][160]-> 接口：UserInfoController.getUserAvatarInfo，耗时：255ms
+2024-08-30 14:02:33 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
+2024-08-30 14:02:33 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:33 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 14:02:33 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 14:02:33 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 14:02:34 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 90116 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 14:02:34 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 14:02:34 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 14:02:34 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 14:02:34 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-08-30 14:02:35 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 14:02:35 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 14:02:35 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 14:02:35 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:35 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 14:02:35 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 14:02:35 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 14:02:35 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 852 ms
+2024-08-30 14:02:36 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 14:02:36 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:36 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 14:02:36 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.355 seconds (process running for 450.013)
+2024-08-30 14:02:36 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 14:02:37 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@566588d5
+2024-08-30 14:02:37 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 14:02:37 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 14:02:37 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-08-30 14:02:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:40 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 14:02:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 14:02:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-30 14:02:40 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 90116 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-30 14:02:40 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-30 14:02:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-30 14:02:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-30 14:02:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-08-30 14:02:41 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-30 14:02:41 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-30 14:02:41 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-30 14:02:41 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:41 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-30 14:02:41 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-30 14:02:41 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-30 14:02:41 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 537 ms
+2024-08-30 14:02:42 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-30 14:02:42 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-08-30 14:02:42 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-30 14:02:42 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.815 seconds (process running for 456.007)
+2024-08-30 14:02:42 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-30 14:02:43 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@79a5bcc7
+2024-08-30 14:02:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-30 14:02:43 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-30 14:32:27 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@61ca862a (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 15:01:47 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@a621585 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 15:01:52 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6ecbca78 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 15:01:57 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@399b76ba (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 15:02:02 [WARN][com.zaxxer.hikari.pool.PoolBase][isConnectionDead][179]-> HikariCPDatasource - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@18b05ff2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2024-08-30 15:19:52 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-30 15:19:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-30 15:19:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.

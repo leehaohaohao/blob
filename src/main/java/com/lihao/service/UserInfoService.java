@@ -9,6 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface UserInfoService {
     UserInfoDto getUserInfo(String userId);
     void updateInfo(UserInfo userInfo, MultipartFile file) throws GlobalException;
-    UserInfo updateTag(UserInfo userInfo);
+    UserInfoDto updateTag(UserInfo userInfo);
     OtherInfoDto otherInfo(String otherId, String userId) throws GlobalException;
 }

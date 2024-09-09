@@ -1,0 +1,356 @@
+#nav-bar {
+    background-color: #dfe0e0fb;
+    display: flex;
+    width: 100%;
+}
+#name,
+#uid,
+#followers,
+#fans,
+#posts {
+    font-size: 16px;
+    color: #333;
+}
+#info_box{
+    display: flex;
+    width: 20%;
+    /* border:1px solid green; */
+}
+#avatar_box{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#avatar{
+    width: 100px;
+    height: 100px;
+}
+#name_id{
+    width: 80%;
+    /* border: 1px solid #45a049; */
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    margin: auto;
+    margin-left: 20px;
+}
+#name_id p{
+    font-size: 18px;
+    color:#442a2afb;
+    font-weight: bold;
+}
+#num_info{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+#num_info p{
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}
+#edit-profile {
+    height: 50px;
+    padding: 10px;
+    margin: auto;
+    margin-right: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+#edit-profile:hover {
+    background-color: #45a049;
+}
+#menu {
+    display: flex;
+    justify-content: space-around;
+}
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+.tabcontent {
+    color: #333;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;  /* 添加圆角 */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);  /* 添加阴影 */
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    margin-right: 10px;
+}
+
+#gender {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#editForm label {
+    font-size: 18px;
+    color: #333;
+}
+
+#editForm input[type="text"],
+#editForm input[type="submit"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#editForm input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#editForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.custom-file-upload {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#img {
+    display: none;  /* 隐藏原生的文件选择按钮 */
+}
+.custom-file-upload label {
+    padding: 10px 24px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.custom-file-upload label:hover {
+    background-color: #45a049;
+}
+.myPost{
+    border: 1px solid green;
+}
+a{
+    text-decoration: none;
+    color: #383838;
+}
+img-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0.3em;
+}
+
+information-box{
+    position:relative;
+    margin: 0.22em 0;
+    display: flex;
+    flex-direction: column;
+}
+information-box>a>img{
+    border-radius: 1em;
+    width:15em;
+}
+
+@keyframes loading {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+#category{
+    display: flex;
+    height: 2.5em;
+    border-bottom:1px solid #ddd;
+    width: 100%;
+    justify-content: center;
+}
+.cate,.cate_active{
+    margin: auto 22px;
+    padding: 4px 12px;
+    font-weight:600; 
+}
+.cate_active{
+    border-radius:1em ;
+    color: #fff;
+    background-color: #2d90cd;
+}
+#empty_txt{
+    font-size:80px;
+    font-weight:600;
+    color:#929292;
+    text-align: justify;
+}
+
+.iconOfUse{
+    width: 2em;
+    border-radius: 1em;
+}
+.titleBelowImg{
+    
+    color: #808080;
+    margin-top: 2px;
+}
+.titleBelow_a{
+    display: flex;
+    align-items: center;
+}
+.loading{
+    text-align: center;
+    margin-left: 2em;
+    padding: 0 4px;
+}
+.loading span {
+    font-weight: bold;
+    animation: loading 1s infinite;
+}
+.loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.link{
+    margin-left: 2em;
+    text-align: center;
+    cursor: pointer;
+}
+.followlink{
+    background-color: #397ae9;
+    border-radius: 1.5em;
+    color: #fff;
+    width: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+.useLinks{
+    color: #397ae9;
+}
+.linksMe{
+    color: #929292;
+}
+.userBelowImg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: #808080;
+    font-size: 12px;
+    bottom: 0;
+}
+#concernList,#fanList{
+    width: 100%;
+    margin: auto;
+    min-height: 600px;
+    /* background: linear-gradient(to right, #f8f9fa, #e0f2fe); */
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: start;
+}
+.info_box{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    width:40%;
+    height: 100px;
+    /* border: 2px solid rgb(86, 81, 81); */
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50px 10px 10px 50px;
+    transition: all 0.3s ease 0s;
+    display: flex;
+    align-items: center;
+}
+.info_box:hover{
+    transform: scale(1.05);
+}
+.info_avatar{
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+}
+.name_id,.num_info{
+    padding-left:5px;
+    width: 33%;
+    /* border: 1px solid rgb(86, 81, 81); */
+    font-weight: bold;
+    text-align: left;
+}
+/* p{
+    border: 1px solid rgb(86, 81, 81);
+} */
+.concern-box,.concern{
+    width: 15%;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.concern{
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    margin: auto;
+}

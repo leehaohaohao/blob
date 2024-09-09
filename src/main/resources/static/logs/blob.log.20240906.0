@@ -1,0 +1,401 @@
+2024-09-06 15:45:24 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-09-06 15:45:24 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 50768 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-09-06 15:45:24 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-09-06 15:45:24 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-06 15:45:24 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-06 15:45:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 15:45:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 15:45:25 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-09-06 15:45:26 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-09-06 15:45:26 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-09-06 15:45:26 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-09-06 15:45:26 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:26 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-09-06 15:45:26 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-09-06 15:45:26 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-09-06 15:45:26 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1772 ms
+2024-09-06 15:45:27 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-09-06 15:45:27 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:27 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-09-06 15:45:27 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 4.113 seconds (process running for 5.057)
+2024-09-06 15:45:27 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-09-06 15:45:29 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ea8bad7
+2024-09-06 15:45:29 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-09-06 15:45:29 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-09-06 15:45:39 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 5 class path changes (1 addition, 1 deletion, 3 modifications)
+2024-09-06 15:45:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:40 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-09-06 15:45:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-09-06 15:45:40 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-09-06 15:45:40 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 50768 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-09-06 15:45:40 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-09-06 15:45:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 15:45:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 15:45:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-09-06 15:45:40 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-09-06 15:45:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-09-06 15:45:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-09-06 15:45:40 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:40 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-09-06 15:45:40 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-09-06 15:45:40 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-09-06 15:45:40 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 460 ms
+2024-09-06 15:45:41 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-09-06 15:45:41 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:41 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-09-06 15:45:41 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.477 seconds (process running for 18.96)
+2024-09-06 15:45:41 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-09-06 15:45:41 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@4af4f5d2
+2024-09-06 15:45:41 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-09-06 15:45:41 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-09-06 15:45:43 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-09-06 15:45:43 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:43 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-09-06 15:45:43 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-09-06 15:45:43 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-09-06 15:45:43 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 50768 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-09-06 15:45:43 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-09-06 15:45:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-09-06 15:45:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-09-06 15:45:44 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-09-06 15:45:44 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-09-06 15:45:44 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-09-06 15:45:44 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-09-06 15:45:44 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:44 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-09-06 15:45:44 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-09-06 15:45:44 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-09-06 15:45:44 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 545 ms
+2024-09-06 15:45:45 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-09-06 15:45:45 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-09-06 15:45:45 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-09-06 15:45:45 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.151 seconds (process running for 23.142)
+2024-09-06 15:45:45 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-09-06 15:45:45 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ab393d4
+2024-09-06 15:45:45 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-09-06 15:45:46 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-09-06 15:47:31 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06 15:47:31 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-09-06 15:47:31 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-09-06 15:47:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：704ms
+2024-09-06 15:47:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：10ms
+2024-09-06 15:47:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：133ms
+2024-09-06 15:47:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：174ms
+2024-09-06 15:47:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：301ms
+2024-09-06 15:47:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：301ms
+2024-09-06 15:47:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：71ms
+2024-09-06 15:47:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：2ms
+2024-09-06 15:47:55 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：37ms
+2024-09-06 15:48:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：45ms
+2024-09-06 15:48:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：86ms
+2024-09-06 15:48:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：130ms
+2024-09-06 15:48:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：39ms
+2024-09-06 15:48:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：144ms
+2024-09-06 15:48:08 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：153ms
+2024-09-06 15:48:09 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：98ms
+2024-09-06 15:48:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:48:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：193ms
+2024-09-06 15:48:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：91ms
+2024-09-06 15:48:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:48:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：156ms
+2024-09-06 15:48:19 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：62ms
+2024-09-06 15:48:19 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:48:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：329ms
+2024-09-06 15:48:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：80ms
+2024-09-06 15:48:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：145ms
+2024-09-06 15:48:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：30ms
+2024-09-06 15:48:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：142ms
+2024-09-06 15:48:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：65ms
+2024-09-06 15:48:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:48:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：184ms
+2024-09-06 15:48:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：50ms
+2024-09-06 15:48:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：2ms
+2024-09-06 15:48:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：143ms
+2024-09-06 15:48:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：3ms
+2024-09-06 15:48:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：25ms
+2024-09-06 15:48:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：162ms
+2024-09-06 15:48:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：164ms
+2024-09-06 15:48:32 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：181ms
+2024-09-06 15:48:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：166ms
+2024-09-06 15:48:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：2ms
+2024-09-06 15:48:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：340ms
+2024-09-06 15:48:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：207ms
+2024-09-06 15:48:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：135ms
+2024-09-06 15:48:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：128ms
+2024-09-06 15:48:40 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：20ms
+2024-09-06 15:48:40 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：20ms
+2024-09-06 15:48:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：14ms
+2024-09-06 15:48:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：147ms
+2024-09-06 15:48:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:48:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：103ms
+2024-09-06 15:48:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：103ms
+2024-09-06 15:48:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：104ms
+2024-09-06 15:48:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：125ms
+2024-09-06 15:49:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.mLogin，耗时：444ms
+2024-09-06 15:49:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotPost，耗时：2ms
+2024-09-06 15:49:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotTag，耗时：3ms
+2024-09-06 15:49:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.num，耗时：12ms
+2024-09-06 15:49:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：109ms
+2024-09-06 15:50:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0]
+2024-09-06 15:50:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0]
+2024-09-06 15:50:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0]
+2024-09-06 15:50:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.MalformedJwtException: Invalid compact JWT string: Compact JWSs must contain exactly 2 period characters, and compact JWEs must contain exactly 4.  Found: 0]
+2024-09-06 15:50:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.mLogin，耗时：687ms
+2024-09-06 15:50:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotTag，耗时：3ms
+2024-09-06 15:50:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotPost，耗时：3ms
+2024-09-06 15:50:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.num，耗时：8ms
+2024-09-06 15:50:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：130ms
+2024-09-06 15:50:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.api，耗时：3ms
+2024-09-06 15:50:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：25ms
+2024-09-06 15:50:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotTag，耗时：2ms
+2024-09-06 15:50:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotPost，耗时：3ms
+2024-09-06 15:50:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.num，耗时：8ms
+2024-09-06 15:50:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：49ms
+2024-09-06 15:50:59 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.api，耗时：3ms
+2024-09-06 15:50:59 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：81ms
+2024-09-06 15:51:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getPerson，耗时：11ms
+2024-09-06 15:51:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：31ms
+2024-09-06 15:51:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getGroupList，耗时：6ms
+2024-09-06 15:51:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:51:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.managerSelect，耗时：6ms
+2024-09-06 15:51:30 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:51:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getApprovalList，耗时：6ms
+2024-09-06 15:51:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:51:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：FeedBackController.get，耗时：11ms
+2024-09-06 15:51:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:51:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：FeedBackController.get，耗时：7ms
+2024-09-06 15:51:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:51:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.api，耗时：3ms
+2024-09-06 15:51:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：24ms
+2024-09-06 15:52:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.num，耗时：8ms
+2024-09-06 15:52:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotTag，耗时：3ms
+2024-09-06 15:52:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotPost，耗时：3ms
+2024-09-06 15:52:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:52:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:52:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：17ms
+2024-09-06 15:52:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:52:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：44ms
+2024-09-06 15:52:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：53ms
+2024-09-06 15:52:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:52:39 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-09-06 15:52:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：2ms
+2024-09-06 15:52:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：252ms
+2024-09-06 15:52:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：5ms
+2024-09-06 15:52:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：30ms
+2024-09-06 15:52:41 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-09-06 15:52:41 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-09-06 15:52:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:52:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：16ms
+2024-09-06 15:52:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：22ms
+2024-09-06 15:52:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：23ms
+2024-09-06 15:52:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：33ms
+2024-09-06 15:52:42 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-09-06 15:52:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:52:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:52:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:52:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：6ms
+2024-09-06 15:52:42 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：28ms
+2024-09-06 15:52:44 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-09-06 15:52:44 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-09-06 15:52:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:52:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：16ms
+2024-09-06 15:52:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：21ms
+2024-09-06 15:52:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：32ms
+2024-09-06 15:52:44 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：20ms
+2024-09-06 15:52:45 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-09-06 15:52:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:52:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:52:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:52:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：3ms
+2024-09-06 15:52:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：31ms
+2024-09-06 15:52:48 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-09-06 15:52:48 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-09-06 15:52:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:52:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：13ms
+2024-09-06 15:52:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:52:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：14ms
+2024-09-06 15:52:48 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:52:49 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-09-06 15:52:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:52:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：0ms
+2024-09-06 15:52:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:52:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：9ms
+2024-09-06 15:52:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：27ms
+2024-09-06 15:53:49 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-09-06 15:53:49 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：181ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：31ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：22ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：36ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：59ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：32ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：18ms
+2024-09-06 15:53:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：195ms
+2024-09-06 15:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：24ms
+2024-09-06 15:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：42ms
+2024-09-06 15:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：48ms
+2024-09-06 15:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：51ms
+2024-09-06 15:54:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:54:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:54:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:54:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：8ms
+2024-09-06 15:54:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：28ms
+2024-09-06 15:54:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:54:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：2ms
+2024-09-06 15:54:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：14ms
+2024-09-06 15:54:13 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:54:14 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：15ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：18ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：19ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:54:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：26ms
+2024-09-06 15:54:16 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:54:16 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：0ms
+2024-09-06 15:54:16 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：34ms
+2024-09-06 15:54:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：31ms
+2024-09-06 15:54:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:54:19 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:54:19 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
+2024-09-06 15:54:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：24ms
+2024-09-06 15:54:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：4ms
+2024-09-06 15:54:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：36ms
+2024-09-06 15:54:22 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：15ms
+2024-09-06 15:54:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：32ms
+2024-09-06 15:54:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:54:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:54:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：27ms
+2024-09-06 15:54:24 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：30ms
+2024-09-06 15:54:49 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.likeOrCollect，耗时：21ms
+2024-09-06 15:54:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：24ms
+2024-09-06 15:54:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：0ms
+2024-09-06 15:54:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：25ms
+2024-09-06 15:54:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：27ms
+2024-09-06 15:54:52 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：29ms
+2024-09-06 15:54:56 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.likeOrCollect，耗时：13ms
+2024-09-06 15:54:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：80ms
+2024-09-06 15:54:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：2ms
+2024-09-06 15:54:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：16ms
+2024-09-06 15:55:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：155ms
+2024-09-06 15:55:02 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：200ms
+2024-09-06 15:55:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：49ms
+2024-09-06 15:55:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：14ms
+2024-09-06 15:55:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:55:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：39ms
+2024-09-06 15:55:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:55:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：42ms
+2024-09-06 15:55:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：47ms
+2024-09-06 15:55:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：42ms
+2024-09-06 15:55:12 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：65ms
+2024-09-06 15:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：24ms
+2024-09-06 15:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：27ms
+2024-09-06 15:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：28ms
+2024-09-06 15:55:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.comment，耗时：14ms
+2024-09-06 15:55:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:55:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:55:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:55:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：29ms
+2024-09-06 15:55:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：29ms
+2024-09-06 15:56:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
+2024-09-06 15:56:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：0ms
+2024-09-06 15:56:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:56:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：18ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：18ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：17ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：14ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
+2024-09-06 15:56:05 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
+2024-09-06 15:56:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
+2024-09-06 15:56:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-09-06 15:56:06 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：21ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：20ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：13ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：13ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
+2024-09-06 15:56:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：22ms
+2024-09-06 15:56:08 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：14ms
+2024-09-06 15:56:08 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：17ms
+2024-09-06 15:56:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:56:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:56:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：42ms
+2024-09-06 15:56:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：42ms
+2024-09-06 15:56:10 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：43ms
+2024-09-06 15:56:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：28ms
+2024-09-06 15:56:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：2ms
+2024-09-06 15:56:15 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：11ms
+2024-09-06 15:56:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:56:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:56:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：14ms
+2024-09-06 15:56:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
+2024-09-06 15:56:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：25ms
+2024-09-06 15:56:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：27ms
+2024-09-06 15:56:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：2ms
+2024-09-06 15:56:18 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getConcern，耗时：9ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：13ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：13ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：30ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：40ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.otherInfo，耗时：1ms
+2024-09-06 15:56:20 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getConcern，耗时：15ms
+2024-09-06 15:56:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
+2024-09-06 15:56:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：14ms
+2024-09-06 15:56:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：15ms
+2024-09-06 15:56:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：15ms
+2024-09-06 15:56:21 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
+2024-09-06 15:56:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：FeedBackController.getType，耗时：3ms
+2024-09-06 15:56:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:56:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：14ms
+2024-09-06 15:56:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：19ms
+2024-09-06 15:56:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：19ms
+2024-09-06 15:56:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：32ms
+2024-09-06 15:56:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：1ms
+2024-09-06 15:56:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：19ms
+2024-09-06 15:56:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：25ms
+2024-09-06 15:56:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：23ms
+2024-09-06 15:56:39 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：36ms
+2024-09-06 15:56:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.updateTag，耗时：3ms
+2024-09-06 15:56:53 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-09-06 15:56:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectMyGroup，耗时：3ms
+2024-09-06 15:56:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupList，耗时：2ms
+2024-09-06 15:56:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：26ms
+2024-09-06 15:56:53 [INFO][com.lihao.netty.ChannelContext][addGroupContext][83]-> 用户U1805198690294980608加入群组G1827294685224845312
+2024-09-06 15:56:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.add2Group，耗时：3ms
+2024-09-06 15:56:53 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupComment，耗时：10ms
+2024-09-06 15:56:57 [INFO][com.lihao.netty.ChannelContext][addGroupContext][86]-> 用户U1805198690294980608已经在群组G1827294685224845312中
+2024-09-06 15:56:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.add2Group，耗时：2ms
+2024-09-06 15:56:57 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupComment，耗时：5ms
+2024-09-06 15:56:58 [INFO][com.lihao.netty.ChannelContext][addGroupContext][83]-> 用户U1805198690294980608加入群组G1827631884327714816
+2024-09-06 15:56:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.add2Group，耗时：2ms
+2024-09-06 15:56:58 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupComment，耗时：4ms
+2024-09-06 15:57:00 [INFO][com.lihao.netty.ChannelContext][addGroupContext][83]-> 用户U1805198690294980608加入群组G1827294685224845312
+2024-09-06 15:57:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.add2Group，耗时：3ms
+2024-09-06 15:57:00 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupComment，耗时：8ms
+2024-09-06 15:57:01 [INFO][com.lihao.netty.ChannelContext][addGroupContext][86]-> 用户U1805198690294980608已经在群组G1827294685224845312中
+2024-09-06 15:57:01 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.add2Group，耗时：3ms
+2024-09-06 15:57:01 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.selectGroupComment，耗时：5ms
+2024-09-06 15:57:03 [INFO][com.lihao.netty.ChannelContext][removeUserFromSomeGroup][112]-> 已经将用户从组内移除！
+2024-09-06 15:57:03 [INFO][com.lihao.netty.ChannelContext][removeUserFromSomeGroup][112]-> 已经将用户从组内移除！
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：GroupController.exit，耗时：2ms
+2024-09-06 15:57:03 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-09-06 15:57:03 [INFO][com.lihao.netty.ChannelContext][removeUserFromSomeGroup][112]-> 已经将用户从组内移除！
+2024-09-06 15:57:03 [INFO][com.lihao.netty.ChannelContext][removeUserFromSomeGroup][112]-> 已经将用户从组内移除！
+2024-09-06 15:57:03 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：0ms
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：20ms
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：20ms
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：28ms
+2024-09-06 15:57:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：37ms
+2024-09-06 15:57:11 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-09-06 15:57:11 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-09-06 15:57:11 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.

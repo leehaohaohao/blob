@@ -82,9 +82,13 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public UserInfo updateTag(UserInfo updateInfo) {
+    public UserInfoDto updateTag(UserInfo updateInfo) {
         userInfoMapper.updateByUserId(updateInfo, updateInfo.getUserId());
-        return userInfoMapper.selectByUserId(updateInfo.getUserId());
+        UserInfoDto userInfoDto  = new UserInfoDto();
+        UserInfo userInfo = userInfoMapper.selectByUserId(updateInfo.getUserId());
+        BeanUtils.copyProperties(userInfo,userInfoDto);
+        redisTools.setTokenUserInfo(userInfoDto);
+        return userInfoDto;
     }
 
     @Override

@@ -12,7 +12,6 @@ import com.lihao.service.UserInfoService;
 import com.lihao.util.CheckUtil;
 import com.lihao.util.StringUtil;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,10 +69,7 @@ public class UserInfoController extends BaseController {
         UserInfo userInfo = new UserInfo();
         userInfo.setSelfTag(selfTag);
         userInfo.setUserId(userId);
-        userInfo = userInfoService.updateTag(userInfo);
-        UserInfoDto userInfoDto = new UserInfoDto();
-        BeanUtils.copyProperties(userInfo,userInfoDto);
-        return getSuccessResponsePack(userInfoDto);
+        return getSuccessResponsePack(userInfoService.updateTag(userInfo));
     }
     @RequestMapping("/other/info")
     @Login

@@ -19,6 +19,7 @@ import com.lihao.util.FileUtil;
 import com.lihao.util.StringUtil;
 import com.lihao.util.Tools;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -33,6 +34,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class ForumServiceImpl implements ForumService {
     private final static Logger looger = LoggerFactory.getLogger(ForumServiceImpl.class);
     @Resource
@@ -101,7 +103,7 @@ public class ForumServiceImpl implements ForumService {
             return postCoverDto;
         }).collect(Collectors.toList());
         //TODO 缓存策略优化
-        redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_DAY);
+        redisTools.setLeftList(RedisConstants.REDIS_POST_KEY+tagFuzzy+":"+page.getPageNum(), postCoverDtos,TimeConstants.ONE_minute);
         return postCoverDtos;
     }
     @Override
@@ -164,20 +166,31 @@ public class ForumServiceImpl implements ForumService {
     }
     @Override
     public List<PostCoverDto> getRandomPost(Page page, String userId) throws GlobalException {
-       List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_RAND);
-       List<PostCoverDto> result = new ArrayList<>();
-       if(page.getPageNum().equals(1)){
+        List<PostCoverDto> postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_RAND);
+        List<PostCoverDto> result = new ArrayList<>();
+        if(page.getPageNum().equals(1)){
            postCacheMap.clear();
-       }
-       Random random = new Random();
+        }
+        Random random = new Random();
+        while(postCoverDtos.isEmpty()){
+            setPostCache();
+            postCoverDtos=redisTools.getList(RedisConstants.REDIS_POST_RAND);
+        }
         //判断是否已经添加过
         if(!postCacheMap.containsKey(userId)){
             postCacheMap.put(userId,new ConcurrentHashSet<>());
         }
         //随机索引列表
+        //文章数量有限时可能出现死循环
         Set<Integer> randomIndex = new HashSet<>();
-        while(randomIndex.size() < page.getPageSize()){
-            randomIndex.add(random.nextInt(postCoverDtos.size()));
+        if(postCoverDtos.size()<=page.getPageSize()){
+            while(randomIndex.size() < postCoverDtos.size()){
+                randomIndex.add(random.nextInt(postCoverDtos.size()));
+            }
+        }else{
+            while(randomIndex.size() < page.getPageSize()){
+                randomIndex.add(random.nextInt(postCoverDtos.size()));
+            }
         }
         //异步并行处理
         List<CompletableFuture<Void>> futures = new ArrayList<>();

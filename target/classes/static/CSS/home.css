@@ -1,0 +1,470 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    transition: background-color 0.5s;
+}
+
+
+#logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 50px; /* 设置logo的宽度 */
+    height: 50px; /* 设置logo的高度 */
+    background-color: #333;
+}
+
+.dropdown-content a{
+    color: rgb(106, 22, 155);
+}
+nav a:hover {
+    color: #ddd;
+}
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-container, .right-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.left-container {
+    flex: 2;
+    margin-right: 20px;
+}
+
+.right-container {
+    flex: 1;
+    margin-left: 20px;
+}
+
+
+.box {
+    background-color: #fff;
+    border-radius: 10px; /* 添加圆角 */
+    padding: 20px;
+    height: 200px;
+}
+.box4 {
+    background: linear-gradient(to right, #f8f9fa, #e0f2fe);
+    border-radius: 10px;
+    padding: 20px;
+    height: 600px;
+    position: relative;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    width: 50px; /* 减小头像的大小 */
+    height: 50px; /* 减小头像的大小 */
+    border-radius: 50%;
+    transition: transform 0.3s;
+    margin-right: 50px;
+}
+
+.dropdown:hover .avatar {
+    transform: scale(1.1);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(117, 8, 8, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    right: 0; /* 将下拉菜单定位到右边 */
+    border-radius: 5px; /* 添加圆角 */
+    color: #333; /* 改变字体颜色 */
+    font-size: 14px; /* 改变字体大小 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content div {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content div:last-child {
+    border-bottom: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+}
+
+#publish {
+    display: block;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #1c5324;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 50px;
+    transition: transform 0.3s; /* 添加悬浮动画 */
+}
+
+#publish:hover {
+    transform: scale(1.1);
+}
+#tagContainer {
+    display: flex; /* 使用 flex 布局 */
+    justify-content: space-between; /* 使标签和按钮在水平方向上分开 */
+    align-items: center; /* 使标签和按钮在垂直方向上居中 */
+    border-bottom: 1px solid #ddd; /* 添加一个灰色的横线 */
+    margin-bottom: 20px; /* 增加与下方元素的间距 */
+    padding-bottom: 20px; /* 增加底部的空间以防止标签贴近分割线 */
+    height: 100px;
+}
+
+#tags {
+    flex: 2; /* 使标签区域比按钮区域大 */
+    display: flex; /* 使用 flex 布局 */
+    flex-wrap: wrap; /* 允许多行显示 */
+    gap: 10px; /* 设置标签之间的间距 */
+}
+
+#tags a {
+    background-color: #bbdefb;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#tags a:hover {
+    transform: scale(1.1);
+    background-color: #90caf9;
+}
+
+#divider {
+    width: 1px; /* 设置分割线的宽度 */
+    height: 80%; /* 设置分割线的高度为 80% */
+    background-color: #ddd; /* 设置分割线的颜色为灰色 */
+    margin-left: 10px; /* 增加分割线与标签的间距 */
+    margin-right: 10px; /* 增加分割线与按钮的间距 */
+}
+
+#buttonContainer {
+    flex: 1; /* 使按钮区域比标签区域小 */
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 使按钮在水平方向上居中 */
+    align-items: center; /* 使按钮在垂直方向上居中 */
+}
+
+#addTag {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #64b5f6;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#addTag:hover {
+    transform: scale(1.1);
+    background-color: #42a5f5;
+}
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#tagInputs {
+    display: flex;
+    flex-direction: row; /* 设置为水平布局 */
+    flex-wrap: wrap; /* 允许多行显示 */
+    gap: 10px; /* 设置输入框之间的间距 */
+}
+
+#tagInputs input {
+    padding: 10px;
+    border-radius: 20px; /* 使输入框更圆润 */
+    border: 1px solid #ddd;
+    background-color: #bbdefb; /* 修改输入框的背景颜色为浅蓝色 */
+    color: #333; /* 修改输入框的文字颜色为深灰色 */
+    flex-grow: 1; /* 使输入框能够弹性地增长 */
+    max-width: 100%; /* 限制输入框的最大宽度 */
+}
+
+#addTagInput {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #64b5f6;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border: none;
+    align-self: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#addTagInput:hover {
+    transform: scale(1.1);
+    background-color: #42a5f5;
+}
+
+#tagLimit {
+    color: #999; /* 设置提示文字的颜色为灰色 */
+    font-size: 14px; /* 设置提示文字的大小 */
+    align-self: center; /* 使提示文字在水平方向上居中 */
+}
+
+#saveTags {
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #64b5f6;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border: none;
+    align-self: center; /* 使按钮在水平方向上居中 */
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#saveTags:hover {
+    transform: scale(1.1);
+    background-color: #42a5f5;
+}
+#infoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* 添加一个灰色的横线 */
+}
+
+#infoContainer {
+    display: grid; /* 使用 grid 布局 */
+    grid-template-columns: repeat(2, 1fr); /* 将容器分为两列 */
+    gap: 10px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd; /* 添加一个灰色的横线 */
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column; /* 设置为垂直布局 */
+    justify-content: center; /* 使内容在垂直方向上居中 */
+    align-items: center; /* 使内容在水平方向上居中 */
+    background-color: #bbdefb; /* 修改背景颜色为浅蓝色 */
+    padding: 10px;
+    border-radius: 20px; /* 修改为胶囊形状 */
+    font-size: 24px; /* 增大字体大小 */
+    height: 100px; /* 设置为正方形 */
+    box-sizing: border-box; /* 使高度包括内边距和边框 */
+    transition: transform 0.3s; /* 添加过渡效果 */
+}
+
+.infoItem:hover {
+    transform: scale(1.05); /* 添加悬浮动画效果 */
+}
+
+.infoLabel {
+    font-weight: bold;
+}
+
+.infoValue {
+    margin-top: 15px;
+    color: #333;
+    font-size: 30px; /* 设置数字的字体大小 */
+    height: 30px; /* 设置数字显示部分的固定高度 */
+}
+.featureContainer {
+    display: flex; /* 使用 flex 布局 */
+    flex-wrap: wrap; /* 如果一行放不下，自动换行 */
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.featureItem {
+    display: flex;
+    justify-content: center; /* 使内容在水平方向上居中 */
+    align-items: center; /* 使内容在垂直方向上居中 */
+    background-color: #bbdefb; /* 修改背景颜色为浅蓝色 */
+    padding: 10px;
+    border-radius: 20px; /* 修改为胶囊形状 */
+    font-size: 22px; /* 增大字体大小 */
+    height: 80px; /* 设置为固定高度 */
+    width: 80px; /* 设置为固定宽度 */
+    box-sizing: border-box; /* 使高度和宽度包括内边距和边框 */
+    transition: transform 0.3s; /* 添加过渡效果 */
+}
+
+.featureItem:hover {
+    transform: scale(1.05); /* 添加悬浮动画效果 */
+}
+
+.featureItem a {
+    color: #333;
+    text-decoration: none;
+}
+/* 模态对话框样式 */
+#modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* 公告容器样式 */
+#announcementContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+/* 公告窗口样式 */
+#announcementWindow {
+    background-color: #fefefe;
+    border-radius: 40px;
+    width: 700px; /* 设置宽度为40% */
+    height: 500px; /* 设置高度为50% */
+    padding: 20px;
+    position: relative;
+    display: flex;
+    margin-right: 20px; /* 添加右边距 */
+}
+
+/* 关闭按钮样式 */
+#closeModal {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* 调整位置，使其在框里的右上角 */
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 公告序号样式 */
+#announcementBlocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.announcementBlock {
+    width: 50px;  /* 固定宽度 */
+    height: 50px;  /* 固定高度 */
+    background-color: #ddd;
+    text-align: center;
+    line-height: 50px;  /* 使文字垂直居中 */
+    cursor: pointer;
+    margin: 5px;  /* 添加外边距，使小方块之间有间隔 */
+    border-radius: 10px; /* 添加圆角 */
+}
+
+.announcementBlock.selected {
+    background-color: #bbb;  /* 选中状态的背景颜色 */
+}
+
+.announcementBlock:hover {
+    background-color: #bbb;
+}
+
+.box{
+    /* border:red 1px solid; */
+    display: flex;
+    padding: 0px;
+}
+.font {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    /* border: green 1px solid; */
+    border-radius: 10px; 
+    gap:20px;
+    /* margin-left: 10px; */
+    background-color: #bbdefb; /* 修改背景颜色为浅蓝色 */
+    padding: 10px;
+}
+
+.font span {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+#MyCoverList,#LikeCoverList,#CollectCoverList{
+    display: flex;
+    padding: 10px;
+    /* border:red 1px solid; */
+}
+.cover{
+    position: relative;
+    margin-left: 10px;
+    height: 100%;
+    width: 200px;
+    /* border: green 1px solid; */
+}
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+

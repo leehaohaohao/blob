@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不挂交流室</title>
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <link rel="stylesheet" href="../CSS/solo.css">
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/chat.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-left">
+        <a href="home.html">首页</a>
+        <a href="multiPersonSquare.html?tag=random_post">资料广场</a>
+        <a href="chat.html">交流室</a>
+    </div>
+    <div id="logoContainer">
+        <form id="soloform" method="get" action="multiPersonSquare.html">
+            <img style="width: 2em;border-radius: 1em;" src="https://img2.baidu.com/it/u=61859711,4130188719&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1719853200&t=73e28dae16028c73aa5a883c67a683ff">
+            <input name="tag">
+            <button>搜索</button>
+        </form>
+    </div>
+    <div class="nav-right">
+        <div class="dropdown">
+            <img src="http://121.40.154.188:8080/image/defAva.png" class="avatar">
+            <div class="dropdown-content">
+                <div class="name">用户:</div>
+                <div class="uid">UID:</div>
+                <div><a href="center.html">个人中心</a></div>
+                <div><a href="concern.html">我的关注</a></div>
+                <div><a href="concern.html">我的粉丝</a></div>
+            </div>
+        </div>
+        <button id="publish" onclick="window.location.href = 'post.html'">发布</button>
+    </div>
+</nav>
+
+<div id="mainContainer">
+    <div id="banner">
+        <div id="bannerContent">
+            欢迎来到不挂科交流室！🎓 请遵守以下规则，保持社区和谐：尊重他人：请勿发布侮辱、歧视或攻击性言论。合法内容：请勿发布任何违法、违规或侵权内容。保护隐私：请勿泄露他人的个人信息。
+        </div>
+    </div>
+    <div id="contentContainer">
+        <div id="left">
+            <div id="info">
+                <div id="groupName">
+                    暂无群聊
+                </div>
+                <div id="groupId">
+                    GID: 空
+                </div>
+            </div>
+            <div id="chatContent">
+            </div>
+            <div id="input">
+                <input type="text" id="messageInput" placeholder="输入消息..." />
+                <button id="sendButton">发送</button>
+            </div>
+        </div>
+        <div id="right">
+            <div id="search">
+                <input type="text" id="searchInput" placeholder="输入GID搜索群组..." />
+                <button id="searchButton" type="button" onclick="searchGroupById()">搜索</button>
+            </div>
+            <div id="groupList">
+
+            </div>
+            <span class="text">我的群组</span>
+            <div class="partition"></div>
+            <div id="myGroup">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="createGroupModal" class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <h2>创建群组</h2>
+        <form id="createGroupForm">
+            <div class="input-group">
+                <label for="name">群组名称:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="avatar">群组封面:</label>
+                <div class="custom-file-upload">
+                    <label for="avatar">选择图片</label>
+                    <input type="file" id="avatar" name="avatar" accept="image/*">
+                </div>
+            </div>
+            <div class="input-group">
+                <img id="preview" src="http://localhost:9090/blob/img/group.png" alt="预览图片" class="preview-image">
+            </div>
+            <button type="submit">创建</button>
+        </form>
+    </div>
+</div>
+</body>
+    <script src="../JS/webSocket.js"></script>
+    <script src="../JS/chat.js"></script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台-网站信息</title>
+    <link rel="stylesheet" href="../CSS/mnav.css">
+    <link rel="stylesheet" href="../CSS/manager.css">
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="info-bar">
+    <span class="left">不挂管理后台</span>
+    <span class="right">欢迎 <span id="username">xxx</span></span>
+</div>
+<div id="main">
+    <div id="sidebar">
+        <div class="menu-item active" onclick="location.href='manager.html'">网站信息</div>
+        <div class="menu-item" onclick="location.href='api.html'">API详情</div>
+        <div class="menu-item" onclick="location.href='person.html'">人员管理</div>
+        <div class="menu-item" onclick="location.href='group.html'">群组管理</div>
+        <div class="menu-item" onclick="location.href='note.html'">公告</div>
+        <div class="menu-item" onclick="location.href='approval.html'">文章审批管理</div>
+        <div class="menu-item" onclick="location.href='fb.html'">问题反馈处理</div>
+    </div>
+    <div id="content">
+        <div id="chart-container">
+            <div class="chart-box"><canvas id="dataChart1"></canvas></div>
+            <div class="chart-box"><canvas id="dataChart2"></canvas></div>
+        </div>
+        <div id="chart">
+            <div id="left-box">
+                <div class="title">
+                    <p>热门话题</p>
+                </div>
+                <div id="l-container">
+                </div>
+            </div>
+            <div id="right-box">
+                <div class="title">
+                    <p>热门文章</p>
+                </div>
+                <div id="r-container">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../JS/manager.js"></script>
+</body>
+</html>
