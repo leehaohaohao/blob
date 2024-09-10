@@ -88,7 +88,7 @@ function register(event) {
         .then(data => {
             if (data.success) {
                 alert(data.data);
-                window.location.href = 'loginPage.html';
+                window.location.href = 'login.html';
             } else {
                 alert(data.message);
             }

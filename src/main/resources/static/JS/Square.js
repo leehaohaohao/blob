@@ -221,7 +221,7 @@ function Status(stmt) {
 function showEmptyInfo() {
     var emptyTarget = document.getElementById("imageList");
     var cont = "<div style='display:flex;align-items:center;'>" +
-        "<div><img style='width:10em' src='http://121.40.154.188:8080/image/emptyPage.png'></div>" +
+        "<div><img style='width:10em' src='http://localhost:9090/blob/img/emptyPage.png'></div>" +
         "<div><div id='empty_txt'>空&nbsp;空&nbsp;如&nbsp;也</div>" +
         "<div style='font-size:20px;color:#dfdfdf'>这里什么都没有……</div></div>" +
         "</div>"

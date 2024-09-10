@@ -8,7 +8,7 @@ var coverFile = null;
 let authorization = localStorage.getItem('authorization');
 // Get user data from sessionStorage
 var user = JSON.parse(sessionStorage.getItem('user'));
-if (user == null) {
+window.addEventListener('load', function (){
     fetch(userInfo, {
         method: 'get',
         headers: {
@@ -23,15 +23,14 @@ if (user == null) {
                 alert(data.message);
             }
         }).catch(error => {
-            console.error('Error:', error);
-        });
-}
+        console.error('Error:', error);
+    });
+})
 if (user != null) {
     document.getElementById('avatar').src = user.photo;
     document.getElementById('name').textContent = user.name;
     document.getElementById('uid').textContent += user.userId;
 }
-
 document.getElementById('addTag').addEventListener('click', function() {
     var tagInputs = document.getElementById('tag-inputs');
     if (tagInputs.children.length < 5) {
@@ -43,7 +42,6 @@ document.getElementById('addTag').addEventListener('click', function() {
 });
 document.getElementById('submit').addEventListener('click', function (event) {
     event.preventDefault();
-
     var title = document.getElementById('title').value;
     var content = editor.txt.html();
     var tags = Array.from(document.getElementById('tag-inputs').children).map(input => input.value);
@@ -54,7 +52,6 @@ document.getElementById('cover').addEventListener('change', function (event) {
     var url = URL.createObjectURL(coverFile);
     document.getElementById('cover-preview').src = url;
 });
-
 function postArticle(title, content, tags) {
     // 创建一个FormData对象
     var formData = new FormData();

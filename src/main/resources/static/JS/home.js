@@ -89,7 +89,6 @@ window.addEventListener('load', function (){
                     });
                 }
                 GData = data.data;
-                sessionStorage.setItem('user', JSON.stringify(GData));
             } else {
                 alert(data.message);
                 showAnnouncement(0);

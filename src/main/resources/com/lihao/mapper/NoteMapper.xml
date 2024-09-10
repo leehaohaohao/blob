@@ -86,10 +86,10 @@
                 <if test="bean.noteContent !=null and bean.noteContent != ''">
                     note_content,
                 </if>
-                <if test="bean.noteStatus !=null and bean.noteStatus != ''">
+                <if test="bean.noteStatus !=null">
                     note_status,
                 </if>
-                <if test="bean.noteType !=null and bean.noteType != ''">
+                <if test="bean.noteType !=null">
                     note_type,
                 </if>
             </trim>
@@ -106,10 +106,10 @@
                 <if test="bean.noteContent !=null and bean.noteContent != ''">
                     #{bean.noteContent},
                 </if>
-                <if test="bean.noteStatus !=null and bean.noteStatus != ''">
+                <if test="bean.noteStatus !=null">
                     #{bean.noteStatus},
                 </if>
-                <if test="bean.noteType !=null and bean.noteType != ''">
+                <if test="bean.noteType !=null">
                     #{bean.noteType},
                 </if>
             </trim>

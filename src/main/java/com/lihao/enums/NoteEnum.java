@@ -18,4 +18,12 @@ public enum NoteEnum {
         this.status = status;
         this.type = type;
     }
+    public static NoteEnum getTypeEnum(Integer status){
+        for(NoteEnum typeEnum : NoteEnum.values()){
+            if(typeEnum.getStatus().equals(status)){
+                return typeEnum;
+            }
+        }
+        return null;
+    }
 }

@@ -282,16 +282,16 @@ public class ForumController extends BaseController{
         }
         Page page = new Page(pageSize,pageNum);
         List<PostCoverDto> postCoverDtos = null;
-        if(status.equals(TypeEnum.LOVE.getStatus())){
+        /*if(status.equals(TypeEnum.LOVE.getStatus())){
             postCoverDtos = redisTools.getList(RedisConstants.REDIS_POST_KEY+"LIKE:"+pageNum+":"+userId);
         }else{
             postCoverDtos =  redisTools.getList(RedisConstants.REDIS_POST_KEY+"COLLECT:"+pageNum+":"+userId);
-        }
-        if(postCoverDtos.isEmpty()){
-            return getSuccessResponsePack(forumService.getMyLikeCollectPost(page,otherId,status,userId));
-        }else {
+        }*/
+        /*if(postCoverDtos.isEmpty()){*/
+        return getSuccessResponsePack(forumService.getMyLikeCollectPost(page,otherId,status,userId));
+        /*}else {
             return getSuccessResponsePack(postCoverDtos);
-        }
+        }*/
     }
 
     /**

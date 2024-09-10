@@ -32,6 +32,8 @@ window.addEventListener('load',async function () {
                 nameList[0].innerHTML = "用户名：" + user.name;
                 var uidList = document.getElementsByClassName('uid');
                 uidList[0].innerHTML = "UID:" + user.userId;
+                var avatarList = document.getElementsByClassName('avatar');
+                avatarList[0].src = user.photo;
                 var otherId = getUserIdFromUrl();
                 if(otherId){
                     if(user.userId!=otherId){
@@ -56,7 +58,7 @@ window.addEventListener('load',async function () {
                                 document.getElementById('posts').innerText = "帖子数:" + other.post;
                                 document.getElementById('likes').innerText = "喜欢数:" + other.love;
                                 document.getElementById('collects').innerText = "收藏数:" + other.collect;
-                                document.getElementsByClassName('avatar')[0].src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
+                                document.getElementById('avatar').src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
                             }else{
                                 alert(res.message);
                             }
@@ -143,7 +145,9 @@ async function openPage(pageName, elmnt,sort,userId,url,status) {
      for (i = 0; i < tablinks.length; i++) {
          tablinks[i].style.backgroundColor = "";
      }
-
+     pageNumMy=1;
+     pageNumCollect=1;
+     pageNumLike=1;
      // Show the specific tab content
      var parent = document.getElementById(pageName);
      parent.style.display = "block";
@@ -423,7 +427,7 @@ function showEmptyInfo(id) {
     const cont = `
         <div style='display:flex;align-items:center;'>
             <div>
-                <img style='width:10em' src='http://121.40.154.188:8080/image/emptyPage.png'>
+                <img style='width:10em' src='http://localhost:9090/blob/img/emptyPage.png'>
             </div>
             <div>
                 <div id='empty_txt'>空 空 如 也</div>
@@ -446,9 +450,12 @@ function deletePost(postId) {
         }).then(res => res.json())
             .then(async data => {
                 if (data.success) {
-                    data = await getPost(2, user.userId, userPost, null, pageNumMy);
+                    pageNumMy=1;
+                    var myPostsButton = document.querySelector('.tablink');
+                    await openPage('MyPosts', myPostsButton, sortTime, user.userId, userPost);
+                    /*data = await getPost(2, user.userId, userPost, null, pageNumMy);
                     console.log(data);
-                    showUserPost(data);
+                    showUserPost(data);*/
                 } else {
                     alert(data.message);
                 }

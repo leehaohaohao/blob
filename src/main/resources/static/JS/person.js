@@ -130,7 +130,6 @@ function changeStatus(button) {
         fetch(updateInfo, {
             method: 'POST',
             body: formData,
-            credentials: 'include',
             headers: {
                 'Authorization': authorization
             }
@@ -168,7 +167,6 @@ document.getElementById('editForm').addEventListener('submit', function (event) 
     fetch(updateInfo, {
         method: 'POST',
         body: formData,
-        credentials: 'include',
         headers: {
             'Authorization': authorization
         }

@@ -45,7 +45,9 @@ window.addEventListener('load', function () {
         fetch(postAnnouncementURL, {
             method: 'POST',
             body: formData,
-            credentials: 'include'
+            headers: {
+                'Authorization': authorization
+            }
         }).then(response => response.json())
             .then(data => {
                 if (data.success) {

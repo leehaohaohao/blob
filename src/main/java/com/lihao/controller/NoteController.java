@@ -39,7 +39,7 @@ public class NoteController extends BaseController {
         if(Tools.isBlank(content)){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
-        if(status != null && FeedBackTypeEnum.getTypeEnum(status) == null){
+        if(status != null && NoteEnum.getTypeEnum(status) == null){
             throw new GlobalException(ExceptionConstants.INVALID_PARAM);
         }
         status = Optional.ofNullable(status)

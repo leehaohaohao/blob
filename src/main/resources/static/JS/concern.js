@@ -19,11 +19,12 @@ window.addEventListener('load', async function() {
         .then(data => {
             if (data.success) {
                 user = data.data;
-                //console.log(user);
                 var nameList = document.getElementsByClassName('name');
                 nameList[0].innerHTML = "用户名：" + user.name;
                 var uidList = document.getElementsByClassName('uid');
                 uidList[0].innerHTML = "UID:" + user.userId;
+                var avatarList = document.getElementsByClassName('avatar');
+                avatarList[0].src = user.photo;
                 var otherId = getUserIdFromUrl();
                 if (otherId) {
                     if (user.userId != otherId) {
@@ -48,7 +49,7 @@ window.addEventListener('load', async function() {
                                 document.getElementById('posts').innerText = "帖子数:" + other.post;
                                 document.getElementById('likes').innerText = "喜欢数:" + other.love;
                                 document.getElementById('collects').innerText = "收藏数:" + other.collect;
-                                document.getElementsByClassName('avatar')[0].src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
+                                document.getElementById('avatar').src = other.photo;  // 更改新的图片元素的src，而不是原有的头像图片
                             } else {
                                 alert(res.message);
                             }
@@ -64,7 +65,6 @@ window.addEventListener('load', async function() {
                     document.getElementById('likes').innerText = "喜欢数:" + user.love;
                     document.getElementById('collects').innerText = "收藏数:" + user.collect;
                     document.getElementById('avatar').src = user.photo;
-                    document.getElementsByClassName('avatar')[0].src = user.photo;
                 }
                 var myPostsButton = document.querySelector('.tablink');
                 openPage('concernList', myPostsButton, 0, getUserIdFromUrl());
@@ -276,7 +276,7 @@ function showEmptyInfo(id) {
     console.log(id)
     var emptyTarget = document.getElementById(id);
     var cont = "<div style='display:flex;align-items:center;'>" +
-        "<div><img style='width:10em' src='http://121.40.154.188:8080/image/emptyPage.png'></div>" +
+        "<div><img style='width:10em' src='http://localhost:9090/blob/img/emptyPage.png'></div>" +
         "<div><div id='empty_txt'>空&nbsp;空&nbsp;如&nbsp;也</div>" +
         "<div style='font-size:20px;color:#dfdfdf'>这里什么都没有……</div></div>" +
         "</div>"

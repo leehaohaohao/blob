@@ -121,7 +121,7 @@ async function getPostByID(postID){
 }
 async function getComment(postId){
     var fd = new FormData();
-    fd.append( 'postId', postID );
+    fd.append( 'postId', postId );
     var response = request('social/get/comment','post',fd);
     let doc = document;
     let RD = null;
@@ -133,58 +133,58 @@ async function getComment(postId){
         alert(err);
     })
 }
-window.CollectOrLike  = function(e,postid,status,type){
+window.CollectOrLike  = function(e,postId,status,type){
     console.log('click');
     let fd =new FormData();
-    fd.append('postId',postid);
+    fd.append('postId',postId);
     fd.append('status',status);
     fd.append('type',type);
     let txt = ''
     let div = '';
     let data = 0;
-    if (type == 0){
+    if (type === 0){
         txt = '点赞'
-        status == 1 ? pageLike -=1 :pageLike +=1
+        status === 1 ? pageLike -=1 :pageLike +=1
         data = pageLike
         div = document.getElementById('like')
     }else{
         txt = '收藏'
-        status == 1 ? pageCollect -=1 :pageCollect +=1
+        status === 1 ? pageCollect -=1 :pageCollect +=1
         data = pageCollect
         div = document.getElementById('collect')
     }
     // console.log(data)
-    if (status == 1){
+    if (status === 1){
         div.innerHTML = data;
         e.innerHTML = txt
-        e.onclick = function() { CollectOrLike(this,postid,0,type); }
+        e.onclick = function() { CollectOrLike(this,postId,0,type); }
         e.style.color = '#000'
     }else{
         div.innerHTML = data;
         e.innerHTML = '已'+txt
         e.style.color ="#ff664b";
-        e.onclick = function() { CollectOrLike(this,postid,1,type); }
+        e.onclick = function() { CollectOrLike(this,postId,1,type); }
     } 
     var response = request("forum/love/collect","post",fd);
     response.then(res=>{
         if(!res.success){
-            if (type == 0){
-                status == 1 ? pageLike +=1 :pageLike -=1
+            if (type === 0){
+                status === 1 ? pageLike +=1 :pageLike -=1
                 data = pageLike
             }else{
-                status == 1 ? pageCollect +=1 :pageCollect -=1
+                status === 1 ? pageCollect +=1 :pageCollect -=1
                 data = pageCollect
             }
-            if (status == 0){
+            if (status === 0){
                 div.innerHTML = data;
                 e.innerHTML = txt
-                e.onclick = function() { CollectOrLike(this,postid,0,type); }
+                e.onclick = function() { CollectOrLike(this,postId,0,type); }
                 e.style.color = '#000'
             }else{
                 div.innerHTML = data;
                 e.innerHTML = '已'+txt
                 e.style.color ="#ff664b";
-                e.onclick = function() { CollectOrLike(this,postid,1,type); }
+                e.onclick = function() { CollectOrLike(this,postId,1,type); }
             } 
         }
     }).catch(err=>{

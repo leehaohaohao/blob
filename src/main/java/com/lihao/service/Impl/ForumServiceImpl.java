@@ -418,8 +418,8 @@ public class ForumServiceImpl implements ForumService {
         if(!postCoverDtos.isEmpty()){
             postCoverDtos.get(0).setOtherInfoDto(otherInfoDto);
         }
-        //添加缓存
-        redisTools.setRightList(RedisConstants.REDIS_POST_KEY+"USER:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);
+        /*//添加缓存
+        redisTools.setRightList(RedisConstants.REDIS_POST_KEY+"USER:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);*/
         return postCoverDtos;
     }
 
@@ -459,12 +459,12 @@ public class ForumServiceImpl implements ForumService {
             }
             return postCoverDto.get(0);
         }).collect(Collectors.toList());
-        //添加缓存
+        /*//添加缓存
         if(like){
             redisTools.setRightList(RedisConstants.REDIS_POST_KEY+"LIKE:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);
         }else {
             redisTools.setRightList(RedisConstants.REDIS_POST_KEY+"COLLECT:"+page.getPageNum()+":"+otherId,postCoverDtos,TimeConstants.ONE_minute);
-        }
+        }*/
         return postCoverDtos;
     }
 
