@@ -5,6 +5,7 @@ import com.lihao.annotation.*;
 import com.lihao.constants.ExceptionConstants;
 import com.lihao.constants.RedisConstants;
 import com.lihao.constants.StringConstants;
+import com.lihao.demo.current_limiting.base.CurrentLimiting;
 import com.lihao.entity.dto.PostCoverDto;
 import com.lihao.entity.dto.PostDto;
 import com.lihao.entity.dto.ResponsePack;
@@ -110,6 +111,7 @@ public class ForumController extends BaseController{
      * @throws GlobalException
      */
     @PostMapping("/tag/post")
+    @CurrentLimiting(keyType= CurrentLimiting.KeyType.ALL)
     @Login
     @MonitorApiUsage
     public ResponsePack getPostByTag(String tagFuzzy,int pageNum,int pageSize) throws GlobalException {

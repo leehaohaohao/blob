@@ -9,5 +9,4 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Login {
     boolean logging() default true;
-    // 上线记得改回true
 }

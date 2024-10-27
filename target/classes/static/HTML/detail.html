@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>管理后台-详细审批</title>
+        <link rel="stylesheet" href="../CSS/mnav.css">
+        <link rel="stylesheet" href="../CSS/detail.css">
+        <link rel="icon" type="image/png" href="../img/logo.jpg">
+    </head>
+    <body>
+        <div class="info-bar">
+            <span class="left">不挂管理后台</span>
+            <span class="right">欢迎 <span id="username">xxx</span></span>
+        </div>
+        <div id="main">
+            <div id="sidebar">
+                <div class="menu-item" onclick="location.href='manager.html'">网站信息</div>
+                <div class="menu-item" onclick="location.href='person.html'">人员管理</div>
+                <div class="menu-item" onclick="location.href='group.html'">群组管理</div>
+                <div class="menu-item" onclick="location.href='note.html'">公告</div>
+                <div class="menu-item active" onclick="location.href='approval.html'">文章审批管理</div>
+                <div class="menu-item" onclick="location.href='fb.html'">问题反馈处理</div>
+            </div>
+            <div id="content">
+                <div class="PageBox">
+                    <div id="postContentBox">
+                        <div class="lineBox">
+                            <h1 id="post_title"></h1>
+                        </div>
+                        <div class="lineBox" id="tags-cont">
+                            <span>标签：</span>
+                            <tag id="tags"></tag>
+                        </div>
+                        <div class="lineBox" id="authorHeader">
+                            <div style="display: inherit;align-items: center;">
+                                <a id="post_author_box">
+                                    <img id="postOwnerPic">
+                                    <div id="post_author"></div>
+                                </a>
+                            </div>
+                            <div style="font-size: 0.8em;">
+                                <span id="post_time"></span>
+                                <span id="post_date"></span>
+                            </div>
+                        </div>
+                        <div class="lineBox">
+                            <div id="post_detail"></div>
+                        </div>
+                    </div>
+                    <div id="remarkContentBox">
+                        <div class="lineBox">
+                            <h3>封面展示：</h3>
+                        </div>
+                        <div class="lineBox" id="coverDisplay">
+                            <img id="coverImage" src="" alt="封面图片">
+                        </div>
+                        <div class="lineBox" style="justify-content: space-between;">
+                            <button class="button approve" id="approveButton">批准</button>
+                            <button class="button reject" id="rejectButton">拒绝</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../JS/detail.js"></script>
+    </body>
+</html>

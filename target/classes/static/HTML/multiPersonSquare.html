@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资料广场</title>
+    <link rel="stylesheet" href="../CSS/nav.css">
+    <link rel="stylesheet" href="../CSS/tag.css">
+    <link rel="stylesheet" href="../CSS/square.css">
+    <link rel="stylesheet" href="../CSS/solo.css">
+
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+</head>
+<nav id="navbar">
+    <div class="nav-left">
+        <a href="home.html">首页</a>
+        <a href="multiPersonSquare.html?tag=random_post">资料广场</a>
+        <a href="chat.html">交流室</a>
+    </div>
+    <!-- 添加一个新的div用于显示logo -->
+    
+    <div id="logoContainer">
+        <form id="soloform" method="get" action="multiPersonSquare.html">
+            <img style="width: 2em;border-radius: 1em;" src="https://img2.baidu.com/it/u=61859711,4130188719&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1719853200&t=73e28dae16028c73aa5a883c67a683ff">
+            <input name="tag">
+            <button>搜索</button>
+        </form>
+    </div>
+    <div class="nav-right">
+        <div class="dropdown">
+            <img src="http://localhost:9090/blob/img/defAva.png" class="avatar">
+            <div class="dropdown-content">
+                <div class="name">用户</div>
+                <div class="uid"></div>
+                <div><a href="center.html">个人中心</a></div>
+                <div><a href="concern.html">我的关注</a></div>
+                <div><a href="concern.html">我的粉丝</a></div>
+            </div>
+        </div>
+        <button id="publish" onclick="window.location.href = 'post.html'">发布</button>
+    </div>
+</nav>
+<div id="category">
+</div>
+<div id="imageList">
+    <img-box id="imgBox1">
+    </img-box>
+    <img-box id="imgBox2">
+    </img-box>
+    <img-box id="imgBox3">
+    </img-box>
+    <img-box id="imgBox4">
+    </img-box>
+</div>
+<script type="module" src="../JS/Square.js"></script>
+</html>

@@ -1,0 +1,85 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /blob
+    session:
+      timeout: PT60M
+project:
+  folder: d:/IDEProject/blob/src/main/resources/static
+log:
+  root:
+    level: info
+mybatis:
+  mapper-locations: classpath:com/lihao/mapper/*.xml
+  type-aliases-package: com.lihao.entity
+  configuration:
+    map-underscore-to-camel-case: true
+spring:
+  jackson:
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blob
+    username: root
+    #password: 1851811574LIhao
+    password: 123456
+    hikari:
+      pool-name: HikariCPDatasource
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  data:
+    redis:
+      database: 0
+      host: 121.40.154.188
+      port: 6379
+      password: 1851811574LIhao
+      timeout: 2000
+      jedis:
+        pool:
+          #连接池最大连接数
+          max-active: 20
+          #连接池最大阻塞时间（-1表示无限制）
+          max-wait: -1
+          #连接池中的最大空闲连接
+          max-idle: 10
+          #连接池最小空闲连接
+          min-idle: 0
+  mail:
+    default-encoding: UTF-8
+    host: smtp.qq.com
+    port: 587
+    #username: li@hao02.freeqiye.com
+    #password: LMbpsFhA4K2HU84p
+    password: ptujcjyycyynbcjj
+    username: 805459342@qq.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+jwt:
+  secret: lihaolihaolihaolihaolihaolihaolh
+  expire: 259200000
+  token: Authorization
+ws:
+  port: 9091
+  heart: 120
+  expire: 5000
+error:
+  img: http://localhost:9090/blob/img/error.jpg
+  name: 不挂违规用户
+logging:
+  level:
+    root: info
+

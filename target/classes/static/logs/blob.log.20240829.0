@@ -1,0 +1,91 @@
+2024-08-29 21:49:04 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 66128 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-29 21:49:04 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-29 21:49:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-29 21:49:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-29 21:49:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2024-08-29 21:49:04 [WARN][org.mybatis.spring.mapper.ClassPathMapperScanner][warn][44]-> No MyBatis mapper was found in '[com.lihao.mapper]' package. Please check your configuration.
+2024-08-29 21:49:04 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-1].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-29 21:49:04 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 540 ms
+2024-08-29 21:49:04 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'run' defined in com.lihao.BlobApplication: Unsatisfied dependency expressed through method 'run' parameter 0: No qualifying bean of type 'com.lihao.netty.NettyServer' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-08-29 21:49:04 [INFO][org.apache.catalina.core.StandardService][log][173]-> Stopping service [Tomcat]
+2024-08-29 21:49:04 [INFO][org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger][logMessage][82]-> 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-29 21:49:04 [ERROR][org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter][report][40]-> 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method run in com.lihao.BlobApplication required a bean of type 'com.lihao.netty.NettyServer' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.lihao.netty.NettyServer' in your configuration.
+
+2024-08-29 21:49:14 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 66128 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-29 21:49:14 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-29 21:49:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-29 21:49:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-29 21:49:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-08-29 21:49:27 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-29 21:49:27 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-29 21:49:27 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-29 21:49:27 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-29 21:49:27 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-29 21:49:27 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-29 21:49:27 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 12791 ms
+2024-08-29 21:49:28 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-29 21:49:28 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-29 21:49:28 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 16.009 seconds (process running for 3278.671)
+2024-08-29 21:49:28 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-29 21:49:29 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@709ff59c
+2024-08-29 21:49:29 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-29 21:49:30 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-29 21:49:30 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-08-29 21:49:52 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-29 21:49:52 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-29 21:49:52 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-29 21:49:56 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (1 addition, 0 deletions, 1 modification)
+2024-08-29 21:49:57 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-08-29 21:49:57 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-08-29 21:49:57 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-29 21:49:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-29 21:49:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-08-29 21:49:57 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 66128 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-08-29 21:49:57 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-08-29 21:49:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-08-29 21:49:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-08-29 21:49:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-08-29 21:49:58 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-08-29 21:49:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-08-29 21:49:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-08-29 21:49:58 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-08-29 21:49:58 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-08-29 21:49:58 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-08-29 21:49:58 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 491 ms
+2024-08-29 21:49:59 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-08-29 21:49:59 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-08-29 21:49:59 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.886 seconds (process running for 3309.259)
+2024-08-29 21:49:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-08-29 21:49:59 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat-2].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-29 21:49:59 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-08-29 21:49:59 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-08-29 21:50:00 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@15633ee8
+2024-08-29 21:50:00 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-08-29 21:50:00 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-08-29 21:50:02 [INFO][com.lihao.netty.handler.CustomWebSocketServerProtocolHandler][channelRead0][52]-> 用户U1805198690294980608:上线
+2024-08-29 21:50:23 [INFO][com.lihao.netty.handler.NettyHandler][channelRead0][20]-> 收到心跳消息：heartBeat
+2024-08-29 21:50:28 [INFO][com.lihao.netty.handler.NettyHandler][channelInactive][29]-> 用户U1805198690294980608离开交流室
+2024-08-29 21:50:28 [INFO][com.lihao.netty.ChannelContext][removeUserContext][99]-> 已经将用户U1805198690294980608移除！
+2024-08-29 21:52:03 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-08-29 21:52:03 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-08-29 21:52:03 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.

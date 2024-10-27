@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台-问题反馈处理</title>
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    <link rel="stylesheet" href="../CSS/mnav.css">
+    <link rel="stylesheet" href="../CSS/fb.css">
+</head>
+<body>
+<div class="info-bar">
+    <span class="left">不挂管理后台</span>
+    <span class="right">欢迎 <span id="username">xxx</span></span>
+</div>
+<div id="main">
+    <div id="sidebar">
+        <div class="menu-item" onclick="location.href='manager.html'">网站信息</div>
+        <div class="menu-item" onclick="location.href='api.html'">API详情</div>
+        <div class="menu-item" onclick="location.href='person.html'">人员管理</div>
+        <div class="menu-item" onclick="location.href='group.html'">群组管理</div>
+        <div class="menu-item" onclick="location.href='note.html'">公告</div>
+        <div class="menu-item" onclick="location.href='approval.html'">文章审批管理</div>
+        <div class="menu-item active" onclick="location.href='fb.html'">问题反馈处理</div>
+    </div>
+    <div id="content">
+        <div class="table-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>问题类型</th>
+                    <th>内容</th>
+                    <th>时间</th>
+                    <th>图片</th>
+                    <th>用户</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- 数据行将由JavaScript填充 -->
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <button class="page-button" onclick="goToFirstPage()">回到第一页</button>
+            <button class="page-button" id="prevPage" onclick="prevPage()">上一页</button>
+            <button class="page-button" id="nextPage" onclick="nextPage()">下一页</button>
+        </div>
+    </div>
+</div>
+<script src="../JS/fb.js"></script>
+</body>
+</html>

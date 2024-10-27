@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>不挂登陆</title>
+        <link rel="stylesheet" type="text/css" href="../CSS/login.css">
+    <link rel="icon" type="image/png" href="../img/logo.jpg">
+    </head>
+    <body>
+        <div id = "mainContainer">
+            <div id = "left">
+                <img src="../img/cover.png" alt="">
+            </div>
+            <div id = "right">
+                <div id = "loginForm">
+                    <div class="info">
+                        <p>登陆</p>
+                    </div>
+                    <div class="form">
+                        <form>
+                            <input class="email" type="text" placeholder="邮箱" name="email">
+                            <input class="password" type="password" placeholder="密码" name="password">
+                            <div id="forget">
+                                <a href="forgot-password.html">忘记密码？</a>
+                            </div>
+                            <button class="submit" onclick="login(event)">登陆</button>
+                            <p style="font-size: 15px; display: inline-block; text-align: center; width: calc(100% - 15px);">OR</p>
+                            <button class="submit" onclick="switchForm(event)">去注册</button>
+                        </form>
+                    </div>
+                </div>
+                <div id = "registerForm">
+                    <div class="info">
+                        <p>注册</p>
+                    </div>
+                    <div class="form">
+                        <form>
+                            <input class="email" type="text" placeholder="邮箱" name="email">
+                            <input class="password" type="password" placeholder="密码" name="password">
+                            <div id="code">
+                                <input class="code" type="text" placeholder="邮箱验证码" name="code">
+                                <button id="submit" onclick="sentCode(event)">发送验证码</button>
+                            </div>
+                            <button class="submit" onclick="register(event)">注册</button>
+                            <p style="font-size: 15px; display: inline-block; text-align: center; width: calc(100% - 15px);">OR</p>
+                            <button class="submit" onclick="switchForm(event)">去登陆</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script src="../JS/login.js"></script>
+</html>

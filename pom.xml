@@ -24,11 +24,23 @@
         <jjwt.version>0.12.3</jjwt.version>
         <thumbnailator.version>0.4.14</thumbnailator.version>
     </properties>
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>leehaohaohao</name>
+            <url>https://raw.github.com/leehaohaohao/maven/master</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lihao</groupId>
+            <artifactId>lihao-demo</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>net.coobird</groupId>

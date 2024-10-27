@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.NoteMapper">
+    <resultMap id="base_map" type="com.lihao.entity.po.Note">
+        <id column="note_id" property="noteId"/>
+        <result column="user_id" property="userId"/>
+        <result column="note_date" property="noteDate"/>
+        <result column="note_content" property="noteContent"/>
+        <result column="note_status" property="noteStatus"/>
+        <result column="note_type" property="noteType"/>
+    </resultMap>
+    <sql id = "base_query_condition">
+        <where>
+            <if test="query.noteDate !=null">
+                AND note_date &gt;= DATE_SUB(#{query.noteDate}, INTERVAL 3 DAY)
+            </if>
+            <if test="query.noteStatus !=null">
+                AND note_status = #{query.noteStatus}
+            </if>
+            <if test="query.noteType !=null">
+                AND note_type = #{query.noteType}
+            </if>
+            <if test="query.noteContent !=null">
+                AND note_content = #{query.noteContent}
+            </if>
+            <if test="query.userId !=null">
+                AND user_id = #{query.userId}
+            </if>
+            <if test="query.noteId !=null">
+                AND note_id = #{query.noteId}
+            </if>
+        </where>
+    </sql>
+    <select id="select" resultMap="base_map">
+        select * from note
+        <include refid="base_query_condition"/>
+        <if test="query.orderBy != null">
+            order by  ${query.orderBy}
+        </if>
+        <if test="query.page !=null">
+            limit ${query.page.left},${query.page.pageSize}
+        </if>
+    </select>
+    <select id="selectById" resultMap="base_map">
+        select * from note
+        <include refid="base_query_condition"/>
+    </select>
+    <update id="update">
+        update note
+        <set>
+            <if test="bean.noteId != null">
+                note_id = #{bean.noteId},
+            </if>
+            <if test="bean.userId != null">
+                user_id = #{bean.userId},
+            </if>
+            <if test="bean.noteDate != null">
+                note_date = #{bean.noteDate},
+            </if>
+            <if test="bean.noteStatus != null">
+                note_status = #{bean.noteStatus},
+            </if>
+            <if test="bean.noteType != null">
+                note_type = #{bean.noteType},
+            </if>
+            <if test="bean.noteContent != null">
+                note_content = #{bean.noteContent},
+            </if>
+        </set>
+        <include refid="base_query_condition"/>
+    </update>
+    <insert id="insert" parameterType="com.lihao.entity.po.Note">
+        insert into note
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="bean.noteId !=null and bean.noteId != ''">
+                    note_id,
+                </if>
+                <if test="bean.userId !=null and bean.userId != ''">
+                    user_id,
+                </if>
+                <if test="bean.noteDate !=null">
+                    note_date,
+                </if>
+                <if test="bean.noteContent !=null and bean.noteContent != ''">
+                    note_content,
+                </if>
+                <if test="bean.noteStatus !=null">
+                    note_status,
+                </if>
+                <if test="bean.noteType !=null">
+                    note_type,
+                </if>
+            </trim>
+            <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+                <if test="bean.noteId !=null and bean.noteId != ''">
+                    #{bean.noteId},
+                </if>
+                <if test="bean.userId !=null and bean.userId != ''">
+                    #{bean.userId},
+                </if>
+                <if test="bean.noteDate !=null">
+                    #{bean.noteDate},
+                </if>
+                <if test="bean.noteContent !=null and bean.noteContent != ''">
+                    #{bean.noteContent},
+                </if>
+                <if test="bean.noteStatus !=null">
+                    #{bean.noteStatus},
+                </if>
+                <if test="bean.noteType !=null">
+                    #{bean.noteType},
+                </if>
+            </trim>
+    </insert>
+</mapper>

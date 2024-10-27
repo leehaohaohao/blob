@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.GroupUserMapper">
+    <resultMap id="base_result_map" type="com.lihao.entity.po.GroupUser">
+        <id property="groupId" column="group_id"/>
+        <id property="userId" column="user_id"/>
+    </resultMap>
+    <sql id="base_column_list">
+        group_id,user_id
+    </sql>
+    <select id="select" resultMap="base_result_map">
+        select <include refid="base_column_list"/>
+            from group_user
+            where group_id=#{groupId} and user_id=#{userId}
+    </select>
+    <insert id="insert" parameterType="com.lihao.entity.po.GroupUser">
+        insert into group_user(group_id,user_id) values(#{groupId},#{userId})
+    </insert>
+</mapper>

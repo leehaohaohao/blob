@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lihao.mapper.TagMapper">
+    <resultMap id="base_column_map" type="com.lihao.entity.po.Tag">
+        <id column="tag" property="tag"/>
+        <result column="nums" property="nums"/>
+    </resultMap>
+    <insert id="insertOrUpdate">
+        INSERT INTO hot_tag (tag,nums)
+        VALUES (#{tag},1)
+        ON DUPLICATE KEY UPDATE nums = nums + 1
+    </insert>
+    <select id="select" resultMap="base_column_map">
+        select * from hot_tag
+        order by nums desc
+        limit 0,8
+    </select>
+    <select id="selectCount" resultType="Integer">
+        SELECT COUNT(*) FROM hot_tag
+    </select>
+    <select id="selectList" resultMap="base_column_map">
+        select * from hot_tag
+        <if test="query.orderBy!=null and query.orderBy!=''">
+            order by #{query.orderBy}
+        </if>
+        <if test="query.page!=null">
+            limit #{query.page.left},#{query.page.right}
+        </if>
+    </select>
+</mapper>
