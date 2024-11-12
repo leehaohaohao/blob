@@ -1,99 +1,33 @@
-2024-09-20 12:44:54 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 12:44:54 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 18744 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 12:44:54 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 12:44:54 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 12:44:54 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 12:44:54 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.lihao.BlobApplication]
-2024-09-20 12:44:54 [ERROR][org.springframework.boot.SpringApplication][reportFailure][859]-> Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.lihao.BlobApplication]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.lihao.BlobApplication.main(BlobApplication.java:22)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'globalExceptionHandler' for bean class [com.lihao.demo.context.exception.GlobalExceptionHandler] conflicts with existing, non-compatible bean definition of same name and class [com.lihao.handler.GlobalExceptionHandler]
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
-	... 16 common frames omitted
-2024-09-20 13:06:08 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 13:06:08 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 31700 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:06:08 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:06:08 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 13:06:08 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 13:06:08 [WARN][org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext][refresh][632]-> Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.lihao.BlobApplication]
-2024-09-20 13:06:08 [ERROR][org.springframework.boot.SpringApplication][reportFailure][859]-> Application run failed
-org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.lihao.BlobApplication]
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:179)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.lihao.BlobApplication.main(BlobApplication.java:22)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'globalExceptionHandler' for bean class [com.lihao.demo.context.exception.GlobalExceptionHandler] conflicts with existing, non-compatible bean definition of same name and class [com.lihao.handler.GlobalExceptionHandler]
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:361)
-	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:288)
-	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128)
-	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:306)
-	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:246)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197)
-	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:165)
-	... 16 common frames omitted
-2024-09-20 13:07:46 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 13:07:46 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28248 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:07:46 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:07:46 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 13:07:46 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 13:07:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:07:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:07:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:07:48 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:07:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:07:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:07:48 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:07:48 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:07:48 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:07:48 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:07:48 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2349 ms
-2024-09-20 13:07:50 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:07:50 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:07:50 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:07:50 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:07:51 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:07:51 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:07:51 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:07:51 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.754 seconds (process running for 6.879)
-2024-09-20 13:07:51 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:07:51 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@faae56b
-2024-09-20 13:07:51 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:12:13 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+2024-11-12 13:52:25 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-11-12 13:52:25 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-12 13:52:25 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-12 13:52:25 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-12 13:52:25 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+2024-11-12 13:52:29 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-12 13:52:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-12 13:52:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-12 13:52:29 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:29 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-12 13:52:29 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-12 13:52:29 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-12 13:52:29 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 3791 ms
+2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-12 13:52:34 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-12 13:52:34 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:34 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-12 13:52:34 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 10.255 seconds (process running for 14.305)
+2024-11-12 13:52:34 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-12 13:52:35 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ebb120
+2024-11-12 13:52:35 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-12 13:52:37 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 6 class path changes (2 additions, 2 deletions, 2 modifications)
+2024-11-12 13:52:37 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:39 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
 java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
@@ -129,254 +63,36 @@ java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-09-20 13:12:13 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:12:13 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:12:13 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:12:16 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 13:12:16 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 27460 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:12:16 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:12:16 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 13:12:16 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 13:12:17 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:12:17 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:12:17 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:12:18 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:12:18 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:12:18 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:12:18 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:18 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:12:18 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:12:18 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:12:18 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2042 ms
-2024-09-20 13:12:19 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:12:19 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:12:19 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:12:19 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:12:21 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:12:21 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:21 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:12:21 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.365 seconds (process running for 6.489)
-2024-09-20 13:12:21 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:12:21 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b50de7a
-2024-09-20 13:12:21 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:12:22 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:12:25 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (0 additions, 2 deletions, 1 modification)
-2024-09-20 13:12:25 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:26 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:12:26 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:12:26 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:12:27 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 27460 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:12:27 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:12:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:12:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:12:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:12:27 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:12:27 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:12:27 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:12:27 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:27 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:12:27 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:12:27 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:12:27 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 726 ms
-2024-09-20 13:12:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:12:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:12:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:12:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:12:29 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:12:29 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:29 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:12:29 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.349 seconds (process running for 14.529)
-2024-09-20 13:12:29 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:12:29 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2101e2de
-2024-09-20 13:12:29 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:12:29 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:12:30 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (2 additions, 0 deletions, 0 modifications)
-2024-09-20 13:12:30 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:31 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:12:31 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:12:31 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:12:31 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 27460 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:12:31 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:12:31 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:12:31 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:12:31 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:12:32 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:12:32 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:12:32 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:12:32 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:32 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:12:32 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:12:32 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:12:32 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 530 ms
-2024-09-20 13:12:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:12:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:12:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:12:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:12:33 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:12:33 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:12:33 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:12:33 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 1.884 seconds (process running for 18.623)
-2024-09-20 13:12:33 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:12:33 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@28378ffb
-2024-09-20 13:12:33 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:12:33 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:13:31 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-20 13:13:31 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-09-20 13:13:31 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 2 ms
-2024-09-20 13:13:31 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：363ms
-2024-09-20 13:14:27 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:27 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:27 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:14:28 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: ""]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959439 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.439Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959476 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.476Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959509 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.509Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959540 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.540Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959570 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.570Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959599 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.599Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959626 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.626Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959660 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.660Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959692 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.692Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959723 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.723Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959753 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.753Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959783 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.783Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959811 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.811Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959840 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.840Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959867 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.867Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959894 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.894Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959922 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.922Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959951 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.951Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:41 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613959982 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:41.982Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960008 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.008Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960033 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.033Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960063 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.063Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960093 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.093Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960124 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.124Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960155 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.155Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960182 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.182Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960213 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.213Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960247 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.247Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960284 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.284Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:15:42 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613960316 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:15:42.316Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987010 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.010Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987040 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.040Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987070 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.070Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987102 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.102Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987136 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.136Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987164 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.164Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987192 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.192Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987224 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.224Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987255 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.255Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987283 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.283Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987311 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.311Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987339 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.339Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987364 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.364Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987394 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.394Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987425 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.425Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987460 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.460Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987488 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.488Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987522 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.522Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987555 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.555Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987580 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.580Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987611 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.611Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987642 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.642Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987671 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.671Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987696 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.696Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987727 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.727Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987755 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.755Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987784 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.784Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987813 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.813Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987839 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.839Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:09 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1613987868 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:16:09.868Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:16:45 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:16:45 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:16:45 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:16:48 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 13:16:48 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:16:48 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:16:48 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 13:16:48 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 13:16:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:16:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:16:49 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:16:50 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:16:50 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:16:50 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:16:50 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:16:50 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:16:50 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:16:50 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:16:50 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2014 ms
-2024-09-20 13:16:51 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:16:51 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:16:51 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:16:51 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:16:52 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:16:52 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:16:52 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:16:52 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.337 seconds (process running for 6.752)
-2024-09-20 13:16:52 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:16:53 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@79c35e72
-2024-09-20 13:16:53 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:16:53 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:16:56 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
-2024-09-20 13:16:56 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:16:57 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:16:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:16:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:16:57 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:16:57 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:16:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:16:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:16:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:16:58 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:16:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:16:58 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:16:58 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:16:58 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:16:58 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:16:58 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:16:58 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 777 ms
-2024-09-20 13:16:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:16:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:16:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:16:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:16:59 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:16:59 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:16:59 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:16:59 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.203 seconds (process running for 13.359)
-2024-09-20 13:16:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:16:59 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f862667
-2024-09-20 13:16:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:17:00 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2024-09-20 13:17:00 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:17:01 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+2024-11-12 13:52:39 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-12 13:52:39 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-12 13:52:39 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-12 13:52:39 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-12 13:52:39 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+2024-11-12 13:52:40 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-12 13:52:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-12 13:52:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-12 13:52:40 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:40 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-12 13:52:40 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-12 13:52:41 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-12 13:52:41 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1259 ms
+2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-12 13:52:43 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-12 13:52:43 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:43 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-12 13:52:43 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.901 seconds (process running for 23.142)
+2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@41827789
+2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-12 13:52:45 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-11-12 13:52:45 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:47 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
 java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
@@ -412,400 +128,60 @@ java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-09-20 13:17:01 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:17:01 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:17:01 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:17:01 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:17:01 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:17:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:17:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:17:01 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:17:02 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:17:02 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:17:02 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:17:02 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:17:02 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:17:02 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:17:02 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:17:02 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 618 ms
-2024-09-20 13:17:02 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:17:02 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:17:02 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:17:02 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:17:03 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:17:03 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:17:03 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:17:03 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.088 seconds (process running for 17.626)
-2024-09-20 13:17:03 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:17:03 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@320f8395
-2024-09-20 13:17:03 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:17:10 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-20 13:17:10 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-09-20 13:17:10 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048571 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.571Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048629 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.629Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048657 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.657Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048685 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.685Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048713 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.713Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048737 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.737Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048762 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.762Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048788 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.788Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048821 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.821Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048859 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.859Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048897 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.897Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048930 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.930Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048960 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.960Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:10 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614048997 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:10.997Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049026 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.026Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049056 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.056Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049091 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.091Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049123 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.123Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049150 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.150Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049176 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.176Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049202 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.202Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049234 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.234Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049265 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.265Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049296 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.296Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049329 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.329Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049361 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.361Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049389 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.389Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049418 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.418Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049450 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.450Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:17:11 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614049487 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:17:11.487Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:02 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
-2024-09-20 13:18:02 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:03 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
-java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
-	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
-	at com.lihao.InitRun.run(InitRun.java:26)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.lihao.BlobApplication.main(BlobApplication.java:22)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-09-20 13:18:03 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:18:03 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:18:03 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:18:03 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:18:03 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:18:03 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:18:03 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:18:03 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:18:03 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:18:03 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:18:03 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:18:03 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:03 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:18:03 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:18:03 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:18:03 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 639 ms
-2024-09-20 13:18:04 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:18:04 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:18:04 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:18:04 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:18:05 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:18:05 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:05 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:18:05 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.256 seconds (process running for 79.433)
-2024-09-20 13:18:05 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:18:05 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c3d7f0a
-2024-09-20 13:18:05 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:18:05 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:18:06 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2024-09-20 13:18:06 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:07 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:18:07 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:18:07 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:18:07 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 28032 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:18:07 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:18:08 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:18:08 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:18:08 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:18:08 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:18:08 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:18:08 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:18:08 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:08 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:18:08 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:18:08 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:18:08 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 598 ms
-2024-09-20 13:18:09 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:18:09 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:18:09 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:18:09 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:18:09 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:18:09 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:18:09 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:18:09 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.111 seconds (process running for 83.811)
-2024-09-20 13:18:09 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:18:09 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@21eaf8d2
-2024-09-20 13:18:09 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:18:13 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-20 13:18:13 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-09-20 13:18:13 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 2 ms
-2024-09-20 13:18:13 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：196ms
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157480 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.480Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157515 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.515Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157551 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.551Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157583 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.583Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157620 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.620Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157655 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.655Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157689 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.689Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157723 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.723Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157751 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.751Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157777 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.777Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157803 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.803Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157831 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.831Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157857 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.857Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157883 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.883Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157906 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.906Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157936 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.936Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157961 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.961Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:18:59 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614157985 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:18:59.985Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158008 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.008Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158038 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.038Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158063 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.063Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158091 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.091Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158119 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.119Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158146 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.146Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158175 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.175Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158203 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.203Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158237 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.237Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158274 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.274Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158307 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.307Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:00 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614158341 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:00.341Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:20 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614178488 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:19:20.488Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:19:35 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：121ms
-2024-09-20 13:20:09 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：122ms
-2024-09-20 13:20:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614243566 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:20:25.566Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:21:15 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [io.jsonwebtoken.ExpiredJwtException: JWT expired 1614285911 milliseconds ago at 2024-09-01T12:56:22.000Z. Current time: 2024-09-20T05:21:07.911Z. Allowed clock skew: 0 milliseconds.]
-2024-09-20 13:21:47 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：116ms
-2024-09-20 13:22:20 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.NullPointerException: Cannot invoke "com.lihao.demo.context.user.ContextInfo.getUserId()" because the return value of "java.lang.ThreadLocal.get()" is null]
-2024-09-20 13:22:33 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.NullPointerException: Cannot invoke "com.lihao.demo.context.user.ContextInfo.getUserId()" because the return value of "java.lang.ThreadLocal.get()" is null]
-2024-09-20 13:24:34 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
-java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
-	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
-	at com.lihao.InitRun.run(InitRun.java:26)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.lihao.BlobApplication.main(BlobApplication.java:22)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-09-20 13:24:34 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:24:34 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:24:34 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:24:37 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-09-20 13:24:37 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 23676 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:24:37 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:24:37 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-09-20 13:24:37 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-09-20 13:24:38 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:24:38 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:24:38 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:24:39 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:24:39 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:24:39 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:24:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:39 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:24:39 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:24:39 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:24:39 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 2092 ms
-2024-09-20 13:24:41 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:24:41 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:24:41 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:24:41 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:24:42 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:24:42 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:42 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:24:42 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 5.853 seconds (process running for 7.003)
-2024-09-20 13:24:42 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:24:42 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a1d58a1
-2024-09-20 13:24:42 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:24:51 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-20 13:24:51 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-09-20 13:24:51 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 2 ms
-2024-09-20 13:24:51 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 2 class path changes (0 additions, 1 deletion, 1 modification)
-2024-09-20 13:24:51 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:51 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.NullPointerException: Cannot invoke "com.lihao.demo.context.user.ContextInfo.getUserId()" because the return value of "java.lang.ThreadLocal.get()" is null]
-2024-09-20 13:24:52 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
-java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
-	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
-	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:195)
-	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
-	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:383)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:50)
-	at com.lihao.redis.RedisUtils.get(RedisUtils.java:35)
-	at com.lihao.InitRun.run(InitRun.java:26)
-	at org.springframework.boot.SpringApplication.lambda$callRunner$4(SpringApplication.java:786)
-	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:83)
-	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
-	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:88)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:786)
-	at org.springframework.boot.SpringApplication.lambda$callRunners$3(SpringApplication.java:774)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:774)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:342)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
-	at com.lihao.BlobApplication.main(BlobApplication.java:22)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-09-20 13:24:52 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:24:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:24:52 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:24:52 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 23676 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:24:52 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:24:53 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:24:53 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:24:53 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:24:53 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:24:53 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:24:53 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:24:53 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:53 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:24:53 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:24:53 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:24:53 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 931 ms
-2024-09-20 13:24:54 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:24:54 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:24:54 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:24:54 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:24:54 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:24:54 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:54 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:24:54 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.459 seconds (process running for 19.498)
-2024-09-20 13:24:54 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:24:55 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ba513b2
-2024-09-20 13:24:55 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:24:55 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:24:56 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2024-09-20 13:24:56 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:57 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-09-20 13:24:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-09-20 13:24:57 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-09-20 13:24:57 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 23676 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-09-20 13:24:57 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-09-20 13:24:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-09-20 13:24:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-09-20 13:24:57 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2024-09-20 13:24:57 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-09-20 13:24:57 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-09-20 13:24:57 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-09-20 13:24:57 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:57 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-09-20 13:24:57 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-09-20 13:24:57 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-09-20 13:24:57 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 536 ms
-2024-09-20 13:24:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-09-20 13:24:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-09-20 13:24:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-09-20 13:24:58 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-09-20 13:24:59 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-09-20 13:24:59 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-09-20 13:24:59 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-09-20 13:24:59 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 2.04 seconds (process running for 23.745)
-2024-09-20 13:24:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-09-20 13:24:59 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@262b9a78
-2024-09-20 13:24:59 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-09-20 13:24:59 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-09-20 13:25:07 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-09-20 13:25:07 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-09-20 13:25:07 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
-2024-09-20 13:25:07 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：92ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：17ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：31ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：28ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
-2024-09-20 13:25:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：27ms
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:25 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：15ms
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
-2024-09-20 13:25:26 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [java.lang.reflect.UndeclaredThrowableException]
+2024-11-12 13:52:47 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-12 13:52:47 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-12 13:52:47 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-12 13:52:47 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-12 13:52:47 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2024-11-12 13:52:48 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-12 13:52:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-12 13:52:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-12 13:52:48 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:48 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-12 13:52:48 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-12 13:52:48 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-12 13:52:48 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1042 ms
+2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-12 13:52:50 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-12 13:52:50 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-12 13:52:50 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-12 13:52:50 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.48 seconds (process running for 30.343)
+2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@480967b5
+2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-12 13:52:50 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-11-12 13:53:25 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-12 13:53:25 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-11-12 13:53:25 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
+2024-11-12 13:53:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.code，耗时：1678ms
+2024-11-12 13:53:54 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.send，耗时：140ms
+2024-11-12 13:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：281ms
+2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：27ms
+2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：94ms
+2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：126ms
+2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：139ms
+2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：149ms
+2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：40ms
+2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：24ms
+2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：58ms
+2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：85ms
+2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：25ms
+2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：22ms
+2024-11-12 13:55:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：23ms
+2024-11-12 13:55:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：18ms
+2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：20ms
+2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
+2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：19ms
+2024-11-12 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：34ms
+2024-11-12 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
+2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
+2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：31ms
+2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：45ms
+2024-11-12 13:55:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.comment，耗时：208ms
+2024-11-12 13:55:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.comment，耗时：21ms
