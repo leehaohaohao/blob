@@ -17,8 +17,6 @@ import com.lihao.redis.RedisTools;
 import com.lihao.service.Impl.EmailServiceImpl;
 import com.lihao.util.*;
 import jakarta.annotation.Resource;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,8 +49,7 @@ public class LoginController extends BaseController {
     @PostMapping("/login")
     @Transactional
     @MonitorApiUsage
-    public ResponsePack loginCon(HttpServletRequest request, HttpServletResponse response,
-                                 String email, String password) throws GlobalException {
+    public ResponsePack loginCon(String email, String password) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
         if(userInfo == null || !userInfo.getPassword().toLowerCase().equals(DigestUtils.md5Hex(password))){
             throw new GlobalException(ExceptionConstants.EMAIL_NO_MATCH);
@@ -70,8 +67,6 @@ public class LoginController extends BaseController {
         UserInfoDto userInfoDto = new UserInfoDto();
         BeanUtils.copyProperties(userInfo,userInfoDto);
         redisTools.setTokenUserInfo(userInfoDto);
-        /*String token = redisTools.setToken(userInfoDto.getUserId());
-        CookieUtil.addCookie( response, StringConstants.TOKEN, token, Math.toIntExact(TimeConstants.ONE_MONTH),request.getContextPath());*/
         //将用户权限信息存入redis
         redisTools.setPermission(userInfo.getUserId(),commonUtil.getPermission(userInfo.getUserId()));
         return getSuccessResponsePack(authorization);
@@ -80,8 +75,7 @@ public class LoginController extends BaseController {
     @Transactional
     @MonitorApiUsage
     public ResponsePack register(String email, String password,
-                                 String code,
-                                 HttpServletRequest request) throws GlobalException {
+                                 String code) throws GlobalException {
         UserInfo userInfo = userInfoMapper.selectByEmail(email);
         if(userInfo != null){
             throw new GlobalException(ExceptionConstants.EMAIL_EXIST);

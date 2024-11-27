@@ -1,33 +1,405 @@
-2024-11-12 13:52:25 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
-2024-11-12 13:52:25 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-11-12 13:52:25 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-11-12 13:52:25 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-11-12 13:52:25 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-11-12 13:52:27 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
-2024-11-12 13:52:29 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-11-12 13:52:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-11-12 13:52:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-11-12 13:52:29 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:29 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-11-12 13:52:29 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-11-12 13:52:29 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-11-12 13:52:29 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 3791 ms
-2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-11-12 13:52:32 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-11-12 13:52:34 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-11-12 13:52:34 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:34 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-11-12 13:52:34 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 10.255 seconds (process running for 14.305)
-2024-11-12 13:52:34 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-11-12 13:52:35 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ebb120
-2024-11-12 13:52:35 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-11-12 13:52:37 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 6 class path changes (2 additions, 2 deletions, 2 modifications)
-2024-11-12 13:52:37 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:39 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+2024-11-27 10:18:02 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-11-27 10:18:02 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 20360 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-27 10:18:02 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-27 10:18:02 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 10:18:02 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 10:18:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:18:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-27 10:18:04 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+2024-11-27 10:18:06 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-27 10:18:06 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-27 10:18:06 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-27 10:18:06 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-27 10:18:06 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-27 10:18:06 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-27 10:18:06 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-27 10:18:06 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 3714 ms
+2024-11-27 10:18:08 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-27 10:18:08 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-27 10:18:08 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-27 10:18:08 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-27 10:18:10 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-27 10:18:10 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-27 10:18:10 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-27 10:18:10 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 8.888 seconds (process running for 12.193)
+2024-11-27 10:18:10 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-27 10:18:11 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@61753745
+2024-11-27 10:18:11 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-27 10:33:42 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:34:02 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:34:12 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:34:22 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:34:32 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:34:37 [INFO][io.lettuce.core.protocol.ConnectionWatchdog][log][171]-> Reconnecting, last destination was /121.40.154.188:6379
+2024-11-27 10:34:37 [INFO][io.lettuce.core.protocol.ReconnectionHandler][lambda$null$3][174]-> Reconnected to 121.40.154.188/<unresolved>:6379
+2024-11-27 10:34:42 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:36:32 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 10:50:08 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-27 10:50:08 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
 java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
@@ -63,36 +435,134 @@ java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-11-12 13:52:39 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-11-12 13:52:39 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-11-12 13:52:39 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-11-12 13:52:39 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-11-12 13:52:39 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-11-12 13:52:40 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
-2024-11-12 13:52:40 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-11-12 13:52:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-11-12 13:52:40 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-11-12 13:52:40 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:40 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-11-12 13:52:40 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-11-12 13:52:41 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-11-12 13:52:41 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1259 ms
-2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-11-12 13:52:42 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-11-12 13:52:43 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-11-12 13:52:43 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:43 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-11-12 13:52:43 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.901 seconds (process running for 23.142)
-2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@41827789
-2024-11-12 13:52:43 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-11-12 13:52:45 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2024-11-12 13:52:45 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:47 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
+2024-11-27 10:50:08 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-27 10:50:08 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-27 10:50:22 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-11-27 10:50:22 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 2256 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-27 10:50:22 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-27 10:50:22 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 10:50:22 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 10:50:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 10:50:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-27 10:50:24 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+2024-11-27 10:50:26 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-27 10:50:26 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-27 10:50:26 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-27 10:50:26 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-27 10:50:26 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-27 10:50:26 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-27 10:50:26 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-27 10:50:26 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 3786 ms
+2024-11-27 10:50:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-27 10:50:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-27 10:50:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-27 10:50:28 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-27 10:50:29 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-27 10:50:29 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-27 10:50:29 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-27 10:50:29 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 8.4 seconds (process running for 19.442)
+2024-11-27 10:50:29 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-27 10:50:30 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@46264441
+2024-11-27 10:50:30 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-27 10:50:31 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-11-27 10:57:01 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-27 10:57:01 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-11-27 10:57:01 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 3 ms
+2024-11-27 10:57:02 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 10:57:17 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：430ms
+2024-11-27 10:57:27 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 10:57:53 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 10:58:04 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 10:58:36 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 11:06:28 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：151ms
+2024-11-27 13:06:13 [WARN][com.zaxxer.hikari.pool.HikariPool][run][804]-> HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=5m35s505ms38µs300ns).
+2024-11-27 13:09:14 [ERROR][org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler][handleError][95]-> Unexpected error occurred in scheduled task
+org.springframework.dao.QueryTimeoutException: Redis command timed out
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:68)
+	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
+	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:40)
+	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:38)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:308)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1026)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.lambda$doInvoke$3(LettuceConnection.java:445)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker$Synchronizer.invoke(LettuceInvoker.java:665)
+	at org.springframework.data.redis.connection.lettuce.LettuceInvoker.just(LettuceInvoker.java:94)
+	at org.springframework.data.redis.connection.lettuce.LettuceHashCommands.hGetAll(LettuceHashCommands.java:103)
+	at org.springframework.data.redis.connection.DefaultedRedisConnection.hGetAll(DefaultedRedisConnection.java:1381)
+	at org.springframework.data.redis.core.DefaultHashOperations.lambda$entries$18(DefaultHashOperations.java:235)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:396)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:363)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:97)
+	at org.springframework.data.redis.core.DefaultHashOperations.entries(DefaultHashOperations.java:235)
+	at com.lihao.redis.RedisUtils.hgetAll(RedisUtils.java:194)
+	at com.lihao.service.ScheduledService.storageApi(ScheduledService.java:34)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:392)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.lihao.service.ScheduledService$$SpringCGLIB$$0.storageApi(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:358)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 2 second(s)
+	at io.lettuce.core.internal.ExceptionFactory.createTimeoutException(ExceptionFactory.java:59)
+	at io.lettuce.core.internal.Futures.awaitOrCancel(Futures.java:246)
+	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:74)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnection.await(LettuceConnection.java:1024)
+	... 39 common frames omitted
+2024-11-27 13:09:56 [WARN][com.zaxxer.hikari.pool.HikariPool][run][804]-> HikariCPDatasource - Thread starvation or clock leap detected (housekeeper delta=2m43s52ms722µs700ns).
+2024-11-27 13:36:36 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-27 13:36:36 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-27 13:36:36 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-27 14:34:06 [INFO][org.hibernate.validator.internal.util.Version][<clinit>][21]-> HV000001: Hibernate Validator 8.0.1.Final
+2024-11-27 14:34:06 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 30752 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-27 14:34:06 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-27 14:34:06 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-27 14:34:06 [INFO][org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor][logTo][252]-> For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-27 14:34:07 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 14:34:07 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-27 14:34:07 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
+2024-11-27 14:34:09 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-27 14:34:09 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-27 14:34:09 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-27 14:34:09 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:09 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-27 14:34:09 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-27 14:34:09 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-27 14:34:09 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 3204 ms
+2024-11-27 14:34:11 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-27 14:34:11 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-27 14:34:11 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-27 14:34:11 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-27 14:34:13 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-27 14:34:13 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:13 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-27 14:34:13 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 7.888 seconds (process running for 9.741)
+2024-11-27 14:34:13 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-27 14:34:13 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a1005b5
+2024-11-27 14:34:13 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-27 14:34:26 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 3 class path changes (1 addition, 1 deletion, 1 modification)
+2024-11-27 14:34:26 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:28 [ERROR][com.lihao.InitRun][run][33]-> 服务启动失败！
 java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use start() to initialize it
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.assertStarted(LettuceConnectionFactory.java:1391)
 	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:991)
@@ -128,68 +598,76 @@ java.lang.IllegalStateException: LettuceConnectionFactory has been STOPPED. Use 
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
-2024-11-12 13:52:47 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-11-12 13:52:47 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-11-12 13:52:47 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
-2024-11-12 13:52:47 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 22304 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
-2024-11-12 13:52:47 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
-2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
-2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2024-11-12 13:52:47 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
-2024-11-12 13:52:48 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
-2024-11-12 13:52:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
-2024-11-12 13:52:48 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
-2024-11-12 13:52:48 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:48 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
-2024-11-12 13:52:48 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
-2024-11-12 13:52:48 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
-2024-11-12 13:52:48 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1042 ms
-2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
-2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
-2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
-2024-11-12 13:52:49 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
-2024-11-12 13:52:50 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
-2024-11-12 13:52:50 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
-2024-11-12 13:52:50 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
-2024-11-12 13:52:50 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.48 seconds (process running for 30.343)
-2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
-2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@480967b5
-2024-11-12 13:52:50 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
-2024-11-12 13:52:50 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
-2024-11-12 13:53:25 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-11-12 13:53:25 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
-2024-11-12 13:53:25 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 1 ms
-2024-11-12 13:53:27 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.code，耗时：1678ms
-2024-11-12 13:53:54 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.send，耗时：140ms
-2024-11-12 13:54:03 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：281ms
-2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：27ms
-2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：94ms
-2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：126ms
-2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：139ms
-2024-11-12 13:54:04 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：149ms
-2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：40ms
-2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：24ms
-2024-11-12 13:55:23 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：58ms
-2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：85ms
-2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：25ms
-2024-11-12 13:55:25 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：22ms
-2024-11-12 13:55:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：23ms
-2024-11-12 13:55:26 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：18ms
-2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：20ms
-2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：16ms
-2024-11-12 13:55:33 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostByTag，耗时：19ms
-2024-11-12 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：34ms
-2024-11-12 13:55:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：29ms
-2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getTag，耗时：1ms
-2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.getComment，耗时：31ms
-2024-11-12 13:55:38 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getPostById，耗时：45ms
-2024-11-12 13:55:41 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.comment，耗时：208ms
-2024-11-12 13:55:43 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：SocialController.comment，耗时：21ms
-2024-11-12 13:56:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：2ms
-2024-11-12 13:56:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：15ms
-2024-11-12 13:56:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：40ms
-2024-11-12 13:56:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：26ms
-2024-11-12 13:56:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：32ms
-2024-11-12 13:59:27 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
-2024-11-12 13:59:27 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
-2024-11-12 13:59:27 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-27 14:34:28 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-27 14:34:28 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-27 14:34:28 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-27 14:34:28 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 30752 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-27 14:34:28 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-27 14:34:29 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 14:34:29 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-27 14:34:29 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-11-27 14:34:29 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-27 14:34:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-27 14:34:29 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-27 14:34:29 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:29 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-27 14:34:29 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-27 14:34:29 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-27 14:34:29 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1256 ms
+2024-11-27 14:34:30 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-27 14:34:30 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-27 14:34:30 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-27 14:34:30 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-27 14:34:31 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-27 14:34:31 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:31 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-27 14:34:31 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.548 seconds (process running for 28.483)
+2024-11-27 14:34:31 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-27 14:34:31 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@45b7549
+2024-11-27 14:34:31 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-27 14:34:32 [INFO][com.lihao.InitRun][run][27]-> 服务启动成功，可以开始愉快的开发了！
+2024-11-27 14:34:33 [INFO][org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener][onApplicationEvent][211]-> Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-11-27 14:34:33 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Stopping ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:35 [INFO][com.lihao.netty.ChannelContext][clear][34]-> 清除人员、群组信息
+2024-11-27 14:34:35 [INFO][com.zaxxer.hikari.HikariDataSource][close][350]-> HikariCPDatasource - Shutdown initiated...
+2024-11-27 14:34:35 [INFO][com.zaxxer.hikari.HikariDataSource][close][352]-> HikariCPDatasource - Shutdown completed.
+2024-11-27 14:34:35 [INFO][com.lihao.BlobApplication][logStarting][50]-> Starting BlobApplication using Java 19.0.2 with PID 30752 (D:\IDEProject\blob\target\classes started by lihao in D:\IDEProject\blob)
+2024-11-27 14:34:35 [INFO][com.lihao.BlobApplication][logStartupProfileInfo][654]-> No active profile set, falling back to 1 default profile: "default"
+2024-11-27 14:34:35 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][multipleStoresDetected][295]-> Multiple Spring Data modules found, entering strict repository configuration mode
+2024-11-27 14:34:35 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][143]-> Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-11-27 14:34:35 [INFO][org.springframework.data.repository.config.RepositoryConfigurationDelegate][registerRepositoriesIn][211]-> Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2024-11-27 14:34:36 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][initialize][109]-> Tomcat initialized with port 9090 (http)
+2024-11-27 14:34:36 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> Loaded Apache Tomcat Native library [2.0.7] using APR version [1.7.4].
+2024-11-27 14:34:36 [INFO][org.apache.catalina.core.AprLifecycleListener][log][173]-> OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+2024-11-27 14:34:36 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Initializing ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:36 [INFO][org.apache.catalina.core.StandardService][log][173]-> Starting service [Tomcat]
+2024-11-27 14:34:36 [INFO][org.apache.catalina.core.StandardEngine][log][173]-> Starting Servlet engine: [Apache Tomcat/10.1.25]
+2024-11-27 14:34:36 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring embedded WebApplicationContext
+2024-11-27 14:34:36 [INFO][org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext][prepareWebApplicationContext][296]-> Root WebApplicationContext: initialization completed in 1133 ms
+2024-11-27 14:34:37 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：FixedWindowStrategy
+2024-11-27 14:34:37 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：LeakyBucketStrategy
+2024-11-27 14:34:37 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：SlideWindowStrategy
+2024-11-27 14:34:37 [INFO][com.lihao.demo.current_limiting.base.AbstractCurrentLimitingStrategy][init][23]-> 注册限流策略：TokenBucketStrategy
+2024-11-27 14:34:39 [INFO][org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer][startServer][59]-> LiveReload server is running on port 35729
+2024-11-27 14:34:39 [INFO][org.apache.coyote.http11.Http11NioProtocol][log][173]-> Starting ProtocolHandler ["http-nio-9090"]
+2024-11-27 14:34:39 [INFO][org.springframework.boot.web.embedded.tomcat.TomcatWebServer][start][241]-> Tomcat started on port 9090 (http) with context path '/blob'
+2024-11-27 14:34:39 [INFO][com.lihao.BlobApplication][logStarted][56]-> Started BlobApplication in 3.936 seconds (process running for 35.651)
+2024-11-27 14:34:39 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][110]-> HikariCPDatasource - Starting...
+2024-11-27 14:34:39 [INFO][com.zaxxer.hikari.pool.HikariPool][checkFailFast][565]-> HikariCPDatasource - Added connection com.mysql.cj.jdbc.ConnectionImpl@164d049b
+2024-11-27 14:34:39 [INFO][com.zaxxer.hikari.HikariDataSource][getConnection][123]-> HikariCPDatasource - Start completed.
+2024-11-27 14:34:39 [INFO][org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/blob]][log][173]-> Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-27 14:34:39 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][532]-> Initializing Servlet 'dispatcherServlet'
+2024-11-27 14:34:39 [INFO][org.springframework.web.servlet.DispatcherServlet][initServletBean][554]-> Completed initialization in 3 ms
+2024-11-27 14:34:39 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.loginCon，耗时：341ms
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：NoteController.select，耗时：33ms
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyPost，耗时：70ms
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：163ms
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：111ms
+2024-11-27 14:34:45 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：ForumController.getMyLikePost，耗时：116ms
+2024-11-27 14:35:30 [WARN][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver][logException][247]-> Resolved [com.lihao.exception.GlobalException: 账号或密码错误！]
+2024-11-27 14:35:36 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：LoginController.mLogin，耗时：121ms
+2024-11-27 14:35:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotPost，耗时：7ms
+2024-11-27 14:35:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：UserInfoController.getUserAvatarInfo，耗时：35ms
+2024-11-27 14:35:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.getHotTag，耗时：28ms
+2024-11-27 14:35:37 [INFO][com.lihao.aspect.NormalAspect][monitorApiUsage][156]-> 接口：BackController.num，耗时：76ms
