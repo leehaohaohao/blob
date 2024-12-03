@@ -36,6 +36,10 @@ public class UserInfoDto {
     private Integer love;
     private Integer collect;
     public void setPhoto(String photo) {
+        if(photo.contains(StringConstants.URL)){
+            this.photo = photo;
+            return;
+        }
         this.photo = StringConstants.URL+photo;
     }
 }

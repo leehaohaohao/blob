@@ -19,6 +19,10 @@ public class GroupDto {
     private Integer status;
     private String userName;
     public void setAvatar(String avatar) {
+        if(avatar.contains(StringConstants.URL)){
+            this.avatar = avatar;
+            return;
+        }
         this.avatar = StringConstants.URL+avatar;
     }
 }

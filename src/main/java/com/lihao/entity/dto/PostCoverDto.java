@@ -17,6 +17,10 @@ public class PostCoverDto {
     private String cover;
     private OtherInfoDto otherInfoDto;
     public void setCover(String cover) {
+        if(cover.contains(StringConstants.URL)){
+            this.cover = cover;
+            return;
+        }
         this.cover = StringConstants.URL+cover;
     }
 }

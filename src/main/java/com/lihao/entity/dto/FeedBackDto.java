@@ -1,6 +1,7 @@
 package com.lihao.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lihao.constants.StringConstants;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -16,4 +17,11 @@ public class FeedBackDto {
     private String file;
     private String type;
     private String name;
+    public void setFile(String file){
+        if(file.contains(StringConstants.URL)){
+            this.file=file;
+            return;
+        }
+        this.file=StringConstants.URL+file;
+    }
 }

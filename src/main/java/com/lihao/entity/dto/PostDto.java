@@ -24,6 +24,10 @@ public class PostDto {
     private Boolean isCollect;
     private List<CommentDto> parentCommentDto;
     public void setCover(String cover){
+        if(cover.contains(StringConstants.URL)){
+            this.cover = cover;
+            return;
+        }
         this.cover= StringConstants.URL+cover;
     }
 
