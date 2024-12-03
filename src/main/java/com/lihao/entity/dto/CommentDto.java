@@ -1,5 +1,6 @@
 package com.lihao.entity.dto;
 
+import com.lihao.constants.StringConstants;
 import lombok.Data;
 
 import java.util.Date;
@@ -17,4 +18,7 @@ public class CommentDto {
     private String topId;
     private Date commentDate;
     private List<CommentDto> childCommentDto;
+    public void setPhoto(String photo){
+        this.photo = StringConstants.URL+photo;
+    }
 }

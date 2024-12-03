@@ -5,7 +5,7 @@ server:
     session:
       timeout: PT60M
 project:
-  folder: d:/IDEProject/blob/src/main/resources/static
+  folder: /app/blob/static
 log:
   root:
     level: info
@@ -15,27 +15,17 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 spring:
+  config:
+    import: database-pro.yaml
   jackson:
     default-property-inclusion: non_null
   servlet:
     multipart:
       max-file-size: 500MB
       max-request-size: 500MB
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blob
-    username: root
-    #password: 1851811574LIhao
-    password: 123456
-    hikari:
-      pool-name: HikariCPDatasource
-      minimum-idle: 5
-      idle-timeout: 180000
-      maximum-pool-size: 10
-      auto-commit: true
-      max-lifetime: 1800000
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
+  web:
+    resources:
+      static-locations: file:/app/blob/static
   data:
     redis:
       database: 0
@@ -77,7 +67,7 @@ ws:
   heart: 120
   expire: 5000
 error:
-  img: http://localhost:9090/blob/img/error.jpg
+  img: img/error.jpg
   name: 不挂违规用户
 logging:
   level:

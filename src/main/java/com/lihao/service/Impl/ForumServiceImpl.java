@@ -5,7 +5,6 @@ import com.github.pagehelper.PageHelper;
 import com.lihao.constants.*;
 import com.lihao.entity.dto.*;
 import com.lihao.entity.po.*;
-import com.lihao.entity.query.CommentQuery;
 import com.lihao.entity.query.LoveCollectQuery;
 import com.lihao.entity.query.PostQuery;
 import com.lihao.entity.query.UserQuery;

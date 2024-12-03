@@ -58,7 +58,7 @@ public class FileUtil {
         // TODO 还需优化,static不能写死
         int startIndex = path.indexOf("/static");
         String result = path.substring(startIndex).replace("/static", "");
-        ss[0] = StringConstants.URI + result + filename;
+        ss[0] = result.replaceFirst("/","") + filename;
         ss[1] = path + filename;
         return ss;
     }

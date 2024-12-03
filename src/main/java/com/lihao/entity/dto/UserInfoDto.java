@@ -1,6 +1,7 @@
 package com.lihao.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lihao.constants.StringConstants;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
@@ -34,4 +35,7 @@ public class UserInfoDto {
     private Integer status;
     private Integer love;
     private Integer collect;
+    public void setPhoto(String photo) {
+        this.photo = StringConstants.URL+photo;
+    }
 }

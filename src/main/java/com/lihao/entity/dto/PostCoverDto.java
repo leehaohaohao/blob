@@ -1,5 +1,6 @@
 package com.lihao.entity.dto;
 
+import com.lihao.constants.StringConstants;
 import lombok.Data;
 
 import java.util.Date;
@@ -15,4 +16,7 @@ public class PostCoverDto {
     private String title;
     private String cover;
     private OtherInfoDto otherInfoDto;
+    public void setCover(String cover) {
+        this.cover = StringConstants.URL+cover;
+    }
 }

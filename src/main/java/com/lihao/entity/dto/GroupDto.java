@@ -1,6 +1,7 @@
 package com.lihao.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lihao.constants.StringConstants;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -17,4 +18,7 @@ public class GroupDto {
     private Date time;
     private Integer status;
     private String userName;
+    public void setAvatar(String avatar) {
+        this.avatar = StringConstants.URL+avatar;
+    }
 }
