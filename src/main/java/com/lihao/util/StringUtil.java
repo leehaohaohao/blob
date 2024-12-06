@@ -26,7 +26,7 @@ public class StringUtil {
         if(StringConstants.isDev){
             return path + "/src/main/resources/static/img/";
         }
-        return "/app/blob/static/img";
+        return "/app/blob/static/img/";
     }
 
     public static String getPostCoverPath() {
@@ -36,7 +36,7 @@ public class StringUtil {
         if(StringConstants.isDev) {
             return path + "/src/main/resources/static/post/cover/";
         }
-        return "/app/blob/static/post/cover";
+        return "/app/blob/static/post/cover/";
     }
     public static String getGroupAvatarPath() {
         // 获取项目根目录
@@ -45,7 +45,7 @@ public class StringUtil {
         if(StringConstants.isDev){
         return path + "/src/main/resources/static/group/avatar/";
         }
-        return "/app/blob/static/group/avatar";
+        return "/app/blob/static/group/avatar/";
     }
     public static String getFeedBackPath() {
         // 获取项目根目录
@@ -54,6 +54,6 @@ public class StringUtil {
         if(StringConstants.isDev) {
             return path + "/src/main/resources/static/feedback/";
         }
-        return "/app/blob/static/feedback";
+        return "/app/blob/static/feedback/";
     }
 }
