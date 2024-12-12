@@ -77,6 +77,8 @@ public class ForumServiceImpl implements ForumService {
             }
             throw new GlobalException(ExceptionConstants.PUBLISH_FAIL);
         }
+        //TODO
+        approvalPost(post.getPostId(),PostEnum.NORMAL.getStatus(),"U1805198690294980608");
     }
     @Override
     public List<PostCoverDto> getPostByTag(String tagFuzzy, Page page, String userId) throws GlobalException {
